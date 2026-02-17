@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hikmet Ehli</string>
+    <string name="title_activity_main">Hikmet Ehli</string>
+    <string name="package_name">com.hikmetehli.app</string>
+    <string name="custom_url_scheme">hikmetehli</string>
+    <string name="hourly_widget_desc">Saatlik ayet ve hadis widgetı</string>
+</resources>
