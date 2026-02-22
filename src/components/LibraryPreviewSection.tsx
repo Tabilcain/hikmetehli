@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { BookMarked, MoveRight } from "lucide-react";
-import { getCoverAssetUrls, getLibraryCatalog } from "@/lib/library";
+import { BookMarked, Download, MoveRight } from "lucide-react";
+import { getCoverAssetUrls, getLibraryCatalog, toAssetUrl } from "@/lib/library";
 
 export const LibraryPreviewSection = () => {
   const { data: catalog, isLoading, isError } = useQuery({
@@ -56,6 +56,7 @@ export const LibraryPreviewSection = () => {
                   ))
                 : previewItems.map((book) => {
                     const cover = getCoverAssetUrls(book);
+                    const pdfUrl = toAssetUrl(book.pdfPath);
                     return (
                       <article
                         key={book.id}
@@ -91,16 +92,24 @@ export const LibraryPreviewSection = () => {
                               <p className="mt-2 text-xs text-muted-foreground">Sayfa bilgisi yakında</p>
                             )}
                           </div>
-                          <div className="flex items-center justify-between">
+                          <div className="grid grid-cols-3 gap-2">
                             <Link
                               to={`/kutuphane/${book.slug}/oku`}
-                              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-background"
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-background"
                             >
                               Oku
                             </Link>
+                            <a
+                              href={pdfUrl}
+                              download
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-primary px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary/90"
+                            >
+                              <Download className="h-4 w-4" />
+                              İndir
+                            </a>
                             <Link
                               to={`/kutuphane/${book.slug}`}
-                              className="inline-flex min-h-10 items-center gap-2 rounded-full border border-border/70 px-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
                             >
                               <BookMarked className="h-4 w-4" />
                               Detay

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Document as PdfDocument, Page, pdfjs } from "react-pdf";
-import { AlertCircle, Download, Expand, Minus, Plus } from "lucide-react";
+import { AlertCircle, Download, Expand, Minimize2, Minus, Plus } from "lucide-react";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
@@ -24,11 +24,13 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const [zoom, setZoom] = useState(1);
   const [viewportWidth, setViewportWidth] = useState(0);
   const [error, setError] = useState<string | null>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [nativeFullscreen, setNativeFullscreen] = useState(false);
+  const [immersiveMode, setImmersiveMode] = useState(false);
 
   const minZoom = isMobile ? 0.9 : 0.8;
   const maxZoom = isMobile ? 1.4 : 2;
   const isContinuousMode = true;
+  const isFullscreen = nativeFullscreen || immersiveMode;
 
   useEffect(() => {
     const element = canvasRef.current;
@@ -54,7 +56,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   useEffect(() => {
     const updateFullscreenState = () => {
       const fullDoc = document as Document & { webkitFullscreenElement?: Element | null };
-      setIsFullscreen(Boolean(document.fullscreenElement || fullDoc.webkitFullscreenElement));
+      setNativeFullscreen(Boolean(document.fullscreenElement || fullDoc.webkitFullscreenElement));
     };
 
     updateFullscreenState();
@@ -66,6 +68,15 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
       document.removeEventListener("webkitfullscreenchange", updateFullscreenState as EventListener);
     };
   }, []);
+
+  useEffect(() => {
+    if (!immersiveMode) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [immersiveMode]);
 
   useEffect(() => {
     if (!isContinuousMode || !numPages) return;
@@ -128,31 +139,40 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const increaseZoom = () => setZoom((current) => Math.min(maxZoom, Number((current + 0.1).toFixed(2))));
   const decreaseZoom = () => setZoom((current) => Math.max(minZoom, Number((current - 0.1).toFixed(2))));
 
-  const toggleFullscreen = async () => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-
-    const prefixedWrapper = wrapper as HTMLElement & {
-      webkitRequestFullscreen?: () => Promise<void> | void;
-      msRequestFullscreen?: () => Promise<void> | void;
-    };
+  const exitFullscreen = async () => {
     const prefixedDoc = document as Document & {
       webkitExitFullscreen?: () => Promise<void> | void;
       webkitFullscreenElement?: Element | null;
     };
 
     try {
-      if (isFullscreen) {
-        if (document.fullscreenElement && document.exitFullscreen) {
-          await document.exitFullscreen();
-          return;
-        }
-        if (prefixedDoc.webkitFullscreenElement && prefixedDoc.webkitExitFullscreen) {
-          await prefixedDoc.webkitExitFullscreen();
-        }
-        return;
+      if (document.fullscreenElement && document.exitFullscreen) {
+        await document.exitFullscreen();
+      } else if (prefixedDoc.webkitFullscreenElement && prefixedDoc.webkitExitFullscreen) {
+        await prefixedDoc.webkitExitFullscreen();
       }
+    } catch {
+      // Ignore native fullscreen exit failures.
+    } finally {
+      setImmersiveMode(false);
+    }
+  };
 
+  const toggleFullscreen = async () => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    if (isFullscreen) {
+      await exitFullscreen();
+      return;
+    }
+
+    const prefixedWrapper = wrapper as HTMLElement & {
+      webkitRequestFullscreen?: () => Promise<void> | void;
+      msRequestFullscreen?: () => Promise<void> | void;
+    };
+
+    try {
       if (wrapper.requestFullscreen) {
         await wrapper.requestFullscreen();
         return;
@@ -165,21 +185,23 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
         await prefixedWrapper.msRequestFullscreen();
         return;
       }
-
-      window.open(fileUrl, "_blank", "noopener,noreferrer");
     } catch {
-      window.open(fileUrl, "_blank", "noopener,noreferrer");
+      // Fallback below.
     }
+
+    // iOS/Safari fallback: keep reading inside app instead of opening a new tab.
+    setImmersiveMode(true);
   };
 
   return (
-    <div
-      ref={wrapperRef}
-      className={cn(
-        "relative rounded-[24px] md:rounded-[28px] border border-border/80 bg-card/90 shadow-elevated",
-        isFullscreen && "z-40",
-      )}
-    >
+      <div
+        ref={wrapperRef}
+        className={cn(
+          "relative rounded-[24px] md:rounded-[28px] border border-border/80 bg-card/90 shadow-elevated",
+          immersiveMode && "fixed inset-0 z-[120] rounded-none border-none bg-background overflow-hidden",
+          nativeFullscreen && "z-40",
+        )}
+      >
       <div className="flex items-start justify-between gap-3 border-b border-border/70 bg-background/75 p-3 md:p-4">
         <div className="min-w-0">
           <p className="text-[10px] uppercase tracking-[0.28em] text-primary">Site İçi Okuyucu</p>
@@ -209,8 +231,8 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-card px-4 text-xs font-semibold uppercase tracking-[0.2em]"
             type="button"
           >
-            <Expand className="h-4 w-4" />
-            Tam Ekran
+            {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
+            {isFullscreen ? "Çık" : "Tam Ekran"}
           </button>
           <a
             href={fileUrl}
@@ -280,10 +302,10 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
             <button
               onClick={toggleFullscreen}
               className="inline-flex min-h-11 items-center justify-center rounded-full border border-border/70 bg-card"
-              aria-label="Tam ekran"
+              aria-label={isFullscreen ? "Tam ekrandan çık" : "Tam ekran"}
               type="button"
             >
-              <Expand className="h-4 w-4" />
+              {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
             </button>
             <a
               href={fileUrl}
@@ -336,7 +358,11 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
         ref={canvasRef}
         className={cn(
           "relative bg-[#0f262b] px-1.5 pt-2 pb-3 md:p-6",
-          isContinuousMode ? "overflow-visible" : "min-h-[56vh] overflow-auto",
+          immersiveMode
+            ? "h-[calc(100dvh-138px)] overflow-auto"
+            : isContinuousMode
+              ? "overflow-visible"
+              : "min-h-[56vh] overflow-auto",
         )}
       >
         {error ? (
