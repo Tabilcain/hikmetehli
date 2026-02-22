@@ -25,7 +25,7 @@ export default defineConfig(() => ({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.png", "favicon.ico", "robots.txt", "manifest.json", "quran.json", "sitemap.xml", "library/catalog.v1.json"],
+      includeAssets: ["favicon.png", "favicon-192.png", "favicon.ico", "robots.txt", "manifest.json", "quran.json", "sitemap.xml", "library/catalog.v1.json"],
       manifest: {
         name: "Hikmet Ehli",
         short_name: "Hikmet Ehli",
@@ -36,7 +36,7 @@ export default defineConfig(() => ({
         theme_color: "#0c4651",
         icons: [
           {
-            src: "/favicon.png",
+            src: "/favicon-192.png",
             sizes: "192x192",
             type: "image/png",
           },
