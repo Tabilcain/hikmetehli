@@ -15,7 +15,7 @@ export const HourlyContentSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | HTMLElement)[]>([]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
