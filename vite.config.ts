@@ -25,7 +25,20 @@ export default defineConfig(() => ({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.png", "favicon-192.png", "favicon.ico", "robots.txt", "manifest.json", "quran.json", "sitemap.xml", "library/catalog.v1.json"],
+      includeAssets: [
+        "favicon.ico",
+        "favicon.png",
+        "favicon-192.png",
+        "favicon-32.png",
+        "favicon-16.png",
+        "apple-touch-icon.png",
+        "og-image.png",
+        "robots.txt",
+        "manifest.json",
+        "quran.json",
+        "sitemap.xml",
+        "library/catalog.v1.json",
+      ],
       manifest: {
         name: "Hikmet Ehli",
         short_name: "Hikmet Ehli",
@@ -76,6 +89,18 @@ export default defineConfig(() => ({
           {
             urlPattern: ({ url }) => url.pathname.includes("/library/pdf/"),
             handler: "NetworkOnly",
+          },
+          {
+            urlPattern: ({ url }) =>
+              /\/(favicon\.ico|favicon\.png|favicon-192\.png|favicon-32\.png|favicon-16\.png|apple-touch-icon\.png|og-image\.png)$/.test(url.pathname),
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "brand-image-cache",
+              expiration: {
+                maxEntries: 8,
+                maxAgeSeconds: 60 * 60 * 24,
+              },
+            },
           },
           {
             urlPattern: ({ request }) => request.destination === "image",

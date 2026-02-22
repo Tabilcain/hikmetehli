@@ -1,0 +1,26 @@
+/favicon.ico
+  Cache-Control: public, max-age=300, must-revalidate
+
+/favicon.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/favicon-192.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/favicon-32.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/favicon-16.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/og-image.png
+  Cache-Control: public, max-age=300, must-revalidate
+
+/manifest.json
+  Cache-Control: public, max-age=300, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=300, must-revalidate
