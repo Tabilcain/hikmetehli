@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dualar-001",
+    "slug": "kuran-ve-sunnetten-dualar",
+    "title": "Kuran ve Sünnetten Dualar",
+    "category": "Dualar",
+    "language": "tr",
+    "coverPathWebp": "library/covers/Kuran ve Sünnetten Dualar.webp",
+    "coverPathPng": "library/covers/Kuran ve Sünnetten Dualar.png",
+    "coverPath": "library/covers/Kuran ve Sünnetten Dualar.png",
+    "pdfPath": "library/pdf/Kuran ve Sünnetten Dualar.pdf",
+    "pageCount": 29,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z"
+  },
+  {
+    "id": "dualar-002",
+    "slug": "kuran-ve-sahih-sunnetten-100-dua",
+    "title": "Kuran ve Sahih Sünnetten 100 Dua",
+    "category": "Dualar",
+    "language": "tr",
+    "coverPathWebp": "library/covers/Kuran ve Sahih Sünnetten 100 Dua.webp",
+    "coverPathPng": "library/covers/Kuran ve Sahih Sünnetten 100 Dua.png",
+    "coverPath": "library/covers/Kuran ve Sahih Sünnetten 100 Dua.png",
+    "pdfPath": "library/pdf/Kuran ve Sahih Sünnetten 100 Dua.pdf",
+    "pageCount": 54,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z"
+  },
+  {
+    "id": "dualar-003",
+    "slug": "nebi-s-a-v-in-dualari",
+    "title": "Nebi (s.a.v)'in Duaları",
+    "category": "Dualar",
+    "language": "mixed",
+    "coverPathWebp": "library/covers/Nebî (s.a.v)'in Duaları .webp",
+    "coverPathPng": "library/covers/Nebî (s.a.v)'in Duaları .png",
+    "coverPath": "library/covers/Nebî (s.a.v)'in Duaları .png",
+    "pdfPath": "library/pdf/Nebî (s.a.v)'in Duaları .pdf",
+    "pageCount": 47,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z"
+  },
+  {
+    "id": "dualar-004",
+    "slug": "kuran-i-kerim-den-dualar",
+    "title": "Kur'an-ı Kerim'den Dualar",
+    "category": "Dualar",
+    "language": "mixed",
+    "coverPathWebp": "library/covers/Kur'an-ı Kerim'den Dualar.webp",
+    "coverPathPng": "library/covers/Kur'an-ı Kerim'den Dualar.png",
+    "coverPath": "library/covers/Kur'an-ı Kerim'den Dualar.png",
+    "pdfPath": "library/pdf/Kur'an-ı Kerim'den Dualar.pdf",
+    "pageCount": 47,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z"
+  },
+  {
+    "id": "dualar-005",
+    "slug": "100-sahih-dua-arapca",
+    "title": "100 Sahih Dua (Arapça)",
+    "category": "Dualar",
+    "language": "ar",
+    "coverPathWebp": "library/covers/100 Sahih Dua (Arapça).webp",
+    "coverPathPng": "library/covers/100 Sahih Dua (Arapça).png",
+    "coverPath": "library/covers/100 Sahih Dua (Arapça).png",
+    "pdfPath": "library/pdf/100 Sahih Dua (Arapça).pdf",
+    "pageCount": 56,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z"
+  }
+]

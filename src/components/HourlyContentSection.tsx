@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { RefreshCw, Share2, Clock3 } from "lucide-react";
+import { RefreshCw, Share2, Clock3, ChevronDown, ChevronUp } from "lucide-react";
 import { useHourlyContent } from "@/hooks/useHourlyContent";
 import { toast } from "@/hooks/use-toast";
 import gsap from "gsap";
@@ -8,14 +8,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { cn } from "@/lib/utils";
 
-export const HourlyContentSection = () => {
+type HourlyContentSectionProps = {
+  tone?: "primary" | "muted";
+  mobileCollapsedByDefault?: boolean;
+};
+
+export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefault = false }: HourlyContentSectionProps) => {
   const { verse, hadith, refresh } = useHourlyContent();
-  const { lowPerformanceMode } = usePerformanceMode();
+  const { lowPerformanceMode, isMobile } = usePerformanceMode();
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<HTMLDivElement[]>([]);
+  const isMuted = tone === "muted";
+  const shouldCollapseMobile = isMobile && mobileCollapsedByDefault;
+  const showDetails = !shouldCollapseMobile || mobileExpanded;
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,9 +56,9 @@ export const HourlyContentSection = () => {
         }
       }
 
-      if (lowPerformanceMode) {
+      if (showDetails && lowPerformanceMode) {
         gsap.fromTo(cards, { y: 24, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1, duration: 0.45 });
-      } else {
+      } else if (showDetails) {
         gsap.fromTo(
           cards,
           { y: 60, opacity: 0.2 },
@@ -82,7 +91,7 @@ export const HourlyContentSection = () => {
       }
 
       mm.add("(min-width: 1024px)", () => {
-        if (lowPerformanceMode) return;
+        if (lowPerformanceMode || !showDetails) return;
 
         ScrollTrigger.create({
           trigger: sectionRef.current,
@@ -95,7 +104,13 @@ export const HourlyContentSection = () => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [lowPerformanceMode]);
+  }, [lowPerformanceMode, showDetails]);
+
+  useLayoutEffect(() => {
+    if (!isMobile) {
+      setMobileExpanded(false);
+    }
+  }, [isMobile]);
 
   const currentHourLabel = new Date().toLocaleTimeString("tr-TR", {
     hour: "2-digit",
@@ -134,20 +149,26 @@ export const HourlyContentSection = () => {
   };
 
   return (
-    <section className="relative py-24 overflow-hidden" id="saatlik-ilham" ref={sectionRef}>
-      <div className="absolute inset-0 hero-glow opacity-40" />
-      <div className="absolute inset-0 grid-overlay opacity-40" />
-      {!lowPerformanceMode && <div className="absolute inset-0 grain-overlay opacity-40" />}
+    <section
+      className={cn("relative overflow-hidden", isMuted ? "py-16 md:py-20" : "py-24")}
+      id="saatlik-ilham"
+      ref={sectionRef}
+    >
+      <div className={cn("absolute inset-0 hero-glow", isMuted ? "opacity-20" : "opacity-40")} />
+      <div className={cn("absolute inset-0 grid-overlay", isMuted ? "opacity-25" : "opacity-40")} />
+      {!lowPerformanceMode && !isMuted && <div className="absolute inset-0 grain-overlay opacity-40" />}
       <div
         className={cn(
-          "absolute -top-24 -right-32 w-[360px] h-[360px] rounded-full bg-accent/40 hourly-orb",
-          lowPerformanceMode ? "blur-xl" : "blur-3xl",
+          "absolute -top-24 -right-32 w-[360px] h-[360px] rounded-full hourly-orb",
+          isMuted ? "bg-accent/20 blur-2xl" : "bg-accent/40 blur-3xl",
+          lowPerformanceMode ? "blur-xl" : "",
         )}
       />
       <div
         className={cn(
-          "absolute -bottom-24 left-12 w-[420px] h-[420px] rounded-full bg-primary/30 hourly-orb",
-          lowPerformanceMode ? "blur-xl" : "blur-3xl",
+          "absolute -bottom-24 left-12 w-[420px] h-[420px] rounded-full hourly-orb",
+          isMuted ? "bg-primary/20 blur-2xl" : "bg-primary/30 blur-3xl",
+          lowPerformanceMode ? "blur-xl" : "",
         )}
       />
       <div className="absolute top-0 left-0 right-0 h-24 section-fade-top pointer-events-none" />
@@ -160,10 +181,10 @@ export const HourlyContentSection = () => {
               <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground" data-hourly-ui>
                 Saatlik İlham
               </p>
-              <h2 className="text-4xl md:text-5xl font-display tracking-tight" data-hourly-ui>
+              <h2 className={cn("font-display tracking-tight", isMuted ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl")} data-hourly-ui>
                 Zamana göre değişen ayet ve hadisler.
               </h2>
-              <p className="text-muted-foreground text-lg" data-hourly-ui>
+              <p className={cn("text-muted-foreground", isMuted ? "text-base" : "text-lg")} data-hourly-ui>
                 Hikmet Ehli, her saat başında yeni bir tefekkür alanı açar. Kısa bir durak,
                 uzun bir düşünceye dönüşür.
               </p>
@@ -188,6 +209,16 @@ export const HourlyContentSection = () => {
                 <Clock3 className="h-3.5 w-3.5 text-primary" />
                 {currentHourLabel}
               </div>
+              {shouldCollapseMobile ? (
+                <button
+                  type="button"
+                  onClick={() => setMobileExpanded((current) => !current)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/70 bg-background/60 text-xs uppercase tracking-[0.2em] text-foreground"
+                >
+                  {mobileExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  {mobileExpanded ? "Daralt" : "Genişlet"}
+                </button>
+              ) : null}
             </div>
 
             <div
@@ -205,7 +236,7 @@ export const HourlyContentSection = () => {
             </div>
           </div>
 
-          <div className="mt-2 grid gap-8 lg:grid-cols-2" ref={cardsRef}>
+          <div className={cn("mt-2 gap-8 lg:grid-cols-2", showDetails ? "grid" : "hidden")} ref={cardsRef}>
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,15 +16,15 @@ export const Hero = () => {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-[85vh] overflow-hidden"
-    >
+      <section
+        ref={containerRef}
+        className="relative min-h-[84vh] md:min-h-[85vh] overflow-hidden"
+      >
       <div className="absolute inset-0 gradient-hero" />
-      <div className="absolute inset-0 hero-glow opacity-80" />
-      <div className="absolute inset-0 grid-overlay opacity-40" />
-      <div className="absolute inset-0 islamic-pattern opacity-20" />
-      {!lowPerformanceMode && <div className="absolute inset-0 grain-overlay opacity-60" />}
+      <div className="absolute inset-0 hero-glow opacity-50 md:opacity-80" />
+      <div className="absolute inset-0 grid-overlay opacity-25 md:opacity-40" />
+      <div className="absolute inset-0 islamic-pattern opacity-10 md:opacity-20" />
+      {!lowPerformanceMode && <div className="absolute inset-0 grain-overlay opacity-35 md:opacity-60" />}
 
       {!lowPerformanceMode && (
         <>
@@ -60,53 +61,71 @@ export const Hero = () => {
           <a className="hover:text-foreground transition-colors" href="#saatlik-ilham">
             Saatlik
           </a>
+          <Link className="hover:text-foreground transition-colors" to="/kutuphane">
+            Kütüphane
+          </Link>
           <a className="hover:text-foreground transition-colors" href="#baglan">
             Bağlan
           </a>
         </div>
-        <a
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
-          href="#baglan"
-        >
-          Katıl
-          <span className="w-2 h-2 rounded-full bg-primary" />
-        </a>
+        <div className="hidden md:flex items-center gap-2">
+          <Link
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-xs uppercase tracking-[0.25em] hover:bg-foreground/5 transition-colors"
+            to="/kutuphane"
+          >
+            Kütüphane
+            <span className="w-2 h-2 rounded-full bg-primary" />
+          </Link>
+          <a
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
+            href="#baglan"
+          >
+            Katıl
+            <span className="w-2 h-2 rounded-full bg-primary" />
+          </a>
+        </div>
       </nav>
 
-      <div className="relative z-10 container pt-16 pb-20 lg:pt-24 lg:pb-28">
+      <div className="relative z-10 container pt-12 pb-12 md:pt-16 md:pb-20 lg:pt-24 lg:pb-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <motion.div style={{ opacity: fadeOut }}>
             <div
               className={cn(
-                "inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border/80 text-xs uppercase tracking-[0.35em] text-muted-foreground",
+                "inline-flex items-center gap-3 px-3 md:px-4 py-2 rounded-full border border-border/80 text-[10px] md:text-xs uppercase tracking-[0.26em] md:tracking-[0.35em] text-muted-foreground",
                 lowPerformanceMode ? "bg-background/80" : "bg-background/60 backdrop-blur-sm",
               )}
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Saatlik Ayet • Hadis
+              Dua Arşivi - Saatlik Ayet . Hadis
             </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 text-5xl md:text-7xl lg:text-8xl font-display tracking-tight text-balance"
+              className="mt-6 md:mt-8 text-4xl md:text-7xl lg:text-8xl font-display tracking-tight text-balance"
             >
               Hikmet Ehli
-              <span className="block mt-6 text-2xl md:text-3xl lg:text-4xl font-arabic font-medium text-foreground/90 leading-[2.1]" dir="rtl" lang="ar">
+              <span className="hidden sm:block mt-6 text-2xl md:text-3xl lg:text-4xl font-arabic font-medium text-foreground/90 leading-[2.1]" dir="rtl" lang="ar">
                 يُؤْتِي الْحِكْمَةَ مَنْ يَشَاءُ ۚ وَمَنْ يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا
               </span>
-              <span className="block mt-4 text-base md:text-lg lg:text-xl font-sans font-normal text-muted-foreground leading-relaxed max-w-2xl">
+              <span className="block mt-3 md:mt-4 text-sm md:text-lg lg:text-xl font-sans font-normal text-muted-foreground leading-relaxed max-w-xl md:max-w-2xl">
                 “O, hikmeti dilediğine verir. Kime hikmet verilmişse, şüphesiz ona çokça hayır verilmiş demektir.”
-                <span className="block mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                <span className="hidden sm:block mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
                   Bakara Suresi, 2/269
                 </span>
               </span>
             </motion.h1>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
+              <Link
+                className="px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
+                to="/kutuphane"
+              >
+                Kütüphane
+              </Link>
               <a
-                className="px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm uppercase tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
+                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
                 href="#saatlik-ilham"
               >
                 Saatlik Ayet & Hadis
@@ -118,7 +137,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div
               className={cn(
@@ -128,28 +147,18 @@ export const Hero = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/20" />
               <div className="relative space-y-6">
-                <div className="flex items-center justify-between text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                  <span>Yeni Seri</span>
-                  <span>Saatlik Ayet & Hadis</span>
+                <div className="flex items-center text-xs uppercase tracking-[0.25em] text-muted-foreground">
+                  <span>Gözat</span>
                 </div>
                 <div className="text-2xl font-display">
-                  Her saat başı taze bir ayet ve hadis.
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center font-display">
-                    H
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Saatlik Güncelleme</p>
-                    <p className="text-xs text-muted-foreground">Otomatik değişir</p>
-                  </div>
+                  Dua Arşivi ve Saatlik Ayet ve Hadisler.
                 </div>
                 <div className="h-px bg-border/70" />
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {[
-                    "Ayet ve hadis birlikte",
-                    "Her saat yeni seçim",
-                    "Paylaş & kopyala",
+                    "Dua arşivi tek sayfada",
+                    "Her Saat Yenilenir",
+                    "Oku, indir ve paylaş",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-2">
                       <span className="mt-1 w-2 h-2 rounded-full bg-primary" />
@@ -157,13 +166,22 @@ export const Hero = () => {
                     </div>
                   ))}
                 </div>
-                <a
-                  href="#saatlik-ilham"
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-all"
-                >
-                  Bölüme Git
-                  <span className="w-2 h-2 rounded-full bg-primary" />
-                </a>
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/kutuphane"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary-foreground shadow-soft hover:bg-primary/90 transition-all"
+                  >
+                    Kütüphaneye Git
+                    <span className="w-2 h-2 rounded-full bg-primary-foreground/80" />
+                  </Link>
+                  <a
+                    href="#saatlik-ilham"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-all"
+                  >
+                    Saatlik Bölümü Aç
+                    <span className="w-2 h-2 rounded-full bg-primary" />
+                  </a>
+                </div>
               </div>
             </div>
 

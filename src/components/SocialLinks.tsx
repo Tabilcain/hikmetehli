@@ -66,7 +66,7 @@ export const SocialLinks = () => {
               Farklı Mecralar, Ortak Tefekkür
             </h2>
             <p className="text-muted-foreground text-lg">
-              Hikmet Ehli sohbetlerini, günlük notlarını ve kısa hikmet videolarını her platformda
+              Günlük notlarını ve kısa hikmet videolarını her platformda
               aynı görsel dil ve sakin akışla paylaşıyor.
             </p>
             <div className="flex items-center gap-3">
