@@ -7,7 +7,7 @@ const stripLeadingSlash = (value: string) => value.replace(/^\/+/, "");
 export const encodeAssetPath = (assetPath: string) =>
   stripLeadingSlash(assetPath)
     .split("/")
-    .map((segment) => encodeURIComponent(segment))
+    .map((segment) => encodeURIComponent(segment.normalize("NFC")))
     .join("/");
 
 export const toAssetUrl = (assetPath: string) => `/${encodeAssetPath(assetPath)}`;
