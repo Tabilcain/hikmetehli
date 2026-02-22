@@ -13,7 +13,6 @@ export const Footer = () => {
       <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Hikmet Ehli</p>
-          <p className="text-lg font-display">İlimle yol alan bir topluluk.</p>
         </div>
         <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
           <span>© {new Date().getFullYear()}</span>

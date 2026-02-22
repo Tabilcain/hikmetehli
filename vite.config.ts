@@ -10,11 +10,23 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("react-pdf") || id.includes("pdfjs-dist")) return "pdf-reader";
+          if (id.includes("framer-motion") || id.includes("gsap")) return "motion";
+          if (id.includes("@tanstack/react-query")) return "query";
+          return undefined;
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.png", "favicon.ico", "robots.txt", "manifest.json", "quran.json"],
+      includeAssets: ["favicon.png", "favicon.ico", "robots.txt", "manifest.json", "quran.json", "sitemap.xml", "library/catalog.v1.json"],
       manifest: {
         name: "Hikmet Ehli",
         short_name: "Hikmet Ehli",
@@ -38,8 +50,19 @@ export default defineConfig(({ mode }) => ({
       },
       workbox: {
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-        globPatterns: ["**/*.{js,css,html,svg,png,ico,woff2}"],
+        globPatterns: ["**/*.{js,css,html,svg,png,webp,ico,woff2}"],
         runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith("/library/catalog.v1.json"),
+            handler: "CacheFirst",
+            options: {
+              cacheName: "library-catalog-cache",
+              expiration: {
+                maxEntries: 1,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
           {
             urlPattern: ({ url }) => url.pathname.endsWith("/quran.json"),
             handler: "CacheFirst",
@@ -50,6 +73,10 @@ export default defineConfig(({ mode }) => ({
                 maxAgeSeconds: 60 * 60 * 24 * 30,
               },
             },
+          },
+          {
+            urlPattern: ({ url }) => url.pathname.includes("/library/pdf/"),
+            handler: "NetworkOnly",
           },
           {
             urlPattern: ({ request }) => request.destination === "image",
