@@ -21,7 +21,7 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
   const sectionRef = useRef<HTMLElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | HTMLElement)[]>([]);
   const isMuted = tone === "muted";
   const shouldCollapseMobile = isMobile && mobileCollapsedByDefault;
   const showDetails = !shouldCollapseMobile || mobileExpanded;
