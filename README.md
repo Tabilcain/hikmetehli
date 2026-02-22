@@ -16,7 +16,7 @@ npm run build
 npm run preview
 ```
 
-## Cloudflare Pages deploy (Lovable bagimsiz)
+## Cloudflare Pages deploy
 
 Bu proje terminalden Cloudflare Pages'e deploy edilir.
 
@@ -29,7 +29,7 @@ npx wrangler login
 2. Pages project olustur (ilk sefer):
 
 ```bash
-npx wrangler pages project create hikmetehli-site
+npx wrangler pages project create hikmetehli
 ```
 
 3. Deploy:
@@ -40,7 +40,7 @@ npm run deploy:cf
 
 ## Domain baglama
 
-Cloudflare Pages panelinde `hikmetehli-site` projesine su domainleri bagla:
+Cloudflare Pages panelinde `hikmetehli` projesine su domainleri bagla:
 
 - `hikmetehli.com`
 - `www.hikmetehli.com`
