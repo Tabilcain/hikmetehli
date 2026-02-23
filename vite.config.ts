@@ -62,7 +62,7 @@ export default defineConfig(() => ({
       },
       workbox: {
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-        globPatterns: ["**/*.{js,css,html,svg,png,webp,ico,woff2}"],
+        globPatterns: ["**/*.{js,mjs,css,html,svg,png,webp,ico,woff2}"],
         navigateFallbackDenylist: [
           /^\/library\/pdf\//,
           /^\/library\/covers\//,
