@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   clearLegacyPdfCaches,
+  deleteCachedPdf,
   ensurePdfCached,
   getCachedPdfResponse,
 } from "@/lib/pdfOfflineCache";
@@ -115,6 +116,19 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
     }
   }, [checkStorage, fileUrl, isCached, isCaching]);
 
+  const invalidateCache = useCallback(async () => {
+    if (!fileUrl || !supportsBrowserCaches()) return false;
+    try {
+      const deleted = await deleteCachedPdf(fileUrl);
+      if (deleted) {
+        setIsCached(false);
+      }
+      return deleted;
+    } catch {
+      return false;
+    }
+  }, [fileUrl]);
+
   const statusLabel = useMemo(() => {
     if (isCached) return "Cihazda mevcut";
     if (isCaching || isChecking) return "İndiriliyor";
@@ -138,6 +152,7 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
     statusDescription,
     supportsOffline: supportsBrowserCaches(),
     ensureCached,
+    invalidateCache,
     refresh,
   };
 };

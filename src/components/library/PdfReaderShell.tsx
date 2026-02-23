@@ -3,7 +3,7 @@ import { Document as PdfDocument, Page, pdfjs } from "react-pdf";
 import { AlertCircle, Download, Expand, Minimize2, Minus, Plus } from "lucide-react";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
-import { getCachedPdfResponse } from "@/lib/pdfOfflineCache";
+import { getCachedPdfBytes } from "@/lib/pdfOfflineCache";
 import { triggerPdfDownload } from "@/lib/pdfDownload";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
@@ -30,8 +30,8 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const [error, setError] = useState<string | null>(null);
   const [nativeFullscreen, setNativeFullscreen] = useState(false);
   const [immersiveMode, setImmersiveMode] = useState(false);
-  const [resolvedFileUrl, setResolvedFileUrl] = useState(fileUrl);
-  const [isUsingOfflineBlob, setIsUsingOfflineBlob] = useState(false);
+  const [resolvedFile, setResolvedFile] = useState<string | { data: Uint8Array }>(fileUrl);
+  const [isUsingOfflineData, setIsUsingOfflineData] = useState(false);
   const offlineStatus = useOfflinePdfStatus(fileUrl, { checkStorage: true });
 
   const minZoom = isMobile ? 0.9 : 0.8;
@@ -58,59 +58,51 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
     setZoom(1);
     setError(null);
     cacheKickoffRef.current = null;
-    setResolvedFileUrl(fileUrl);
-    setIsUsingOfflineBlob(false);
+    setResolvedFile(fileUrl);
+    setIsUsingOfflineData(false);
     pageRefs.current = {};
   }, [fileUrl]);
 
   useEffect(() => {
     let cancelled = false;
-    let objectUrl: string | null = null;
 
-    const loadOfflineBlob = async () => {
+    const loadOfflineData = async () => {
       if (typeof caches === "undefined") {
-        setResolvedFileUrl(fileUrl);
-        setIsUsingOfflineBlob(false);
+        setResolvedFile(fileUrl);
+        setIsUsingOfflineData(false);
         return;
       }
 
       if (offlineStatus.isOnline || !offlineStatus.isCached) {
-        setResolvedFileUrl(fileUrl);
-        setIsUsingOfflineBlob(false);
+        setResolvedFile(fileUrl);
+        setIsUsingOfflineData(false);
         return;
       }
 
       try {
-        const cachedResponse = await getCachedPdfResponse(fileUrl);
+        const cachedBytes = await getCachedPdfBytes(fileUrl);
 
-        if (!cachedResponse) {
-          setResolvedFileUrl(fileUrl);
-          setIsUsingOfflineBlob(false);
+        if (!cachedBytes) {
+          setResolvedFile(fileUrl);
+          setIsUsingOfflineData(false);
           return;
         }
 
-        objectUrl = URL.createObjectURL(await cachedResponse.blob());
-        if (cancelled) {
-          URL.revokeObjectURL(objectUrl);
-          return;
-        }
+        if (cancelled) return;
 
-        setResolvedFileUrl(objectUrl);
-        setIsUsingOfflineBlob(true);
+        setResolvedFile({ data: cachedBytes });
+        setIsUsingOfflineData(true);
       } catch {
         if (cancelled) return;
-        setResolvedFileUrl(fileUrl);
-        setIsUsingOfflineBlob(false);
+        setResolvedFile(fileUrl);
+        setIsUsingOfflineData(false);
       }
     };
 
-    void loadOfflineBlob();
+    void loadOfflineData();
 
     return () => {
       cancelled = true;
-      if (objectUrl) {
-        URL.revokeObjectURL(objectUrl);
-      }
     };
   }, [fileUrl, offlineStatus.isCached, offlineStatus.isOnline]);
 
@@ -447,7 +439,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
           </div>
         ) : (
           <PdfDocument
-            file={resolvedFileUrl}
+            file={resolvedFile}
             loading={<div className="m-auto text-sm text-muted-foreground">PDF yükleniyor...</div>}
             onLoadSuccess={({ numPages: totalPages }) => {
               setNumPages(totalPages);
@@ -465,10 +457,11 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               }
 
               if (offlineStatus.isCached && !navigator.onLine) {
-                if (!isUsingOfflineBlob) {
+                if (!isUsingOfflineData) {
                   setError("Offline kopya hazırlanamadı. İnternete bağlanıp tekrar deneyin.");
                   return;
                 }
+                void offlineStatus.invalidateCache();
                 setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
                 return;
               }

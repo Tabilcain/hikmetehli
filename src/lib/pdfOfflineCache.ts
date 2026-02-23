@@ -66,6 +66,27 @@ export const getCachedPdfResponse = async (fileUrl: string) => {
   return match;
 };
 
+export const getCachedPdfBytes = async (fileUrl: string) => {
+  const response = await getCachedPdfResponse(fileUrl);
+  if (!response) return null;
+
+  try {
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    if (!bytes.byteLength) return null;
+    return bytes;
+  } catch {
+    return null;
+  }
+};
+
+export const deleteCachedPdf = async (fileUrl: string) => {
+  if (!supportsBrowserCaches() || !fileUrl) return false;
+
+  const request = createPdfRequest(fileUrl);
+  const cache = await caches.open(LIBRARY_PDF_CACHE_NAME);
+  return cache.delete(request, { ignoreVary: true });
+};
+
 export const ensurePdfCached = async (fileUrl: string) => {
   if (!supportsBrowserCaches() || !fileUrl) return false;
 
