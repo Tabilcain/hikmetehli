@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, BookOpen, Download, Share2 } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
 import { getCoverAssetUrls, getLibraryCatalog, toVersionedPdfUrl } from "@/lib/library";
+import { triggerPdfDownload } from "@/lib/pdfDownload";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { toast } from "@/hooks/use-toast";
 import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
@@ -132,14 +133,16 @@ const LibraryDetail = () => {
                       <BookOpen className="h-4 w-4" />
                       Oku
                     </Link>
-                    <a
-                      href={pdfUrl}
-                      download
+                    <button
+                      type="button"
+                      onClick={() => {
+                        triggerPdfDownload({ fileUrl: pdfUrl, title: book.title });
+                      }}
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
                     >
                       <Download className="h-4 w-4" />
                       İndir
-                    </a>
+                    </button>
                     <button
                       type="button"
                       onClick={handleShare}

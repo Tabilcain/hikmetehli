@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { BookOpen, Download } from "lucide-react";
 import type { LibraryBook } from "@/types/library";
 import { getCoverAssetUrls, toVersionedPdfUrl } from "@/lib/library";
+import { triggerPdfDownload } from "@/lib/pdfDownload";
 import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 
 type LibraryCardProps = {
@@ -58,14 +59,16 @@ export const LibraryCard = ({ book }: LibraryCardProps) => {
             <BookOpen className="h-4 w-4" />
             Oku
           </Link>
-          <a
-            href={pdfUrl}
-            download
+          <button
+            type="button"
+            onClick={() => {
+              triggerPdfDownload({ fileUrl: pdfUrl, title: book.title });
+            }}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-soft transition-colors hover:bg-primary/90"
           >
             <Download className="h-4 w-4" />
             İndir
-          </a>
+          </button>
         </div>
 
         <Link

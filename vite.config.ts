@@ -63,6 +63,12 @@ export default defineConfig(() => ({
       workbox: {
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         globPatterns: ["**/*.{js,css,html,svg,png,webp,ico,woff2}"],
+        navigateFallbackDenylist: [
+          /^\/library\/pdf\//,
+          /^\/library\/covers\//,
+          /^\/favicon/,
+          /^\/manifest/,
+        ],
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.endsWith("/library/catalog.v1.json"),
@@ -90,7 +96,7 @@ export default defineConfig(() => ({
             urlPattern: ({ url }) => url.pathname.includes("/library/pdf/"),
             handler: "CacheFirst",
             options: {
-              cacheName: "library-pdf-cache",
+              cacheName: "library-pdf-cache-v2",
               rangeRequests: true,
               cacheableResponse: {
                 statuses: [0, 200],

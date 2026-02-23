@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { BookMarked, Download, MoveRight } from "lucide-react";
 import { getCoverAssetUrls, getLibraryCatalog, toVersionedPdfUrl } from "@/lib/library";
+import { triggerPdfDownload } from "@/lib/pdfDownload";
 
 export const LibraryPreviewSection = () => {
   const { data: catalog, isLoading, isError } = useQuery({
@@ -99,14 +100,16 @@ export const LibraryPreviewSection = () => {
                             >
                               Oku
                             </Link>
-                            <a
-                              href={pdfUrl}
-                              download
+                            <button
+                              type="button"
+                              onClick={() => {
+                                triggerPdfDownload({ fileUrl: pdfUrl, title: book.title });
+                              }}
                               className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-primary px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary/90"
                             >
                               <Download className="h-4 w-4" />
                               İndir
-                            </a>
+                            </button>
                             <Link
                               to={`/kutuphane/${book.slug}`}
                               className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"

@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  clearLegacyPdfCaches,
+  ensurePdfCached,
+  getCachedPdfResponse,
+} from "@/lib/pdfOfflineCache";
 
-const PDF_CACHE_NAME = "library-pdf-cache";
 const LOW_STORAGE_THRESHOLD_BYTES = 25 * 1024 * 1024;
 
 type UseOfflinePdfStatusOptions = {
@@ -9,12 +13,6 @@ type UseOfflinePdfStatusOptions = {
 
 const supportsBrowserCaches = () =>
   typeof window !== "undefined" && typeof window.caches !== "undefined";
-
-const createPdfRequest = (fileUrl: string) =>
-  new Request(fileUrl, {
-    method: "GET",
-    credentials: "same-origin",
-  });
 
 const readStorageState = async () => {
   if (typeof navigator === "undefined" || !navigator.storage?.estimate) {
@@ -33,29 +31,8 @@ const readStorageState = async () => {
 };
 
 const isPdfCached = async (fileUrl: string) => {
-  if (!supportsBrowserCaches() || !fileUrl) return false;
-  const cache = await caches.open(PDF_CACHE_NAME);
-  const match = await cache.match(createPdfRequest(fileUrl), { ignoreVary: true });
+  const match = await getCachedPdfResponse(fileUrl);
   return Boolean(match);
-};
-
-const cachePdfFile = async (fileUrl: string) => {
-  const cache = await caches.open(PDF_CACHE_NAME);
-  const request = createPdfRequest(fileUrl);
-  const existing = await cache.match(request, { ignoreVary: true });
-  if (existing) return true;
-
-  const response = await fetch(request, {
-    cache: "no-store",
-    credentials: "same-origin",
-  });
-
-  if (!(response.ok || response.type === "opaque")) {
-    throw new Error("PDF indirilemedi.");
-  }
-
-  await cache.put(request, response.clone());
-  return true;
 };
 
 export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatusOptions = {}) => {
@@ -78,6 +55,7 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
 
     setIsChecking(true);
     try {
+      await clearLegacyPdfCaches();
       const [cachedResult, storageResult] = await Promise.all([
         isPdfCached(fileUrl),
         checkStorage ? readStorageState() : Promise.resolve({ lowStorage: false }),
@@ -127,7 +105,7 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
         const storageState = await readStorageState();
         setLowStorage(storageState.lowStorage);
       }
-      const cached = await cachePdfFile(fileUrl);
+      const cached = await ensurePdfCached(fileUrl);
       setIsCached(cached);
       return cached;
     } catch {

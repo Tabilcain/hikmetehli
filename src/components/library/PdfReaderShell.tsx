@@ -3,6 +3,8 @@ import { Document as PdfDocument, Page, pdfjs } from "react-pdf";
 import { AlertCircle, Download, Expand, Minimize2, Minus, Plus } from "lucide-react";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { getCachedPdfResponse } from "@/lib/pdfOfflineCache";
+import { triggerPdfDownload } from "@/lib/pdfDownload";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 import { cn } from "@/lib/utils";
@@ -79,9 +81,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
       }
 
       try {
-        const cache = await caches.open("library-pdf-cache");
-        const request = new Request(fileUrl, { method: "GET", credentials: "same-origin" });
-        const cachedResponse = await cache.match(request, { ignoreVary: true });
+        const cachedResponse = await getCachedPdfResponse(fileUrl);
 
         if (!cachedResponse) {
           setResolvedFileUrl(fileUrl);
@@ -302,14 +302,16 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
             {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
             {isFullscreen ? "Çık" : "Tam Ekran"}
           </button>
-          <a
-            href={fileUrl}
-            download
+          <button
+            type="button"
+            onClick={() => {
+              triggerPdfDownload({ fileUrl, title });
+            }}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
           >
             <Download className="h-4 w-4" />
             İndir
-          </a>
+          </button>
         </div>
       </div>
 
@@ -375,14 +377,16 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
             >
               {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Expand className="h-4 w-4" />}
             </button>
-            <a
-              href={fileUrl}
-              download
+            <button
+              type="button"
+              onClick={() => {
+                triggerPdfDownload({ fileUrl, title });
+              }}
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary text-primary-foreground"
               aria-label="İndir"
             >
               <Download className="h-4 w-4" />
-            </a>
+            </button>
           </div>
         </div>
 

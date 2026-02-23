@@ -1,0 +1,96 @@
+export const LIBRARY_PDF_CACHE_NAME = "library-pdf-cache-v2";
+const LEGACY_LIBRARY_PDF_CACHE_NAMES = ["library-pdf-cache"];
+
+let legacyCleanupPromise: Promise<void> | null = null;
+
+const supportsBrowserCaches = () =>
+  typeof window !== "undefined" && typeof window.caches !== "undefined";
+
+export const createPdfRequest = (fileUrl: string) =>
+  new Request(fileUrl, {
+    method: "GET",
+    credentials: "same-origin",
+  });
+
+const hasPdfSignature = async (response: Response) => {
+  try {
+    const headChunk = await response.clone().blob().then((blob) => blob.slice(0, 5).arrayBuffer());
+    const signature = new TextDecoder("ascii").decode(headChunk);
+    return signature === "%PDF-";
+  } catch {
+    return false;
+  }
+};
+
+export const isValidPdfResponse = async (response: Response | null) => {
+  if (!response) return false;
+  const contentType = (response.headers.get("content-type") || "").toLowerCase();
+
+  if (contentType.includes("application/pdf")) return true;
+  if (contentType.includes("text/html")) return false;
+
+  return hasPdfSignature(response);
+};
+
+export const clearLegacyPdfCaches = async () => {
+  if (!supportsBrowserCaches()) return;
+
+  if (!legacyCleanupPromise) {
+    legacyCleanupPromise = (async () => {
+      const cacheKeys = await caches.keys();
+      const targets = cacheKeys.filter((key) => LEGACY_LIBRARY_PDF_CACHE_NAMES.includes(key));
+      await Promise.all(targets.map((key) => caches.delete(key)));
+    })().catch(() => {
+      // Swallow cleanup errors to avoid blocking reader flow.
+    });
+  }
+
+  await legacyCleanupPromise;
+};
+
+export const getCachedPdfResponse = async (fileUrl: string) => {
+  if (!supportsBrowserCaches() || !fileUrl) return null;
+
+  const request = createPdfRequest(fileUrl);
+  const cache = await caches.open(LIBRARY_PDF_CACHE_NAME);
+  const match = await cache.match(request, { ignoreVary: true });
+  const valid = await isValidPdfResponse(match);
+
+  if (!valid) {
+    if (match) {
+      await cache.delete(request, { ignoreVary: true });
+    }
+    return null;
+  }
+
+  return match;
+};
+
+export const ensurePdfCached = async (fileUrl: string) => {
+  if (!supportsBrowserCaches() || !fileUrl) return false;
+
+  await clearLegacyPdfCaches();
+
+  const request = createPdfRequest(fileUrl);
+  const cache = await caches.open(LIBRARY_PDF_CACHE_NAME);
+  const existing = await getCachedPdfResponse(fileUrl);
+  if (existing) return true;
+
+  const response = await fetch(request, {
+    cache: "no-store",
+    credentials: "same-origin",
+  });
+
+  if (!(response.ok || response.type === "opaque")) {
+    throw new Error("PDF indirilemedi.");
+  }
+
+  const valid = await isValidPdfResponse(response);
+  if (!valid) {
+    await cache.delete(request, { ignoreVary: true });
+    throw new Error("Geçersiz PDF yanıtı alındı.");
+  }
+
+  await cache.put(request, response.clone());
+  return true;
+};
