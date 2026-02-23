@@ -91,6 +91,7 @@ export default defineConfig(() => ({
             handler: "CacheFirst",
             options: {
               cacheName: "library-pdf-cache",
+              rangeRequests: true,
               cacheableResponse: {
                 statuses: [0, 200],
               },

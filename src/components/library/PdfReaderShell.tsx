@@ -28,6 +28,8 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const [error, setError] = useState<string | null>(null);
   const [nativeFullscreen, setNativeFullscreen] = useState(false);
   const [immersiveMode, setImmersiveMode] = useState(false);
+  const [resolvedFileUrl, setResolvedFileUrl] = useState(fileUrl);
+  const [isUsingOfflineBlob, setIsUsingOfflineBlob] = useState(false);
   const offlineStatus = useOfflinePdfStatus(fileUrl, { checkStorage: true });
 
   const minZoom = isMobile ? 0.9 : 0.8;
@@ -54,8 +56,63 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
     setZoom(1);
     setError(null);
     cacheKickoffRef.current = null;
+    setResolvedFileUrl(fileUrl);
+    setIsUsingOfflineBlob(false);
     pageRefs.current = {};
   }, [fileUrl]);
+
+  useEffect(() => {
+    let cancelled = false;
+    let objectUrl: string | null = null;
+
+    const loadOfflineBlob = async () => {
+      if (typeof caches === "undefined") {
+        setResolvedFileUrl(fileUrl);
+        setIsUsingOfflineBlob(false);
+        return;
+      }
+
+      if (offlineStatus.isOnline || !offlineStatus.isCached) {
+        setResolvedFileUrl(fileUrl);
+        setIsUsingOfflineBlob(false);
+        return;
+      }
+
+      try {
+        const cache = await caches.open("library-pdf-cache");
+        const request = new Request(fileUrl, { method: "GET", credentials: "same-origin" });
+        const cachedResponse = await cache.match(request, { ignoreVary: true });
+
+        if (!cachedResponse) {
+          setResolvedFileUrl(fileUrl);
+          setIsUsingOfflineBlob(false);
+          return;
+        }
+
+        objectUrl = URL.createObjectURL(await cachedResponse.blob());
+        if (cancelled) {
+          URL.revokeObjectURL(objectUrl);
+          return;
+        }
+
+        setResolvedFileUrl(objectUrl);
+        setIsUsingOfflineBlob(true);
+      } catch {
+        if (cancelled) return;
+        setResolvedFileUrl(fileUrl);
+        setIsUsingOfflineBlob(false);
+      }
+    };
+
+    void loadOfflineBlob();
+
+    return () => {
+      cancelled = true;
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+      }
+    };
+  }, [fileUrl, offlineStatus.isCached, offlineStatus.isOnline]);
 
   useEffect(() => {
     const updateFullscreenState = () => {
@@ -386,7 +443,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
           </div>
         ) : (
           <PdfDocument
-            file={fileUrl}
+            file={resolvedFileUrl}
             loading={<div className="m-auto text-sm text-muted-foreground">PDF yükleniyor...</div>}
             onLoadSuccess={({ numPages: totalPages }) => {
               setNumPages(totalPages);
@@ -404,6 +461,10 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               }
 
               if (offlineStatus.isCached && !navigator.onLine) {
+                if (!isUsingOfflineBlob) {
+                  setError("Offline kopya hazırlanamadı. İnternete bağlanıp tekrar deneyin.");
+                  return;
+                }
                 setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
                 return;
               }
