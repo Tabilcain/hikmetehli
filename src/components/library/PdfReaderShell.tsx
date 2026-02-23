@@ -32,7 +32,14 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const [immersiveMode, setImmersiveMode] = useState(false);
   const [resolvedFile, setResolvedFile] = useState<string | { data: Uint8Array }>(fileUrl);
   const [isUsingOfflineData, setIsUsingOfflineData] = useState(false);
+  const [isPreparingOfflineFile, setIsPreparingOfflineFile] = useState(false);
   const offlineStatus = useOfflinePdfStatus(fileUrl, { checkStorage: true });
+  const {
+    isCached: isOfflineCached,
+    isOnline: isOfflineOnline,
+    invalidateCache: invalidateOfflineCache,
+    refresh: refreshOfflineStatus,
+  } = offlineStatus;
 
   const minZoom = isMobile ? 0.9 : 0.8;
   const maxZoom = isMobile ? 1.4 : 2;
@@ -60,6 +67,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
     cacheKickoffRef.current = null;
     setResolvedFile(fileUrl);
     setIsUsingOfflineData(false);
+    setIsPreparingOfflineFile(false);
     pageRefs.current = {};
   }, [fileUrl]);
 
@@ -68,23 +76,32 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
 
     const loadOfflineData = async () => {
       if (typeof caches === "undefined") {
+        setIsPreparingOfflineFile(false);
         setResolvedFile(fileUrl);
         setIsUsingOfflineData(false);
         return;
       }
 
-      if (offlineStatus.isOnline || !offlineStatus.isCached) {
+      if (!isOfflineCached) {
+        setIsPreparingOfflineFile(false);
         setResolvedFile(fileUrl);
         setIsUsingOfflineData(false);
         return;
       }
 
       try {
+        setIsPreparingOfflineFile(true);
         const cachedBytes = await getCachedPdfBytes(fileUrl);
 
         if (!cachedBytes) {
+          if (cancelled) return;
           setResolvedFile(fileUrl);
           setIsUsingOfflineData(false);
+          if (!isOfflineOnline) {
+            setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
+            void invalidateOfflineCache();
+            void refreshOfflineStatus();
+          }
           return;
         }
 
@@ -92,10 +109,18 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
 
         setResolvedFile({ data: cachedBytes });
         setIsUsingOfflineData(true);
+        setError(null);
       } catch {
         if (cancelled) return;
         setResolvedFile(fileUrl);
         setIsUsingOfflineData(false);
+        if (!isOfflineOnline) {
+          setError("Offline kopya hazırlanamadı. İnternete bağlanıp tekrar deneyin.");
+        }
+      } finally {
+        if (!cancelled) {
+          setIsPreparingOfflineFile(false);
+        }
       }
     };
 
@@ -104,7 +129,13 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
     return () => {
       cancelled = true;
     };
-  }, [fileUrl, offlineStatus.isCached, offlineStatus.isOnline]);
+  }, [
+    fileUrl,
+    invalidateOfflineCache,
+    isOfflineCached,
+    isOfflineOnline,
+    refreshOfflineStatus,
+  ]);
 
   useEffect(() => {
     const updateFullscreenState = () => {
@@ -429,7 +460,9 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               : "min-h-[56vh] overflow-auto",
         )}
       >
-        {error ? (
+        {isPreparingOfflineFile ? (
+          <div className="m-auto text-sm text-muted-foreground">Offline kopya hazırlanıyor...</div>
+        ) : error ? (
           <div className="m-auto flex max-w-md items-start gap-3 rounded-2xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive-foreground">
             <AlertCircle className="mt-0.5 h-5 w-5" />
             <div>
@@ -457,11 +490,10 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               }
 
               if (offlineStatus.isCached && !navigator.onLine) {
-                if (!isUsingOfflineData) {
-                  setError("Offline kopya hazırlanamadı. İnternete bağlanıp tekrar deneyin.");
-                  return;
+                if (isUsingOfflineData) {
+                  void offlineStatus.invalidateCache();
+                  void offlineStatus.refresh();
                 }
-                void offlineStatus.invalidateCache();
                 setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
                 return;
               }
