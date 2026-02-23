@@ -484,15 +484,15 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               }
             }}
             onLoadError={(pdfError) => {
-              if (!navigator.onLine && !offlineStatus.isCached) {
+              if (!isOfflineOnline && !isOfflineCached) {
                 setError("Bu kitap cihazda kayıtlı değil. İnternete bağlanıp en az bir kez açın.");
                 return;
               }
 
-              if (offlineStatus.isCached && !navigator.onLine) {
+              if (isOfflineCached && !isOfflineOnline) {
                 if (isUsingOfflineData) {
-                  void offlineStatus.invalidateCache();
-                  void offlineStatus.refresh();
+                  void invalidateOfflineCache();
+                  void refreshOfflineStatus();
                 }
                 setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
                 return;
