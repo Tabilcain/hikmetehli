@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { BookOpen, Download } from "lucide-react";
 import type { LibraryBook } from "@/types/library";
-import { getCoverAssetUrls, toAssetUrl } from "@/lib/library";
+import { getCoverAssetUrls, toVersionedPdfUrl } from "@/lib/library";
+import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 
 type LibraryCardProps = {
   book: LibraryBook;
@@ -9,7 +10,8 @@ type LibraryCardProps = {
 
 export const LibraryCard = ({ book }: LibraryCardProps) => {
   const { webp: coverWebp, fallback: coverFallback } = getCoverAssetUrls(book);
-  const pdfUrl = toAssetUrl(book.pdfPath);
+  const pdfUrl = toVersionedPdfUrl(book);
+  const offlineStatus = useOfflinePdfStatus(pdfUrl);
 
   return (
     <article className="group relative overflow-hidden rounded-[22px] md:rounded-[26px] border border-border/80 bg-card/85 p-3 md:p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-elevated">
@@ -40,11 +42,17 @@ export const LibraryCard = ({ book }: LibraryCardProps) => {
           ) : (
             <p className="mt-2 text-xs text-muted-foreground">Sayfa bilgisi yakında</p>
           )}
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            Offline: {offlineStatus.statusLabel}
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-2">
           <Link
             to={`/kutuphane/${book.slug}/oku`}
+            onClick={() => {
+              void offlineStatus.ensureCached();
+            }}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/80 bg-background/70 px-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background"
           >
             <BookOpen className="h-4 w-4" />

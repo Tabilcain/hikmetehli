@@ -4,6 +4,7 @@ import { AlertCircle, Download, Expand, Minimize2, Minus, Plus } from "lucide-re
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
+import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 import { cn } from "@/lib/utils";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
@@ -17,6 +18,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const pageRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const cacheKickoffRef = useRef<string | null>(null);
   const { isMobile } = usePerformanceMode();
 
   const [numPages, setNumPages] = useState<number>();
@@ -26,6 +28,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
   const [error, setError] = useState<string | null>(null);
   const [nativeFullscreen, setNativeFullscreen] = useState(false);
   const [immersiveMode, setImmersiveMode] = useState(false);
+  const offlineStatus = useOfflinePdfStatus(fileUrl, { checkStorage: true });
 
   const minZoom = isMobile ? 0.9 : 0.8;
   const maxZoom = isMobile ? 1.4 : 2;
@@ -50,6 +53,7 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
     setPageNumber(1);
     setZoom(1);
     setError(null);
+    cacheKickoffRef.current = null;
     pageRefs.current = {};
   }, [fileUrl]);
 
@@ -206,6 +210,13 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
         <div className="min-w-0">
           <p className="text-[10px] uppercase tracking-[0.28em] text-primary">Site İçi Okuyucu</p>
           <p className="mt-1 truncate text-sm text-muted-foreground">{title}</p>
+          <p className="mt-1 text-xs text-muted-foreground">Offline: {offlineStatus.statusLabel}</p>
+          <p className="text-[11px] text-muted-foreground/90">{offlineStatus.statusDescription}</p>
+          {offlineStatus.lowStorage ? (
+            <p className="mt-1 text-[11px] text-amber-300/90">
+              Cihaz depolaması düşük. Sistem offline dosyaları temizleyebilir.
+            </p>
+          ) : null}
         </div>
 
         <div className="hidden lg:flex flex-wrap items-center gap-2">
@@ -381,8 +392,22 @@ export const PdfReaderShell = ({ fileUrl, title }: PdfReaderShellProps) => {
               setNumPages(totalPages);
               setPageNumber((current) => Math.min(current, totalPages));
               setError(null);
+              if (cacheKickoffRef.current !== fileUrl) {
+                cacheKickoffRef.current = fileUrl;
+                void offlineStatus.ensureCached();
+              }
             }}
             onLoadError={(pdfError) => {
+              if (!navigator.onLine && !offlineStatus.isCached) {
+                setError("Bu kitap cihazda kayıtlı değil. İnternete bağlanıp en az bir kez açın.");
+                return;
+              }
+
+              if (offlineStatus.isCached && !navigator.onLine) {
+                setError("Cihazdaki offline kopya açılamadı. İnternete bağlanıp tekrar deneyin.");
+                return;
+              }
+
               setError(pdfError.message || "Dosya yüklenemedi.");
             }}
             error={<span className="text-sm text-destructive">Dosya okunamadı.</span>}

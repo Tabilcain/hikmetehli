@@ -88,7 +88,17 @@ export default defineConfig(() => ({
           },
           {
             urlPattern: ({ url }) => url.pathname.includes("/library/pdf/"),
-            handler: "NetworkOnly",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "library-pdf-cache",
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 180,
+              },
+            },
           },
           {
             urlPattern: ({ url }) =>

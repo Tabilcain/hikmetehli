@@ -12,6 +12,12 @@ export const encodeAssetPath = (assetPath: string) =>
 
 export const toAssetUrl = (assetPath: string) => `/${encodeAssetPath(assetPath)}`;
 
+export const withAssetVersion = (assetUrl: string, version: string) => {
+  if (!version) return assetUrl;
+  const separator = assetUrl.includes("?") ? "&" : "?";
+  return `${assetUrl}${separator}v=${encodeURIComponent(version)}`;
+};
+
 export const normalizeSearchText = (input: string) =>
   input
     .toLocaleLowerCase("tr-TR")
@@ -53,4 +59,9 @@ export const getCoverAssetUrls = (book: LibraryBook) => {
     webp: book.coverPathWebp ? toAssetUrl(book.coverPathWebp) : undefined,
     fallback: fallback ? toAssetUrl(fallback) : undefined,
   };
+};
+
+export const toVersionedPdfUrl = (book: LibraryBook) => {
+  const basePdfUrl = toAssetUrl(book.pdfPath);
+  return withAssetVersion(basePdfUrl, book.updatedAt || book.createdAt || "");
 };

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { BookMarked, Download, MoveRight } from "lucide-react";
-import { getCoverAssetUrls, getLibraryCatalog, toAssetUrl } from "@/lib/library";
+import { getCoverAssetUrls, getLibraryCatalog, toVersionedPdfUrl } from "@/lib/library";
 
 export const LibraryPreviewSection = () => {
   const { data: catalog, isLoading, isError } = useQuery({
@@ -56,7 +56,7 @@ export const LibraryPreviewSection = () => {
                   ))
                 : previewItems.map((book) => {
                     const cover = getCoverAssetUrls(book);
-                    const pdfUrl = toAssetUrl(book.pdfPath);
+                    const pdfUrl = toVersionedPdfUrl(book);
                     return (
                       <article
                         key={book.id}

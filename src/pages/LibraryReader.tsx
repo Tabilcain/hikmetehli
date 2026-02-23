@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
 import { PdfReaderShell } from "@/components/library/PdfReaderShell";
-import { getLibraryCatalog, toAssetUrl } from "@/lib/library";
+import { getLibraryCatalog, toVersionedPdfUrl } from "@/lib/library";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
 const LibraryReader = () => {
@@ -64,7 +64,7 @@ const LibraryReader = () => {
               <p className="mt-2 text-sm text-muted-foreground">İlgili kitap kaydı bulunamadı veya kaldırılmış olabilir.</p>
             </div>
           ) : (
-            <PdfReaderShell fileUrl={toAssetUrl(book.pdfPath)} title={book.title} />
+            <PdfReaderShell fileUrl={toVersionedPdfUrl(book)} title={book.title} />
           )}
         </div>
       </main>

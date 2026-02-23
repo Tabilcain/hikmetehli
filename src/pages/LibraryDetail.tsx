@@ -3,9 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, BookOpen, Download, Share2 } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
-import { getCoverAssetUrls, getLibraryCatalog, toAssetUrl } from "@/lib/library";
+import { getCoverAssetUrls, getLibraryCatalog, toVersionedPdfUrl } from "@/lib/library";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { toast } from "@/hooks/use-toast";
+import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 
 const LibraryDetail = () => {
   const { slug = "" } = useParams();
@@ -18,7 +19,8 @@ const LibraryDetail = () => {
 
   const book = useMemo(() => (catalog || []).find((item) => item.slug === slug), [catalog, slug]);
   const cover = book ? getCoverAssetUrls(book) : { webp: undefined, fallback: undefined };
-  const pdfUrl = book ? toAssetUrl(book.pdfPath) : "";
+  const pdfUrl = book ? toVersionedPdfUrl(book) : "";
+  const offlineStatus = useOfflinePdfStatus(pdfUrl, { checkStorage: true });
 
   const canonicalUrl = typeof window !== "undefined" ? window.location.href : undefined;
   const ogImage = typeof window !== "undefined" && cover.fallback ? `${window.location.origin}${cover.fallback}` : undefined;
@@ -108,11 +110,23 @@ const LibraryDetail = () => {
                     <div className="mt-6 inline-flex items-center rounded-full border border-border/70 bg-background/65 px-4 py-2 text-xs text-muted-foreground">
                       {book.pageCount ? `${book.pageCount} sayfa` : "Sayfa bilgisi yakında"}
                     </div>
+                    <div className="mt-3 space-y-1 text-xs text-muted-foreground">
+                      <p>Offline: {offlineStatus.statusLabel}</p>
+                      <p>{offlineStatus.statusDescription}</p>
+                      {offlineStatus.lowStorage ? (
+                        <p className="text-[11px] text-amber-300/90">
+                          Cihaz depolaması düşük. Sistem offline dosyaları temizleyebilir.
+                        </p>
+                      ) : null}
+                    </div>
                   </div>
 
                   <div className="mt-8 grid gap-3 sm:grid-cols-3">
                     <Link
                       to={`/kutuphane/${book.slug}/oku`}
+                      onClick={() => {
+                        void offlineStatus.ensureCached();
+                      }}
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
                     >
                       <BookOpen className="h-4 w-4" />
