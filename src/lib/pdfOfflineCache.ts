@@ -12,11 +12,19 @@ export const createPdfRequest = (fileUrl: string) =>
     credentials: "same-origin",
   });
 
-const hasPdfSignature = async (response: Response) => {
+const hasPdfMarkers = async (response: Response) => {
   try {
-    const headChunk = await response.clone().blob().then((blob) => blob.slice(0, 5).arrayBuffer());
+    const blob = await response.clone().blob();
+    if (blob.size < 1024) return false;
+
+    const headChunk = await blob.slice(0, 5).arrayBuffer();
     const signature = new TextDecoder("ascii").decode(headChunk);
-    return signature === "%PDF-";
+    if (signature !== "%PDF-") return false;
+
+    const tailStart = Math.max(0, blob.size - 1024);
+    const tailChunk = await blob.slice(tailStart).arrayBuffer();
+    const tailText = new TextDecoder("ascii").decode(tailChunk);
+    return tailText.includes("%%EOF");
   } catch {
     return false;
   }
@@ -26,10 +34,10 @@ export const isValidPdfResponse = async (response: Response | null) => {
   if (!response) return false;
   const contentType = (response.headers.get("content-type") || "").toLowerCase();
 
-  if (contentType.includes("application/pdf")) return true;
+  if (contentType.includes("application/pdf")) return hasPdfMarkers(response);
   if (contentType.includes("text/html")) return false;
 
-  return hasPdfSignature(response);
+  return hasPdfMarkers(response);
 };
 
 export const clearLegacyPdfCaches = async () => {
