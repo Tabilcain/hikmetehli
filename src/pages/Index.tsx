@@ -76,7 +76,7 @@ const Index = () => {
 
         {showDeferredSections ? (
           <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
-            <HourlyContentSection tone="muted" mobileCollapsedByDefault />
+            <HourlyContentSection tone="muted" />
           </Suspense>
         ) : (
           <div className="container py-10">
