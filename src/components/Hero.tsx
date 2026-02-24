@@ -107,12 +107,12 @@ export const Hero = () => {
             >
               Hikmet Ehli
               <span className="hidden sm:block mt-6 text-2xl md:text-3xl lg:text-4xl font-arabic font-medium text-foreground/90 leading-[2.1]" dir="rtl" lang="ar">
-                إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ
+                يُؤْتِي الْحِكْمَةَ مَنْ يَشَٓاءُۚ وَمَنْ يُؤْتَ الْحِكْمَةَ فَقَدْ اُو۫تِيَ خَيْراً كَث۪يراًۜ
               </span>
               <span className="block mt-3 md:mt-4 text-sm md:text-lg lg:text-xl font-sans font-normal text-muted-foreground leading-relaxed max-w-xl md:max-w-2xl">
-                “Ameller niyetlere göredir. Herkese niyet ettiği şey vardır.”
+                “O hikmeti dilediğine verir. Kime hikmet verilmişse ona pek büyük bir hayır verilmiş demektir.”
                 <span className="hidden sm:block mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                  Buhârî, Bed'ü'l-Vahy, 1
+                  Bakara Suresi, 2/269
                 </span>
               </span>
             </motion.h1>

@@ -124,7 +124,7 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
   };
 
   const handleShare = async () => {
-    const text = `📿 Saatlik Sahih Hadis (${hadith.source})\n${hadith.turkish}${hadith.book ? `\n\nKaynak: ${hadith.book}` : ""}`;
+    const text = `📿 ${hadith.source}\n${hadith.turkish}${hadith.book ? `\n\nKaynak: ${hadith.book}` : ""}`;
     try {
       if (navigator.share) {
         await navigator.share({ title: "Saatlik Sahih Hadis", text });
@@ -236,7 +236,7 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
             </div>
           </div>
 
-          <div className={cn("mt-2 gap-8 lg:grid-cols-2", showDetails ? "grid" : "hidden")} ref={cardsRef}>
+          <div className={cn("mt-2 grid-cols-1", showDetails ? "grid" : "hidden")} ref={cardsRef}>
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -272,37 +272,6 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
                     {hadith.source}, {hadith.book}
                   </p>
                 )}
-              </div>
-            </motion.article>
-
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={cn(
-                "relative rounded-[32px] border border-border/80 p-7 shadow-soft overflow-hidden",
-                lowPerformanceMode ? "bg-card/95" : "bg-card/80 backdrop-blur-sm",
-              )}
-              ref={(el) => {
-                if (el) cardRefs.current[1] = el;
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 via-transparent to-primary/10" />
-              <div className="relative">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-[0.3em] text-primary">Kaynak ve Okuma Notu</span>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Buhârî · Müslim</span>
-                </div>
-                <p className="mt-6 text-[1.02rem] leading-relaxed text-foreground/90">
-                  Bu alan yalnızca sahih kaynaklardan seçilen hadislerle saatlik olarak güncellenir.
-                </p>
-                <div className="muted-rule my-5" />
-                <div className="space-y-3 text-sm text-muted-foreground">
-                  <p>Kaynak havuzu: Buhârî ve Müslim.</p>
-                  <p>Saat başı otomatik yenilenir, dilersen “Yenile” ile manuel güncelleyebilirsin.</p>
-                  <p>“Paylaş” butonuyla hadisi doğrudan kopyalayabilir veya paylaşabilirsin.</p>
-                </div>
               </div>
             </motion.article>
           </div>
