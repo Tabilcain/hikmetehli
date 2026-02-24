@@ -14,7 +14,7 @@ type HourlyContentSectionProps = {
 };
 
 export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefault = false }: HourlyContentSectionProps) => {
-  const { verse, hadith, refresh } = useHourlyContent();
+  const { hadith, refresh } = useHourlyContent();
   const { lowPerformanceMode, isMobile } = usePerformanceMode();
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(false);
@@ -124,10 +124,10 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
   };
 
   const handleShare = async () => {
-    const text = `📖 ${verse.surah} Suresi, ${verse.ayahNumber}. Ayet\n${verse.turkish}\n\n📿 Hadis (${hadith.source})\n${hadith.turkish}`;
+    const text = `📿 Saatlik Sahih Hadis (${hadith.source})\n${hadith.turkish}${hadith.book ? `\n\nKaynak: ${hadith.book}` : ""}`;
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Ayet & Hadis", text });
+        await navigator.share({ title: "Saatlik Sahih Hadis", text });
         return;
       }
       if (navigator.clipboard?.writeText) {
@@ -182,7 +182,7 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
                 Saatlik İlham
               </p>
               <h2 className={cn("font-display tracking-tight", isMuted ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl")} data-hourly-ui>
-                Zamana göre değişen ayet ve hadisler.
+                Zamana göre değişen sahih hadisler.
               </h2>
               <p className={cn("text-muted-foreground", isMuted ? "text-base" : "text-lg")} data-hourly-ui>
                 Hikmet Ehli, her saat başında yeni bir tefekkür alanı açar. Kısa bir durak,
@@ -230,7 +230,7 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
             >
               <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">İçerik Notu</p>
               <p className="mt-3 text-sm text-muted-foreground">
-                Saat başı otomatik yenilenir. İstersen içerik akışını manuel olarak da tazeleyebilirsin.
+                Saat başı sahih hadis otomatik yenilenir. İstersen içerik akışını manuel olarak da tazeleyebilirsin.
               </p>
               <div className="mt-6 h-px bg-border/60" />
             </div>
@@ -253,19 +253,25 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-[0.3em] text-primary">Ayet</span>
-                  <span className="text-xs text-muted-foreground">
-                    {verse.surah} · {verse.ayahNumber}
+                  <span className="text-xs uppercase tracking-[0.3em] text-primary">Sahih Hadis</span>
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                    {hadith.source}
                   </span>
                 </div>
-                <p className="font-arabic text-2xl leading-[2.2] text-right mt-6" dir="rtl" lang="ar">
-                  {verse.arabic}
-                </p>
-                <div className="muted-rule my-5" />
-                <p className="text-[1.05rem] leading-relaxed text-foreground/90">{verse.turkish}</p>
-                <p className="mt-3 text-xs text-muted-foreground">
-                  {verse.surah} Suresi, {verse.surahNumber}:{verse.ayahNumber}
-                </p>
+                {hadith.arabic && (
+                  <>
+                    <p className="font-arabic text-xl leading-[2.1] text-right mt-6" dir="rtl" lang="ar">
+                      {hadith.arabic}
+                    </p>
+                    <div className="muted-rule my-5" />
+                  </>
+                )}
+                <p className="text-[1.05rem] leading-relaxed text-foreground/90">{hadith.turkish}</p>
+                {hadith.book && (
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    {hadith.source}, {hadith.book}
+                  </p>
+                )}
               </div>
             </motion.article>
 
@@ -285,25 +291,18 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
               <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 via-transparent to-primary/10" />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-[0.3em] text-primary">Hadis</span>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                    {hadith.source}
-                  </span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-primary">Kaynak ve Okuma Notu</span>
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Buhârî · Müslim</span>
                 </div>
-                {hadith.arabic && (
-                  <>
-                    <p className="font-arabic text-xl leading-[2.1] text-right mt-6" dir="rtl" lang="ar">
-                      {hadith.arabic}
-                    </p>
-                    <div className="muted-rule my-5" />
-                  </>
-                )}
-                <p className="text-[1.05rem] leading-relaxed text-foreground/90">{hadith.turkish}</p>
-                {hadith.book && (
-                  <p className="mt-3 text-xs text-muted-foreground">
-                    {hadith.source}, {hadith.book}
-                  </p>
-                )}
+                <p className="mt-6 text-[1.02rem] leading-relaxed text-foreground/90">
+                  Bu alan yalnızca sahih kaynaklardan seçilen hadislerle saatlik olarak güncellenir.
+                </p>
+                <div className="muted-rule my-5" />
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <p>Kaynak havuzu: Buhârî ve Müslim.</p>
+                  <p>Saat başı otomatik yenilenir, dilersen “Yenile” ile manuel güncelleyebilirsin.</p>
+                  <p>“Paylaş” butonuyla hadisi doğrudan kopyalayabilir veya paylaşabilirsin.</p>
+                </div>
               </div>
             </motion.article>
           </div>

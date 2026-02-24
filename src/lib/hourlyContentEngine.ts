@@ -1,11 +1,3 @@
-export type VerseLike = {
-  surah: string;
-  surahNumber: number;
-  ayahNumber: number;
-  arabic: string;
-  turkish: string;
-};
-
 export type HadithLike = {
   source: string;
   book?: string;
@@ -27,16 +19,10 @@ function seededRandom(seed: number): number {
   return x - Math.floor(x);
 }
 
-export function selectHourlyContent<TVerse extends VerseLike, THadith extends HadithLike>(
+export function selectHourlyHadith<THadith extends HadithLike>(
   seed: number,
-  verses: TVerse[],
   hadiths: THadith[],
-): { verse: TVerse; hadith: THadith } {
-  const verseIndex = Math.floor(seededRandom(seed) * verses.length);
+): THadith {
   const hadithIndex = Math.floor(seededRandom(seed * 7 + 13) * hadiths.length);
-
-  return {
-    verse: verses[verseIndex],
-    hadith: hadiths[hadithIndex],
-  };
+  return hadiths[hadithIndex];
 }

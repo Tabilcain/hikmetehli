@@ -96,7 +96,7 @@ export const Hero = () => {
               )}
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Dua Arşivi - Saatlik Ayet . Hadis
+              Dua Arşivi - Saatlik Sahih Hadis
             </div>
 
             <motion.h1
@@ -107,12 +107,12 @@ export const Hero = () => {
             >
               Hikmet Ehli
               <span className="hidden sm:block mt-6 text-2xl md:text-3xl lg:text-4xl font-arabic font-medium text-foreground/90 leading-[2.1]" dir="rtl" lang="ar">
-                يُؤْتِي الْحِكْمَةَ مَنْ يَشَاءُ ۚ وَمَنْ يُؤْتَ الْحِكْمَةَ فَقَدْ أُوتِيَ خَيْرًا كَثِيرًا
+                إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ
               </span>
               <span className="block mt-3 md:mt-4 text-sm md:text-lg lg:text-xl font-sans font-normal text-muted-foreground leading-relaxed max-w-xl md:max-w-2xl">
-                “O, hikmeti dilediğine verir. Kime hikmet verilmişse, şüphesiz ona çokça hayır verilmiş demektir.”
+                “Ameller niyetlere göredir. Herkese niyet ettiği şey vardır.”
                 <span className="hidden sm:block mt-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                  Bakara Suresi, 2/269
+                  Buhârî, Bed'ü'l-Vahy, 1
                 </span>
               </span>
             </motion.h1>
@@ -128,7 +128,7 @@ export const Hero = () => {
                 className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
                 href="#saatlik-ilham"
               >
-                Saatlik Ayet & Hadis
+                Saatlik Sahih Hadis
               </a>
             </div>
           </motion.div>
@@ -151,14 +151,14 @@ export const Hero = () => {
                   <span>Gözat</span>
                 </div>
                 <div className="text-2xl font-display">
-                  Dua Arşivi ve Saatlik Ayet ve Hadisler.
+                  Dua Arşivi ve Saatlik Sahih Hadisler.
                 </div>
                 <div className="h-px bg-border/70" />
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {[
-                    "Dua arşivi tek sayfada",
+                    "Sahih kaynaklı içerik",
                     "Her Saat Yenilenir",
-                    "Oku, indir ve paylaş",
+                    "Oku, paylaş ve tefekkür et",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-2">
                       <span className="mt-1 w-2 h-2 rounded-full bg-primary" />

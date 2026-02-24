@@ -59,7 +59,7 @@ export const InstallCTA = () => {
       <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Ana Ekrana Ekle</p>
       <h3 className="mt-4 text-2xl font-display">Saatlik İlhamı bir uygulama gibi kullan.</h3>
       <p className="mt-3 text-sm text-muted-foreground">
-        Bildirim beklemeden her saat taze ayet & hadis. Ana ekranına ekleyerek tek dokunuşla eriş.
+        Bildirim beklemeden her saat taze sahih hadis. Ana ekranına ekleyerek tek dokunuşla eriş.
       </p>
 
       {installed ? (

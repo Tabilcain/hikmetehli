@@ -81,7 +81,7 @@ const Index = () => {
         ) : (
           <div className="container py-10">
             <div className="rounded-3xl border border-border/70 bg-card/70 p-4 text-sm text-muted-foreground">
-              Saatlik ayet ve hadis bölümü hazırlanıyor...
+              Saatlik sahih hadis bölümü hazırlanıyor...
             </div>
           </div>
         )}

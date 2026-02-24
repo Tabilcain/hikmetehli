@@ -1,48 +1,40 @@
 import { useState, useEffect, useCallback } from "react";
-import { verses as fallbackVerses, type Verse } from "@/data/verses";
 import { hadiths as fallbackHadiths, type Hadith } from "@/data/hadiths";
-import { loadAllVerses, getLoadedVerses } from "@/services/quranService";
 import { loadAllHadiths, getLoadedHadiths } from "@/services/hadithService";
-import { getHourlySeed, selectHourlyContent } from "@/lib/hourlyContentEngine";
+import { getHourlySeed, selectHourlyHadith } from "@/lib/hourlyContentEngine";
 
 export function useHourlyContent() {
   const [seed, setSeed] = useState(getHourlySeed);
-  const [allVerses, setAllVerses] = useState<Verse[]>(() => getLoadedVerses() || fallbackVerses);
   const [allHadiths, setAllHadiths] = useState<Hadith[]>(() => getLoadedHadiths() || fallbackHadiths);
-  const [content, setContent] = useState(() => {
-    const verses = getLoadedVerses() || fallbackVerses;
-    const hadiths = getLoadedHadiths() || fallbackHadiths;
-    return selectHourlyContent(getHourlySeed(), verses, hadiths);
-  });
+  const [hadith, setHadith] = useState(() =>
+    selectHourlyHadith(getHourlySeed(), getLoadedHadiths() || fallbackHadiths),
+  );
 
-  // Load full data
   useEffect(() => {
-    Promise.all([loadAllVerses(), loadAllHadiths()]).then(([verses, hadiths]) => {
+    void loadAllHadiths().then((hadiths) => {
       const nextSeed = getHourlySeed();
-      setAllVerses(verses);
       setAllHadiths(hadiths);
       setSeed(nextSeed);
-      setContent(selectHourlyContent(nextSeed, verses, hadiths));
+      setHadith(selectHourlyHadith(nextSeed, hadiths));
     });
   }, []);
 
-  // Check every minute if the hour changed
   useEffect(() => {
     const interval = setInterval(() => {
       const newSeed = getHourlySeed();
       if (newSeed !== seed) {
         setSeed(newSeed);
-        setContent(selectHourlyContent(newSeed, allVerses, allHadiths));
+        setHadith(selectHourlyHadith(newSeed, allHadiths));
       }
     }, 60_000);
     return () => clearInterval(interval);
-  }, [seed, allVerses, allHadiths]);
+  }, [seed, allHadiths]);
 
   const refresh = useCallback(() => {
     const randomSeed = Math.floor(Math.random() * 999999);
     setSeed(randomSeed);
-    setContent(selectHourlyContent(randomSeed, allVerses, allHadiths));
-  }, [allVerses, allHadiths]);
+    setHadith(selectHourlyHadith(randomSeed, allHadiths));
+  }, [allHadiths]);
 
-  return { verse: content.verse, hadith: content.hadith, refresh };
+  return { hadith, refresh };
 }
