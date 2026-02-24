@@ -111,10 +111,13 @@ const updateQuranJson = async (meals: Map<string, string>) => {
   });
 
   await writeFile(quranJsonPath, `${JSON.stringify(updatedRows)}\n`);
-  return updatedRows.length;
+  return updatedRows;
 };
 
-const updateFallbackVerses = async (meals: Map<string, string>) => {
+const updateFallbackVerses = async (
+  meals: Map<string, string>,
+  quranMap: Map<string, QuranRow>,
+) => {
   const versesModuleUrl = pathToFileURL(fallbackVersesPath).href;
   const versesModule = await import(versesModuleUrl);
   const fallbackVerses = (versesModule.verses ?? []) as FallbackVerse[];
@@ -126,12 +129,17 @@ const updateFallbackVerses = async (meals: Map<string, string>) => {
   const updatedFallback = fallbackVerses.map((verse) => {
     const key = `${verse.surahNumber}|${verse.ayahNumber}`;
     const meal = meals.get(key);
+    const quran = quranMap.get(key);
     if (!meal) {
       throw new Error(`Fallback ayet için meal bulunamadı: ${key}`);
+    }
+    if (!quran) {
+      throw new Error(`Fallback ayet için quran kaydı bulunamadı: ${key}`);
     }
 
     return {
       ...verse,
+      arabic: quran.a,
       turkish: meal,
     };
   });
@@ -154,11 +162,12 @@ export const verses: Verse[] = ${JSON.stringify(updatedFallback, null, 2)};
 
 const main = async () => {
   const meals = await parseBulacMeals(bulacPath);
-  const quranCount = await updateQuranJson(meals);
-  const fallbackCount = await updateFallbackVerses(meals);
+  const quranRows = await updateQuranJson(meals);
+  const quranMap = new Map(quranRows.map((row) => [`${row.sn}|${row.an}`, row]));
+  const fallbackCount = await updateFallbackVerses(meals, quranMap);
 
   console.log(
-    `Bulaç mealleri uygulandı. quran.json: ${quranCount} ayet, fallback: ${fallbackCount} ayet.`,
+    `Bulaç mealleri uygulandı. quran.json: ${quranRows.length} ayet, fallback: ${fallbackCount} ayet.`,
   );
 };
 
