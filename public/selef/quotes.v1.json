@@ -1,0 +1,2046 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-28T22:48:17.681Z",
+  "imams": [
+    {
+      "id": "imam-safii",
+      "name": "İmam Şafii",
+      "count": 47
+    },
+    {
+      "id": "ebu-suleyman-ed-darani",
+      "name": "Ebu Süleyman ed-Dârânî",
+      "count": 50
+    },
+    {
+      "id": "ibn-mubarek",
+      "name": "Abdullah bin Mübarek",
+      "count": 26
+    },
+    {
+      "id": "hasan-basri",
+      "name": "Hasan-ı Basrî",
+      "count": 41
+    },
+    {
+      "id": "omer-bin-abdulaziz",
+      "name": "Ömer bin Abdülaziz",
+      "count": 29
+    },
+    {
+      "id": "abdullah-bin-mesud",
+      "name": "Abdullah bin Mesud",
+      "count": 49
+    },
+    {
+      "id": "sufyan-es-sevri",
+      "name": "Süfyan es-Sevrî",
+      "count": 60
+    },
+    {
+      "id": "omer-bin-hattab",
+      "name": "Ömer bin Hattab",
+      "count": 31
+    }
+  ],
+  "quotes": [
+    {
+      "id": "imam-safii-001",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Resulullah (s.a.v.)’in bir sünnetini bulduğunuzda ona uyun ve kimsenin sözüne bakmayın."
+    },
+    {
+      "id": "imam-safii-002",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İnsanların kadri en yüce olanı kendi kadrini görmeyen, fazileti en çok olanı ise kendi faziletini görmeyendir."
+    },
+    {
+      "id": "imam-safii-003",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Ameline ucub (kendini beğenme) girmesinden korkarsan; kimin rızasını istediğini, hangi nimeti arzuladığını ve hangi azaptan korktuğunu hatırla. Kim bunu düşünürse ameli gözünde küçülür."
+    },
+    {
+      "id": "imam-safii-004",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İmam Malik, Şafii ile bir araya gelip yüzünde zeka, ilim ve takva alametlerini görünce şöyle dedi: Şüphesiz Allah Teala’nın senin üzerine bir nur bıraktığını görüyorum; onu masiyetin (günahın) karanlığıyla söndürme."
+    },
+    {
+      "id": "imam-safii-005",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Bağdat'tan çıktım ve arkamda Ahmed b. Hanbel'den daha faziletli, daha alim, daha fakih ve daha takvalı bir adam bırakmadım."
+    },
+    {
+      "id": "imam-safii-006",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "O (dünya), üzerinde köpeklerin bulunduğu ve dertleri onu çekip almak olan kokuşmuş bir leşten başka bir şey değildir. Eğer ondan sakınırsan ehline karşı selâmette olursun, eğer onu çekip almaya çalışırsan köpekleri seninle çekişir."
+    },
+    {
+      "id": "imam-safii-007",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Hiç kimse bu ilmi saltanat ve nefis izzetiyle isteyip felaha eremez; lakin kim onu nefis fedakarlığı, geçim darlığı ve alimlere hizmetle isterse felaha erer."
+    },
+    {
+      "id": "imam-safii-008",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Tevazu kerem sahiplerinin ahlakından, kibir ise aşağılık kimselerin huylarındandır. Tevazu sevgiyi, kanaat ise rahatlığı miras bırakır."
+    },
+    {
+      "id": "imam-safii-009",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İmam Şafii’ye bir mesele soruldu ve sustu. 'Cevap vermeyecek misiniz?' denildi. Şöyle dedi: 'Susmamda mı yoksa cevap vermem de mi fazilet olduğunu bilene kadar (hayır).'"
+    },
+    {
+      "id": "imam-safii-010",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Resulullah (s.a.v.)’den bir hadis rivayet edip de onunla amel etmezsem, hangi gök beni gölgeler, hangi yer beni taşır?"
+    },
+    {
+      "id": "imam-safii-011",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Eğer akıllı bir adam günün başında tasavvufa girse, öğle vakti gelmeden ahmaklaşır."
+    },
+    {
+      "id": "imam-safii-012",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Alimlerin fakirliği isteğe bağlı (ihtiyari), cahillerin fakirliği ise mecburidir (ıztırari)."
+    },
+    {
+      "id": "imam-safii-013",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Fakirlikten asla korkmadım. Dünyanın fazlasını istemek, Allah'ın tevhid ehlini kendisiyle cezalandırdığı bir cezadır."
+    },
+    {
+      "id": "imam-safii-014",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Sana laf taşıyan, senden de laf taşır."
+    },
+    {
+      "id": "imam-safii-015",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kullara zulmetmek/saldırmak, ahirete ne kötü bir azıktır."
+    },
+    {
+      "id": "imam-safii-016",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İnsanların rızası ulaşılmaz bir gayedir, onlardan selâmette kalmaya da bir yol yoktur; o halde sana fayda verene bak ve ona sarıl."
+    },
+    {
+      "id": "imam-safii-017",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Hayır beş şeydedir: Nefis zenginliği, eziyetten kaçınmak, helal kazanç, takva ve Allah'a güven."
+    },
+    {
+      "id": "imam-safii-018",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Ne doğru ne de yalan yere Allah adına yemin ettim."
+    },
+    {
+      "id": "imam-safii-019",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Seni ilgilendirmeyen şey hakkında konuştuğunda kelime sana malik olur, sen ona malik olamazsın."
+    },
+    {
+      "id": "imam-safii-020",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kişi ancak dört şeyle kâmil olur: Dindarlık, emanet, (nefsini) koruma ve vakar."
+    },
+    {
+      "id": "imam-safii-021",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Mürüvvetin rükünleri dörttür: Güzel ahlak, cömertlik, tevazu ve ibadet."
+    },
+    {
+      "id": "imam-safii-022",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İlmin süsü takva (vera) ve yumuşak huyluluktur (hilim)."
+    },
+    {
+      "id": "imam-safii-023",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Dinde tartışma (mira) kalbi katılaştırır ve kinleri miras bırakır."
+    },
+    {
+      "id": "imam-safii-024",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İlim talep etmek nafile namazdan daha faziletlidir."
+    },
+    {
+      "id": "imam-safii-025",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Hiç kimseyle münazara etmedim ki onun hata yapmasını isteyeyim."
+    },
+    {
+      "id": "imam-safii-026",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İnsanların kadri en yüce olanı kendi kadrini görmeyendir.\""
+    },
+    {
+      "id": "imam-safii-027",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Azıkların en faydalısı takva, en zararlısı ise zulümdür."
+    },
+    {
+      "id": "imam-safii-028",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Resulullah (s.a.v.)’den sahih bir hadis rivayet edip de onu kabul etmezsem, aklımın gittiğine sizi şahit tutarım."
+    },
+    {
+      "id": "imam-safii-029",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kitabımda Resulullah (s.a.v.)’in sünnetine aykırı bir şey bulursanız, Resulullah’ın sünnetini söyleyin ve benim dediğimi bırakın."
+    },
+    {
+      "id": "imam-safii-030",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Birine hakkı ve hücceti (delili) sunduğumda onları benden kabul ederse ona heybet duyar ve sevgisini kalbimde tutarım; kim de hakka karşı kibirlenir ve delili reddederse gözümden düşer."
+    },
+    {
+      "id": "imam-safii-031",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kim Allah'ın kalbini açmasını veya nurlandırmasını isterse lüzumsuz konuşmayı, günahları ve masiyeti terk etsin; Allah ile arasında gizli bir ameli olsun. Bunu yaparsa Allah ona öyle bir ilim açar ki onu başkasından meşgul eder; şüphesiz ölümde çokça meşguliyet vardır."
+    },
+    {
+      "id": "imam-safii-032",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İsterdim ki insanlar bu ilmi benden öğrensinler ama ondan bana hiçbir şey nispet edilmesin."
+    },
+    {
+      "id": "imam-safii-033",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Bir adam 'İnsan için hangisi daha faziletlidir; imkan sahibi olmak mı (temkin) yoksa imtihan edilmek mi (ibitila)?' diye sordu. Şafii dedi ki: İmtihan edilmeden imkan verilmez."
+    },
+    {
+      "id": "imam-safii-034",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İnsanlardan tamamen uzaklaşmak düşmanlık kazandırır, onlara çok fazla açılmak ise kötü arkadaş getirir; o halde ikisinin arasında ol."
+    },
+    {
+      "id": "imam-safii-035",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İlmi küçük düşürmek, seni her münazaraya davet edenle münazara etmektir."
+    },
+    {
+      "id": "imam-safii-036",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Soğuk suyun mürüvvetimden bir şey eksilttiğini bilseydim onu içmezdim."
+    },
+    {
+      "id": "imam-safii-037",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Elbisesini temizleyenin dertleri azalır, kokusu güzel olanın aklı artar."
+    },
+    {
+      "id": "imam-safii-038",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Konuşmak için sükuttan, hüküm çıkarmak için tefekkürden yardım alın."
+    },
+    {
+      "id": "imam-safii-039",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Doygunluk (çok yemek) kalbi katılaştırır, bedeni ağırlaştırır ve feraseti yok eder."
+    },
+    {
+      "id": "imam-safii-040",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kardeşine gizlice öğüt veren ona nasihat etmiştir; kim ona alenen öğüt verirse onu rezil etmiştir."
+    },
+    {
+      "id": "imam-safii-041",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Hasetçi uzun hasretler içindedir ve derecelerden mahrumdur."
+    },
+    {
+      "id": "imam-safii-042",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "İlim fayda verendir; ilim ezberlenen değildir."
+    },
+    {
+      "id": "imam-safii-043",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Amellerin en zoru üçtür: Azlıktayken cömertlik, yalnızken takva ve umut bağlanan veya korkulan kişinin yanında hakkı söylemek."
+    },
+    {
+      "id": "imam-safii-044",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Eğer tecrübesiz biri öne geçerse (liderlik taslarsa) çok hayrı kaçırır."
+    },
+    {
+      "id": "imam-safii-045",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Cömertlik ve kerem, dünyanın ve ahiretin ayıplarını örter."
+    },
+    {
+      "id": "imam-safii-046",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Kur'an'ı yedi yaşındayken ezberledim."
+    },
+    {
+      "id": "imam-safii-047",
+      "imamId": "imam-safii",
+      "imamName": "İmam Şafii",
+      "text": "Takvanın izzet vermediği kimsenin izzeti yoktur."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-001",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Dünya şehvetlerine (arzularına) ancak kalbinde kendisini ahiretten meşgul eden bir şey bulunan kimse sabredebilir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-002",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Dünyanın başından sonuna kadar her şeye sahip olup hayır yollarında harcamam, Allah'tan bir göz kırpması kadar gafil kalmam karşılığında beni sevindirmez."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-003",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Okuma (kıraat) sana lezzetli gelirse rükua ve secdeye gitme; secde sana lezzetli gelirse rükua gitme ve okuma; sana hangi kapı açıldıysa ona tutun."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-004",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Zahit, dünyanın kederini atıp onda rahata eren değildir; zahit ancak dünyanın kederini atıp ahireti için onda yorulandır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-005",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Ebu Süleyman ed-Dârânî’ye ölüm geldiğinde dostları: 'Müjde! Çok bağışlayan ve merhametli bir Rabbe gidiyorsun' dediler. O ise: 'Küçükten hesaba çeken, büyükten cezalandıran bir Rabbe gidiyorsun desenize!' dedi."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-006",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "İbn Sirin'in (Bir adama 'ey müflis' dedim de cezalandırıldım) sözü ona ulaşınca şöyle dedi: 'Onların günahları azdı, nereden vurulduklarını bildiler; bizim günahlarımız çoğaldı, nereden vurulduğumuzu bilemiyoruz.'"
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-007",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Ben bir ayeti okur ve onda dört veya beş gece dururum! Eğer tefekkürü kesmeseydim, o ayeti geçip başkasına devam edemezdim."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-008",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Nafile bir ibadetten lezzet alan kimse, farz vakti geldiğinde nafilenin lezzeti yüzünden onu (vaktinde) kesmiyorsa, o kişi nafilesinde aldanmıştır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-009",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Zebaniler, Allah'a isyan eden Kur'an taşıyıcılarına; Kur'an'dan sonra Allah'a isyan eden putperestlerden daha hızlı ulaşacaktır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-010",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Allah'a isyan edenler, ancak Allah katında değersiz oldukları için isyan etmişlerdir. Eğer O'nun katında değerli olsalardı, Allah onları isyanlardan korurdu."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-011",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Lokman oğluna şöyle demiştir: Yavrum, dünyaya ahiretine zarar verecek kadar girme, insanlara yük olacak kadar da onu tamamen terk etme."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-012",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Bir adam bazı hükümdarlara bağlanır da etkilerini üzerinde görür; ya kralların Kralı'na bağlanan kim bilir neler görür!"
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-013",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Rızık konusunda Allah'a güvenen kişinin ahlakı güzelleşir, hilim sahibi olur, cömertleşir ve namazdaki vesveseleri azalır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-014",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "İbadet ehli gecelerinde, eğlence ehlinin eğlencesinden daha çok lezzet alır. Bazen gecenin ortasında kalbime öyle bir sevinç gelir ki, bazen kalbimin güldüğünü görürüm."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-015",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Evimden çıktığımda gözüm neye ilişse, onda Allah'ın üzerimdeki bir nimetini ve benim için bir ibreti mutlaka görürüm."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-016",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kul, Rabbinden (c.c.) haya ettiği zaman hayrı tamamlamış demektir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-017",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Eğer tüm dünya tek bir lokma olup elimde olsaydı ve bir din kardeşim gelseydi, onu onun ağzına koymayı isterdim."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-018",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Bir arzuyu terk etme konusunda dürüst olanın kalbinden Allah o arzuyu giderir. Allah, Kendi rızası için terk edilen bir arzuyla kalbe azap etmeyecek kadar kerem sahibidir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-019",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Allah hakkında hüsnüzan besleyip de Allah'tan korkmayan kişi aldanmıştır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-020",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kaybeden kişi, insanlara salih amelini gösterip, kendisine şah damarından daha yakın olana (Allah'a) karşı çirkin işle çıkandır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-021",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Rızadan öyle bir pay almayı umuyorum ki; Allah beni ateşe koysa bile bundan razı olurdum."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-022",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kıyamet günü Rahman’ın meclis arkadaşları; kendisinde cömertlik, cömertlik (seha), hilim, merhamet, şefkat, şükür, iyilik ve sabır hasletlerini toplayanlardır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-023",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kanaat, rızanın başlangıcıdır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-024",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Dünyada ve ahiretteki her hayrın aslı, Allah korkusudur."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-025",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Seni Allah'tan meşgul eden her şey senin için uğursuzdur."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-026",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Arzulardan birini terk etmek, kalp için bir yıl nafile namaz ve oruçtan daha faydalıdır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-027",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Zühd; Allah'tan meşgul eden şeyi terk etmektir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-028",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Her şeyin bir ilmi vardır; terk edilmişliğin (hizlanın) ilmi ağlamayı terk etmektir. Her şeyin bir pası vardır; kalbin pası tokluktur."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-029",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Attığı tek bir adımı sadece Allah için olan kimseye ne mutlu!"
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-030",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Saliha eş dünyadan değildir; çünkü o seni ahiret için (işlerden) boşaltır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-031",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kul ihlaslı olduğunda, vesveselerin çokluğu ve riya ondan kesilir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-032",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Cemaatle namazı ancak bir günah sebebiyle kaçırır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-033",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Amellerin en faziletlisi nefsin hevasına muhalefet etmektir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-034",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "'Sabrettikleri için onları cennet ve ipekle mükafatlandırdı' ayeti hakkında: Arzulara karşı sabrettiler, dedi."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-035",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Doyan kimseye altı afet girer: Münacat lezzetini kaybeder, hikmeti ezberlemesi zorlaşır, mahlukata karşı merhametten mahrum kalır, ibadet ağırlaşır, arzuları artar ve diğer toklar dünya çöplüğünün etrafında dönerler."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-036",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Gece olmasaydı (dünyada) kalmayı sevmezdim."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-037",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Dünyanın anahtarı tokluk, ahiretin anahtarı açlıktır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-038",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Gözlerinizi ağlamaya, kalplerinizi tefekküre alıştırın."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-039",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Allah'a isyan edenler, O'nun katında değersiz oldukları için isyan etmişlerdir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-040",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Her şeyin bir pası vardır; kalp nurunun pası tokluktur."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-041",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Verâ (şüpheli şeylerden kaçınmak), zühdün başlangıcıdır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-042",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kalp acıkıp susayınca saflaşır ve incelir; doyduğunda körleşir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-043",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Bugünü dününe eşit olan noksanlıktadır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-044",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Rabbiyle meşgul olan, kendisinden ve insanlardan uzaklaşır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-045",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Kendisiyle meşgul olan, insanlardan uzaklaşır."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-046",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Korkunun ayrıldığı her kalp harabeye döner."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-047",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Ahiret kalpteyse dünya oraya girmeye çalışır; dünya kalpteyse ahiret oraya girmez çünkü ahiret kerim (şerefli), dünya leim (değersiz)dir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-048",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Yoldan çıkanlar (İblis, Karun, Bel'am) ancak niyetlerinin aslı hileli olduğu için böyle oldular; hilelerine geri döndüler. Allah dürüstlük (sıdk) lütfettikten sonra onu kulundan geri almayacak kadar kerem sahibidir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-049",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "Saflaştırana saflık verilir, bulandırana bulandırılır. Gecesini iyi yapana gündüzünde, gündüzünü iyi yapana gecesinde karşılık verilir."
+    },
+    {
+      "id": "ebu-suleyman-ed-darani-050",
+      "imamId": "ebu-suleyman-ed-darani",
+      "imamName": "Ebu Süleyman ed-Dârânî",
+      "text": "İhtiyacı olan kişi, söze salavatla başlasın, dileğini dilesin ve salavatla bitirsin. Allah iki salavatı kabul eder, aradakini bırakmayacak kadar cömerttir."
+    },
+    {
+      "id": "ibn-mubarek-001",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Süfyan es-Sevri’ye: 'Namaz kılan kişi namazıyla neyi niyet etmeli?' diye sordum. Şöyle dedi: 'Rabbi ile münacat etmeyi (baş başa konuşmayı) niyet etmeli.'"
+    },
+    {
+      "id": "ibn-mubarek-002",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "İbn Mübarek’e: 'İnsanlar kimlerdir?' diye soruldu; 'Âlimlerdir' dedi. 'Hükümdarlar kimlerdir?' denildi; 'Zahitlerdir' dedi. 'Süfelyan (aşağılık kimseler) kimlerdir?' denildi; 'Din ile dünyayı yiyenlerdir' dedi."
+    },
+    {
+      "id": "ibn-mubarek-003",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Günahları işlemek kalbi öldürür; onlara devam etmek ise zilleti miras bırakır. Günahları terk etmek kalplerin hayatıdır; nefsine karşı gelmen senin için en hayırlı olandır."
+    },
+    {
+      "id": "ibn-mubarek-004",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Allah için (samimi) bir kardeş bulamamaktan yorulduğum kadar hiçbir şeyden yorulmadım."
+    },
+    {
+      "id": "ibn-mubarek-005",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Dayanağınız 'eser' (hadis ve rivayet) olsun; şahsi görüşlerden (re'y) ise sadece hadisi size açıklayan kısımları alın."
+    },
+    {
+      "id": "ibn-mubarek-006",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Zillet ancak tamahkarlıktadır (açgözlülüktedir)."
+    },
+    {
+      "id": "ibn-mubarek-007",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Haram olan bir kuruşu terk etmek, (haramdan gelip de) sadaka olarak vereceğim yüz bin kuruştan daha hayırlıdır."
+    },
+    {
+      "id": "ibn-mubarek-008",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Bize güzel ahlakı tek bir kelimede özetle denildiğinde şöyle dedi: 'Öfkeyi terk etmektir.'"
+    },
+    {
+      "id": "ibn-mubarek-009",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Namazı kıldığında neden bizimle oturmuyorsun?' diye sorulduğunda şöyle dedi: 'Sahabe ve Tâbiûn ile oturuyorum; onların kitaplarına ve eserlerine bakıyorum. Sizinle ne yapayım? Siz insanların gıybetini yapıyorsunuz.'"
+    },
+    {
+      "id": "ibn-mubarek-010",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Bir adam yüz şeyden sakınsa da tek bir (şüpheli) şeyden sakınmasa, o kişi gerçek manada takva (verâ) sahibi olamaz."
+    },
+    {
+      "id": "ibn-mubarek-011",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Boş vaktin ve huzurun olduğunda Allah’a yakınlaşmak için kılacağın iki rekatı ganimet bil. Eğer batıl bir şey konuşmaya niyetlenirsen, onun yerine tesbihatta bulun."
+    },
+    {
+      "id": "ibn-mubarek-012",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Kişi ilim talep ettiği sürece âlimdir. Ne zaman ki artık öğrendiğini zannederse, işte o zaman cahilleşmiştir."
+    },
+    {
+      "id": "ibn-mubarek-013",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Bir adam için en büyük musibetlerden biri, kendisindeki noksanlığı bilip de buna aldırmaması ve üzülmemesidir."
+    },
+    {
+      "id": "ibn-mubarek-014",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Eğer birinin gıybetini yapacak olsaydım, annem ve babamın gıybetini yapardım; çünkü sevaplarıma en çok onlar layıktır."
+    },
+    {
+      "id": "ibn-mubarek-015",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Ne zamana kadar ilim yazacaksın?' denildiğinde; 'Belki de bana fayda verecek olan o kelimeyi henüz yazmamışımdır' dedi."
+    },
+    {
+      "id": "ibn-mubarek-016",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Güzel ahlak; güler yüzlü olmak ve iyilikte bulunmaktır."
+    },
+    {
+      "id": "ibn-mubarek-017",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Şam toprağında bir kalem ödünç aldım; onu geri vermek niyetindeydim. Merv’e döndüğümde kalemin yanımda kaldığını fark ettim ve onu sahibine geri vermek için tekrar Şam’a gittim."
+    },
+    {
+      "id": "ibn-mubarek-018",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Zahit; dünyalığa kavuştuğunda sevinmeyen, onu kaybettiğinde ise üzülmeyen kimsedir."
+    },
+    {
+      "id": "ibn-mubarek-019",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Edep, neredeyse dinin üçte ikisidir."
+    },
+    {
+      "id": "ibn-mubarek-020",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "İlim talep etmeyen birinin nefsi onu nasıl onurlu bir işe davet eder, şaşarım."
+    },
+    {
+      "id": "ibn-mubarek-021",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Meclisin yoksullarla (miskinlerle) beraber olsun."
+    },
+    {
+      "id": "ibn-mubarek-022",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Bid’at sahibi ile oturmaktan sakın."
+    },
+    {
+      "id": "ibn-mubarek-023",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Müminin dünyada bir saltanatı yoktur; onun asıl saltanatı ahirettedir."
+    },
+    {
+      "id": "ibn-mubarek-024",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Nice küçük amel vardır ki niyet onu büyütür; nice büyük amel vardır ki niyet onu küçültür."
+    },
+    {
+      "id": "ibn-mubarek-025",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Lüzumsuz konuşmayı terk et, hikmete ulaşırsın."
+    },
+    {
+      "id": "ibn-mubarek-026",
+      "imamId": "ibn-mubarek",
+      "imamName": "Abdullah bin Mübarek",
+      "text": "Lüzumsuz bakışları terk et, huşuya ulaşırsın."
+    },
+    {
+      "id": "hasan-basri-001",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Günahkarlar hakkında şöyle demiştir: Onlar Allah katında değerlerini yitirdiler, bu yüzden O’na isyan ettiler. Eğer O’nun katında değerli olsalardı, Allah onları (günahtan) korurdu."
+    },
+    {
+      "id": "hasan-basri-002",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Gözümle bakmadım, dilimle konuşmadım, elimle tutmadım ve ayağımla kalkmadım ki önce (yapacağım işin) bir itaat mi yoksa bir isyan mı olduğuna bakmış olmayayım. Eğer itaat ise ilerledim, günah ise geri durdum."
+    },
+    {
+      "id": "hasan-basri-003",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "İnsanların elindekine göz dikmediğin sürece sana saygı duymaya devam ederler. Ne zaman ki bunu yaparsan, seni hafife alırlar."
+    },
+    {
+      "id": "hasan-basri-004",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "İlim ikidir: Dilin ilmi ki o Allah’ın ademoğlu üzerindeki delilidir. Bir de kalpteki ilim ki faydalı olan ilim odur."
+    },
+    {
+      "id": "hasan-basri-005",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Kul, amelini nelerin bozduğunu bildiği sürece hayır üzerindedir."
+    },
+    {
+      "id": "hasan-basri-006",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Mümin, iman ile Allah korkusunu bir araya getirmiştir; münafık ise kötülük ile (azaptan) emin olma hissini bir araya getirmiştir."
+    },
+    {
+      "id": "hasan-basri-007",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Gece ibadeti için uykusuz kalmaktan ve malı Allah yolunda harcamaktan daha zor bir amel bilmiyoruz."
+    },
+    {
+      "id": "hasan-basri-008",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Mümini ancak nefsini hesaba çekerken görürsün: 'Ne yapmak istedin? Ne yemek istedin?' der. Günahkar (facir) ise nefsini hesaba çekmeden yoluna devam eder."
+    },
+    {
+      "id": "hasan-basri-009",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Tokalaşmak sevgiyi artırır."
+    },
+    {
+      "id": "hasan-basri-010",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Takva, takva sahiplerini o hale getirmiştir ki harama düşme korkusuyla helalin çoğunu terk etmişlerdir."
+    },
+    {
+      "id": "hasan-basri-011",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Mümin dünyada, boynunu esaretten kurtarmaya çalışan bir esir gibidir."
+    },
+    {
+      "id": "hasan-basri-012",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Sen ancak bir araya gelmiş günlerden ibaretsin; bir gün geçtiğinde senin bir parçan da gitmiş demektir."
+    },
+    {
+      "id": "hasan-basri-013",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Şu dirhem ve dinar ne kötü iki arkadaştır; senden ayrılmadıkça (onları harcamadıkça) sana fayda vermezler."
+    },
+    {
+      "id": "hasan-basri-014",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Zerre ağırlığınca takva (şüpheli şeylerden kaçınmak), bin miskal oruç ve namazdan daha hayırlıdır."
+    },
+    {
+      "id": "hasan-basri-015",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Akıllı ve ferasetli mümin, Allah kendisine nimetini artırdıkça O’na olan korkusu artan kimsedir."
+    },
+    {
+      "id": "hasan-basri-016",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Haset, Müslümanın dininde; vücuttaki bir yaranın yayılmasından daha hızlı ilerler."
+    },
+    {
+      "id": "hasan-basri-017",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Sabır cennet hazinelerinden bir hazinedir. İnsan bütün hayrı ancak bir anlık sabırla elde eder."
+    },
+    {
+      "id": "hasan-basri-018",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Başkasının sözünü sana taşıyan kimseden sakın; çünkü o senin sözünü de başkasına taşıyacaktır."
+    },
+    {
+      "id": "hasan-basri-019",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Kişinin din kardeşi üzerinden kâr elde etmesi mürüvvetten değildir."
+    },
+    {
+      "id": "hasan-basri-020",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Müslüman bir kardeşimin ihtiyacını gidermek, benim için bir ay itikafa girmekten daha sevimlidir."
+    },
+    {
+      "id": "hasan-basri-021",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Ey ademoğlu! Gündüzün senin misafirindir, ona iyi davran. Eğer ona iyilik edersen seni överek gider, kötülük edersen seni yererek gider."
+    },
+    {
+      "id": "hasan-basri-022",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Cehennemin varlığına tüm kalbiyle inanan bir kula, koca dünya dar gelir."
+    },
+    {
+      "id": "hasan-basri-023",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Asıl fakih; dünyadan yüz çevirmiş, ahirete ise rağbet etmiş kimsedir."
+    },
+    {
+      "id": "hasan-basri-024",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Nefis kötülüğü emreder; o sana itaat konusunda zorluk çıkarırsa, sen de ona günah konusunda istediğini yapmayarak isyan et."
+    },
+    {
+      "id": "hasan-basri-025",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Kişi bazen bir günah işler ve bu sebeple gece namazından mahrum kalır."
+    },
+    {
+      "id": "hasan-basri-026",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Eğer gece namazına ve gündüz orucuna güç yetiremiyorsan, bil ki sen mahrum bırakılmışsın; hataların seni zincirlemiştir."
+    },
+    {
+      "id": "hasan-basri-027",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "İbadetler arasında gecenin ortasında kılınan namazdan daha zor (ve etkili) bir şey görmedim."
+    },
+    {
+      "id": "hasan-basri-028",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "İki şey asla bir arada bulunmaz: Kanaat ve haset. İki şey ise asla birbirinden ayrılmaz: Hırs ve haset."
+    },
+    {
+      "id": "hasan-basri-029",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "İnsanlarla güzel ahlakla beraber ol; zira aralarındaki konaklama süren azdır."
+    },
+    {
+      "id": "hasan-basri-030",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Ey insanlar! Tövbeyi ertelemekten sakının. Bazı salihlerin şöyle dediğini duydum: 'Tövbe edene kadar ölmek istemiyoruz, sonra da ölene kadar tövbe etmiyoruz'."
+    },
+    {
+      "id": "hasan-basri-031",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Kim ilmi Allah için isterse, bu durum çok geçmeden onun huşusunda, zühdünde ve tevazusunda görülür."
+    },
+    {
+      "id": "hasan-basri-032",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Ey ademoğlu! İman ne süslenmekle ne de temenni etmekledir; iman, kalbe yerleşen ve amellerin doğruladığı şeydir."
+    },
+    {
+      "id": "hasan-basri-033",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Bu nimetleri çokça anın; çünkü onları anmak şükürdür."
+    },
+    {
+      "id": "hasan-basri-034",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Ölüm, dünyanın gerçek yüzünü ortaya çıkardı; böylece akıl sahibi için orada hiçbir sevinç bırakmadı."
+    },
+    {
+      "id": "hasan-basri-035",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Her ümmetin taptığı bir put vardır; bu ümmetin putu ise altın ve gümüştür (dinar ve dirhemdir)."
+    },
+    {
+      "id": "hasan-basri-036",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Kim seninle dinin konusunda yarışırsa onunla yarış; kim seninle dünyan konusunda yarışırsa dünyayı onun önüne at (ona bırak)."
+    },
+    {
+      "id": "hasan-basri-037",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Dünyada zühd (maddi hırslardan uzaklaşmak) kalbi ve bedeni rahatlatır."
+    },
+    {
+      "id": "hasan-basri-038",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Bir kul dünya beklentisini uzattıkça, amelini kötüleştirir."
+    },
+    {
+      "id": "hasan-basri-039",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Âlimler olmasaydı, insanlar hayvanlar gibi olurdu."
+    },
+    {
+      "id": "hasan-basri-040",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Ahlakı kötü olan, kendi nefsine azap eder."
+    },
+    {
+      "id": "hasan-basri-041",
+      "imamId": "hasan-basri",
+      "imamName": "Hasan-ı Basrî",
+      "text": "Allah’ın bir kuldan yüz çevirdiğinin alameti, o kulu kendisini ilgilendirmeyen boş işlerle meşgul etmesidir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-001",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Geceyi ibadetle geçiren ve gündüzü oruç tutan kişi, eğer dilini korumazsa kıyamet günü iflas eder."
+    },
+    {
+      "id": "omer-bin-abdulaziz-002",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz’in yanına bir adam girdi ve şöyle dedi: 'Ey müminlerin emiri, senden öncekiler için halifelik onlara bir süstü, sen ise halifeliğin süsüsün. Senin misalin ancak şairin dediği gibidir: İnci güzel yüzleri süslediği zaman, senin yüzünün güzelliği de inci için bir süstür.' Bunun üzerine (Ömer bin Abdülaziz) ondan yüz çevirdi."
+    },
+    {
+      "id": "omer-bin-abdulaziz-003",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Amr bin Muhâcir’den rivayet edildiğine göre Ömer bin Abdülaziz -rahimehullah- bana şöyle dedi: Eğer beni haktan saptığımı görürsen, elini yakama koy, sonra beni sars ve şöyle de: 'Ey Ömer, ne yapıyorsun?'"
+    },
+    {
+      "id": "omer-bin-abdulaziz-004",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Meymûn bin Mihrân şöyle dedi: Ömer bin Abdülaziz -rahimehullah- beni vali atadı ve bana şöyle dedi: Eğer sana benden hakka aykırı bir yazı gelirse, onu duvara çal."
+    },
+    {
+      "id": "omer-bin-abdulaziz-005",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Allah bir kula bir nimet verip de sonra onu ondan geri aldığında, karşılığında ona sabır vermişse; ona verdiği karşılık (sabır), kendisinden aldığı şeyden mutlaka daha hayırlıdır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-006",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Görüşlerden (re'y), sizden öncekilere uygun olanı alın; çünkü onlar sizden daha bilgiliydiler."
+    },
+    {
+      "id": "omer-bin-abdulaziz-007",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Ölümün zikri (hatırlanması) kalbimden bir saat çıksa, kalbim bozulurdu."
+    },
+    {
+      "id": "omer-bin-abdulaziz-008",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Ölümün (acısının) benden hafifletilmesini istemem; çünkü o, Müslümanın karşılığında ecir alacağı son şeydir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-009",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Hiçbir şey başka bir şeyle; ilmin yanındaki hilim (yumuşak huyluluk) ve gücün yanındaki af kadar güzel bir şekilde bir araya gelmemiştir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-010",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Siz ancak sonsuzluk için yaratıldınız; lakin bir yurttan diğerine göç ettiriliyorsunuz."
+    },
+    {
+      "id": "omer-bin-abdulaziz-011",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: İnsanlara dünyalıktan bir pay sunana kadar, haktan istediğim hiçbir şeyde bana itaat etmediler."
+    },
+    {
+      "id": "omer-bin-abdulaziz-012",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Şakalaşmaktan sakının; çünkü o, kin doğuran bir ahmaklıktır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-013",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Şüphesiz ibadetin en faziletlisi farzları yerine getirmek ve haramlardan kaçınmaktır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-014",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Gece ve gündüz senin üzerinde işliyor (ömrünü tüketiyor), o halde sen de onlarda (salih ameller) işle."
+    },
+    {
+      "id": "omer-bin-abdulaziz-015",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Amellerin en faziletlisi, nefislerin (yapmaya) zorlandığıdır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-016",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Sözünün amelinden olduğunu bilmeyenin günahları çok olur."
+    },
+    {
+      "id": "omer-bin-abdulaziz-017",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Nefsin arzusundan (heva), öfkeden ve açgözlülükten korunan kişi kurtuluşa ermiştir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-018",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Dünyadaki hallerden hangisi üzere olursam olayım, başka bir hal üzere olmayı istemem."
+    },
+    {
+      "id": "omer-bin-abdulaziz-019",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Allah’ın nimetlerini Allah Teala’ya şükrederek bağlayın (kalıcı kılın)."
+    },
+    {
+      "id": "omer-bin-abdulaziz-020",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Said bin Süveyd’den rivayet edildiğine göre; Ömer bin Abdülaziz -rahimehullah- bize cuma namazını kıldırdı, sonra oturdu; üzerinde önü ve arkası yamalı bir gömlek vardı. Bir adam ona: 'Ey müminlerin emiri, şüphesiz Allah Azze ve Celle sana (imkan) verdi; keşke giyinip kuşansaydın' dedi. Ömer bin Abdülaziz başını bir süre öne eğdi, öyle ki biz bu sözün onu üzdüğünü anladık. Sonra başını ona doğru kaldırdı ve şöyle dedi: Şüphesiz iktisadın (ölçülü olmanın) en faziletlisi varlıklı zamandadır; affın en faziletlisi ise güç yetirilen zamandadır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-021",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Abdullah bin Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Ömer bin Abdülaziz, Allah'ın kendisine verdiği bir nimete her bakışında mutlaka şöyle derdi: Allah’ım! Senin nimetlerini nankörlüğe çevirmekten, onları tanıdıktan sonra inkâr etmekten veya onları unutup Sana sena etmeyi (şükretmeyi) terk etmekten Sana sığınırım."
+    },
+    {
+      "id": "omer-bin-abdulaziz-022",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Abdülaziz bin Ömer bin Abdülaziz -rahimehullah- şöyle dedi: Babam bana dedi ki: Yavrum, Müslüman bir kimseden bir söz işittiğinde, onun için hayırlı bir yorum bulabildiğin sürece o sözü şerle yorumlama."
+    },
+    {
+      "id": "omer-bin-abdulaziz-023",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Hiçbir şey başka bir şeyle; ilmin yanındaki hilim (yumuşak huyluluk) kadar güzel bir şekilde bir araya gelmemiştir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-024",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Dinini tartışmalara hedef kılanın (dindeki) değişkenliği çok olur."
+    },
+    {
+      "id": "omer-bin-abdulaziz-025",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Kalbe ancak kalpten çıkan fayda verir."
+    },
+    {
+      "id": "omer-bin-abdulaziz-026",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Tek derdi midesi olanın vay haline!"
+    },
+    {
+      "id": "omer-bin-abdulaziz-027",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "İbadetin en faziletlisi farzları yerine getirmek ve haramlardan kaçınmaktır."
+    },
+    {
+      "id": "omer-bin-abdulaziz-028",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Gizli hallerinizi düzeltin ki aşikâr halleriniz düzelsin."
+    },
+    {
+      "id": "omer-bin-abdulaziz-029",
+      "imamId": "omer-bin-abdulaziz",
+      "imamName": "Ömer bin Abdülaziz",
+      "text": "Ahiretinizi düzeltin ki dünyanız düzelsin."
+    },
+    {
+      "id": "abdullah-bin-mesud-001",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "İlim istiyorsanız Kur’an’ı derinlemesine inceleyin; çünkü öncekilerin de sonrakilerin de ilmi ondadır."
+    },
+    {
+      "id": "abdullah-bin-mesud-002",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Karşılaştığın her kimseye selam vermen tevazudandır."
+    },
+    {
+      "id": "abdullah-bin-mesud-003",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Yeryüzünde hiçbir şey, dilden daha fazla uzun süreli hapse layık değildir."
+    },
+    {
+      "id": "abdullah-bin-mesud-004",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kur’an’ı hıfzetmek sadece harflerini ezberlemek değil, onun sınırlarını (hükümlerini) hakkıyla ikame etmektir."
+    },
+    {
+      "id": "abdullah-bin-mesud-005",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Allah korkusu ilim olarak, O'nun rahmetinden emin olup aldanmak (mağrur olmak) ise cahillik olarak kişiye yeter."
+    },
+    {
+      "id": "abdullah-bin-mesud-006",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Sabır imanın yarısı, yakin (şüphesiz iman) ise tamamıdır."
+    },
+    {
+      "id": "abdullah-bin-mesud-007",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Sapıklığın en kötüsü, hidayet ve imandan sonra gelen sapıklıktır."
+    },
+    {
+      "id": "abdullah-bin-mesud-008",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Bir adamı ne dünya işi ne de ahiret işiyle uğraşırken, böyle boş boş (atıl) dururken görmekten nefret ederim."
+    },
+    {
+      "id": "abdullah-bin-mesud-009",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Ölen kişinin amel defterinin başlığı, insanların arkasından yaptığı övgüdür."
+    },
+    {
+      "id": "abdullah-bin-mesud-010",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Sünnet üzere az amel etmek (iktisat), bid’at üzere çok çalışmaktan (içtihat) daha hayırlıdır."
+    },
+    {
+      "id": "abdullah-bin-mesud-011",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kendinizi hayra alıştırın, zira hayır bir alışkanlıktır."
+    },
+    {
+      "id": "abdullah-bin-mesud-012",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Nefsim kudret elinde olan Allah'a yemin ederim ki; Kur’an’ın hakkıyla okunması, helalini helal, haramını haram bilmek ve onu Allah’ın indirdiği gibi okumaktır."
+    },
+    {
+      "id": "abdullah-bin-mesud-013",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Öğrenin, öğrenin! Öğrendiğiniz zaman da onunla amel edin."
+    },
+    {
+      "id": "abdullah-bin-mesud-014",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Öyle bir topluluk gelecek ki; binaları yükseltecekler ama dini alçaltacaklar ve süslü binekler kullanacaklar. Sizin kıblenize yönelecekler ama sizin dininiz üzere olmayarak ölecekler."
+    },
+    {
+      "id": "abdullah-bin-mesud-015",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Bir adamın, işlediği bir günah sebebiyle bildiği ilmi unuttuğunu zannederim."
+    },
+    {
+      "id": "abdullah-bin-mesud-016",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Şu dört şey karara bağlanıp bitirilmiştir: Yaratılış, ahlak, rızık ve ecel. Hiç kimse diğerinden daha fazla kazanmaya (rızık ve eceli değiştirmeye) güç yetiremez."
+    },
+    {
+      "id": "abdullah-bin-mesud-017",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kur’an’da Allah'a teslimiyet ve güveni en güçlü ifade eden ayet: 'Kim Allah’a tevekkül ederse, O ona kafidir' ayetidir."
+    },
+    {
+      "id": "abdullah-bin-mesud-018",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Birinin yolundan gidecekseniz ölenlerin yolundan gidin; zira hayatta olanın fitneye düşmeyeceğinden emin olunamaz."
+    },
+    {
+      "id": "abdullah-bin-mesud-019",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Lüzumsuz konuşmaktan sakının; kişiye ihtiyacını görecek kadar söz yeter."
+    },
+    {
+      "id": "abdullah-bin-mesud-020",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Bir topluluğa akıllarının ermediği bir söz söylersen, bu onların bir kısmı için mutlaka fitne olur."
+    },
+    {
+      "id": "abdullah-bin-mesud-021",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Nasuh tövbesi; kişinin bir günah işlemesi ve bir daha asla ona dönmemesidir."
+    },
+    {
+      "id": "abdullah-bin-mesud-022",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Ya öğreten ol ya öğrenen ol; bu ikisinin dışında kalan (boş gezen) olma."
+    },
+    {
+      "id": "abdullah-bin-mesud-023",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Dünyanın berraklığı gitti, tortusu kaldı; bu yüzden ölüm her Müslüman için bir hediyedir."
+    },
+    {
+      "id": "abdullah-bin-mesud-024",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Birinizin sağlıklıyken ve mala hırslıyken harcadığı bir dirhem, ölürken vasiyet ettiği yüz dirhemden daha hayırlıdır."
+    },
+    {
+      "id": "abdullah-bin-mesud-025",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kalpler birer kaptır; onları Kur’an ile doldurun, başka şeyle meşgul etmeyin."
+    },
+    {
+      "id": "abdullah-bin-mesud-026",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Dünyayı isteyen ahiretine zarar verir, ahireti isteyen dünyasına zarar verir."
+    },
+    {
+      "id": "abdullah-bin-mesud-027",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "İman iki yarımdır: Yarısı sabır, yarısı şükürdür."
+    },
+    {
+      "id": "abdullah-bin-mesud-028",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Mümin için Allah’a kavuşuncaya kadar gerçek bir rahatlık yoktur."
+    },
+    {
+      "id": "abdullah-bin-mesud-029",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Öncekilerin ve sonrakilerin ilmini isteyen, Kur’an’ın manasını derinlemesine düşünsün."
+    },
+    {
+      "id": "abdullah-bin-mesud-030",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Birini övmekte de yermekte de acele etmeyin; zira bugün sizi sevindiren kişi yarın sizi üzebilir."
+    },
+    {
+      "id": "abdullah-bin-mesud-031",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Eğer birinizin bir kadın hoşuna giderse, onun (maddi/bedensel) kusurlarını ve çirkinliklerini hatırlasın."
+    },
+    {
+      "id": "abdullah-bin-mesud-032",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Gece namazına kalkamıyoruz\" diyenlere: \"Sizi günahlarınız zincire vurup oturtmuştur\" dedi."
+    },
+    {
+      "id": "abdullah-bin-mesud-033",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Dünyadan yine dünya ile vazgeçmeye çalışan, ateşi samanla söndürmeye çalışan gibidir."
+    },
+    {
+      "id": "abdullah-bin-mesud-034",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Birbirinizden ayrılmayın, yoksa helak olursunuz."
+    },
+    {
+      "id": "abdullah-bin-mesud-035",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "(Komşusu eziyet eden adama:) Git, o senin hakkında Allah’a isyan ediyorsa, sen onun hakkında Allah’a itaat et."
+    },
+    {
+      "id": "abdullah-bin-mesud-036",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "(Cehennem nasıldır diye sorana:) Onu görseydin, kalbin yerinden çıkardı!"
+    },
+    {
+      "id": "abdullah-bin-mesud-037",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "(Mukarrebun olmak istediğini söyleyen birine:) Ama burada öyle bir adam var ki (kendini kastederek), öldüğünde diriltilmemeyi dilerdi."
+    },
+    {
+      "id": "abdullah-bin-mesud-038",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "(Peşinden gelen insanlara:) Geri dönün! Zira bu, takip eden için zillet, takip edilen için fitnedir."
+    },
+    {
+      "id": "abdullah-bin-mesud-039",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Eğer benim kendim hakkında bildiklerimi bilseydiniz, başımdan aşağı toprak saçardınız."
+    },
+    {
+      "id": "abdullah-bin-mesud-040",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Şu iki sevimsiz şey ne güzeldir: Ölüm ve fakirlik. Vallahi benim için zenginlik veya fakirlik önemli değildir; hangisiyle imtihan edilirsem edileyim her ikisinde de Allah'tan bir hayır umarım. Zenginlikte şefkat ve şükür, fakirlikte ise iffet ve sabır vardır."
+    },
+    {
+      "id": "abdullah-bin-mesud-041",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kur’an’ı taşıyan kişi; insanlar uyurken gecesiyle, insanlar yerken gündüzüyle, insanlar sevinirken hüznüyle, insanlar gülerken ağlamasıyla, insanlar boş konuşurken sükutuyla ve insanlar kibirlenirken tevazusuyla tanınmalıdır. Kur’an taşıyıcısı kaba, gafil, gürültücü, bağırıp çağıran ve sert biri olmamalıdır."
+    },
+    {
+      "id": "abdullah-bin-mesud-042",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kim büyüklük taslarsa Allah onu alçaltır, kim tevazu gösterirse Allah onu yüceltir. Meleğin de şeytanın da kalbe verdiği bir fısıltı vardır; meleğin fısıltısı hayrı vaat etmek ve hakkı tasdik etmektir. Şeytanın fısıltısı ise şerri vaat etmek ve hakkı yalanlamaktır."
+    },
+    {
+      "id": "abdullah-bin-mesud-043",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Şu yakindendir (kesin imandandır): İnsanları razı etmek için Allah’ı gazaplandırmaman, Allah’ın verdiği rızık için kimseye (minnetle) hamd etmemen ve Allah’ın sana vermediği şey için kimseyi kınamaman. Allah’ın rızkını ne bir hırslı çabasıyla getirebilir ne de bir istemeyenin nefreti geri çevirebilir. Allah adaleti ve hilmiyle ferahlığı yakine, üzüntü ve kederi ise şüphe ve hoşnutsuzluğa yerleştirmiştir."
+    },
+    {
+      "id": "abdullah-bin-mesud-044",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "İlim pınarları, hidayet kandilleri olun. Evlerinizin bekçisi, gecenin ışıkları, kalbi taze, elbiseleri eski olanlar olun ki göklerde tanınasınız ama yeryüzünde gizli kalasınız."
+    },
+    {
+      "id": "abdullah-bin-mesud-045",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kafirin vücudunu en sağlam ama kalbini en hasta görürsünüz. Müminin ise kalbi en sağlam ama vücudu en zayıf olanına rastlarsınız. Vallahi, eğer kalpleriniz hasta ve vücutlarınız sağlamsa, Allah katında pislik böceklerinden daha değersiz olursunuz."
+    },
+    {
+      "id": "abdullah-bin-mesud-046",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Dininiz konusunda kimseyi körü körüne taklit etmeyin; o inanırsa inanıp o inkar ederse inkar etmeyin. Eğer mutlaka birine uyacaksanız ölenlere uyun, çünkü hayatta olan için fitne tehlikesi bitmemiştir."
+    },
+    {
+      "id": "abdullah-bin-mesud-047",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Bir adam 'bana öz ve faydalı sözler öğret' dediğinde ona şöyle dedi: Allah’a ibadet et ve O’na hiçbir şeyi ortak koşma. Kur’an neredeyse sen de orada ol. Hak, uzak ve sevimsiz birinden gelse de onu kabul et; batıl, yakın ve sevdiğin birinden gelse de onu reddet."
+    },
+    {
+      "id": "abdullah-bin-mesud-048",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Kalbini üç yerde ara: Kur’an dinlerken, zikir meclislerinde ve yalnız kaldığında. Eğer bu yerlerde kalbini bulamıyorsan, Allah’tan sana bir kalp lütfetmesini iste; çünkü senin (diri) bir kalbin yok demektir."
+    },
+    {
+      "id": "abdullah-bin-mesud-049",
+      "imamId": "abdullah-bin-mesud",
+      "imamName": "Abdullah bin Mesud",
+      "text": "Birinin yolundan gidecekseniz sahabenin yolundan gidin. Onlar bu ümmetin en faziletlileri, kalbi en temiz, ilmi en derin olanlarıydılar. Allah onları Peygamberine arkadaşlık etmek ve dinini ikame etmek için seçti. Onların kadrini bilin, izlerinden gidin ve güç yetirebildiğinizce ahlak ve yaşantılarına tutunun; çünkü onlar dosdoğru yol üzerindeydiler."
+    },
+    {
+      "id": "sufyan-es-sevri-001",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Şöyle denilirdi: Kendini bildiğin zaman, senin hakkında söylenenler sana zarar vermez."
+    },
+    {
+      "id": "sufyan-es-sevri-002",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Bizimle Mürcie arasındaki fark üçtür: Biz 'İman söz ve ameldir' deriz, onlar 'İman sözdür ama amel değildir' derler. Biz 'İman artar ve eksilir' deriz, onlar 'Ne artar ne eksilir' derler. Biz 'Nifak (vardır)' deriz, onlar 'Nifak yoktur' derler."
+    },
+    {
+      "id": "sufyan-es-sevri-003",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Züht, kaba yemekler yemek ve sert elbiseler giymek değildir; aksine emeli (dünya tutkusunu) kısa tutmak ve ölümü beklemektir."
+    },
+    {
+      "id": "sufyan-es-sevri-004",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Şöhretten sakın; kime gittiysem beni şöhretten nehyetmiştir (yasaklamıştır)."
+    },
+    {
+      "id": "sufyan-es-sevri-005",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Osman ve Ali -radıyallahu anhuma- sevgisi ancak soylu adamların kalbinde birleşir."
+    },
+    {
+      "id": "sufyan-es-sevri-006",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Kur'an okuyucusunun (kâri) sultana sığındığını görürsen bil ki o hırsızdır; zenginlere sığınırsa gösterişçidir (mürai). Sakın 'Belki bir haksızlığı giderir veya bir mazlumu savunur' denilerek aldatılma; çünkü bu, İblis'in Kur'an okuyucularını merdiven olarak kullandığı bir tuzağıdır."
+    },
+    {
+      "id": "sufyan-es-sevri-007",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Liderlik (riyaset) hırsı kadar zühtün az olduğu başka bir şey görmedim. Adamı yeme, içme, mal ve giysi konusunda züht ederken görürsün; fakat liderlik konusunda kendisiyle çekişilirse onu savunur ve (başkasına) düşmanlık besler."
+    },
+    {
+      "id": "sufyan-es-sevri-008",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Ehl-i Sünnet'e hayrı tavsiye edin (onlara iyi davranın), çünkü onlar gariptirler."
+    },
+    {
+      "id": "sufyan-es-sevri-009",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Hadis ehlinin (geçim konusunda) başkasından müstağni olması hoşuma gider; zira afetler ve insanların dilleri onlara daha hızlı ulaşır."
+    },
+    {
+      "id": "sufyan-es-sevri-010",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Bizim nezdimizde ilim ancak güvenilir kimseden gelen ruhsatlardır (kolaylıklardır); zorlaştırmayı ise herkes becerir."
+    },
+    {
+      "id": "sufyan-es-sevri-011",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Hadis bir izzettir; kim onunla dünyayı isterse dünyayı, kim ahireti isterse ahireti elde eder."
+    },
+    {
+      "id": "sufyan-es-sevri-012",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "İsa bin Meryem aleyhisselam şöyle dedi: Günahkarlara buğzederek Allah'a yaklaşın, onlardan uzaklaşarak O'nun rızasını arayın. 'Kiminle oturalım?' dediler. Şöyle dedi: Görülmesi size Allah'ı hatırlatan, ameli sizi ahirete özendiren ve konuşması ilminizi artıran kimseyle."
+    },
+    {
+      "id": "sufyan-es-sevri-013",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Bir zalimin bekası için dua eden kimse, Allah'a isyan edilmesini sevmiş demektir."
+    },
+    {
+      "id": "sufyan-es-sevri-014",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'ın taksim ettiğine razı ol zengin olursun, Allah'a tevekkül et güçlü olursun."
+    },
+    {
+      "id": "sufyan-es-sevri-015",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "İyiliği çok yapmaya bak, Allah kabrinde sana ünsiyet versin; haramlardan kaçın imanın lezzetini bulursun."
+    },
+    {
+      "id": "sufyan-es-sevri-016",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Cömert ol ki kusurların örtülsün; Allah senin için hesabı ve dehşetli anları hafifletsin."
+    },
+    {
+      "id": "sufyan-es-sevri-017",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Ahiret işlerinden birine niyetlendiğinde, Şeytan seninle o iş arasına girmeden önce kolları sıva ve acele et."
+    },
+    {
+      "id": "sufyan-es-sevri-018",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'a itaat edenlerden hiçbirine buğzetme; halka ve havasa karşı merhametli ol; seni terk etse bile akrabanla bağını kesme ve sana zulmedeni bağışla ki peygamberlerin ve şehitlerin arkadaşı olasın."
+    },
+    {
+      "id": "sufyan-es-sevri-019",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünya için orada kalacağın kadar, ahiret için de orada kalacağın kadar çalış."
+    },
+    {
+      "id": "sufyan-es-sevri-020",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünyada züht etmek insanlara karşı züht etmektir; bunun ilki de kendi nefsine karşı züht etmendir."
+    },
+    {
+      "id": "sufyan-es-sevri-021",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Nefsimden daha zor bir şeyi tedavi etmedim; bazen lehime olur, bazen aleyhime."
+    },
+    {
+      "id": "sufyan-es-sevri-022",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'ın taksim ettiğine razı ol zengin olursun, Allah'a tevekkül et güçlü olursun.\""
+    },
+    {
+      "id": "sufyan-es-sevri-023",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "İyiliği çok yapmaya bak, Allah kabrinde sana ünsiyet versin; haramlardan kaçın imanın lezzetini bulursun.\""
+    },
+    {
+      "id": "sufyan-es-sevri-024",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Cömert ol ki kusurların örtülsün; Allah senin için hesabı ve dehşetli anları hafifletsin.\""
+    },
+    {
+      "id": "sufyan-es-sevri-025",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Sürekli kınayan/ayıplayan biri olma ki insanların dillerinden kurtulasın; merhametli ve insanlar tarafından sevilen biri ol."
+    },
+    {
+      "id": "sufyan-es-sevri-026",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Az yemeye bak ki gece ibadetine (seher vaktine) sahip olasın; oruca sarıl zira o fücur kapısını kapatır, ibadet kapısını açar; az konuşmaya bak kalbin yumuşar; sükuta sarıl takvaya (verâ) sahip olasın."
+    },
+    {
+      "id": "sufyan-es-sevri-027",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'a itaat edenlerden hiçbirine buğzetme; halka ve havasa karşı merhametli ol; seni terk etse bile akrabanla bağını kesme ve sana zulmedeni bağışla ki peygamberlerin ve şehitlerin arkadaşı olasın.\""
+    },
+    {
+      "id": "sufyan-es-sevri-028",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Ahiret işlerinden birine niyetlendiğinde, Şeytan seninle o iş arasına girmeden önce kolları sıva ve acele et.\""
+    },
+    {
+      "id": "sufyan-es-sevri-029",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'ın huzuruna seninle O'nun arasındaki yetmiş günahla çıkman, kullarla arandaki tek bir günahla çıkmandan daha hafiftir."
+    },
+    {
+      "id": "sufyan-es-sevri-030",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Sizi yemekten nehyetmedim (yasaklamadım) fakat nereden yediğinize bakın; Allah 'Her mescitte zinetinizi alın, yiyin ve için' buyururken sizi yemekten nasıl nehyederim?"
+    },
+    {
+      "id": "sufyan-es-sevri-031",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünyanın misali, üzerinde bal olan bir ekmek gibidir; bir sinek ona uğradığında kanatları kopar, kuru bir ekmeğe uğradığında ise selâmetle geçer."
+    },
+    {
+      "id": "sufyan-es-sevri-032",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Eğer hayvanlar sizin ölüm hakkında bildiklerinizi bilselerdi, onlardan semiz (yağlı) olanını yiyemezdiniz."
+    },
+    {
+      "id": "sufyan-es-sevri-033",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünyadan bir adama bir şey verilmemiştir ki ona 'Bunu al ve beraberinde bir o kadar da hüzün al' denilmiş olmasın."
+    },
+    {
+      "id": "sufyan-es-sevri-034",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "İlahî; hayvanları çoban engeller de onlar hevalarından vazgeçerler; görüyorum ki Kitabın beni hevamdan engellemiyor; vay halime!"
+    },
+    {
+      "id": "sufyan-es-sevri-035",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Hiçbir şeyin kendisine gizli kalmadığı Zât'ın (Allah'ın) gözetiminde olduğunu unutma; vefaya sahip olandan ümit et; cezaya sahip olandan ise sakın."
+    },
+    {
+      "id": "sufyan-es-sevri-036",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Su içmek isterim de bir adam benden önce davranıp bana su içirirse, sanki kemiklerimden birini kırmış gibi olurum; çünkü ona karşılık veremem (minneti altında kalırım)."
+    },
+    {
+      "id": "sufyan-es-sevri-037",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dilinle, dişlerini kıracak şeyler konuşma."
+    },
+    {
+      "id": "sufyan-es-sevri-038",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Kendini bildiğin zaman, senin hakkında söylenenler sana zarar vermez.\""
+    },
+    {
+      "id": "sufyan-es-sevri-039",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Kardeşin seni ziyaret ettiğinde ona 'Yemek yer misin?' veya 'Sana bir şey ikram edeyim mi?' deme; ikram et, yerse yer yemezse kaldırırsın."
+    },
+    {
+      "id": "sufyan-es-sevri-040",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Eğer yakin kalbe gerektiği gibi yerleşseydi; sevinçten, hüzünden, cennet özleminden veya cehennem korkusundan dolayı kalp uçardı."
+    },
+    {
+      "id": "sufyan-es-sevri-041",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Allah'ın gazabından şu üç şeyde sakın: Emrettiği şeyde kusur etmekten, taksim ettiğine razı olmadığını görmesinden ve dünyadan bir şey isteyip de bulamadığında Rabbine öfkelenmenden."
+    },
+    {
+      "id": "sufyan-es-sevri-042",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Nefsimden daha zor bir şeyi tedavi etmedim; bazen aleyhime olur, bazen lehime.\""
+    },
+    {
+      "id": "sufyan-es-sevri-043",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Zenginlerin fakirlerin yanında mütevazı olması (tezellülü) ne güzeldir; fakirlerin zenginlerin yanında zillete düşmesi ne çirkindir."
+    },
+    {
+      "id": "sufyan-es-sevri-044",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "İnsanlar üzerine öyle bir zaman gelir ki kalpler ölür, bedenler ise diridir."
+    },
+    {
+      "id": "sufyan-es-sevri-045",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünya için orada kalacağın kadar, ahiret için de orada kalacağın kadar çalış.\""
+    },
+    {
+      "id": "sufyan-es-sevri-046",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Gizli halini (seriretini) düzelt ki Allah senin aşikâr halini düzeltsin; Allah ile aranı düzelt ki Allah seninle insanlar arasını düzeltsin; ahiretin için çalış ki Allah dünya işinde sana yetsin; dünyanı ahiretin karşılığında sat ki her ikisini birden kazanasın; ahiretini dünyan karşılığında satma ki her ikisini birden kaybedesin."
+    },
+    {
+      "id": "sufyan-es-sevri-047",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Kahramanların işini yap: Helalinden kazanmak ve aileye harcamak."
+    },
+    {
+      "id": "sufyan-es-sevri-048",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Resulullah sallallahu aleyhi ve sellem'den bana ulaşan hiçbir hadis yoktur ki onunla en az bir kere amel etmiş olmayayım."
+    },
+    {
+      "id": "sufyan-es-sevri-049",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Eskiden mal sevilmezdi (kerih görülürdü) fakat bugün o müminin kalkanıdır."
+    },
+    {
+      "id": "sufyan-es-sevri-050",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Arkamda Allah'ın hesabını soracağı on bin dirhem bırakmam, insanlara muhtaç olmamdan bana daha sevimlidir."
+    },
+    {
+      "id": "sufyan-es-sevri-051",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Bid'at, İblis'e günahtan (mâsiyetten) daha sevimlidir; zira günahtan tövbe edilir fakat bid'atten tövbe edilmez. Allah Teala bid'at sahibinin amelini bid'atini bırakana kadar kabul etmeyi reddetmiştir."
+    },
+    {
+      "id": "sufyan-es-sevri-052",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Eğer bir adam evin en içindeki bir odada hadis konusunda yalan söylemeye niyetlense, Allah onu mutlaka ortaya çıkarır."
+    },
+    {
+      "id": "sufyan-es-sevri-053",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünyadaki her düşmanlığın aslına baktık ve onu aşağılık kimselere iyilik yapmak olarak bulduk."
+    },
+    {
+      "id": "sufyan-es-sevri-054",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Dünyadan bir adama bir şey verilmemiştir ki ona 'Bunu al ve beraberinde bir o kadar da hüzün al' denilmiş olmasın.\""
+    },
+    {
+      "id": "sufyan-es-sevri-055",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Şu üçü sabırdandır: Musibetini anlatma, acını anlatma ve nefsini temize çıkarma."
+    },
+    {
+      "id": "sufyan-es-sevri-056",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Mal bu ümmetin hastalığıdır, âlim ise bu ümmetin tabibidir; eğer tabib hastalığı kendisine bulaştırırsa insanları ne zaman iyileştirir?"
+    },
+    {
+      "id": "sufyan-es-sevri-057",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Şaka yapma heybetin gider, yalan söyleme nurun gider. Şu iki hasletten sakın: Öfke (sabırsızlık) ve tembellik; zira öfkelenirsen hakka sabredemezsin, tembelleşirsen hakkı eda edemezsin."
+    },
+    {
+      "id": "sufyan-es-sevri-058",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Şaka yapma heybetin gider, yalan söyleme nurun gider. Şu iki hasletten sakın: Öfke (sabırsızlık) ve tembellik; zira öfkelenirsen hakka sabredemezsin, tembelleşirsen hakkı eda edemezsin.\""
+    },
+    {
+      "id": "sufyan-es-sevri-059",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Kendini bilen kimseye, insanların onun hakkında ne dediği zarar vermez.\""
+    },
+    {
+      "id": "sufyan-es-sevri-060",
+      "imamId": "sufyan-es-sevri",
+      "imamName": "Süfyan es-Sevrî",
+      "text": "Ömrüyle oyun oynayan (onu boşa harcayan) ekim günlerini zayi etmiştir; ekim günlerini zayi eden ise hasat günlerinde pişman olur."
+    },
+    {
+      "id": "omer-bin-hattab-001",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Bir kimsenin namazına, orucuna bakmayın; konuştuğunda doğru söylüyor mu, kendisine bir şey emanet edildiğinde sadakat gösteriyor mu ve dünya (menfaati) karşısında haramdan sakınıyor mu, ona bakın."
+    },
+    {
+      "id": "omer-bin-hattab-002",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kişiye yalan olarak, her duyduğunu anlatması yeter."
+    },
+    {
+      "id": "omer-bin-hattab-003",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kimin kelamı çok olursa hatası da çok olur."
+    },
+    {
+      "id": "omer-bin-hattab-004",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Mümin kardeşinin sana olan sevgisini şu üç şey pekiştirir: Karşılaştığında ona önce senin selam vermen, ona en sevdiği isimle hitap etmen ve mecliste ona yer açman."
+    },
+    {
+      "id": "omer-bin-hattab-005",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kul ile rızkı arasında bir perde vardır. Eğer kul razı olur ve kanaat ederse rızkı ona gelir. Eğer o perdeyi yırtıp (hırsla) saldırırsa, kendisine takdir edilen rızıktan fazlasına asla ulaşamaz."
+    },
+    {
+      "id": "omer-bin-hattab-006",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Vay o kimseye ki derdi dünya, işi ise günah olmuştur! Yarın (huzura) nasıl çıkacak? Ne ekerseniz onu biçersiniz."
+    },
+    {
+      "id": "omer-bin-hattab-007",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Hiçbiriniz rızık aramayı bırakıp 'Allah'ım beni rızıklandır' diyerek oturmasın. Bilirsiniz ki gökyüzü ne altın yağdırır ne de gümüş."
+    },
+    {
+      "id": "omer-bin-hattab-008",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "(Birini öven birine sordu:) \"Onunla yolculuk yaptın mı?\" Hayır. \"Onunla bir alışverişin veya komşuluğun oldu mu?\" Hayır. \"Vallahi, kendisinden başka ilah olmayan Allah'a yemin olsun ki sen onu tanımıyorsun."
+    },
+    {
+      "id": "omer-bin-hattab-009",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Sırrını saklayan kimsenin dizginleri kendi elindedir. Kendisini şüphe uyandıracak durumlara düşüren kimse ise, kendisine suizanda bulunanı kınamasın."
+    },
+    {
+      "id": "omer-bin-hattab-010",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Sadık dostlar edinmeye bak ve onların arasında yaşa. Çünkü onlar bollukta süs, darlıkta ise hazırlıktır."
+    },
+    {
+      "id": "omer-bin-hattab-011",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Mümini asla yalancı bulamazsın."
+    },
+    {
+      "id": "omer-bin-hattab-012",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Bütün hayır 'Rıza'dadır. Eğer razı olabiliyorsan ol, olamıyorsan sabret."
+    },
+    {
+      "id": "omer-bin-hattab-013",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Eğer bir adamın namazı ihmal ettiğini görürseniz, vallahi o, namaz dışındaki işlerini daha çok ihmal eder."
+    },
+    {
+      "id": "omer-bin-hattab-014",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Nasuh tövbesi; kulun bir günah işleyip sonra ona tövbe etmesi ve bir daha asla o günaha dönmemesidir."
+    },
+    {
+      "id": "omer-bin-hattab-015",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kişinin aslı aklı, şerefi dini, mürüvveti (insanlığı) ise ahlakıdır."
+    },
+    {
+      "id": "omer-bin-hattab-016",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Biz hayatımızın en hayırlı anlarını sabırla elde ettik."
+    },
+    {
+      "id": "omer-bin-hattab-017",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Tövbe edenlerle beraber oturun, zira onların kalpleri daha ince ve duyarlıdır."
+    },
+    {
+      "id": "omer-bin-hattab-018",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Aciz kişi, kendi nefsini idare etmekten aciz olandır."
+    },
+    {
+      "id": "omer-bin-hattab-019",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Sevgin bir tutku (aşırılık), nefretin de bir yıkım olmasın."
+    },
+    {
+      "id": "omer-bin-hattab-020",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kimin gülmesi çok olursa, heybeti azalır."
+    },
+    {
+      "id": "omer-bin-hattab-021",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Müslüman kardeşinin ağzından çıkan bir sözü, hayra yorma imkanın varken kötüye yorman helal değildir."
+    },
+    {
+      "id": "omer-bin-hattab-022",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Kendi öngörüsünden/sezgisinden faydalanamayan kimse, kendisinden de faydalanamaz."
+    },
+    {
+      "id": "omer-bin-hattab-023",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Hz. Ömer çocuklardan istiğfar etmelerini ister ve \"Siz henüz günah işlemediniz\" derdi."
+    },
+    {
+      "id": "omer-bin-hattab-024",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Allah'ın haram kıldığı şeylerden sakınmak (takva) ile ancak Allah duaları ve tesbihatı kabul eder."
+    },
+    {
+      "id": "omer-bin-hattab-025",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Bir adamın ahlakına, onu öfke anında denemeden güvenme."
+    },
+    {
+      "id": "omer-bin-hattab-026",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Çocuklarınıza ok atmayı, yüzmeyi ve ata binmeyi öğretin."
+    },
+    {
+      "id": "omer-bin-hattab-027",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Ameller birbirlerine karşı övündüler; sadaka 'Ben sizin en faziletlinizim' dedi."
+    },
+    {
+      "id": "omer-bin-hattab-028",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Oburluktan sakının; zira o hayatta bir ağırlık, ölümde ise kötü bir kokudur."
+    },
+    {
+      "id": "omer-bin-hattab-029",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Lider (makam sahibi) olmadan önce fıkıh/ilim öğrenin."
+    },
+    {
+      "id": "omer-bin-hattab-030",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "İlim öğrenin; ilimle birlikte vakarı ve sekineti de öğrenin."
+    },
+    {
+      "id": "omer-bin-hattab-031",
+      "imamId": "omer-bin-hattab",
+      "imamName": "Ömer bin Hattab",
+      "text": "Çoluk çocuğunuzu çoğaltın; çünkü kimin vesilesiyle rızıklandırılacağınızı bilemezsiniz."
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 const LibraryIndex = lazy(() => import("./pages/LibraryIndex"));
 const LibraryDetail = lazy(() => import("./pages/LibraryDetail"));
 const LibraryReader = lazy(() => import("./pages/LibraryReader"));
+const SelefIncileri = lazy(() => import("./pages/SelefIncileri"));
 
 const queryClient = new QueryClient();
 const RouteFallback = (
@@ -48,6 +49,14 @@ const App = () => (
             element={(
               <Suspense fallback={RouteFallback}>
                 <LibraryReader />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/selef-incileri"
+            element={(
+              <Suspense fallback={RouteFallback}>
+                <SelefIncileri />
               </Suspense>
             )}
           />

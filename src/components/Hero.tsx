@@ -16,10 +16,10 @@ export const Hero = () => {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-      <section
-        ref={containerRef}
-        className="relative min-h-[84vh] md:min-h-[85vh] overflow-hidden"
-      >
+    <section
+      ref={containerRef}
+      className="relative min-h-[84vh] md:min-h-[85vh] overflow-hidden"
+    >
       <div className="absolute inset-0 gradient-hero" />
       <div className="absolute inset-0 hero-glow opacity-50 md:opacity-80" />
       <div className="absolute inset-0 grid-overlay opacity-25 md:opacity-40" />
@@ -60,6 +60,9 @@ export const Hero = () => {
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-muted-foreground">
           <a className="hover:text-foreground transition-colors" href="#saatlik-ilham">
             Saatlik
+          </a>
+          <a className="hover:text-foreground transition-colors" href="#selef-incileri">
+            Selef
           </a>
           <Link className="hover:text-foreground transition-colors" to="/kutuphane">
             Kütüphane
@@ -129,6 +132,12 @@ export const Hero = () => {
                 href="#saatlik-ilham"
               >
                 Saatlik Sahih Hadis
+              </a>
+              <a
+                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
+                href="#selef-incileri"
+              >
+                Selef İncileri
               </a>
             </div>
           </motion.div>
