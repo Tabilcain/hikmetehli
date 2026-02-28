@@ -6,6 +6,7 @@ import { GradientMesh } from "@/components/GradientMesh";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { PageTransition } from "@/components/PageTransition";
 import { LibraryPreviewSection } from "@/components/LibraryPreviewSection";
+import { SelefPreviewSection } from "@/components/SelefPreviewSection";
 
 const HourlyContentSection = lazy(() =>
   import("@/components/HourlyContentSection").then((module) => ({ default: module.HourlyContentSection })),
@@ -73,6 +74,8 @@ const Index = () => {
         <Hero />
 
         <LibraryPreviewSection />
+
+        <SelefPreviewSection />
 
         {showDeferredSections ? (
           <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>

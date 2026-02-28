@@ -19,10 +19,18 @@ function seededRandom(seed: number): number {
   return x - Math.floor(x);
 }
 
+export function selectHourlyItem<T>(seed: number, items: T[]): T {
+  if (!items.length) {
+    throw new Error("Saatlik içerik seçimi için liste boş olamaz.");
+  }
+
+  const index = Math.floor(seededRandom(seed * 7 + 13) * items.length);
+  return items[index];
+}
+
 export function selectHourlyHadith<THadith extends HadithLike>(
   seed: number,
   hadiths: THadith[],
 ): THadith {
-  const hadithIndex = Math.floor(seededRandom(seed * 7 + 13) * hadiths.length);
-  return hadiths[hadithIndex];
+  return selectHourlyItem(seed, hadiths);
 }

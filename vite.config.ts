@@ -38,6 +38,7 @@ export default defineConfig(() => ({
         "quran.json",
         "sitemap.xml",
         "library/catalog.v1.json",
+        "selef/quotes.v1.json",
       ],
       manifest: {
         name: "Hikmet Ehli",
@@ -86,6 +87,17 @@ export default defineConfig(() => ({
             handler: "CacheFirst",
             options: {
               cacheName: "quran-cache",
+              expiration: {
+                maxEntries: 1,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
+          {
+            urlPattern: ({ url }) => url.pathname.endsWith("/selef/quotes.v1.json"),
+            handler: "CacheFirst",
+            options: {
+              cacheName: "selef-quotes-cache",
               expiration: {
                 maxEntries: 1,
                 maxAgeSeconds: 60 * 60 * 24 * 30,
