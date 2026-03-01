@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-02-28T22:48:17.681Z",
+  "generatedAt": "2026-03-01T09:02:29.461Z",
   "imams": [
     {
       "id": "imam-safii",
@@ -41,6 +41,31 @@
       "id": "omer-bin-hattab",
       "name": "Ömer bin Hattab",
       "count": 31
+    },
+    {
+      "id": "fudayl-bin-iyad",
+      "name": "Fudayl bin İyad",
+      "count": 44
+    },
+    {
+      "id": "ahmed-bin-hanbel",
+      "name": "Ahmed bin Hanbel",
+      "count": 16
+    },
+    {
+      "id": "malik-bin-dinar",
+      "name": "Malik bin Dinar",
+      "count": 32
+    },
+    {
+      "id": "ibrahim-bin-edhem",
+      "name": "İbrahim bin Edhem",
+      "count": 28
+    },
+    {
+      "id": "yahya-bin-muaz",
+      "name": "Yahya bin Muaz",
+      "count": 55
     }
   ],
   "quotes": [
@@ -2041,6 +2066,1056 @@
       "imamId": "omer-bin-hattab",
       "imamName": "Ömer bin Hattab",
       "text": "Çoluk çocuğunuzu çoğaltın; çünkü kimin vesilesiyle rızıklandırılacağınızı bilemezsiniz."
+    },
+    {
+      "id": "fudayl-bin-iyad-001",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kardeşinin yetmiş hatasına tahammül et. Ona: 'Bu nasıl olur ey Ebû Ali?' denildi. Şöyle dedi: 'Çünkü Allah için kardeş olduğun kişi yetmiş kere hata yapmaz.'"
+    },
+    {
+      "id": "fudayl-bin-iyad-002",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Korku ümitten (recâ) efdaldir. Kul sağlıklı olduğu sürece böyledir; ancak ona ölüm geldiğinde ümit korkudan efdaldir."
+    },
+    {
+      "id": "fudayl-bin-iyad-003",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kişinin Allah Teâlâ'dan korkusu, Allah Teâlâ hakkındaki ilmi kadardır."
+    },
+    {
+      "id": "fudayl-bin-iyad-004",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Hayret, hem de ne büyük hayret; Allah'ı tanıyıp da bu tanımadan sonra O'na isyan edene!"
+    },
+    {
+      "id": "fudayl-bin-iyad-005",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "İki haslet kalbi katılaştırır: Çok konuşmak ve çok yemek."
+    },
+    {
+      "id": "fudayl-bin-iyad-006",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "İnsanları anmak hastalık, Allah'ı anmak şifadır."
+    },
+    {
+      "id": "fudayl-bin-iyad-007",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Müminin sözü hikmet, susması tefekkür, bakışı ibret, ameli iyiliktir; eğer böyle olursan sürekli ibadet üzerindesin demektir."
+    },
+    {
+      "id": "fudayl-bin-iyad-008",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kur'an kendisiyle amel edilsin diye indirildi; insanlar ise onun okunmasını amel edindiler."
+    },
+    {
+      "id": "fudayl-bin-iyad-009",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kur'an taşıyıcısına (hafıza) yakışan, ne halifelere ne de onlardan aşağıdakilere ihtiyacının olmasıdır; aksine halkın ihtiyaçlarının ona olması gerekir."
+    },
+    {
+      "id": "fudayl-bin-iyad-010",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Bedbahtlığın alameti beştir: Kalp katılığı, göz kuruluğu (ağlayamama), haya azlığı, dünyaya rağbet ve uzun emel."
+    },
+    {
+      "id": "fudayl-bin-iyad-011",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Eğer kabul olunacak bir duam olsaydı, onu sultan (devlet başkanı) için ederdim; çünkü onun ıslahı ile tebaa da ıslah olur."
+    },
+    {
+      "id": "fudayl-bin-iyad-012",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Eğer alimlerimizde sabır olsaydı, şunların -yani mülk sahiplerinin- kapılarına gitmezlerdi."
+    },
+    {
+      "id": "fudayl-bin-iyad-013",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Şarkı (musiki), zinanın efsunudur."
+    },
+    {
+      "id": "fudayl-bin-iyad-014",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Mümin örter ve nasihat eder, facir ise rezil eder ve kınar."
+    },
+    {
+      "id": "fudayl-bin-iyad-015",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Liderlik (riyaset) sevdasına düşen her kimse mutlaka haset eder, saldırır, insanların ayıplarını araştırır ve birinin hayırla anılmasından hoşlanmaz."
+    },
+    {
+      "id": "fudayl-bin-iyad-016",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kim Allah'tan korkarsa, korkusu onu her türlü hayra yönlendirir."
+    },
+    {
+      "id": "fudayl-bin-iyad-017",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Bazı kitaplarda buldum: Beni tanıyan biri Bana isyan ederse, ona Beni tanımayanı musallat ederim."
+    },
+    {
+      "id": "fudayl-bin-iyad-018",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Fudayl bin İyâz'a tevazu hakkında sorulduğunda şöyle dedi: Hakka boyun eğmek, ona tabi olmak ve kimden gelirse gelsin onu kabul etmektir."
+    },
+    {
+      "id": "fudayl-bin-iyad-019",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Şehvetlerin hükmettiği kimseden başarı (tevfik) kaynakları kesilir."
+    },
+    {
+      "id": "fudayl-bin-iyad-020",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Rabbimin (rızkıma kefil olup) rızasından sonra rızkım için hüzünlenmekten O'ndan haya ederim."
+    },
+    {
+      "id": "fudayl-bin-iyad-021",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Âlim, bildiğiyle amel edene kadar cahildir; amel ettiğinde ise âlim olur."
+    },
+    {
+      "id": "fudayl-bin-iyad-022",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Günahtan vazgeçmeden yapılan istiğfar, yalancıların tövbesidir."
+    },
+    {
+      "id": "fudayl-bin-iyad-023",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Mahlukatın senden heybet duyması, senin Allah'tan duyduğun heybet kadardır."
+    },
+    {
+      "id": "fudayl-bin-iyad-024",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Oturup konuştuğunda, yerilmek veya övülmek senin için bir olduğunda konuş."
+    },
+    {
+      "id": "fudayl-bin-iyad-025",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Allah Azze ve Celle senden ancak niyetini ve iradeni ister."
+    },
+    {
+      "id": "fudayl-bin-iyad-026",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "(İnsanları tanıyan rahat eder) sözüyle -Allahualem- onların ne fayda ne de zarar verebileceklerini kastetmektedir."
+    },
+    {
+      "id": "fudayl-bin-iyad-027",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Razı olan kişi, makamının üstündekini temenni etmez."
+    },
+    {
+      "id": "fudayl-bin-iyad-028",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Rızık için asla dertlenmedim."
+    },
+    {
+      "id": "fudayl-bin-iyad-029",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kusursuz bir kardeş arayan, kardeşsiz kalır."
+    },
+    {
+      "id": "fudayl-bin-iyad-030",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Dünyayı yücelten hiç kimse görmedim ki onda gözü aydın olsun (huzur bulsun) veya ondan faydalansın; dünyayı küçümseyen ise ondan faydalanmıştır."
+    },
+    {
+      "id": "fudayl-bin-iyad-031",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Bir adam Fudayl bin İyâz'a: 'Ey Ebû Ali, kişi Allah Teâlâ'ya olan sevgisinin zirvesine ne zaman ulaşır?' diye sordu. Fudayl: 'Allah'ın sana vermesi ile vermemesi senin katında bir olduğunda, O'nun sevgisinin zirvesine ulaşmışsın demektir' dedi."
+    },
+    {
+      "id": "fudayl-bin-iyad-032",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "İnsanlar doğruluk (sıdk) ve helal talep etmekten daha üstün bir şeyle süslenmediler."
+    },
+    {
+      "id": "fudayl-bin-iyad-033",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Mümin gıpta eder haset etmez; gıpta imandan, haset ise nifaktandır."
+    },
+    {
+      "id": "fudayl-bin-iyad-034",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Anılmayı (şöhreti) seven anılmaz; anılmaktan hoşlanmayan ise anılır."
+    },
+    {
+      "id": "fudayl-bin-iyad-035",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Dilini koru, işine bak, zamanını tanı ve mekanını gizle."
+    },
+    {
+      "id": "fudayl-bin-iyad-036",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Allah'tan korkana kimse zarar veremez; Allah'tan başkasından korkana ise kimse fayda veremez."
+    },
+    {
+      "id": "fudayl-bin-iyad-037",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Vallahi, bir köpeğe veya hınzıra haksız yere eziyet etmen helal değilken, bir Müslüman'a nasıl eziyet edersin?"
+    },
+    {
+      "id": "fudayl-bin-iyad-038",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Dünyadan zühd etmedikçe (yüz çevirmedikçe) imanın lezzetini tatmak kalplerinize haramdır."
+    },
+    {
+      "id": "fudayl-bin-iyad-039",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Günah senin katında ne kadar küçülürse Allah katında o kadar büyür; senin katında ne kadar büyürse Allah katında o kadar küçülür."
+    },
+    {
+      "id": "fudayl-bin-iyad-040",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Gece kıyamına ve gündüz orucuna güç yetiremiyorsan, bil ki sen mahrumsun; günahların seni bağlamıştır."
+    },
+    {
+      "id": "fudayl-bin-iyad-041",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Eğer kabul olunacak bir duam olsaydı, onu sadece imam (önder) için ederdim; zira imamın ıslahı, beldelerin ve kulların ıslahıdır."
+    },
+    {
+      "id": "fudayl-bin-iyad-042",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Ahlakı kötü olanın dini, hasebi ve mürüvveti kusurlu olur (lekelenir)."
+    },
+    {
+      "id": "fudayl-bin-iyad-043",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Bildiğiyle amel eden, bilmediği şeyden müstağni olur; bildiğiyle amel edeni Allah bilmediği şeye muvaffak kılar."
+    },
+    {
+      "id": "fudayl-bin-iyad-044",
+      "imamId": "fudayl-bin-iyad",
+      "imamName": "Fudayl bin İyad",
+      "text": "Kulun Allah'tan korkusu, Allah hakkındaki ilmi kadardır; dünyadaki zühdü ise ahirete olan rağbeti kadardır."
+    },
+    {
+      "id": "ahmed-bin-hanbel-001",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Oğlu Abdullah bin Ahmed bin Hanbel anlatıyor: Babama; \"Ey babacığım, Şâfiî nasıl bir adamdı? Zira senin ona çokça dua ettiğini işitiyorum\" dedim. Babam şöyle cevap verdi: \"Yavrum; Şâfiî dünya için güneş, insanlar için ise afiyet (sağlık) gibiydi. Bak bakalım, bu ikisinin yerini tutacak veya bunların halefi olabilecek başka bir şey var mı?"
+    },
+    {
+      "id": "ahmed-bin-hanbel-002",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "İnsanların ilme olan ihtiyacı, ekmeğe ve suya olan ihtiyaçlarından daha fazladır. Çünkü ilme her saat ihtiyaç duyulur; ekmek ve suya ise günde sadece bir veya iki kez ihtiyaç vardır."
+    },
+    {
+      "id": "ahmed-bin-hanbel-003",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Bana ulaşan her bir hadis ile mutlaka amel ettim. Onunla amel ettikçe de o hadis zihnime nakşoldu (onu ezberledim)."
+    },
+    {
+      "id": "ahmed-bin-hanbel-004",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Tevekkülün özü; işi bütünüyle şanı yüce olan Allah’a havale etmek ve O’na tam manasıyla güvenmektir."
+    },
+    {
+      "id": "ahmed-bin-hanbel-005",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Göğüsleri Kur’an ile dolu olan adamların ciğerlerini (maneviyatlarını ve dertlerini) dünyanın eritip bitirmesi bana çok ağır geliyor."
+    },
+    {
+      "id": "ahmed-bin-hanbel-006",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Bizler miskin (aciz) bir topluluğuz; rızıklarımızı yiyor ve ecelimizi bekliyoruz."
+    },
+    {
+      "id": "ahmed-bin-hanbel-007",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "İmam Ahmed’e: \"Bizimle Rahman’ın Arş’ı arasında ne kadar mesafe var?\" diye soruldu. Buyurdu ki: \"Sadık (ihlaslı) bir kalpten çıkan sadık bir dua kadar."
+    },
+    {
+      "id": "ahmed-bin-hanbel-008",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "İmam Ahmed’e: \"Kul ne zaman rahata erer?\" diye soruldu. Buyurdu ki: \"Ayağını cennete attığı ilk adımda."
+    },
+    {
+      "id": "ahmed-bin-hanbel-009",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Allah’ım! Yüzümü Senden başkasına secde etmekten koruduğun gibi, Senden başkasından bir şey istemekten (el açmaktan) da öylece koru."
+    },
+    {
+      "id": "ahmed-bin-hanbel-010",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Eğer Allah’ın sana sevdiğin şeyleri vermeye devam etmesini istiyorsan, sen de O’nun sevdiği işler üzere kalmaya devam et."
+    },
+    {
+      "id": "ahmed-bin-hanbel-011",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Tevekkül; insanlardan bir şey bekleme arzusunu bütünüyle kesmek ve onlara karşı (umut bağlama hususunda) bir yeis (ümit kesme) içinde olmaktır."
+    },
+    {
+      "id": "ahmed-bin-hanbel-012",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Kalpler, ancak helal lokma yemekle yumuşar."
+    },
+    {
+      "id": "ahmed-bin-hanbel-013",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Daima hayra niyet et; çünkü hayra niyet ettiğin sürece hayır üzere kalmaya devam edersin."
+    },
+    {
+      "id": "ahmed-bin-hanbel-014",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Takvayı azığın yap, ahireti ise daima gözünün önünde bulundur."
+    },
+    {
+      "id": "ahmed-bin-hanbel-015",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Gençliği, sanki yenimin (kolumun) içinde duran ve aniden yere düşen bir şeye benzetiyorum (o kadar çabuk geçti)."
+    },
+    {
+      "id": "ahmed-bin-hanbel-016",
+      "imamId": "ahmed-bin-hanbel",
+      "imamName": "Ahmed bin Hanbel",
+      "text": "Eğer niyet halis (sadece Allah rızası için) ise, ilimle kıyaslanabilecek (onun yerini tutacak) başka hiçbir şey yoktur."
+    },
+    {
+      "id": "malik-bin-dinar-001",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Bir kimseye kötülük olarak; kendisinin salih (iyi) biri olmaması ve buna rağmen salihler hakkında ileri geri konuşması yeter."
+    },
+    {
+      "id": "malik-bin-dinar-002",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Şunu bil ki; bir insanın duyduğu her şeyi konuşması, büyük bir manevi bozgunculuk ve yıkımdır.\" (Müslim, Mukaddime 5: \"Her duyduğunu söylemesi kişiye yalan olarak yeter\" hadisine işareten)."
+    },
+    {
+      "id": "malik-bin-dinar-003",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Âlim, ilmiyle amel etmediği vakit; onun vaazı ve öğüdü, yağmur damlasının sarp ve kaygan taştan kayıp gitmesi gibi kalplerden kayıp gider."
+    },
+    {
+      "id": "malik-bin-dinar-004",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Kim Allah'ın kelâmıyla (Kur’an ile) ünsiyet kurup huzur bulmaz da mahlukatın lakırdısına sığınırsa; onun ilmi az, kalbi kör ve işi zayi olmuş demektir."
+    },
+    {
+      "id": "malik-bin-dinar-005",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Düşmanlarınızla cihad ettiğiniz gibi, nefsi arzularınızla (hevânızla) da öylece cihad edin."
+    },
+    {
+      "id": "malik-bin-dinar-006",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Basra valisi, etrafına azamet saçarak Mâlik bin Dinar'ın yanından geçti. Mâlik ona: \"Bu yürüyüşünü biraz hafiflet (kibirden sakın)!\" diye seslendi. Valinin hizmetçileri Mâlik’in üzerine yürümeye yeltenince vali: \"Bırakın onu!\" dedi ve Mâlik’e dönerek: \"Beni tanımıyor musun?\" diye sordu. Mâlik şu muazzam cevabı verdi: \"Seni benden daha iyi kim tanıyabilir? Başlangıcın reddedilmiş bir nutfe (meni), sonun ise kokuşmuş bir leştir. Bu ikisi arasında ise içinde pislik (dışkı) taşıyıp durmaktasın!\" Vali bu sözler üzerine başını öne eğdi ve sessizce uzaklaştı."
+    },
+    {
+      "id": "malik-bin-dinar-007",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Kim dünyanın şehvetlerine galip gelirse, işte o kimse şeytanın bile gölgesinden korkup kaçtığı kişidir."
+    },
+    {
+      "id": "malik-bin-dinar-008",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Kurt ile kuzu ne zaman barışırsa, mümin ile münafık da ancak o zaman uzlaşır (asla uzlaşamazlar)."
+    },
+    {
+      "id": "malik-bin-dinar-009",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Mâlik bin Dinar hem ağlar hem arkadaşlarını ağlatırdı. Ağlarken şöyle derdi: \"Allah’a itaatte sabredin; zira bu dünyadaki sabır az bir süredir, kazanılacak ganimet ise sonsuzdur. Ölüm ve hesap ise sandığınızdan çok daha yakındır."
+    },
+    {
+      "id": "malik-bin-dinar-010",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Size yemin ederim ki; eğer münafıkların (hakikatlerini ele veren) kuyrukları çıksaydı, müminler yeryüzünde yürüyecek yer bulamazlardı."
+    },
+    {
+      "id": "malik-bin-dinar-011",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Varacağı yerin ölüm, gireceği yerin kabir olduğunu bildiği halde; insanın dünyada gözünün arkada kalmaması ve hayatın tadına dalması ne kadar da hayret vericidir!"
+    },
+    {
+      "id": "malik-bin-dinar-012",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Hainlere güvenilir bir sırdaş/emanetçi olmak, kişiye ihanet olarak yeter."
+    },
+    {
+      "id": "malik-bin-dinar-013",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Arzu ederdim ki; Kıyamet günü Rabbimin huzuruna çıktığımda Allah Teâlâ bana bir secde etmem için izin versin, o secdede benden razı olduğunu bileyim ve sonra bana: 'Ey Mâlik, toprak ol!' desin.\" (Nebe Suresi, 40. ayetteki kafirin \"Keşke toprak olsaydım\" temennisine arifane bir nazire)."
+    },
+    {
+      "id": "malik-bin-dinar-014",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Allah dünyayı bir kaçış (geçiş) yurdu, ahireti ise karar (yerleşme) yurdu kıldı. O halde asıl yurdunuz için hazırlık yapın ve bedenleriniz çıkmadan evvel dünyayı kalplerinizden çıkarın. Sırlarınızı bilen Allah’ın huzurunda perdelerinizi yırtmayın (günahla kendinizi rüsvay etmeyin). Siz dünyada yaşatıldınız ama başka bir âlem için yaratıldınız. Dünyanın misali zehir gibidir; onu tanımayan yer, tanıyan ise ondan sakınır. Yine dünya, dokunuşu yumuşak ama içi öldürücü zehirle dolu bir yılan gibidir; akıllılar ondan kaçar, çocuklar ise ellerini ona uzatır."
+    },
+    {
+      "id": "malik-bin-dinar-015",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Hatalar ve günahlar için ağlamak; rüzgârın kuru yaprakları dökmesi gibi günahları döker, silip süpürür."
+    },
+    {
+      "id": "malik-bin-dinar-016",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Allah’a itaati kendine ticaret edin; sermayesiz kârların (sevapların) sana akın akın geldiğini göreceksin."
+    },
+    {
+      "id": "malik-bin-dinar-017",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Doğruluk ile yalan kalp içinde sürekli savaş halindedir; ta ki biri diğerini oradan çıkarıp atana kadar."
+    },
+    {
+      "id": "malik-bin-dinar-018",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Mâlik bin Dinar’ın evine bir hırsız girdi ama çalacak hiçbir şey bulamadı. Mâlik ona seslendi: \"Dünyadan bir şey bulamadın, bari ahiretten bir şeyler ister misin?\" Hırsız \"Evet\" deyince; \"Abdest al ve iki rekat namaz kıl\" dedi. Hırsız denileni yaptı, sonra oturup Mâlik ile mescide gitti. Görenler \"Bu yanındaki kim?\" diye sorunca Mâlik: \"Bizi soymaya geldi, biz onu soyduk (onu Allah’a kazandırdık)\" dedi."
+    },
+    {
+      "id": "malik-bin-dinar-019",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Sana hayrı dokunmayan, kendisinden bir güzellik tefeyyüz edemediğin her türlü arkadaştan uzak dur."
+    },
+    {
+      "id": "malik-bin-dinar-020",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Bir kula verilebilecek en büyük ceza, kalp katılığıdır."
+    },
+    {
+      "id": "malik-bin-dinar-021",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Bütün derdi nefsi, arzuları ve midesi olan kul ne kötü bir kuldur!"
+    },
+    {
+      "id": "malik-bin-dinar-022",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "*\"İnsanları tanıdığımdan beri; ne övgülerine sevindim ne de yergilerine yerindim.\" Neden diye sorulunca: \"Çünkü beni öven de yeren de (hakikatimi bilmedikleri için) ölçüsüzce mübalağa ediyor\" dedi."
+    },
+    {
+      "id": "malik-bin-dinar-023",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Mâlik bin Dinar geceleri sakalını tutar ve ağlayarak şöyle derdi: \"Ya Rabbi! Cennetlikleri de cehennemlikleri de Sen bilirsin; acaba Mâlik’in konağı bu iki yurttan hangisidir?"
+    },
+    {
+      "id": "malik-bin-dinar-024",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Mâlik bin Dinar namazını kötü kılan (tadil-i erkana uymayan) bir adam gördü ve: \"Ailesine ne kadar acıyorum!\" dedi. \"Adam namazı kötü kılıyor, sen neden ailesine acıyorsun?\" dediklerinde: \"O, evinin büyüğüdür; evdekiler namazı ondan öğreniyorlar (kötü örnek oluyor)\" buyurdu."
+    },
+    {
+      "id": "malik-bin-dinar-025",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Ebrar (iyiler) birbirlerine şu üç şeyi tavsiye ederlerdi: Dili dizginlemek (susmak), çokça istiğfar etmek ve (fitne zamanı) uzlete çekilmek."
+    },
+    {
+      "id": "malik-bin-dinar-026",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Münafığın alametlerinden biri de; sadece kendi isminin duyulmasını ve şöhret olmayı sevmesidir."
+    },
+    {
+      "id": "malik-bin-dinar-027",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Yaptığın amelin kabul edilmeyeceği korkusunu taşımak, amelin kendisinden daha zordur/ağırdır."
+    },
+    {
+      "id": "malik-bin-dinar-028",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Dünya için ne kadar üzülürsen, ahiret kaygısı kalbinden o nispette çıkar. Ahiret için ne kadar dertlenirsen, dünya tasası kalbinden o ölçüde silinir."
+    },
+    {
+      "id": "malik-bin-dinar-029",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Dünya sevgisinin alametlerinden biri de; kişinin daima karnını doyurma (oburluk) peşinde olmasıdır."
+    },
+    {
+      "id": "malik-bin-dinar-030",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Dünyanın cazibesinden ve süsünden (çiçeğinden) uzaklaşan kimse, nefsi arzularına galip gelmiş demektir."
+    },
+    {
+      "id": "malik-bin-dinar-031",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Eğer bir kalpte (Allah korkusundan veya günahlarından dolayı) bir hüzün yoksa, o kalp harabeye dönmüş demektir."
+    },
+    {
+      "id": "malik-bin-dinar-032",
+      "imamId": "malik-bin-dinar",
+      "imamName": "Malik bin Dinar",
+      "text": "Dünya nimetlerinden faydalananlar; Allah’ı zikretmek kadar büyük ve tatlı bir nimetle asla rızıklanmamışlardır."
+    },
+    {
+      "id": "ibrahim-bin-edhem-001",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Zâhidler (dünyaya sırt dönenler) içinde Allah’a en yakın olanı; O’ndan en çok korkanıdır. Allah katında en sevimlisi; ameli en güzel olanıdır. En faziletlisi; Allah’ın katındakine (ahirete) arzusu en büyük olanıdır. En keremlisi; takvası en yüce olanıdır. Zühdü en tam olanı; nefsi en cömert ve kalbi en selim olanıdır. Zühdü en kâmil olanı ise; yakini (imanı) en güçlü olanıdır."
+    },
+    {
+      "id": "ibrahim-bin-edhem-002",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem, kendisini ilgilendirmeyen boş işler hakkında konuşan bir adama rastladı ve durup şöyle sordu: \"Bu konuşmandan bir sevap umuyor musun?\" Adam \"Hayır\" dedi. \"Peki, bu sözlerin yüzünden bir cezadan emin misin?\" diye sordu. Adam yine \"Hayır\" dedi. Bunun üzerine buyurdu ki: \"Sevap ummadığın ve cezasından da emin olmadığın bir sözle ne diye vakit öldürürsün?"
+    },
+    {
+      "id": "ibrahim-bin-edhem-003",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Eğer Allah’a isyan etmek istersen; bunu O’nun seni göremeyeceği bir yerde yap!\" (Yani her yer O’nun mülküdür ve O her şeyi görür, öyleyse hiçbir yerde isyan edemezsin)."
+    },
+    {
+      "id": "ibrahim-bin-edhem-004",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem’in dualarından biri şöyleydi: \"Allah’ım! Beni isyanın zilletinden alıp, Sana itaat etmenin izzetine ulaştır."
+    },
+    {
+      "id": "ibrahim-bin-edhem-005",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Adil olmayan her hükümdar, bir hırsızla eşittir. Takva sahibi olmayan her âlim, bir kurtla eşittir. Allah’tan başkasına boyun eğen (zillet gösteren) her kişi ise, bir köpekle eşittir."
+    },
+    {
+      "id": "ibrahim-bin-edhem-006",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Hüzün iki türlüdür: Biri senin lehinedir, diğeri aleyhinedir. Senin lehine olan hüzün; ahiret için dertlenmendir. Senin aleyhine olan hüzün ise; dünya ve onun süsü için üzülmendir."
+    },
+    {
+      "id": "ibrahim-bin-edhem-007",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Tövbe etmek isteyen kişi; önce haksızlıkları (kul haklarını/mezalimi) terk edip iade etmeli ve eski kötü arkadaş çevresinden uzaklaşmalıdır. Aksi takdirde istediği (hakiki tövbe) makama ulaşamaz."
+    },
+    {
+      "id": "ibrahim-bin-edhem-008",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Bâtıla (harama ve boş işlere) çokça bakmak, kalpteki 'Hak' marifetini ve hakikati tanıma yetisini alıp götürür."
+    },
+    {
+      "id": "ibrahim-bin-edhem-009",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Zühd; elin dünyadan boşalması değil, kalbin dünyadan boşalmasıdır."
+    },
+    {
+      "id": "ibrahim-bin-edhem-010",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Cömertlik, kerem ve yardımlaşma hasletleri (zamanımızda) çekilip gitti. Kim insanlara malıyla, yemeğiyle ve içeceğiyle yardım edemiyorsa; bari onlara güler yüzüyle ve güzel ahlakıyla muamele etsin."
+    },
+    {
+      "id": "ibrahim-bin-edhem-011",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem üç arkadaşıyla bir yolculuğa çıkmıştı. Şiddetli bir soğukta, kapısı olmayan virane bir mescide sığındılar. Arkadaşları uyuyunca İbrahim sabaha kadar kapı eşiğinde ayakta bekledi. Uyandıklarında neden uyumadığını sordular. Buyurdu ki: \"Üzerinize soğuk vurmasından korktum ve kendimi size kapı yaptım."
+    },
+    {
+      "id": "ibrahim-bin-edhem-012",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Hevâ (nefsi arzular) insanı felakete sürükler, Allah korkusu ise şifa verir. Şunu bil ki; kalbindeki arzuları ancak, seni her an gördüğünü bildiğin Allah’tan korkman söküp atar."
+    },
+    {
+      "id": "ibrahim-bin-edhem-013",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Şöhret peşinde koşan kimse, Allah’a karşı samimi (sadık) değildir."
+    },
+    {
+      "id": "ibrahim-bin-edhem-014",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Bir adam çoluk çocuğunun çokluğundan ve geçim derdinden şikayet edince İbrahim bin Edhem şöyle dedi: \"Kardeşim, evindeki nüfustan rızkı Allah’ın üzerinde olmayanı bir bak, bulursan onu benim evime getir!\" (Bu sözle rızkın yalnızca Allah'a ait olduğuna dair tevekkülü hatırlatmıştır)."
+    },
+    {
+      "id": "ibrahim-bin-edhem-015",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Cihadın en çetini, nefsi arzularla (hevâ) yapılan cihaddır. Kim nefsini arzularından men ederse; dünyanın derdinden ve belasından kurtulur, onun eziyetlerine karşı muhafaza olunur."
+    },
+    {
+      "id": "ibrahim-bin-edhem-016",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Denilmiştir ki: İblis için 'halim (yumuşak huylu) bir âlim'den daha ağır gelen bir şey yoktur. O âlim konuşursa ilimle konuşur, susarsa hilimle susar."
+    },
+    {
+      "id": "ibrahim-bin-edhem-017",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Mekki bin İbrahim anlatıyor: İbrahim bin Edhem’e \"Müminin kerameti hangi mertebeye ulaşır?\" diye sorulunca; \"Dağa 'kımılda' dese kımıldar\" dedi. O sırada (bu söz üzerine) dağ sarsılmaya başladı."
+    },
+    {
+      "id": "ibrahim-bin-edhem-018",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Eğer tövbe aynasına bakmayı alışkanlık edinirsen; işlediğin günahın ne kadar çirkin ve şerli bir şey olduğu sana ayan beyan görünür."
+    },
+    {
+      "id": "ibrahim-bin-edhem-019",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Zâhidlerin dünyadan el etek çekmeleri; ahmak ve cahillerin cehaletine ortak olmaktan sakınmaları içindir."
+    },
+    {
+      "id": "ibrahim-bin-edhem-020",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Nefsi arzular (hevâ), körlüğün (basiretsizliğin) ortağıdır."
+    },
+    {
+      "id": "ibrahim-bin-edhem-021",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Ey kardeşim! Allah’ı kendine yâr ve dost edin, insanları ise bir kenara bırak."
+    },
+    {
+      "id": "ibrahim-bin-edhem-022",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem arkadaşlarından çok namaz kılması veya oruç tutmasıyla değil; sadakati (doğruluğu) ve cömertliğiyle üstün gelmiştir."
+    },
+    {
+      "id": "ibrahim-bin-edhem-023",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem anlatıyor: Gece hiç uyumayan bir âbide \"Neden uyumuyorsun?\" diye sordum. Bana şöyle dedi: \"Kur’an’daki (ilahî tehditler ve müjdeler gibi) hayret verici sırlar uykumu kaçırdı."
+    },
+    {
+      "id": "ibrahim-bin-edhem-024",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Dünya hırsının ve tamahın azlığı; doğruluğu ve takvayı doğurur. Hırs ve tamahın çokluğu ise; kederi ve sabırsızlığı doğurur."
+    },
+    {
+      "id": "ibrahim-bin-edhem-025",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Bir şey istediğinde; seninle Allah arasında kimseyi minnettar kılma (aracı yapma). Doğrudan Allah’tan iste ki O sana ihsan etsin. Sakın mahlukattan isteme; onların iyiliğini bir yük/borç say."
+    },
+    {
+      "id": "ibrahim-bin-edhem-026",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Bize ne oluyor ki; fakirliğimizi kendimiz gibi acizlere şikayet ediyoruz da, bu sıkıntıyı gidermesi için Rabbimize iltica etmiyoruz?"
+    },
+    {
+      "id": "ibrahim-bin-edhem-027",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "İbrahim bin Edhem, Süfyan-ı Sevrî’ye yazdığı mektupta şöyle demiştir: \"Neyi talep ettiğini (cenneti ve Rıza-i İlahîyi) bilen kişi, bu uğurda ne harcasa ona hafif gelir. Kim bakışlarını (harama) salarsa pişmanlığı uzar. Kim emellerini (hiç ölmeyecekmiş gibi) yayarsa ameli kötüleşir. Kim dilini başıboş bırakırsa kendi sonunu hazırlar."
+    },
+    {
+      "id": "ibrahim-bin-edhem-028",
+      "imamId": "ibrahim-bin-edhem",
+      "imamName": "İbrahim bin Edhem",
+      "text": "Zühd üç sınıftır: Farz olan zühd, fazilet olan zühd ve selamet olan zühd. Farz olan; haramları terk etmektir. Fazilet olan; helallerin fazlasından kaçınmaktır. Selamet olan ise; şüpheli şeylerden (şübehat) uzak durmaktır."
+    },
+    {
+      "id": "yahya-bin-muaz-001",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "(Tâhâ Suresi, 44. ayette geçen) \"Ona (Firavun'a) yumuşak söz söyleyin, belki öğüt alır veya korkar\" kelâmı hakkında şöyle demiştir: \"İlahi! 'Ben ilahım' diyen (Firavun) birine karşı nezaket ve yumuşaklığın buysa; 'Sen İlahsın' diyen bir kuluna lütfun kim bilir nasıldır!"
+    },
+    {
+      "id": "yahya-bin-muaz-002",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Yahya bin Muaz’a: \"Kul ne zaman rıza makamına ulaşır?\" diye soruldu. Buyurdu ki: \"Rabbine karşı şu dört esası yerine getirdiğinde: Eğer verirsen kabul ederim, vermezsen razı olurum, beni kendi halime bırakırsan ibadet ederim, beni çağırırsan icabet ederim."
+    },
+    {
+      "id": "yahya-bin-muaz-003",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah’ım! Eğer günahım beni korkuttuysa, Sana olan hüsnüzannım beni korumuştur. Allah’ım! Dünyada, örtülmesine ahirette daha çok muhtaç olduğum günahlarımı örttün. Onları bir grup Müslümana göstermeyerek bana ihsanda bulundun; o halde o büyük hesap gününde beni tüm âlemlerin önünde rüsvay etme, ey merhametlilerin en merhametlisi."
+    },
+    {
+      "id": "yahya-bin-muaz-004",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ölüm gününde mirasının, haşir gününde ise mizanının (terazisinin) seni utandırdığı kimselerden olma."
+    },
+    {
+      "id": "yahya-bin-muaz-005",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Size dünyayı terk etmenizi emretmiyorum, asıl günahları terk etmenizi emrediyorum. Dünyayı terk etmek bir fazilettir; fakat günahları terk etmek bir farzdır. Siz ise farzı yerine getirmeye, nafile iyilik ve faziletlerden daha çok muhtaçsınız."
+    },
+    {
+      "id": "yahya-bin-muaz-006",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kim gizlide Allah’a ihanet ederse, Allah onun sırrını aleniyette (herkesin önünde) açığa çıkarır."
+    },
+    {
+      "id": "yahya-bin-muaz-007",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ey kendisinden istenmediğinde öfkelenen Rabbim! Senden isteyeni mahrum bırakma."
+    },
+    {
+      "id": "yahya-bin-muaz-008",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ey biz istemeden bize hazinelerindeki en hayırlı şeyi, yani iman nimetini lütfeden! Biz istedikten sonra affını bizden esirgeme."
+    },
+    {
+      "id": "yahya-bin-muaz-009",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Eğer bağışlarsan Sen en hayırlı merhamet edicisin; eğer azap edersen Sen asla zalim değilsin."
+    },
+    {
+      "id": "yahya-bin-muaz-010",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah bir topluluktan razı olur ve onların kötülüklerini bağışlar; bir topluluğa da gazap eder ve onlardan iyiliklerini kabul etmez."
+    },
+    {
+      "id": "yahya-bin-muaz-011",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "(İnfitâr Suresi, 6. ayetteki) \"Ey insan! Seni Kerîm olan Rabbine karşı ne aldattı?\" sualine karşı şöyle der: \"İlahi! Senin bana olan bitmek bilmez keremin (iyiliğin) beni 'aldattı' (ümitlendirdi)."
+    },
+    {
+      "id": "yahya-bin-muaz-012",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah’tan korkun ölçüsünde mahlukat senden çekinir; Allah’ı sevmen ölçüsünde mahlukat seni sever ve Allah ile meşguliyetin ölçüsünde mahlukat senin işlerinle meşgul olur."
+    },
+    {
+      "id": "yahya-bin-muaz-013",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Malının azalmasına üzülüp de ömrünün kısalmasına üzülmeyen kimseye şaşarım."
+    },
+    {
+      "id": "yahya-bin-muaz-014",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Gerçek kardeşin sana kusurlarını gösteren, gerçek dostun ise seni günahlardan sakındırandır."
+    },
+    {
+      "id": "yahya-bin-muaz-015",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Dünya bir harabedir; onu imar edenin kalbi ondan daha haraptır. Ahiret ise mamur bir yurttur; onu talep edenin kalbi ondan daha mamurdur."
+    },
+    {
+      "id": "yahya-bin-muaz-016",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Gerçek akıllı kişi şu üç ameli işleyendir: Dünya onu terk etmeden o dünyayı terk eden, kabre girmeden kabrini (salih amellerle) inşa eden ve Rabbine kavuşmadan O'nu razı eden."
+    },
+    {
+      "id": "yahya-bin-muaz-017",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "(Hadis-i Şerif mealiyle uyumlu olarak): \"Cennet nefsin hoşlanmadığı zorluklarla, cehennem ise şehvetlerle kuşatılmıştır. Sen ağır bir hasta gibisin; eğer nefsin ilacın acılığına sabrederse şifa bulur, yok eğer sızlanırsa hastalığı uzayıp gider."
+    },
+    {
+      "id": "yahya-bin-muaz-018",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Gece uzundur, onu uykunla kısaltma. Gündüz ise berraktır, onu günahlarınla kirletme."
+    },
+    {
+      "id": "yahya-bin-muaz-019",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kalbin dünya sevgisine bağlı kaldığı sürece, dinin paramparça olmaya devam eder."
+    },
+    {
+      "id": "yahya-bin-muaz-020",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ey Âdemoğlu! Dünyayı onsuz yapamayacak birinin hırsıyla istiyorsun; ahireti ise ona hiç ihtiyacı olmayan birinin ilgisizliğiyle arıyorsun. Oysa dünya, sen onu istemesen de sana yetecek kadar garanti edilmiştir; ahirete ise ancak senin talebin ve çabanla ulaşılır. Halini bir düşün!"
+    },
+    {
+      "id": "yahya-bin-muaz-021",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Nice istiğfar eden vardır ki nefret edilir; nice susan vardır ki kendisine merhamet edilir. Çünkü şu kişi diliyle tövbe eder ama kalbi günahkârdır; öbürü ise susar ama kalbi zikirle meşguldür."
+    },
+    {
+      "id": "yahya-bin-muaz-022",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kalbin ilacı beş şeydir: Kur'an'ı tefekkür ederek okumak, mideyi boş tutmak, geceyi ibadetle ihya etmek, seher vaktinde yalvarmak ve salihlerle beraber olmak."
+    },
+    {
+      "id": "yahya-bin-muaz-023",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kişinin ölüm anında malı hakkında iki büyük musibeti vardır: Malın tamamı elinden alınır ama o malın tamamının hesabı sorulur."
+    },
+    {
+      "id": "yahya-bin-muaz-024",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "İlahî! Sana isyan etmişken nasıl sevineyim? Fakat Seni tanımışken de nasıl ferahlamayayım? Hatalı biriyken Sana nasıl yalvarayım? Fakat Sen bu kadar kerem sahibiyken Sana nasıl yalvarmayayım?"
+    },
+    {
+      "id": "yahya-bin-muaz-025",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Müminin senden yana nasibi şu üç şey olsun: Eğer ona faydan dokunmuyorsa bari zarar verme; onu sevindiremiyorsan bari üzme; onu övmiyorsan bari yerme."
+    },
+    {
+      "id": "yahya-bin-muaz-026",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kendisiyle Sana karşı boynumun büküldüğü (hicap duyduğum) bir günah, kendisiyle gururlandığım bir itaatten bana daha sevimlidir."
+    },
+    {
+      "id": "yahya-bin-muaz-027",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah’ım! Bizi bedenleriyle Sana davet edip kalpleriyle Senden kaçanlardan eyleme. Ey bizim için her şeyden daha keremli olan! Bizi Senin katında en değersizlerden eyleme."
+    },
+    {
+      "id": "yahya-bin-muaz-028",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "İnsanları tövbeden alıkoyan şey 'tul-i emel'dir (hiç ölmeyecekmiş gibi yaşamak). Tövbe edenin alameti ise gözyaşı dökmesi, yalnızlığı sevmesi ve her niyetinde nefsini hesaba çekmesidir."
+    },
+    {
+      "id": "yahya-bin-muaz-029",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Zavallı Âdemoğlu! Eğer fakirlikten korktuğu gibi cehennemden korksaydı, mutlaka cennete girerdi."
+    },
+    {
+      "id": "yahya-bin-muaz-030",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "İlahî! Biliyorum ki Sana ulaşmak ancak Senin lütfunladır; Senden kopuş ise ancak Senin adaletinledir. İlahî! Senden başka Rabbim yokken Seni nasıl unuturum? İlahî! 'Bir daha asla dönmem' demiyorum; çünkü nefsimin sözünden dönen tabiatını biliyorum. Fakat 'Belki dönmeden önce ölürüm' ümidiyle 'Dönmeyeceğim' diyorum."
+    },
+    {
+      "id": "yahya-bin-muaz-031",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ahiret ganimeti üç şeydedir: Rabbe itaat, anne-babaya iyilik (ihsan) ve şeytana isyan."
+    },
+    {
+      "id": "yahya-bin-muaz-032",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Şu üç özelliği taşımayanı arkadaş edinmeyin: Seni günahların felaketlerinden sakındıran, sana gizli ayıplarını tanıtan ve seni her şeyi bilen Allah'ın yolunda yalnız bırakmayan."
+    },
+    {
+      "id": "yahya-bin-muaz-033",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ölümü çokça anan kimseye üç hayır kapısı açılır: Tövbede acele etmek, az bir rızıkla kanaat etmek ve ibadette şevk. Dünyaya hırs gösteren ise ancak takdir edileni yer ama üç kusurla damgalanır: Daima nankördür, elindeki dünyalıktan kimseye vermez ve Allah'ın ona takdir etmediği şeyi ararken yorulup dinî görevlerini ihmal eder."
+    },
+    {
+      "id": "yahya-bin-muaz-034",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "İnsanlar hakkında hüsnüzan, kendi nefsin hakkında ise suizan besle; böylece ilkinden yana selamette, ikincisinden yana ise manevi artışta olursun."
+    },
+    {
+      "id": "yahya-bin-muaz-035",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah’ı anmaya karşı sabredenlere (uzak duranlara) şaşarım; ondan da şaşırtıcı olanı ise Allah’ın onlara nasıl sabrettiğidir; (kahrıyla) onları nasıl helak etmez?"
+    },
+    {
+      "id": "yahya-bin-muaz-036",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ey Âdemoğlu! Yardım dilesen de sana geri dönmeyecek olan kaybolmuş bir dünya metaı için neden üzülürsün? Ve ölümün senin elinde bırakmayacağı mevcut bir şey için neden sevinirsin?"
+    },
+    {
+      "id": "yahya-bin-muaz-037",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Canlarını feda etme riskini göze aldıklarında (Hakk'a) yaklaştılar; bu, haberin (bilginin) tadıdır, ya bizzat müşahedenin tadı nasıldır?"
+    },
+    {
+      "id": "yahya-bin-muaz-038",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Tövbe eden için hiçbir gurur kaynağının denk olamayacağı bir şeref vardır: Allah’ın onun tövbesiyle ferahlaması (sevinmesi)."
+    },
+    {
+      "id": "yahya-bin-muaz-039",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Mahlukata karşı (onları gerçek fail görmekten) kör olmadıkça Hakk’ı tanıyamazsın."
+    },
+    {
+      "id": "yahya-bin-muaz-040",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kişinin en büyük saadeti, düşmanının anlayışsız olmasıdır; benim düşmanımın da anlayışı yok. 'Düşmanınız kim?' denildi. Buyurdu ki: 'Nefsimdir; dünyadaki bir saatlik şehvet uğruna ebedi cennet nimetlerini satan nefsimden daha cahil kim olabilir?'"
+    },
+    {
+      "id": "yahya-bin-muaz-041",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Arifin ibadeti üç esasa dayanır: Halkla güzel geçinmek, Celil olan Allah’ı zikre devam etmek ve sağlıklı bir beden içinde mahzun (dertli) bir kalp taşımak."
+    },
+    {
+      "id": "yahya-bin-muaz-042",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Arifler için şu iki nimet bile lütuf olarak yeterdi: Ne zaman O’na dönseler O’nu hazır bulurlar ve ne zaman dilerlerse O’nu zikredebilirler."
+    },
+    {
+      "id": "yahya-bin-muaz-043",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Dünya, bizzat sahibi olan Allah’ın katında bile değersizdir. Senin mülkün bile değilken senin katında neden bir değeri olsun?"
+    },
+    {
+      "id": "yahya-bin-muaz-044",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Allah’ım! Günahımı itiraf etmeyi Sana ulaşmak için bir vesile kıldım ve Senin tevekkülünün gölgesine sığındım. Eğer bağışlarsan, buna Senden daha layık kim vardır? Eğer cezalandırırsan, hükmünde Senden daha adil kim vardır?"
+    },
+    {
+      "id": "yahya-bin-muaz-045",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Yahya bin Muaz’a: \"Ahirette en güvende olan kimdir?\" diye soruldu. Buyurdu ki: \"Bugün Allah’tan en çok korkandır.\" Bir adam ona: \"Sen dünyayı seviyorsun\" deyince Yahya: \"Ahireti soran nerede?\" dedi. Adam \"Buradayım\" deyince; \"Söyle bana, ahirete itaatle mi ulaşılır yoksa isyanla mı?\" dedi. Adam \"İtaatle\" dedi. \"Peki itaat hayatla mı olur?\" Adam \"Evet\" dedi. \"Hayat ise gıda (rızık) ile mi kaimdir?\" Adam \"Evet\" dedi. \"Gıda ise dünyadan mıdır?\" Adam \"Dünyadandır\" dedi. Yahya bin Muaz: \"O halde, içinde bana takdir edilen rızkı kazandığım, o rızıkla hayatta kaldığım, o hayatla Rabbime itaat ettiğim ve o itaatle de ahireti kazandığım bir dünyayı nasıl sevmeyeyim?!\" dedi. Adam: \"Şüphesiz ki bu, Efendimiz'in (s.a.v) 'Bazı beyanlarda (sözlerde) büyüleyici bir güç vardır' hadisinin bir örneğidir.\" dedi."
+    },
+    {
+      "id": "yahya-bin-muaz-046",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Kim dünyaya gönül verirse kalbi mutlaka bir kusurla lekelenir; kim dünyayı nefsine hâkim kılarsa mutlaka günah denizine düşer."
+    },
+    {
+      "id": "yahya-bin-muaz-047",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ey Âdemoğlu! Kalbin dünya sevgisine bağlı kaldığı sürece dinin paramparça olmaya devam eder."
+    },
+    {
+      "id": "yahya-bin-muaz-048",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Dünya mesafeleri ayaklarla, ahiret mesafeleri ise kalplerle kat edilir."
+    },
+    {
+      "id": "yahya-bin-muaz-049",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Eğer Allah onlara adaletiyle hükmederse tek bir iyilikleri bile kalmaz; eğer onlara lütfuyla muamele ederse tek bir günahları bile kalmaz."
+    },
+    {
+      "id": "yahya-bin-muaz-050",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Günahım yüzünden Senden ümit kesmeye nasıl cüret ederim; oysa Sen, benim günahıma rağmen ihsanını benden esirgemiyorsun."
+    },
+    {
+      "id": "yahya-bin-muaz-051",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Ölürsem kendi nefsim için ağlamam; sadece yerine getirilmesi gereken (kulluk) ihtiyaçlarımın yarım kalmasına ağlarım."
+    },
+    {
+      "id": "yahya-bin-muaz-052",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Hikmet, şu üç şeyin bulunduğu kalbe girmez: Rızık endişesi, mahlukata haset ve makam tutkusu."
+    },
+    {
+      "id": "yahya-bin-muaz-053",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Dünyaya meyletmekten sakın! Çünkü orası kalıcı bir yurt değil, sadece bir geçiş yeridir."
+    },
+    {
+      "id": "yahya-bin-muaz-054",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "Açlık (manevi bir) nurdur, tokluk ise (nefsi azdıran bir) nardır."
+    },
+    {
+      "id": "yahya-bin-muaz-055",
+      "imamId": "yahya-bin-muaz",
+      "imamName": "Yahya bin Muaz",
+      "text": "İnsanın üç büyük düşmanı vardır: Dünyası, şeytanı ve nefsi. Dünyadan zühd (gönül koymamak) ile, şeytandan ona muhalefetle, nefisten ise şehvetleri terk ederek korun."
     }
   ]
 }

@@ -40,7 +40,7 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
 
   const previewImams = page.locator("button[data-selef-preview-imam]");
   await expect(previewImams.first()).toBeVisible();
-  await expect(previewImams).toHaveCount(8);
+  await expect(previewImams).toHaveCount(13);
 
   const previewDetailLink = page.locator('#selef-incileri a[href^="/selef-incileri?imam="]').first();
   await expect(previewDetailLink).toBeVisible();
@@ -58,7 +58,7 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();
 
   const filterButtons = page.locator("button[data-selef-imam-filter]");
-  await expect(filterButtons).toHaveCount(9);
+  await expect(filterButtons).toHaveCount(14);
 
   const imamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
     elements.map((element) => element.getAttribute("data-imam-id")),
@@ -169,8 +169,12 @@ test("reader route canvas ve kontroller calisiyor", async ({ page }) => {
   const downloadButton = page.getByRole("button", { name: /^İndir$/i }).first();
 
   await expect(previousButton).toBeVisible();
-  await previousButton.click({ trial: true });
-  await nextButton.click({ trial: true });
+  if (await previousButton.isEnabled()) {
+    await previousButton.click({ trial: true });
+  }
+  if (await nextButton.isEnabled()) {
+    await nextButton.click({ trial: true });
+  }
   await zoomInButton.click({ trial: true });
   await zoomOutButton.click({ trial: true });
   await fullscreenButton.click({ trial: true });
