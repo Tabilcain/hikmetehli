@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { Share2, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
+import { toast } from "@/hooks/use-toast";
 import { loadSelefQuotesPayload } from "@/services/selefService";
 
 export const SelefPreviewSection = () => {
@@ -31,6 +32,40 @@ export const SelefPreviewSection = () => {
     return quotes.find((quote) => quote.imamId === selectedImam.id) || null;
   }, [quotes, selectedImam]);
 
+  const handleShareSelectedQuote = async () => {
+    if (!selectedImam || !selectedQuote) return;
+
+    const shareUrl = `${window.location.origin}/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}`;
+    const text = `✨ ${selectedQuote.imamName}\n“${selectedQuote.text}”\n\nHikmet Ehli - Selef İncileri\n${shareUrl}`;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "Selef İncileri",
+          text,
+        });
+        return;
+      }
+
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        toast({ title: "Söz panoya kopyalandı." });
+        return;
+      }
+      throw new Error("Clipboard unavailable");
+    } catch (error) {
+      if (error && typeof error === "object" && "name" in error && (error as { name: string }).name === "AbortError") {
+        return;
+      }
+      try {
+        await navigator.clipboard?.writeText(text);
+        toast({ title: "Söz panoya kopyalandı." });
+      } catch {
+        toast({ title: "Paylaşım başarısız", description: "Metni manuel kopyalayın.", variant: "destructive" });
+      }
+    }
+  };
+
   return (
     <section className="relative py-16 md:py-24" id="selef-incileri">
       <div className="absolute inset-0 hero-glow opacity-25" />
@@ -52,7 +87,7 @@ export const SelefPreviewSection = () => {
             to={selectedImam ? `/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}` : "/selef-incileri"}
             className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated hover:shadow-glow transition-all"
           >
-            {selectedImam ? `${selectedImam.name}` : "Tümünü Gör"}
+            Tümünü Gör
             <Sparkles className="h-4 w-4" />
           </Link>
         </div>
@@ -110,13 +145,17 @@ export const SelefPreviewSection = () => {
                     {selectedQuote ? `“${selectedQuote.text.slice(0, 168)}${selectedQuote.text.length > 168 ? "..." : ""}”` : "Bu imam için sözler yükleniyor."}
                   </p>
                   <div className="mt-4">
-                    <Link
-                      to={`/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}`}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        void handleShareSelectedQuote();
+                      }}
+                      disabled={!selectedQuote}
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground"
                     >
-                      Tümünü Gör
-                      <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                      Paylaş
+                      <Share2 className="h-4 w-4" />
+                    </button>
                   </div>
                 </div>
               ) : null}
