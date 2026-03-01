@@ -42,10 +42,10 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(previewImams.first()).toBeVisible();
   await expect(previewImams).toHaveCount(13);
 
-  const previewDetailLink = page.locator('#selef-incileri a[href^="/selef-incileri?imam="]').first();
+  const previewDetailLink = page.locator('#selef-incileri a[href="/selef-incileri"]').first();
   await expect(previewDetailLink).toBeVisible();
   await previewDetailLink.click();
-  await expect(page).toHaveURL(/\/selef-incileri\?imam=/);
+  await expect(page).toHaveURL(/\/selef-incileri$/);
 
   expect(runtimeErrors).toEqual([]);
 });

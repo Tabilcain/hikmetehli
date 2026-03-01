@@ -84,7 +84,7 @@ export const SelefPreviewSection = () => {
           </div>
 
           <Link
-            to={selectedImam ? `/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}` : "/selef-incileri"}
+            to="/selef-incileri"
             className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated hover:shadow-glow transition-all"
           >
             Tümünü Gör
@@ -159,15 +159,6 @@ export const SelefPreviewSection = () => {
                   </div>
                 </div>
               ) : null}
-
-              <div className="mt-5">
-                <Link
-                  to="/selef-incileri"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
-                >
-                  Tüm imamları listele
-                </Link>
-              </div>
             </>
           ) : (
             <div className="rounded-2xl border border-border/70 bg-background/60 p-4 text-sm text-muted-foreground">
