@@ -1,70 +1,35 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Clock3, RefreshCw, Share2, Sparkles } from "lucide-react";
-import { useHourlySelefQuote } from "@/hooks/useHourlySelefQuote";
-import { usePerformanceMode } from "@/hooks/usePerformanceMode";
-import { toast } from "@/hooks/use-toast";
-
-const CLAMPED_TEXT_STYLE = {
-  display: "-webkit-box",
-  WebkitLineClamp: 5,
-  WebkitBoxOrient: "vertical" as const,
-  overflow: "hidden",
-};
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { loadSelefQuotesPayload } from "@/services/selefService";
 
 export const SelefPreviewSection = () => {
-  const { quote, isLoading, isError, refresh } = useHourlySelefQuote();
-  const { isMobile } = usePerformanceMode();
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  const [expanded, setExpanded] = useState(false);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["selef-quotes"],
+    queryFn: loadSelefQuotesPayload,
+    staleTime: 1000 * 60 * 60,
+  });
+
+  const imams = data?.imams ?? [];
+  const quotes = data?.quotes ?? [];
+  const [selectedImamId, setSelectedImamId] = useState<string>("");
 
   useEffect(() => {
-    setExpanded(false);
-  }, [quote?.id]);
+    if (!imams.length) return;
+    if (selectedImamId && imams.some((imam) => imam.id === selectedImamId)) return;
+    setSelectedImamId(imams[0].id);
+  }, [imams, selectedImamId]);
 
-  const currentHourLabel = useMemo(
-    () => new Date().toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" }),
-    [],
+  const selectedImam = useMemo(
+    () => imams.find((imam) => imam.id === selectedImamId) || imams[0],
+    [imams, selectedImamId],
   );
 
-  const isClampEnabled = Boolean(isMobile && quote && quote.text.length > 260);
-
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    refresh();
-    window.setTimeout(() => setIsRefreshing(false), 600);
-  };
-
-  const handleShare = async () => {
-    if (!quote) return;
-
-    const text = `✨ ${quote.imamName}\n${quote.text}\n\nHikmet Ehli - Selef İncileri`;
-
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: "Selef İncileri",
-          text,
-          url: `${window.location.origin}/selef-incileri`,
-        });
-        return;
-      }
-
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(text);
-        toast({ title: "Söz panoya kopyalandı." });
-        return;
-      }
-
-      throw new Error("Clipboard unavailable");
-    } catch {
-      toast({
-        title: "Paylaşım başarısız",
-        description: "Metni manuel kopyalayabilirsiniz.",
-        variant: "destructive",
-      });
-    }
-  };
+  const selectedQuote = useMemo(() => {
+    if (!selectedImam) return null;
+    return quotes.find((quote) => quote.imamId === selectedImam.id) || null;
+  }, [quotes, selectedImam]);
 
   return (
     <section className="relative py-16 md:py-24" id="selef-incileri">
@@ -76,83 +41,92 @@ export const SelefPreviewSection = () => {
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Selef İncileri</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
-              Selef İmamlarının sözlerinden kısa tefekkür durakları.
+              Önce imamı seç, sonra doğrudan onun sözlerine geç.
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              Her saat yenilenen söz akışıyla bir cümleye odaklan, dilersen tüm arşivi imam filtreleriyle gez.
+              Mobil odaklı keşif akışıyla önce isimleri gör, birini seç ve tek dokunuşla o kişinin söz arşivini aç.
             </p>
           </div>
 
           <Link
-            to="/selef-incileri"
+            to={selectedImam ? `/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}` : "/selef-incileri"}
             className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated hover:shadow-glow transition-all"
           >
-            Tümünü Gör
+            {selectedImam ? `${selectedImam.name}` : "Tümünü Gör"}
             <Sparkles className="h-4 w-4" />
           </Link>
         </div>
 
         <article className="mt-8 md:mt-10 rounded-[24px] md:rounded-[30px] border border-border/80 bg-card/85 p-4 md:p-6 shadow-soft backdrop-blur-sm">
           {isLoading ? (
-            <div className="space-y-3 animate-pulse">
+            <div className="space-y-4 animate-pulse">
               <div className="h-4 w-36 rounded bg-muted/35" />
-              <div className="h-5 w-full rounded bg-muted/35" />
-              <div className="h-5 w-[92%] rounded bg-muted/35" />
-              <div className="h-5 w-[72%] rounded bg-muted/35" />
+              <div className="h-20 w-full rounded-2xl bg-muted/35" />
+              <div className="h-20 w-full rounded-2xl bg-muted/30" />
             </div>
           ) : isError ? (
             <div className="rounded-2xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive-foreground">
               Selef sözleri yüklenemedi. Lütfen bağlantınızı kontrol edip tekrar deneyin.
             </div>
-          ) : quote ? (
+          ) : imams.length > 0 ? (
             <>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary">{quote.imamName}</p>
-                <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/60 px-3 py-1.5 text-[11px] text-muted-foreground">
-                  <Clock3 className="h-3.5 w-3.5 text-primary" />
-                  Saatlik: {currentHourLabel}
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">İmamlar</p>
+                <p className="text-xs text-muted-foreground">{imams.length} isim</p>
+              </div>
+
+              <div className="mt-4 -mx-1 overflow-x-auto pb-1">
+                <div className="flex min-w-max gap-2 px-1 snap-x snap-mandatory">
+                  {imams.map((imam) => {
+                    const isActive = selectedImam?.id === imam.id;
+                    return (
+                      <button
+                        key={imam.id}
+                        type="button"
+                        data-selef-preview-imam={imam.id}
+                        onClick={() => setSelectedImamId(imam.id)}
+                        className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                          isActive
+                            ? "border-primary/60 bg-primary text-primary-foreground"
+                            : "border-border/70 bg-background/70 text-foreground"
+                        }`}
+                      >
+                        {imam.name}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              <p
-                className="mt-4 text-base md:text-lg leading-relaxed text-foreground/95"
-                style={isClampEnabled && !expanded ? CLAMPED_TEXT_STYLE : undefined}
-              >
-                “{quote.text}”
-              </p>
-
-              {isClampEnabled ? (
-                <button
-                  type="button"
-                  onClick={() => setExpanded((current) => !current)}
-                  className="mt-3 text-xs uppercase tracking-[0.22em] text-primary"
-                >
-                  {expanded ? "Daralt" : "Devamını gör"}
-                </button>
+              {selectedImam ? (
+                <div className="mt-5 rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-sm font-semibold">{selectedImam.name}</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {selectedImam.count} söz
+                    </p>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {selectedQuote ? `“${selectedQuote.text.slice(0, 168)}${selectedQuote.text.length > 168 ? "..." : ""}”` : "Bu imam için sözler yükleniyor."}
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      to={`/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}`}
+                      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground"
+                    >
+                      Tümünü Gör
+                      <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
               ) : null}
 
-              <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                <button
-                  type="button"
-                  onClick={handleRefresh}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
-                >
-                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? "animate-spin" : ""}`} />
-                  Yenile
-                </button>
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
-                >
-                  <Share2 className="h-4 w-4" />
-                  Paylaş
-                </button>
+              <div className="mt-5">
                 <Link
                   to="/selef-incileri"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
                 >
-                  Arşivi Aç
+                  Tüm imamları listele
                 </Link>
               </div>
             </>

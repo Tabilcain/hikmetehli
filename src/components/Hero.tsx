@@ -99,7 +99,7 @@ export const Hero = () => {
               )}
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Dua Arşivi - Saatlik Sahih Hadis
+              Dua Arşivi - Saatlik Sahih Hadis - Selef İncileri
             </div>
 
             <motion.h1
@@ -122,7 +122,7 @@ export const Hero = () => {
 
             <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
               <Link
-                className="px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
+                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
                 to="/kutuphane"
               >
                 Kütüphane
@@ -134,7 +134,7 @@ export const Hero = () => {
                 Saatlik Sahih Hadis
               </a>
               <a
-                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
+                className="px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
                 href="#selef-incileri"
               >
                 Selef İncileri
@@ -160,13 +160,14 @@ export const Hero = () => {
                   <span>Gözat</span>
                 </div>
                 <div className="text-2xl font-display">
-                  Dua Arşivi ve Saatlik Sahih Hadisler.
+                  Dua Arşivi, Selef İncileri ve Saatlik Sahih Hadisler.
                 </div>
                 <div className="h-px bg-border/70" />
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {[
                     "Sahih kaynaklı içerik",
                     "Her Saat Yenilenir",
+                    "Selef imamlarından veciz sözler",
                     "Oku, paylaş ve tefekkür et",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-2">
@@ -190,6 +191,13 @@ export const Hero = () => {
                     Saatlik Bölümü Aç
                     <span className="w-2 h-2 rounded-full bg-primary" />
                   </a>
+                  <Link
+                    to="/selef-incileri"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-all"
+                  >
+                    Selef İncileri
+                    <span className="w-2 h-2 rounded-full bg-primary" />
+                  </Link>
                 </div>
               </div>
             </div>

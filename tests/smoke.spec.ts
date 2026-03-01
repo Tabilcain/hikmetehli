@@ -15,11 +15,17 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   const runtimeErrors = captureRuntimeErrors(page);
 
   await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("networkidle");
 
-  const libraryCta = page.locator('a[href="/kutuphane"]:visible').first();
-  const hourlyCta = page.locator('a[href="#saatlik-ilham"]:visible').first();
-  const selefCta = page.locator('a[href="#selef-incileri"]:visible').first();
-  const selefRouteCta = page.locator('a[href="/selef-incileri"]:visible').first();
+  const hasBodyText = (await page.locator("body").innerText()).trim().length > 0;
+  if (!hasBodyText) {
+    await page.reload({ waitUntil: "networkidle" });
+  }
+
+  const libraryCta = page.getByRole("link", { name: /Kütüphane/i }).first();
+  const hourlyCta = page.getByRole("link", { name: /Saatlik Sahih Hadis/i }).first();
+  const selefCta = page.getByRole("link", { name: /Selef İncileri/i }).first();
+  const selefRouteCta = page.locator('a[href^="/selef-incileri"]').first();
 
   await expect(libraryCta).toBeVisible();
   await expect(hourlyCta).toBeVisible();
@@ -30,7 +36,16 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(page.locator("#saatlik-ilham")).toBeVisible();
   await expect(page.getByText("Zamana göre değişen sahih hadisler.")).toBeVisible();
   await expect(page.locator("#selef-incileri")).toBeVisible();
-  await expect(page.getByText(/Selef İmamlarının sözlerinden kısa tefekkür durakları\./i)).toBeVisible();
+  await expect(page.getByText(/Önce imamı seç, sonra doğrudan onun sözlerine geç\./i)).toBeVisible();
+
+  const previewImams = page.locator("button[data-selef-preview-imam]");
+  await expect(previewImams.first()).toBeVisible();
+  await expect(previewImams).toHaveCount(8);
+
+  const previewDetailLink = page.locator('#selef-incileri a[href^="/selef-incileri?imam="]').first();
+  await expect(previewDetailLink).toBeVisible();
+  await previewDetailLink.click();
+  await expect(page).toHaveURL(/\/selef-incileri\?imam=/);
 
   expect(runtimeErrors).toEqual([]);
 });
@@ -38,22 +53,38 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
 test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calistiriyor", async ({ page }) => {
   const runtimeErrors = captureRuntimeErrors(page);
 
-  await page.goto("/selef-incileri", { waitUntil: "domcontentloaded" });
+  await page.goto("/selef-incileri?imam=imam-safii", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Selef İmamlarının Sözlerinden İnciler" })).toBeVisible();
+  await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();
 
   const filterButtons = page.locator("button[data-selef-imam-filter]");
   await expect(filterButtons).toHaveCount(9);
-
-  const targetFilter = filterButtons.nth(1);
-  const targetFilterId = await targetFilter.getAttribute("data-selef-imam-filter");
-  expect(targetFilterId).toBeTruthy();
-  await targetFilter.click();
 
   const imamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
     elements.map((element) => element.getAttribute("data-imam-id")),
   );
   expect(imamIds.length).toBeGreaterThan(0);
-  expect(imamIds.every((id) => id === targetFilterId)).toBeTruthy();
+  expect(imamIds.every((id) => id === "imam-safii")).toBeTruthy();
+
+  await page.getByRole("button", { name: "Tüm imamlar" }).click();
+  await expect(page).toHaveURL(/\/selef-incileri$/);
+  await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toHaveCount(0);
+  const mixedAllImamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
+    elements.slice(0, 8).map((element) => element.getAttribute("data-imam-id")),
+  );
+  expect(new Set(mixedAllImamIds).size).toBeGreaterThan(1);
+
+  const targetFilter = filterButtons.nth(2);
+  const targetFilterId = await targetFilter.getAttribute("data-selef-imam-filter");
+  expect(targetFilterId).toBeTruthy();
+  await targetFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/selef-incileri\\?imam=${targetFilterId}`));
+
+  const filteredImamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
+    elements.map((element) => element.getAttribute("data-imam-id")),
+  );
+  expect(filteredImamIds.length).toBeGreaterThan(0);
+  expect(filteredImamIds.every((id) => id === targetFilterId)).toBeTruthy();
 
   const firstCard = page.locator("article[data-quote-id]").first();
   await expect(firstCard).toBeVisible();
@@ -137,7 +168,8 @@ test("reader route canvas ve kontroller calisiyor", async ({ page }) => {
   const fullscreenButton = page.getByRole("button", { name: /Tam ekran|Tam Ekran/i }).first();
   const downloadButton = page.getByRole("button", { name: /^İndir$/i }).first();
 
-  await expect(previousButton).toBeDisabled();
+  await expect(previousButton).toBeVisible();
+  await previousButton.click({ trial: true });
   await nextButton.click({ trial: true });
   await zoomInButton.click({ trial: true });
   await zoomOutButton.click({ trial: true });

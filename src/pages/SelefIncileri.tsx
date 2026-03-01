@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, Heart, HeartOff, Search, Share2, Sparkles } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
@@ -56,7 +56,47 @@ const shareQuote = async (quote: SelefQuote) => {
   return false;
 };
 
+const mixQuotesByImam = (quotes: SelefQuote[], imamOrder: string[]) => {
+  if (!quotes.length) return [];
+
+  const grouped = new Map<string, SelefQuote[]>();
+  for (const quote of quotes) {
+    const list = grouped.get(quote.imamId);
+    if (list) {
+      list.push(quote);
+    } else {
+      grouped.set(quote.imamId, [quote]);
+    }
+  }
+
+  const seen = new Set(imamOrder);
+  const fallbackOrder = Array.from(grouped.keys()).filter((imamId) => !seen.has(imamId));
+  const order = [...imamOrder, ...fallbackOrder];
+  const cursors = new Map(order.map((imamId) => [imamId, 0]));
+  const mixed: SelefQuote[] = [];
+
+  while (mixed.length < quotes.length) {
+    let progressed = false;
+    for (const imamId of order) {
+      const items = grouped.get(imamId);
+      if (!items?.length) continue;
+
+      const cursor = cursors.get(imamId) ?? 0;
+      if (cursor >= items.length) continue;
+
+      mixed.push(items[cursor]);
+      cursors.set(imamId, cursor + 1);
+      progressed = true;
+    }
+
+    if (!progressed) break;
+  }
+
+  return mixed;
+};
+
 const SelefIncileri = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedImamId, setSelectedImamId] = useState("all");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
@@ -70,19 +110,54 @@ const SelefIncileri = () => {
 
   const quotes = data?.quotes ?? [];
   const imams = data?.imams ?? [];
+  const selectedImam = selectedImamId === "all"
+    ? null
+    : imams.find((imam) => imam.id === selectedImamId) || null;
 
   useEffect(() => {
     persistFavoriteIds(favoriteIds);
   }, [favoriteIds]);
 
+  useEffect(() => {
+    if (!imams.length) return;
+
+    const imamFromQuery = searchParams.get("imam");
+    const hasValidImam = Boolean(imamFromQuery && imams.some((imam) => imam.id === imamFromQuery));
+
+    if (hasValidImam && imamFromQuery !== selectedImamId) {
+      setSelectedImamId(imamFromQuery!);
+      return;
+    }
+
+    if (imamFromQuery && !hasValidImam) {
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.delete("imam");
+      setSearchParams(nextParams, { replace: true });
+      if (selectedImamId !== "all") {
+        setSelectedImamId("all");
+      }
+      return;
+    }
+
+    if (!imamFromQuery && selectedImamId !== "all") {
+      setSelectedImamId("all");
+    }
+  }, [imams, searchParams, selectedImamId, setSearchParams]);
+
   const normalizedSearch = useMemo(() => normalizeSearchText(search), [search]);
+  const mixedQuotes = useMemo(
+    () => mixQuotesByImam(quotes, imams.map((imam) => imam.id)),
+    [imams, quotes],
+  );
+  const sourceQuotes = useMemo(() => {
+    if (selectedImamId === "all") {
+      return mixedQuotes;
+    }
+    return quotes.filter((quote) => quote.imamId === selectedImamId);
+  }, [mixedQuotes, quotes, selectedImamId]);
 
   const filteredQuotes = useMemo(() => {
-    return quotes.filter((quote) => {
-      if (selectedImamId !== "all" && quote.imamId !== selectedImamId) {
-        return false;
-      }
-
+    return sourceQuotes.filter((quote) => {
       if (favoritesOnly && !favoriteIds.has(quote.id)) {
         return false;
       }
@@ -94,7 +169,7 @@ const SelefIncileri = () => {
       const haystack = normalizeSearchText(`${quote.imamName} ${quote.text}`);
       return haystack.includes(normalizedSearch);
     });
-  }, [favoriteIds, favoritesOnly, normalizedSearch, quotes, selectedImamId]);
+  }, [favoriteIds, favoritesOnly, normalizedSearch, sourceQuotes]);
 
   usePageMeta({
     title: "Selef İncileri | Hikmet Ehli",
@@ -129,6 +204,19 @@ const SelefIncileri = () => {
     });
   };
 
+  const handleSelectImam = (imamId: string) => {
+    setSelectedImamId(imamId);
+    const nextParams = new URLSearchParams(searchParams);
+
+    if (imamId === "all") {
+      nextParams.delete("imam");
+    } else {
+      nextParams.set("imam", imamId);
+    }
+
+    setSearchParams(nextParams);
+  };
+
   return (
     <PageTransition>
       <main className="relative min-h-screen overflow-hidden bg-background">
@@ -148,7 +236,7 @@ const SelefIncileri = () => {
                   Selef İmamlarının Sözlerinden İnciler
                 </h1>
                 <p className="mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-                  İmam bazında filtrele, metin içinde ara, favorilerine kaydet ve dilediğin sözü paylaş.
+                  Landing’de seçtiğin imamı doğrudan burada açar. İstersen tüm imamlara dönüp arşivi genişletebilirsin.
                 </p>
               </div>
 
@@ -185,12 +273,29 @@ const SelefIncileri = () => {
               </button>
             </div>
 
+            {selectedImam ? (
+              <div
+                className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-primary/35 bg-primary/10 px-4 py-3"
+                data-selected-imam-banner={selectedImam.id}
+              >
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Seçili imam</p>
+                <p className="text-sm font-semibold">{selectedImam.name}</p>
+                <button
+                  type="button"
+                  onClick={() => handleSelectImam("all")}
+                  className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/80 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
+                >
+                  Tüm imamlar
+                </button>
+              </div>
+            ) : null}
+
             <div className="mt-4 overflow-x-auto pb-1">
               <div className="flex min-w-max items-center gap-2">
                 <button
                   type="button"
                   data-selef-imam-filter="all"
-                  onClick={() => setSelectedImamId("all")}
+                  onClick={() => handleSelectImam("all")}
                   className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
                     selectedImamId === "all"
                       ? "border-primary/60 bg-primary text-primary-foreground"
@@ -205,7 +310,7 @@ const SelefIncileri = () => {
                     key={imam.id}
                     type="button"
                     data-selef-imam-filter={imam.id}
-                    onClick={() => setSelectedImamId(imam.id)}
+                    onClick={() => handleSelectImam(imam.id)}
                     className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
                       selectedImamId === imam.id
                         ? "border-primary/60 bg-primary text-primary-foreground"
@@ -222,7 +327,7 @@ const SelefIncileri = () => {
           <section className="mt-5 md:mt-7">
             <div className="mb-4 flex items-center justify-between gap-2">
               <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                {isLoading ? "Yükleniyor" : `${filteredQuotes.length} söz`}
+                {isLoading ? "Yükleniyor" : selectedImam ? `${selectedImam.name}: ${filteredQuotes.length} söz` : `${filteredQuotes.length} söz`}
               </p>
               <p className="text-xs text-muted-foreground">Favori: {favoriteIds.size}</p>
             </div>
