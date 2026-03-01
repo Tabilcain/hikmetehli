@@ -33,8 +33,8 @@ const persistFavoriteIds = (favoriteIds: Set<string>) => {
 };
 
 const shareQuote = async (quote: SelefQuote) => {
-  const shareUrl = `${window.location.origin}/selef-incileri?imam=${encodeURIComponent(quote.imamId)}`;
-  const text = `✨ ${quote.imamName}\n“${quote.text}”\n\nHikmet Ehli - Selef İncileri\n${shareUrl}`;
+  const shareUrl = `${window.location.origin}/selef-incileri`;
+  const text = `✨ ${quote.imamName}\n“${quote.text}”\n\n${shareUrl}`;
 
   try {
     if (navigator.share) {

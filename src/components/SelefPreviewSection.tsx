@@ -35,8 +35,8 @@ export const SelefPreviewSection = () => {
   const handleShareSelectedQuote = async () => {
     if (!selectedImam || !selectedQuote) return;
 
-    const shareUrl = `${window.location.origin}/selef-incileri?imam=${encodeURIComponent(selectedImam.id)}`;
-    const text = `✨ ${selectedQuote.imamName}\n“${selectedQuote.text}”\n\nHikmet Ehli - Selef İncileri\n${shareUrl}`;
+    const shareUrl = `${window.location.origin}/selef-incileri`;
+    const text = `✨ ${selectedQuote.imamName}\n“${selectedQuote.text}”\n\n${shareUrl}`;
 
     try {
       if (navigator.share) {
