@@ -11,6 +11,7 @@ const LibraryIndex = lazy(() => import("./pages/LibraryIndex"));
 const LibraryDetail = lazy(() => import("./pages/LibraryDetail"));
 const LibraryReader = lazy(() => import("./pages/LibraryReader"));
 const SelefIncileri = lazy(() => import("./pages/SelefIncileri"));
+const SelefImamDetay = lazy(() => import("./pages/SelefImamDetay"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -71,6 +72,14 @@ const App = () => (
             element={(
               <Suspense fallback={RouteFallback}>
                 <SelefIncileri />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/selef-incileri/imam/:imamId"
+            element={(
+              <Suspense fallback={RouteFallback}>
+                <SelefImamDetay />
               </Suspense>
             )}
           />

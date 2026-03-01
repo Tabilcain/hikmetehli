@@ -38,7 +38,7 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(page.locator("#selef-incileri")).toBeVisible();
   await expect(page.locator("#selef-incileri h2")).toHaveText(/Satırlardan Sadırlara/i);
 
-  const previewImams = page.locator("button[data-selef-preview-imam]");
+  const previewImams = page.locator("[data-selef-preview-imam]");
   await expect(previewImams.first()).toBeVisible();
   await expect(previewImams).toHaveCount(13);
 
@@ -58,7 +58,7 @@ test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
   await page.waitForLoadState("networkidle");
 
   await page.locator("#selef-incileri").scrollIntoViewIfNeeded();
-  const previewImams = page.locator("button[data-selef-preview-imam]");
+  const previewImams = page.locator("[data-selef-preview-imam]");
   await expect(previewImams).toHaveCount(13);
 
   const previewList = page.locator("[data-selef-preview-imam-list]").first();
@@ -89,6 +89,13 @@ test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
   );
   expect(filterRows[1]).toBeGreaterThan(filterRows[0]);
 
+  const targetImamFilter = detailFilterButtons.nth(2);
+  const targetImamId = await targetImamFilter.getAttribute("data-selef-imam-filter");
+  expect(targetImamId).toBeTruthy();
+  await targetImamFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/selef-incileri/imam/${targetImamId}`));
+  await expect(page.locator(`[data-selected-imam-banner="${targetImamId}"]`)).toBeVisible();
+
   expect(runtimeErrors).toEqual([]);
 });
 
@@ -96,37 +103,14 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   const runtimeErrors = captureRuntimeErrors(page);
 
   await page.goto("/selef-incileri?imam=imam-safii", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("heading", { name: "Selef İmamlarının Sözlerinden İnciler" })).toBeVisible();
+  await expect(page).toHaveURL(/\/selef-incileri\/imam\/imam-safii$/);
   await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();
-
-  const filterButtons = page.locator("button[data-selef-imam-filter]");
-  await expect(filterButtons).toHaveCount(14);
 
   const imamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
     elements.map((element) => element.getAttribute("data-imam-id")),
   );
   expect(imamIds.length).toBeGreaterThan(0);
   expect(imamIds.every((id) => id === "imam-safii")).toBeTruthy();
-
-  await page.getByRole("button", { name: "Tüm imamlar" }).click();
-  await expect(page).toHaveURL(/\/selef-incileri$/);
-  await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toHaveCount(0);
-  const mixedAllImamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
-    elements.slice(0, 8).map((element) => element.getAttribute("data-imam-id")),
-  );
-  expect(new Set(mixedAllImamIds).size).toBeGreaterThan(1);
-
-  const targetFilter = filterButtons.nth(2);
-  const targetFilterId = await targetFilter.getAttribute("data-selef-imam-filter");
-  expect(targetFilterId).toBeTruthy();
-  await targetFilter.click();
-  await expect(page).toHaveURL(new RegExp(`/selef-incileri\\?imam=${targetFilterId}`));
-
-  const filteredImamIds = await page.locator("article[data-imam-id]").evaluateAll((elements) =>
-    elements.map((element) => element.getAttribute("data-imam-id")),
-  );
-  expect(filteredImamIds.length).toBeGreaterThan(0);
-  expect(filteredImamIds.every((id) => id === targetFilterId)).toBeTruthy();
 
   const firstCard = page.locator("article[data-quote-id]").first();
   await expect(firstCard).toBeVisible();
@@ -151,6 +135,22 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   await page.reload({ waitUntil: "domcontentloaded" });
   const persistedFavorite = page.locator(`button[data-favorite-button="${quoteId}"]`);
   await expect(persistedFavorite).toHaveAttribute("aria-pressed", "true");
+
+  await page.getByRole("link", { name: "Tüm imamlar" }).click();
+  await expect(page).toHaveURL(/\/selef-incileri$/);
+  await expect(page.locator("[data-selected-imam-banner]")).toHaveCount(0);
+
+  const mixedAllImamIds = await page.locator("article[data-imam-id]:visible").evaluateAll((elements) =>
+    elements.slice(0, 8).map((element) => element.getAttribute("data-imam-id")),
+  );
+  expect(new Set(mixedAllImamIds).size).toBeGreaterThan(1);
+
+  const filterButtons = page.locator("button[data-selef-imam-filter]");
+  const targetFilter = filterButtons.nth(2);
+  const targetFilterId = await targetFilter.getAttribute("data-selef-imam-filter");
+  expect(targetFilterId).toBeTruthy();
+  await targetFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/selef-incileri/imam/${targetFilterId}`));
 
   expect(runtimeErrors).toEqual([]);
 });

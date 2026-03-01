@@ -1,10 +1,38 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Share2, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
-import { loadSelefQuotesPayload } from "@/services/selefService";
+import { loadSelefQuotesPayload, type SelefQuote } from "@/services/selefService";
+
+const getDaySeed = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
+const hashString = (value: string) => {
+  let hash = 5381;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = ((hash << 5) + hash) ^ value.charCodeAt(index);
+  }
+  return hash >>> 0;
+};
+
+const pickFeaturedQuote = (quotes: SelefQuote[]) => {
+  if (!quotes.length) return null;
+  const seed = getDaySeed();
+  const sorted = [...quotes].sort((quoteA, quoteB) => {
+    const orderA = hashString(`${seed}:${quoteA.id}`);
+    const orderB = hashString(`${seed}:${quoteB.id}`);
+    if (orderA !== orderB) return orderA - orderB;
+    return quoteA.id.localeCompare(quoteB.id, "tr");
+  });
+  return sorted[0];
+};
 
 export const SelefPreviewSection = () => {
   const { isMobile } = usePerformanceMode();
@@ -16,29 +44,19 @@ export const SelefPreviewSection = () => {
 
   const imams = data?.imams ?? [];
   const quotes = data?.quotes ?? [];
-  const [selectedImamId, setSelectedImamId] = useState<string>("");
 
-  useEffect(() => {
-    if (!imams.length) return;
-    if (selectedImamId && imams.some((imam) => imam.id === selectedImamId)) return;
-    setSelectedImamId(imams[0].id);
-  }, [imams, selectedImamId]);
+  const featuredQuote = useMemo(() => pickFeaturedQuote(quotes), [quotes]);
+  const featuredImam = useMemo(() => {
+    if (!imams.length) return null;
+    if (!featuredQuote) return imams[0];
+    return imams.find((imam) => imam.id === featuredQuote.imamId) ?? imams[0];
+  }, [featuredQuote, imams]);
 
-  const selectedImam = useMemo(
-    () => imams.find((imam) => imam.id === selectedImamId) || imams[0],
-    [imams, selectedImamId],
-  );
-
-  const selectedQuote = useMemo(() => {
-    if (!selectedImam) return null;
-    return quotes.find((quote) => quote.imamId === selectedImam.id) || null;
-  }, [quotes, selectedImam]);
-
-  const handleShareSelectedQuote = async () => {
-    if (!selectedImam || !selectedQuote) return;
+  const handleShareFeaturedQuote = async () => {
+    if (!featuredQuote) return;
 
     const shareUrl = `${window.location.origin}/selef-incileri`;
-    const text = `✨ ${selectedQuote.imamName}\n“${selectedQuote.text}”\n\n${shareUrl}`;
+    const text = `✨ ${featuredQuote.imamName}\n“${featuredQuote.text}”\n\n${shareUrl}`;
 
     try {
       if (navigator.share) {
@@ -83,11 +101,14 @@ export const SelefPreviewSection = () => {
             <p className="text-sm md:text-lg text-muted-foreground">
               İsimler arasında gezinebilir, dilediğin kişinin üzerine dokunarak ona ait hikmetli sözleri anında görüntüleyebilirsin.
             </p>
+            <p className="text-xs md:text-sm text-muted-foreground/90">
+              Önce imamı seç, sonra doğrudan onun sözlerine geç.
+            </p>
           </div>
 
           <Link
             to="/selef-incileri"
-            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated hover:shadow-glow transition-all"
+            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-all hover:shadow-glow"
           >
             Tümünü Gör
             <Sparkles className="h-4 w-4" />
@@ -116,22 +137,21 @@ export const SelefPreviewSection = () => {
                 <div className="mt-4" data-selef-preview-imam-list>
                   <div className="grid grid-cols-1 gap-2">
                     {imams.map((imam) => {
-                      const isActive = selectedImam?.id === imam.id;
+                      const isFeatured = featuredImam?.id === imam.id;
                       return (
-                        <button
+                        <Link
                           key={imam.id}
-                          type="button"
+                          to={`/selef-incileri/imam/${imam.id}`}
                           data-selef-preview-imam={imam.id}
-                          onClick={() => setSelectedImamId(imam.id)}
                           className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
-                            isActive
+                            isFeatured
                               ? "border-primary/60 bg-primary text-primary-foreground"
                               : "border-border/70 bg-background/70 text-foreground"
                           }`}
                         >
                           <span>{imam.name}</span>
                           <span className="text-[10px] opacity-90">{imam.count}</span>
-                        </button>
+                        </Link>
                       );
                     })}
                   </div>
@@ -140,46 +160,45 @@ export const SelefPreviewSection = () => {
                 <div className="mt-4 -mx-1 overflow-x-auto pb-1" data-selef-preview-imam-list>
                   <div className="flex min-w-max gap-2 px-1 snap-x snap-mandatory">
                     {imams.map((imam) => {
-                      const isActive = selectedImam?.id === imam.id;
+                      const isFeatured = featuredImam?.id === imam.id;
                       return (
-                        <button
+                        <Link
                           key={imam.id}
-                          type="button"
+                          to={`/selef-incileri/imam/${imam.id}`}
                           data-selef-preview-imam={imam.id}
-                          onClick={() => setSelectedImamId(imam.id)}
                           className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
-                            isActive
+                            isFeatured
                               ? "border-primary/60 bg-primary text-primary-foreground"
                               : "border-border/70 bg-background/70 text-foreground"
                           }`}
                         >
                           {imam.name}
-                        </button>
+                        </Link>
                       );
                     })}
                   </div>
                 </div>
               )}
 
-              {selectedImam ? (
+              {featuredImam ? (
                 <div className="mt-5 rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
-                    <p className="text-sm font-semibold">{selectedImam.name}</p>
+                    <p className="text-sm font-semibold">{featuredImam.name}</p>
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      {selectedImam.count} söz
+                      {featuredImam.count} söz
                     </p>
                   </div>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {selectedQuote ? `“${selectedQuote.text.slice(0, 168)}${selectedQuote.text.length > 168 ? "..." : ""}”` : "Bu imam için sözler yükleniyor."}
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {featuredQuote ? `“${featuredQuote.text.slice(0, 168)}${featuredQuote.text.length > 168 ? "..." : ""}”` : "Bu imam için sözler yükleniyor."}
                   </p>
                   <div className="mt-4">
                     <button
                       type="button"
                       onClick={() => {
-                        void handleShareSelectedQuote();
+                        void handleShareFeaturedQuote();
                       }}
-                      disabled={!selectedQuote}
-                      className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground"
+                      disabled={!featuredQuote}
+                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground sm:w-auto"
                     >
                       Paylaş
                       <Share2 className="h-4 w-4" />
