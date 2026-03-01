@@ -41,10 +41,10 @@ export const SelefPreviewSection = () => {
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Selef İncileri</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
-              Önce imamı seç, sonra doğrudan onun sözlerine geç.
+              Satırlardan Sadırlara
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              Mobil odaklı keşif akışıyla önce isimleri gör, birini seç ve tek dokunuşla o kişinin söz arşivini aç.
+              İsimler arasında gezinebilir, dilediğin kişinin üzerine dokunarak ona ait hikmetli sözleri anında görüntüleyebilirsin.
             </p>
           </div>
 
