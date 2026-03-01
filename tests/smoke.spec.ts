@@ -36,7 +36,7 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(page.locator("#saatlik-ilham")).toBeVisible();
   await expect(page.getByText("Zamana göre değişen sahih hadisler.")).toBeVisible();
   await expect(page.locator("#selef-incileri")).toBeVisible();
-  await expect(page.getByText(/Önce imamı seç, sonra doğrudan onun sözlerine geç\./i)).toBeVisible();
+  await expect(page.locator("#selef-incileri h2")).toHaveText(/Satırlardan Sadırlara/i);
 
   const previewImams = page.locator("button[data-selef-preview-imam]");
   await expect(previewImams.first()).toBeVisible();

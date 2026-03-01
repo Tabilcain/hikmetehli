@@ -33,14 +33,14 @@ const persistFavoriteIds = (favoriteIds: Set<string>) => {
 };
 
 const shareQuote = async (quote: SelefQuote) => {
-  const text = `✨ ${quote.imamName}\n${quote.text}\n\nHikmet Ehli - Selef İncileri`;
+  const shareUrl = `${window.location.origin}/selef-incileri?imam=${encodeURIComponent(quote.imamId)}`;
+  const text = `✨ ${quote.imamName}\n“${quote.text}”\n\nHikmet Ehli - Selef İncileri\n${shareUrl}`;
 
   try {
     if (navigator.share) {
       await navigator.share({
         title: "Selef İncileri",
         text,
-        url: `${window.location.origin}/selef-incileri`,
       });
       return true;
     }
