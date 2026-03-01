@@ -154,6 +154,16 @@
   .grid-overlay {
     background-size: 120px 120px;
   }
+
+  .hero-glow {
+    filter: saturate(0.85);
+    opacity: 0.65 !important;
+  }
+
+  .islamic-pattern {
+    background-size: 92px 92px;
+    opacity: 0.08 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -281,5 +291,10 @@
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1100px;
   }
 }

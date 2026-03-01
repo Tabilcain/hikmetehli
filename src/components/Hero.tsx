@@ -18,7 +18,7 @@ export const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[84vh] md:min-h-[85vh] overflow-hidden"
+      className="relative min-h-[78vh] md:min-h-[85vh] overflow-hidden"
     >
       <div className="absolute inset-0 gradient-hero" />
       <div className="absolute inset-0 hero-glow opacity-50 md:opacity-80" />
@@ -47,7 +47,7 @@ export const Hero = () => {
         </>
       )}
 
-      <nav className="relative z-10 flex items-center justify-between px-6 lg:px-16 pt-8">
+      <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 lg:px-16 pt-6 md:pt-8">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center font-display text-lg">
             HE
@@ -94,7 +94,7 @@ export const Hero = () => {
           <motion.div style={{ opacity: fadeOut }}>
             <div
               className={cn(
-                "inline-flex items-center gap-3 px-3 md:px-4 py-2 rounded-full border border-border/80 text-[10px] md:text-xs uppercase tracking-[0.26em] md:tracking-[0.35em] text-muted-foreground",
+                "inline-flex items-center gap-3 px-3 md:px-4 py-2 rounded-full border border-border/80 text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.35em] text-muted-foreground",
                 lowPerformanceMode ? "bg-background/80" : "bg-background/60 backdrop-blur-sm",
               )}
             >
@@ -106,7 +106,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 md:mt-8 text-4xl md:text-7xl lg:text-8xl font-display tracking-tight text-balance"
+              className="mt-6 md:mt-8 text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-display tracking-tight text-balance"
             >
               Hikmet Ehli
               <span className="hidden sm:block mt-6 text-2xl md:text-3xl lg:text-4xl font-arabic font-medium text-foreground/90 leading-[2.1]" dir="rtl" lang="ar">
@@ -120,21 +120,21 @@ export const Hero = () => {
               </span>
             </motion.h1>
 
-            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
+            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 md:gap-4">
               <Link
-                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-all"
                 to="/kutuphane"
               >
                 Kütüphane
               </Link>
               <a
-                className="inline-flex px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-background transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-all"
                 href="#saatlik-ilham"
               >
                 Saatlik Sahih Hadis
               </a>
               <a
-                className="px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
                 href="#selef-incileri"
               >
                 Selef İncileri

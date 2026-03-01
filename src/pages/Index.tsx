@@ -73,14 +73,20 @@ const Index = () => {
 
         <Hero />
 
-        <LibraryPreviewSection />
+        <div className="content-visibility-auto">
+          <LibraryPreviewSection />
+        </div>
 
-        <SelefPreviewSection />
+        <div className="content-visibility-auto">
+          <SelefPreviewSection />
+        </div>
 
         {showDeferredSections ? (
-          <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
-            <HourlyContentSection tone="muted" />
-          </Suspense>
+          <div className="content-visibility-auto">
+            <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
+              <HourlyContentSection tone="muted" />
+            </Suspense>
+          </div>
         ) : (
           <div className="container py-10">
             <div className="rounded-3xl border border-border/70 bg-card/70 p-4 text-sm text-muted-foreground">
@@ -90,9 +96,11 @@ const Index = () => {
         )}
 
         {showDeferredSections ? (
-          <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
-            <SocialLinks />
-          </Suspense>
+          <div className="content-visibility-auto">
+            <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
+              <SocialLinks />
+            </Suspense>
+          </div>
         ) : null}
 
         <Footer />

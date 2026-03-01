@@ -5,6 +5,7 @@ import { ArrowLeft, Heart, HeartOff, Search, Share2, Sparkles } from "lucide-rea
 import { PageTransition } from "@/components/PageTransition";
 import { toast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { normalizeSearchText } from "@/lib/library";
 import { loadSelefQuotesPayload, type SelefQuote } from "@/services/selefService";
 
@@ -96,6 +97,7 @@ const mixQuotesByImam = (quotes: SelefQuote[], imamOrder: string[]) => {
 };
 
 const SelefIncileri = () => {
+  const { isMobile } = usePerformanceMode();
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [selectedImamId, setSelectedImamId] = useState("all");
@@ -290,38 +292,75 @@ const SelefIncileri = () => {
               </div>
             ) : null}
 
-            <div className="mt-4 overflow-x-auto pb-1">
-              <div className="flex min-w-max items-center gap-2">
-                <button
-                  type="button"
-                  data-selef-imam-filter="all"
-                  onClick={() => handleSelectImam("all")}
-                  className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
-                    selectedImamId === "all"
-                      ? "border-primary/60 bg-primary text-primary-foreground"
-                      : "border-border/70 bg-background/70"
-                  }`}
-                >
-                  Tümü
-                </button>
-
-                {imams.map((imam) => (
+            {isMobile ? (
+              <div className="mt-4" data-selef-filter-list>
+                <div className="grid grid-cols-1 gap-2">
                   <button
-                    key={imam.id}
                     type="button"
-                    data-selef-imam-filter={imam.id}
-                    onClick={() => handleSelectImam(imam.id)}
-                    className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
-                      selectedImamId === imam.id
+                    data-selef-imam-filter="all"
+                    onClick={() => handleSelectImam("all")}
+                    className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                      selectedImamId === "all"
                         ? "border-primary/60 bg-primary text-primary-foreground"
                         : "border-border/70 bg-background/70"
                     }`}
                   >
-                    {imam.name}
+                    <span>Tümü</span>
+                    <span className="text-[10px] opacity-90">{quotes.length}</span>
                   </button>
-                ))}
+
+                  {imams.map((imam) => (
+                    <button
+                      key={imam.id}
+                      type="button"
+                      data-selef-imam-filter={imam.id}
+                      onClick={() => handleSelectImam(imam.id)}
+                      className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                        selectedImamId === imam.id
+                          ? "border-primary/60 bg-primary text-primary-foreground"
+                          : "border-border/70 bg-background/70"
+                      }`}
+                    >
+                      <span>{imam.name}</span>
+                      <span className="text-[10px] opacity-90">{imam.count}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="mt-4 overflow-x-auto pb-1" data-selef-filter-list>
+                <div className="flex min-w-max items-center gap-2">
+                  <button
+                    type="button"
+                    data-selef-imam-filter="all"
+                    onClick={() => handleSelectImam("all")}
+                    className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                      selectedImamId === "all"
+                        ? "border-primary/60 bg-primary text-primary-foreground"
+                        : "border-border/70 bg-background/70"
+                    }`}
+                  >
+                    Tümü
+                  </button>
+
+                  {imams.map((imam) => (
+                    <button
+                      key={imam.id}
+                      type="button"
+                      data-selef-imam-filter={imam.id}
+                      onClick={() => handleSelectImam(imam.id)}
+                      className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                        selectedImamId === imam.id
+                          ? "border-primary/60 bg-primary text-primary-foreground"
+                          : "border-border/70 bg-background/70"
+                      }`}
+                    >
+                      {imam.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </header>
 
           <section className="mt-5 md:mt-7">
@@ -364,9 +403,9 @@ const SelefIncileri = () => {
                       className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft"
                     >
                       <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.imamName}</p>
-                      <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/95">“{quote.text}”</p>
+                      <p className="mt-3 break-words text-sm leading-7 md:text-base text-foreground/95">“{quote.text}”</p>
 
-                      <div className="mt-4 grid grid-cols-2 gap-2">
+                      <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <button
                           type="button"
                           data-favorite-button={quote.id}

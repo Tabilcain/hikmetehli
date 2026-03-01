@@ -50,6 +50,48 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   expect(runtimeErrors).toEqual([]);
 });
 
+test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
+  const runtimeErrors = captureRuntimeErrors(page);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("networkidle");
+
+  await page.locator("#selef-incileri").scrollIntoViewIfNeeded();
+  const previewImams = page.locator("button[data-selef-preview-imam]");
+  await expect(previewImams).toHaveCount(13);
+
+  const previewList = page.locator("[data-selef-preview-imam-list]").first();
+  const previewHasHorizontalOverflow = await previewList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(previewHasHorizontalOverflow).toBeFalsy();
+
+  const previewRows = await previewImams.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(previewRows[1]).toBeGreaterThan(previewRows[0]);
+
+  await page.locator('#selef-incileri a[href="/selef-incileri"]').first().click();
+  await expect(page).toHaveURL(/\/selef-incileri$/);
+
+  const detailFilterButtons = page.locator("button[data-selef-imam-filter]");
+  await expect(detailFilterButtons).toHaveCount(14);
+
+  const filterList = page.locator("[data-selef-filter-list]").first();
+  const filterHasHorizontalOverflow = await filterList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(filterHasHorizontalOverflow).toBeFalsy();
+
+  const filterRows = await detailFilterButtons.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(filterRows[1]).toBeGreaterThan(filterRows[0]);
+
+  expect(runtimeErrors).toEqual([]);
+});
+
 test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calistiriyor", async ({ page }) => {
   const runtimeErrors = captureRuntimeErrors(page);
 

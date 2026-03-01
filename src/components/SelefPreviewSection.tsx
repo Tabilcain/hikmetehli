@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Share2, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
+import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { loadSelefQuotesPayload } from "@/services/selefService";
 
 export const SelefPreviewSection = () => {
+  const { isMobile } = usePerformanceMode();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["selef-quotes"],
     queryFn: loadSelefQuotesPayload,
@@ -110,28 +112,54 @@ export const SelefPreviewSection = () => {
                 <p className="text-xs text-muted-foreground">{imams.length} isim</p>
               </div>
 
-              <div className="mt-4 -mx-1 overflow-x-auto pb-1">
-                <div className="flex min-w-max gap-2 px-1 snap-x snap-mandatory">
-                  {imams.map((imam) => {
-                    const isActive = selectedImam?.id === imam.id;
-                    return (
-                      <button
-                        key={imam.id}
-                        type="button"
-                        data-selef-preview-imam={imam.id}
-                        onClick={() => setSelectedImamId(imam.id)}
-                        className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
-                          isActive
-                            ? "border-primary/60 bg-primary text-primary-foreground"
-                            : "border-border/70 bg-background/70 text-foreground"
-                        }`}
-                      >
-                        {imam.name}
-                      </button>
-                    );
-                  })}
+              {isMobile ? (
+                <div className="mt-4" data-selef-preview-imam-list>
+                  <div className="grid grid-cols-1 gap-2">
+                    {imams.map((imam) => {
+                      const isActive = selectedImam?.id === imam.id;
+                      return (
+                        <button
+                          key={imam.id}
+                          type="button"
+                          data-selef-preview-imam={imam.id}
+                          onClick={() => setSelectedImamId(imam.id)}
+                          className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                            isActive
+                              ? "border-primary/60 bg-primary text-primary-foreground"
+                              : "border-border/70 bg-background/70 text-foreground"
+                          }`}
+                        >
+                          <span>{imam.name}</span>
+                          <span className="text-[10px] opacity-90">{imam.count}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mt-4 -mx-1 overflow-x-auto pb-1" data-selef-preview-imam-list>
+                  <div className="flex min-w-max gap-2 px-1 snap-x snap-mandatory">
+                    {imams.map((imam) => {
+                      const isActive = selectedImam?.id === imam.id;
+                      return (
+                        <button
+                          key={imam.id}
+                          type="button"
+                          data-selef-preview-imam={imam.id}
+                          onClick={() => setSelectedImamId(imam.id)}
+                          className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                            isActive
+                              ? "border-primary/60 bg-primary text-primary-foreground"
+                              : "border-border/70 bg-background/70 text-foreground"
+                          }`}
+                        >
+                          {imam.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
               {selectedImam ? (
                 <div className="mt-5 rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
@@ -151,7 +179,7 @@ export const SelefPreviewSection = () => {
                         void handleShareSelectedQuote();
                       }}
                       disabled={!selectedQuote}
-                      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground"
+                      className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground"
                     >
                       Paylaş
                       <Share2 className="h-4 w-4" />

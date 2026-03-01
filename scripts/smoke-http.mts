@@ -66,6 +66,24 @@ const expectHttpOk = async (pathname: string, expectedContentType?: string) => {
   );
 };
 
+const expectHeaderContains = async (pathname: string, headerName: string, expectedValue: string) => {
+  const { response } = await fetchWithHeadFallback(pathname);
+  const rawHeader = response.headers.get(headerName.toLowerCase()) || response.headers.get(headerName) || "";
+  assert(
+    rawHeader.toLowerCase().includes(expectedValue.toLowerCase()),
+    `${pathname} için ${headerName} '${rawHeader}' fakat '${expectedValue}' içermeliydi.`,
+  );
+};
+
+const getIndexAssetPath = async () => {
+  const response = await fetch(`${baseUrl}/`, { method: "GET" });
+  assert(response.ok, `/ root GET ${response.status} döndü.`);
+  const html = await response.text();
+  const match = html.match(/<script[^>]+src="(\/assets\/index-[^"]+\.js)"/i);
+  assert(Boolean(match?.[1]), "index.html içinde ana js asset yolu bulunamadı.");
+  return match![1];
+};
+
 const waitUntilReady = async () => {
   const timeoutMs = 45_000;
   const startedAt = Date.now();
@@ -148,6 +166,12 @@ const run = async () => {
     assert(catalogFromServer.length >= catalog.length, "Sunucu katalog kaydı beklenenden az.");
 
     await expectHttpOk("/selef/quotes.v1.json", "application/json");
+    const indexAssetPath = await getIndexAssetPath();
+    await expectHeaderContains(indexAssetPath, "cache-control", "immutable");
+    await expectHeaderContains(indexAssetPath, "cache-control", "max-age=31536000");
+    await expectHeaderContains("/selef/quotes.v1.json", "cache-control", "s-maxage=3600");
+    await expectHeaderContains("/library/catalog.v1.json", "cache-control", "s-maxage=3600");
+    await expectHeaderContains("/", "cache-control", "max-age=0");
 
     for (const book of catalog) {
       await expectHttpOk(toAssetPathname(book.pdfPath), "application/pdf");

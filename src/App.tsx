@@ -12,7 +12,21 @@ const LibraryDetail = lazy(() => import("./pages/LibraryDetail"));
 const LibraryReader = lazy(() => import("./pages/LibraryReader"));
 const SelefIncileri = lazy(() => import("./pages/SelefIncileri"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5,
+      gcTime: 1000 * 60 * 30,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: true,
+      retry: 1,
+      retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 8000),
+    },
+    mutations: {
+      retry: 0,
+    },
+  },
+});
 const RouteFallback = (
   <div className="min-h-screen bg-background text-foreground flex items-center justify-center text-sm text-muted-foreground">
     Sayfa yükleniyor...

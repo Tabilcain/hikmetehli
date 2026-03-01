@@ -37,8 +37,6 @@ export default defineConfig(() => ({
         "manifest.json",
         "quran.json",
         "sitemap.xml",
-        "library/catalog.v1.json",
-        "selef/quotes.v1.json",
       ],
       manifest: {
         name: "Hikmet Ehli",
@@ -62,6 +60,7 @@ export default defineConfig(() => ({
         ],
       },
       workbox: {
+        cleanupOutdatedCaches: true,
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         globPatterns: ["**/*.{js,mjs,css,html,svg,png,webp,ico,woff2}"],
         navigateFallbackDenylist: [
@@ -73,9 +72,12 @@ export default defineConfig(() => ({
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.endsWith("/library/catalog.v1.json"),
-            handler: "CacheFirst",
+            handler: "StaleWhileRevalidate",
             options: {
               cacheName: "library-catalog-cache",
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
               expiration: {
                 maxEntries: 1,
                 maxAgeSeconds: 60 * 60 * 24 * 30,
@@ -95,9 +97,12 @@ export default defineConfig(() => ({
           },
           {
             urlPattern: ({ url }) => url.pathname.endsWith("/selef/quotes.v1.json"),
-            handler: "CacheFirst",
+            handler: "StaleWhileRevalidate",
             options: {
               cacheName: "selef-quotes-cache",
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
               expiration: {
                 maxEntries: 1,
                 maxAgeSeconds: 60 * 60 * 24 * 30,
