@@ -226,18 +226,24 @@ const SelefIncileri = () => {
   const handleOpenImam = (imamId: string) => {
     navigate(`/selef-incileri/imam/${imamId}`);
   };
+  const imamSkeletonCount = isMobile ? 7 : 10;
 
   return (
     <PageTransition>
       <main className="relative min-h-screen overflow-hidden bg-background">
         <div className="absolute inset-0 gradient-hero opacity-75" />
-        <div className="absolute inset-0 hero-glow opacity-45" />
-        <div className="absolute inset-0 grid-overlay opacity-35" />
+        <div className="absolute inset-0 hero-glow opacity-28 md:opacity-45" />
+        <div className="absolute inset-0 grid-overlay opacity-22 md:opacity-35" />
 
         <div className="container relative z-10 py-6 md:py-10">
-          <header className="rounded-2xl md:rounded-3xl border border-border/80 bg-card/80 p-4 md:p-7 shadow-elevated backdrop-blur-sm">
+          <header
+            className={`rounded-2xl md:rounded-3xl border border-border/80 p-4 md:p-7 shadow-elevated ${
+              isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
+            }`}
+            data-selef-header-shell
+          >
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
+              <div className="min-h-[146px] md:min-h-[174px]">
                 <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-primary">
                   <Sparkles className="h-4 w-4" />
                   Selef İncileri
@@ -284,53 +290,75 @@ const SelefIncileri = () => {
             </div>
 
             {isMobile ? (
-              <div className="mt-4" data-selef-filter-list>
+              <div className="mt-4 min-h-[352px]" data-selef-filter-list>
                 <div className="grid grid-cols-1 gap-2">
-                  <button
-                    type="button"
-                    data-selef-imam-filter="all"
-                    className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-primary/60 bg-primary px-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground"
-                  >
-                    <span>Tümü</span>
-                    <span className="text-[10px] opacity-90">{quotes.length}</span>
-                  </button>
+                  {isLoading ? (
+                    Array.from({ length: imamSkeletonCount }).map((_, index) => (
+                      <div
+                        key={`imam-skeleton-${index}`}
+                        className="min-h-12 animate-pulse rounded-xl border border-border/60 bg-background/55"
+                      />
+                    ))
+                  ) : (
+                    <>
+                      <button
+                        type="button"
+                        data-selef-imam-filter="all"
+                        className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-primary/60 bg-primary px-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground"
+                      >
+                        <span>Tümü</span>
+                        <span className="text-[10px] opacity-90">{quotes.length}</span>
+                      </button>
 
-                  {imams.map((imam) => (
-                    <button
-                      key={imam.id}
-                      type="button"
-                      data-selef-imam-filter={imam.id}
-                      onClick={() => handleOpenImam(imam.id)}
-                      className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-border/70 bg-background/70 px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors"
-                    >
-                      <span>{imam.name}</span>
-                      <span className="text-[10px] opacity-90">{imam.count}</span>
-                    </button>
-                  ))}
+                      {imams.map((imam) => (
+                        <button
+                          key={imam.id}
+                          type="button"
+                          data-selef-imam-filter={imam.id}
+                          onClick={() => handleOpenImam(imam.id)}
+                          className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-border/70 bg-background/70 px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors"
+                        >
+                          <span>{imam.name}</span>
+                          <span className="text-[10px] opacity-90">{imam.count}</span>
+                        </button>
+                      ))}
+                    </>
+                  )}
                 </div>
               </div>
             ) : (
-              <div className="mt-4 overflow-x-auto pb-1" data-selef-filter-list>
+              <div className="mt-4 min-h-[56px] overflow-x-auto pb-1" data-selef-filter-list>
                 <div className="flex min-w-max items-center gap-2">
-                  <button
-                    type="button"
-                    data-selef-imam-filter="all"
-                    className="inline-flex min-h-11 items-center rounded-full border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
-                  >
-                    Tümü
-                  </button>
+                  {isLoading ? (
+                    Array.from({ length: imamSkeletonCount }).map((_, index) => (
+                      <div
+                        key={`imam-desktop-skeleton-${index}`}
+                        className="h-11 w-28 animate-pulse rounded-full border border-border/60 bg-background/55"
+                      />
+                    ))
+                  ) : (
+                    <>
+                      <button
+                        type="button"
+                        data-selef-imam-filter="all"
+                        className="inline-flex min-h-11 items-center rounded-full border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
+                      >
+                        Tümü
+                      </button>
 
-                  {imams.map((imam) => (
-                    <button
-                      key={imam.id}
-                      type="button"
-                      data-selef-imam-filter={imam.id}
-                      onClick={() => handleOpenImam(imam.id)}
-                      className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors"
-                    >
-                      {imam.name}
-                    </button>
-                  ))}
+                      {imams.map((imam) => (
+                        <button
+                          key={imam.id}
+                          type="button"
+                          data-selef-imam-filter={imam.id}
+                          onClick={() => handleOpenImam(imam.id)}
+                          className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors"
+                        >
+                          {imam.name}
+                        </button>
+                      ))}
+                    </>
+                  )}
                 </div>
               </div>
             )}
@@ -355,7 +383,7 @@ const SelefIncileri = () => {
                 {Array.from({ length: 6 }).map((_, index) => (
                   <div
                     key={index}
-                    className="animate-pulse rounded-[22px] border border-border/70 bg-card/70 p-4"
+                    className="min-h-[228px] animate-pulse rounded-[22px] border border-border/70 bg-card/70 p-4"
                   >
                     <div className="h-4 w-1/3 rounded bg-muted/40" />
                     <div className="mt-4 h-4 w-full rounded bg-muted/35" />
@@ -373,7 +401,7 @@ const SelefIncileri = () => {
                       key={quote.id}
                       data-imam-id={quote.imamId}
                       data-quote-id={quote.id}
-                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft"
+                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_270px] [content-visibility:auto]"
                     >
                       <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.imamName}</p>
                       <p className="mt-3 break-words text-sm leading-7 md:text-base text-foreground/95">“{quote.text}”</p>

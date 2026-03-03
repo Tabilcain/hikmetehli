@@ -88,8 +88,8 @@ export const SelefPreviewSection = () => {
 
   return (
     <section className="relative py-16 md:py-24" id="selef-incileri">
-      <div className="absolute inset-0 hero-glow opacity-25" />
-      <div className="absolute inset-0 grid-overlay opacity-20" />
+      <div className="absolute inset-0 hero-glow opacity-18 md:opacity-25" />
+      <div className="absolute inset-0 grid-overlay opacity-14 md:opacity-20" />
 
       <div className="container relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -108,19 +108,25 @@ export const SelefPreviewSection = () => {
 
           <Link
             to="/selef-incileri"
-            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-all hover:shadow-glow"
+            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-[box-shadow,background-color] hover:shadow-glow"
           >
             Tümünü Gör
             <Sparkles className="h-4 w-4" />
           </Link>
         </div>
 
-        <article className="mt-8 md:mt-10 rounded-[24px] md:rounded-[30px] border border-border/80 bg-card/85 p-4 md:p-6 shadow-soft backdrop-blur-sm">
+        <article
+          className={`mt-8 min-h-[500px] md:mt-10 md:min-h-[420px] rounded-[24px] md:rounded-[30px] border border-border/80 p-4 md:p-6 shadow-soft ${
+            isMobile ? "bg-card/90" : "bg-card/85 backdrop-blur-sm"
+          }`}
+          data-selef-preview-shell
+        >
           {isLoading ? (
             <div className="space-y-4 animate-pulse">
               <div className="h-4 w-36 rounded bg-muted/35" />
-              <div className="h-20 w-full rounded-2xl bg-muted/35" />
-              <div className="h-20 w-full rounded-2xl bg-muted/30" />
+              <div className="h-12 w-full rounded-xl bg-muted/35" />
+              <div className="h-12 w-full rounded-xl bg-muted/30" />
+              <div className="h-36 w-full rounded-2xl bg-muted/28" />
             </div>
           ) : isError ? (
             <div className="rounded-2xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive-foreground">
@@ -134,7 +140,7 @@ export const SelefPreviewSection = () => {
               </div>
 
               {isMobile ? (
-                <div className="mt-4" data-selef-preview-imam-list>
+                <div className="mt-4 min-h-[210px]" data-selef-preview-imam-list>
                   <div className="grid grid-cols-1 gap-2">
                     {imams.map((imam) => {
                       const isFeatured = featuredImam?.id === imam.id;
@@ -157,7 +163,7 @@ export const SelefPreviewSection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="mt-4 -mx-1 overflow-x-auto pb-1" data-selef-preview-imam-list>
+                <div className="mt-4 -mx-1 min-h-[56px] overflow-x-auto pb-1" data-selef-preview-imam-list>
                   <div className="flex min-w-max gap-2 px-1 snap-x snap-mandatory">
                     {imams.map((imam) => {
                       const isFeatured = featuredImam?.id === imam.id;
@@ -181,7 +187,7 @@ export const SelefPreviewSection = () => {
               )}
 
               {featuredImam ? (
-                <div className="mt-5 rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
+                <div className="mt-5 min-h-[188px] rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-semibold">{featuredImam.name}</p>
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">

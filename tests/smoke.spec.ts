@@ -103,6 +103,19 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   const runtimeErrors = captureRuntimeErrors(page);
 
   await page.goto("/selef-incileri?imam=imam-safii", { waitUntil: "domcontentloaded" });
+  const headerShell = page.locator("[data-selef-header-shell]").first();
+  await expect(headerShell).toBeVisible();
+  const beforeLoadBox = await headerShell.boundingBox();
+  await page.waitForLoadState("networkidle");
+  await page.waitForTimeout(120);
+  const afterLoadBox = await headerShell.boundingBox();
+  expect(beforeLoadBox).not.toBeNull();
+  expect(afterLoadBox).not.toBeNull();
+  if (beforeLoadBox && afterLoadBox) {
+    expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
+    expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
+  }
+
   await expect(page).toHaveURL(/\/selef-incileri\/imam\/imam-safii$/);
   await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();
 

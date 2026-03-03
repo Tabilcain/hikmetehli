@@ -91,7 +91,7 @@ export const Hero = () => {
 
       <div className="relative z-10 container pt-12 pb-12 md:pt-16 md:pb-20 lg:pt-24 lg:pb-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
-          <motion.div style={{ opacity: fadeOut }}>
+          <motion.div style={lowPerformanceMode ? undefined : { opacity: fadeOut }}>
             <div
               className={cn(
                 "inline-flex items-center gap-3 px-3 md:px-4 py-2 rounded-full border border-border/80 text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.35em] text-muted-foreground",
@@ -122,19 +122,19 @@ export const Hero = () => {
 
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 md:gap-4">
               <Link
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-colors"
                 to="/kutuphane"
               >
                 Kütüphane
               </Link>
               <a
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-colors"
                 href="#saatlik-ilham"
               >
                 Saatlik Sahih Hadis
               </a>
               <a
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] shadow-elevated hover:shadow-glow transition-all"
+                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] shadow-elevated hover:shadow-glow transition-[background-color,box-shadow]"
                 href="#selef-incileri"
               >
                 Selef İncileri
@@ -179,21 +179,21 @@ export const Hero = () => {
                 <div className="flex flex-wrap items-center gap-3">
                   <Link
                     to="/kutuphane"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary-foreground shadow-soft hover:bg-primary/90 transition-all"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary-foreground shadow-soft hover:bg-primary/90 transition-[background-color,box-shadow]"
                   >
                     Kütüphaneye Git
                     <span className="w-2 h-2 rounded-full bg-primary-foreground/80" />
                   </Link>
                   <a
                     href="#saatlik-ilham"
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-all"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-colors"
                   >
                     Saatlik Bölümü Aç
                     <span className="w-2 h-2 rounded-full bg-primary" />
                   </a>
                   <Link
                     to="/selef-incileri"
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-all"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-colors"
                   >
                     Selef İncileri
                     <span className="w-2 h-2 rounded-full bg-primary" />
@@ -220,19 +220,21 @@ export const Hero = () => {
         </div>
       </div>
 
-      <motion.div
-        style={{ opacity: fadeOut }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-xs uppercase tracking-[0.3em] text-muted-foreground"
-      >
-        <span>Kaydır</span>
-        <motion.span
-          className="mt-2 w-5 h-9 rounded-full border border-muted-foreground/50 flex items-start justify-center"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      {!lowPerformanceMode ? (
+        <motion.div
+          style={{ opacity: fadeOut }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-xs uppercase tracking-[0.3em] text-muted-foreground"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2" />
-        </motion.span>
-      </motion.div>
+          <span>Kaydır</span>
+          <motion.span
+            className="mt-2 w-5 h-9 rounded-full border border-muted-foreground/50 flex items-start justify-center"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2" />
+          </motion.span>
+        </motion.div>
+      ) : null}
 
       <div className="absolute bottom-0 left-0 right-0 h-24 section-fade-bottom pointer-events-none" />
     </section>

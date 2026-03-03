@@ -5,6 +5,7 @@ import { ArrowLeft, Heart, HeartOff, Search, Share2, Sparkles } from "lucide-rea
 import { PageTransition } from "@/components/PageTransition";
 import { toast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { normalizeSearchText } from "@/lib/library";
 import { loadSelefQuotesPayload, type SelefQuote } from "@/services/selefService";
 
@@ -59,6 +60,7 @@ const shareQuote = async (quote: SelefQuote) => {
 const SelefImamDetay = () => {
   const navigate = useNavigate();
   const { imamId = "" } = useParams();
+  const { isMobile } = usePerformanceMode();
   const [search, setSearch] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(() => readFavoriteIds());
@@ -146,13 +148,18 @@ const SelefImamDetay = () => {
     <PageTransition>
       <main className="relative min-h-screen overflow-hidden bg-background">
         <div className="absolute inset-0 gradient-hero opacity-75" />
-        <div className="absolute inset-0 hero-glow opacity-45" />
-        <div className="absolute inset-0 grid-overlay opacity-35" />
+        <div className="absolute inset-0 hero-glow opacity-28 md:opacity-45" />
+        <div className="absolute inset-0 grid-overlay opacity-22 md:opacity-35" />
 
         <div className="container relative z-10 py-5 md:py-10">
-          <header className="rounded-2xl md:rounded-3xl border border-border/80 bg-card/80 p-4 md:p-7 shadow-elevated backdrop-blur-sm">
+          <header
+            className={`rounded-2xl md:rounded-3xl border border-border/80 p-4 md:p-7 shadow-elevated ${
+              isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
+            }`}
+            data-selef-header-shell
+          >
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
+              <div className="min-h-[146px] md:min-h-[174px]">
                 <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-primary">
                   <Sparkles className="h-4 w-4" />
                   Selef İncileri
@@ -198,14 +205,16 @@ const SelefImamDetay = () => {
 
             {selectedImam ? (
               <div
-                className="mt-4 rounded-2xl border border-primary/35 bg-primary/10 px-4 py-3"
+                className="mt-4 min-h-[92px] rounded-2xl border border-primary/35 bg-primary/10 px-4 py-3"
                 data-selected-imam-banner={selectedImam.id}
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Seçili imam</p>
                 <p className="mt-1 text-base font-semibold">{selectedImam.name}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">{selectedImam.count} söz</p>
               </div>
-            ) : null}
+            ) : (
+              <div className="mt-4 min-h-[92px] animate-pulse rounded-2xl border border-border/60 bg-background/55" />
+            )}
           </header>
 
           <section className="mt-4 md:mt-6">
@@ -231,7 +240,7 @@ const SelefImamDetay = () => {
                 {Array.from({ length: 6 }).map((_, index) => (
                   <div
                     key={index}
-                    className="animate-pulse rounded-[22px] border border-border/70 bg-card/70 p-4"
+                    className="min-h-[228px] animate-pulse rounded-[22px] border border-border/70 bg-card/70 p-4"
                   >
                     <div className="h-4 w-1/3 rounded bg-muted/40" />
                     <div className="mt-4 h-4 w-full rounded bg-muted/35" />
@@ -249,7 +258,7 @@ const SelefImamDetay = () => {
                       key={quote.id}
                       data-imam-id={quote.imamId}
                       data-quote-id={quote.id}
-                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft"
+                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_270px] [content-visibility:auto]"
                     >
                       <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.imamName}</p>
                       <p className="mt-3 break-words text-sm leading-7 md:text-base text-foreground/95">“{quote.text}”</p>

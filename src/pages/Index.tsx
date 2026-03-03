@@ -81,27 +81,35 @@ const Index = () => {
           <SelefPreviewSection />
         </div>
 
-        {showDeferredSections ? (
-          <div className="content-visibility-auto">
-            <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
-              <HourlyContentSection tone="muted" />
-            </Suspense>
-          </div>
-        ) : (
-          <div className="container py-10">
-            <div className="rounded-3xl border border-border/70 bg-card/70 p-4 text-sm text-muted-foreground">
-              Saatlik sahih hadis bölümü hazırlanıyor...
-            </div>
-          </div>
-        )}
+        <div className="content-visibility-hourly">
+          <section className="min-h-[420px] md:min-h-[520px]" data-home-hourly-shell>
+            {showDeferredSections ? (
+              <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
+                <HourlyContentSection tone="muted" />
+              </Suspense>
+            ) : (
+              <div className="container py-10">
+                <div className="rounded-3xl border border-border/70 bg-card/70 p-4 text-sm text-muted-foreground">
+                  Saatlik sahih hadis bölümü hazırlanıyor...
+                </div>
+              </div>
+            )}
+          </section>
+        </div>
 
-        {showDeferredSections ? (
-          <div className="content-visibility-auto">
-            <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
-              <SocialLinks />
-            </Suspense>
-          </div>
-        ) : null}
+        <div className="content-visibility-social">
+          <section className="min-h-[220px] md:min-h-[280px]">
+            {showDeferredSections ? (
+              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
+                <SocialLinks />
+              </Suspense>
+            ) : (
+              <div className="container py-10 text-sm text-muted-foreground">
+                Bağlantılar hazırlanıyor...
+              </div>
+            )}
+          </section>
+        </div>
 
         <Footer />
       </main>
