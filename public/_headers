@@ -22,13 +22,13 @@
 /muasir
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
-/muasir/*
+/muasir/kisi/*
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /selef-incileri
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
-/selef-incileri/*
+/selef-incileri/imam/*
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /kutuphane
