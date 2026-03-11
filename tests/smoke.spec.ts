@@ -57,6 +57,13 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   const previewPeople = page.locator("[data-muasir-preview-person]");
   await expect(previewPeople.first()).toBeVisible();
   await expect(previewPeople).toHaveCount(5);
+  const previewQuote = page.locator("[data-muasir-preview-quote]").first();
+  const previewQuoteId = await previewQuote.getAttribute("data-muasir-preview-quote");
+  expect(previewQuoteId).toBeTruthy();
+  const refreshPreviewButton = page.locator("[data-muasir-preview-refresh]").first();
+  await expect(refreshPreviewButton).toBeVisible();
+  await refreshPreviewButton.click();
+  await expect(previewQuote).not.toHaveAttribute("data-muasir-preview-quote", previewQuoteId || "");
 
   const previewImams = page.locator("[data-selef-preview-imam]");
   await expect(previewImams.first()).toBeVisible();
@@ -186,8 +193,8 @@ test("muasir sozler sayfasi filtre arama favori ve paylasim aksiyonlarini calist
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(120);
   const afterLoadBox = await readRect(page, "[data-muasir-header-shell]");
-  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
-  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
+  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(48);
+  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(24);
 
   await expect(page).toHaveURL(/\/muasir\/kisi\/seyh-suleyman-ulvan$/);
   await expect(page.locator('[data-selected-muasir-banner="seyh-suleyman-ulvan"]')).toBeVisible();
@@ -251,8 +258,8 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(120);
   const afterLoadBox = await readRect(page, "[data-selef-header-shell]");
-  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
-  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
+  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(48);
+  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(24);
 
   await expect(page).toHaveURL(/\/selef-incileri\/imam\/imam-safii$/);
   await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();

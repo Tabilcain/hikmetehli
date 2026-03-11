@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Share2, Sparkles } from "lucide-react";
+import { RefreshCw, Share2, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
@@ -44,13 +44,43 @@ export const MuasirPreviewSection = () => {
 
   const people = useMemo(() => data?.people ?? [], [data]);
   const quotes = useMemo(() => data?.quotes ?? [], [data]);
+  const dailyQuote = useMemo(() => pickFeaturedQuote(quotes), [quotes]);
+  const [activeQuoteId, setActiveQuoteId] = useState<string | null>(null);
 
-  const featuredQuote = useMemo(() => pickFeaturedQuote(quotes), [quotes]);
+  useEffect(() => {
+    if (!quotes.length) {
+      setActiveQuoteId(null);
+      return;
+    }
+
+    setActiveQuoteId((current) => {
+      if (current && quotes.some((quote) => quote.id === current)) {
+        return current;
+      }
+      return dailyQuote?.id ?? quotes[0].id;
+    });
+  }, [dailyQuote, quotes]);
+
+  const featuredQuote = useMemo(() => {
+    if (!quotes.length) return null;
+    if (!activeQuoteId) return dailyQuote;
+    return quotes.find((quote) => quote.id === activeQuoteId) ?? dailyQuote ?? quotes[0];
+  }, [activeQuoteId, dailyQuote, quotes]);
   const featuredPerson = useMemo(() => {
     if (!people.length) return null;
     if (!featuredQuote) return people[0];
     return people.find((person) => person.id === featuredQuote.personId) ?? people[0];
   }, [featuredQuote, people]);
+
+  const handleRefreshFeaturedQuote = useCallback(() => {
+    if (quotes.length <= 1) return;
+
+    setActiveQuoteId((current) => {
+      const pool = current ? quotes.filter((quote) => quote.id !== current) : quotes;
+      const nextQuote = pool[Math.floor(Math.random() * pool.length)] ?? quotes[0];
+      return nextQuote.id;
+    });
+  }, [quotes]);
 
   const handleShareFeaturedQuote = async () => {
     if (!featuredQuote) return;
@@ -194,10 +224,23 @@ export const MuasirPreviewSection = () => {
                       {featuredPerson.count} söz
                     </p>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p
+                    className="mt-3 text-sm leading-relaxed text-muted-foreground"
+                    data-muasir-preview-quote={featuredQuote?.id ?? "loading"}
+                  >
                     {featuredQuote ? `“${featuredQuote.text.slice(0, 168)}${featuredQuote.text.length > 168 ? "..." : ""}”` : "Bu kişi için sözler yükleniyor."}
                   </p>
-                  <div className="mt-4">
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <button
+                      type="button"
+                      onClick={handleRefreshFeaturedQuote}
+                      disabled={!featuredQuote || quotes.length <= 1}
+                      data-muasir-preview-refresh
+                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-border/80 bg-background/70 px-5 text-xs font-semibold uppercase tracking-[0.22em] text-foreground transition-colors hover:bg-background disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                    >
+                      Yenile
+                      <RefreshCw className="h-4 w-4" />
+                    </button>
                     <button
                       type="button"
                       onClick={() => {
