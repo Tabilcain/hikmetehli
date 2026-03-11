@@ -71,8 +71,8 @@ const SelefImamDetay = () => {
     staleTime: 1000 * 60 * 60,
   });
 
-  const quotes = data?.quotes ?? [];
-  const imams = data?.imams ?? [];
+  const quotes = useMemo(() => data?.quotes ?? [], [data]);
+  const imams = useMemo(() => data?.imams ?? [], [data]);
   const selectedImam = useMemo(
     () => imams.find((imam) => imam.id === imamId) ?? null,
     [imamId, imams],

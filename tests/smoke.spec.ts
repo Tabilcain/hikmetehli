@@ -23,29 +23,103 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   }
 
   const libraryCta = page.getByRole("link", { name: /Kütüphane/i }).first();
+  const muasirCta = page.getByRole("link", { name: /Muasır/i }).first();
   const hourlyCta = page.getByRole("link", { name: /Saatlik Sahih Hadis/i }).first();
   const selefCta = page.getByRole("link", { name: /Selef İncileri/i }).first();
+  const muasirRouteCta = page.locator('a[href^="/muasir"]').first();
   const selefRouteCta = page.locator('a[href^="/selef-incileri"]').first();
 
   await expect(libraryCta).toBeVisible();
+  await expect(muasirCta).toBeVisible();
   await expect(hourlyCta).toBeVisible();
   await expect(selefCta).toBeVisible();
+  await expect(muasirRouteCta).toBeVisible();
   await expect(selefRouteCta).toBeVisible();
 
   await hourlyCta.click();
   await expect(page.locator("#saatlik-ilham")).toBeVisible();
   await expect(page.getByText("Zamana göre değişen sahih hadisler.")).toBeVisible();
+  await expect(page.locator("#muasir")).toBeVisible();
   await expect(page.locator("#selef-incileri")).toBeVisible();
+  await expect(page.locator("#muasir h2")).toHaveText(/Muasır Alimlerden ve Davetçilerden Sözler/i);
   await expect(page.locator("#selef-incileri h2")).toHaveText(/Satırlardan Sadırlara/i);
+
+  const sectionPositions = await Promise.all([
+    page.locator("#muasir").boundingBox(),
+    page.locator("#selef-incileri").boundingBox(),
+    page.locator("#kutuphane").boundingBox(),
+  ]);
+  expect(sectionPositions[0]?.y ?? 0).toBeLessThan(sectionPositions[1]?.y ?? 0);
+  expect(sectionPositions[1]?.y ?? 0).toBeLessThan(sectionPositions[2]?.y ?? 0);
+
+  const previewPeople = page.locator("[data-muasir-preview-person]");
+  await expect(previewPeople.first()).toBeVisible();
+  await expect(previewPeople).toHaveCount(5);
 
   const previewImams = page.locator("[data-selef-preview-imam]");
   await expect(previewImams.first()).toBeVisible();
-  await expect(previewImams).toHaveCount(13);
+  await expect(previewImams).toHaveCount(6);
+  await expect(page.locator('[data-selef-preview-more="true"]')).toBeVisible();
 
+  const muasirDetailLink = page.locator('#muasir a[href="/muasir"]').first();
+  await expect(muasirDetailLink).toBeVisible();
+  await muasirDetailLink.click();
+  await expect(page).toHaveURL(/\/muasir$/);
+
+  await page.goBack({ waitUntil: "networkidle" });
   const previewDetailLink = page.locator('#selef-incileri a[href="/selef-incileri"]').first();
   await expect(previewDetailLink).toBeVisible();
   await previewDetailLink.click();
   await expect(page).toHaveURL(/\/selef-incileri$/);
+
+  expect(runtimeErrors).toEqual([]);
+});
+
+test("mobilde muasir kisi listeleri kaydirmasiz gorunuyor", async ({ page }) => {
+  const runtimeErrors = captureRuntimeErrors(page);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("networkidle");
+
+  await page.locator("#muasir").scrollIntoViewIfNeeded();
+  const previewPeople = page.locator("[data-muasir-preview-person]");
+  await expect(previewPeople).toHaveCount(5);
+
+  const previewList = page.locator("[data-muasir-preview-person-list]").first();
+  const previewHasHorizontalOverflow = await previewList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(previewHasHorizontalOverflow).toBeFalsy();
+
+  const previewRows = await previewPeople.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(previewRows[1]).toBeGreaterThan(previewRows[0]);
+
+  await page.locator('#muasir a[href="/muasir"]').first().click();
+  await expect(page).toHaveURL(/\/muasir$/);
+
+  const detailFilterButtons = page.locator("button[data-muasir-person-filter]");
+  await expect(detailFilterButtons).toHaveCount(6);
+
+  const filterList = page.locator("[data-muasir-filter-list]").first();
+  const filterHasHorizontalOverflow = await filterList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(filterHasHorizontalOverflow).toBeFalsy();
+
+  const filterRows = await detailFilterButtons.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(filterRows[1]).toBeGreaterThan(filterRows[0]);
+
+  const targetPersonFilter = detailFilterButtons.nth(2);
+  const targetPersonId = await targetPersonFilter.getAttribute("data-muasir-person-filter");
+  expect(targetPersonId).toBeTruthy();
+  await targetPersonFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/muasir/kisi/${targetPersonId}`));
+  await expect(page.locator(`[data-selected-muasir-banner="${targetPersonId}"]`)).toBeVisible();
 
   expect(runtimeErrors).toEqual([]);
 });
@@ -59,7 +133,8 @@ test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
 
   await page.locator("#selef-incileri").scrollIntoViewIfNeeded();
   const previewImams = page.locator("[data-selef-preview-imam]");
-  await expect(previewImams).toHaveCount(13);
+  await expect(previewImams).toHaveCount(6);
+  await expect(page.locator('[data-selef-preview-more="true"]')).toBeVisible();
 
   const previewList = page.locator("[data-selef-preview-imam-list]").first();
   const previewHasHorizontalOverflow = await previewList.evaluate(
@@ -95,6 +170,75 @@ test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
   await targetImamFilter.click();
   await expect(page).toHaveURL(new RegExp(`/selef-incileri/imam/${targetImamId}`));
   await expect(page.locator(`[data-selected-imam-banner="${targetImamId}"]`)).toBeVisible();
+
+  expect(runtimeErrors).toEqual([]);
+});
+
+test("muasir sozler sayfasi filtre arama favori ve paylasim aksiyonlarini calistiriyor", async ({ page }) => {
+  const runtimeErrors = captureRuntimeErrors(page);
+
+  await page.goto("/muasir?kisi=seyh-suleyman-ulvan", { waitUntil: "domcontentloaded" });
+  const headerShell = page.locator("[data-muasir-header-shell]").first();
+  await expect(headerShell).toBeVisible();
+  const beforeLoadBox = await headerShell.boundingBox();
+  await page.waitForLoadState("networkidle");
+  await page.waitForTimeout(120);
+  const afterLoadBox = await headerShell.boundingBox();
+  expect(beforeLoadBox).not.toBeNull();
+  expect(afterLoadBox).not.toBeNull();
+  if (beforeLoadBox && afterLoadBox) {
+    expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
+    expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
+  }
+
+  await expect(page).toHaveURL(/\/muasir\/kisi\/seyh-suleyman-ulvan$/);
+  await expect(page.locator('[data-selected-muasir-banner="seyh-suleyman-ulvan"]')).toBeVisible();
+
+  const personIds = await page.locator("article[data-person-id]").evaluateAll((elements) =>
+    elements.map((element) => element.getAttribute("data-person-id")),
+  );
+  expect(personIds.length).toBeGreaterThan(0);
+  expect(personIds.every((id) => id === "seyh-suleyman-ulvan")).toBeTruthy();
+
+  const firstCard = page.locator("article[data-quote-id]").first();
+  await expect(firstCard).toBeVisible();
+
+  const favoriteButton = firstCard.locator("button[data-favorite-button]").first();
+  await favoriteButton.click();
+
+  const quoteId = await firstCard.getAttribute("data-quote-id");
+  expect(quoteId).toBeTruthy();
+
+  const selectedFavorite = page.locator(`button[data-favorite-button="${quoteId}"]`);
+  await expect(selectedFavorite).toHaveAttribute("aria-pressed", "true");
+
+  const searchInput = page.getByPlaceholder("Sözlerde ara...");
+  await searchInput.fill("olmayan-bir-kelime");
+  await expect(page.getByText("Sonuç bulunamadı.")).toBeVisible();
+  await searchInput.clear();
+
+  const shareButton = firstCard.locator("button[data-share-button]").first();
+  await shareButton.click({ trial: true });
+
+  await page.reload({ waitUntil: "domcontentloaded" });
+  const persistedFavorite = page.locator(`button[data-favorite-button="${quoteId}"]`);
+  await expect(persistedFavorite).toHaveAttribute("aria-pressed", "true");
+
+  await page.getByRole("link", { name: "Tüm kişiler" }).click();
+  await expect(page).toHaveURL(/\/muasir$/);
+  await expect(page.locator("[data-selected-muasir-banner]")).toHaveCount(0);
+
+  const mixedAllPersonIds = await page.locator("article[data-person-id]:visible").evaluateAll((elements) =>
+    elements.slice(0, 8).map((element) => element.getAttribute("data-person-id")),
+  );
+  expect(new Set(mixedAllPersonIds).size).toBeGreaterThan(1);
+
+  const filterButtons = page.locator("button[data-muasir-person-filter]");
+  const targetFilter = filterButtons.nth(2);
+  const targetFilterId = await targetFilter.getAttribute("data-muasir-person-filter");
+  expect(targetFilterId).toBeTruthy();
+  await targetFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/muasir/kisi/${targetFilterId}`));
 
   expect(runtimeErrors).toEqual([]);
 });

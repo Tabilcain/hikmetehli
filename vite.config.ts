@@ -110,6 +110,20 @@ export default defineConfig(() => ({
             },
           },
           {
+            urlPattern: ({ url }) => url.pathname.endsWith("/muasir/quotes.v1.json"),
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "muasir-quotes-cache",
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+              expiration: {
+                maxEntries: 1,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
+          {
             urlPattern: ({ url }) => url.pathname.includes("/library/pdf/"),
             handler: "CacheFirst",
             options: {

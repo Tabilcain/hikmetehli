@@ -14,6 +14,10 @@ export const Hero = () => {
   const floatY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const orbY = useTransform(scrollYProgress, [0, 1], [0, 140]);
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const primaryGlowClass = cn(
+    "bg-primary text-primary-foreground shadow-elevated transition-[transform,background-color,box-shadow,filter]",
+    "hover:-translate-y-0.5 hover:bg-primary/95 hover:brightness-105 hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.32),0_18px_46px_hsl(var(--primary)/0.34)]",
+  );
 
   return (
     <section
@@ -58,20 +62,30 @@ export const Hero = () => {
           </div>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.2em] text-muted-foreground">
-          <a className="hover:text-foreground transition-colors" href="#saatlik-ilham">
-            Saatlik
+          <a className="hover:text-foreground transition-colors" href="#muasir">
+            Muasır
           </a>
           <a className="hover:text-foreground transition-colors" href="#selef-incileri">
             Selef
           </a>
           <Link className="hover:text-foreground transition-colors" to="/kutuphane">
-            Kütüphane
+            Dua Arşivi
           </Link>
+          <a className="hover:text-foreground transition-colors" href="#saatlik-ilham">
+            Saatlik
+          </a>
           <a className="hover:text-foreground transition-colors" href="#baglan">
             Bağlan
           </a>
         </div>
         <div className="hidden md:flex items-center gap-2">
+          <Link
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-xs uppercase tracking-[0.25em] hover:bg-foreground/5 transition-colors"
+            to="/muasir"
+          >
+            Muasır
+            <span className="w-2 h-2 rounded-full bg-primary" />
+          </Link>
           <Link
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-xs uppercase tracking-[0.25em] hover:bg-foreground/5 transition-colors"
             to="/kutuphane"
@@ -99,7 +113,7 @@ export const Hero = () => {
               )}
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Dua Arşivi - Saatlik Sahih Hadis - Selef İncileri
+              Muasır Sözler - Selef İncileri - Dua Arşivi - Saatlik Sahih Hadis
             </div>
 
             <motion.h1
@@ -120,24 +134,30 @@ export const Hero = () => {
               </span>
             </motion.h1>
 
-            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 md:gap-4">
+            <div className="mt-8 grid gap-2.5 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-center md:mt-10 md:gap-4">
               <Link
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-colors"
-                to="/kutuphane"
+                className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-xs uppercase tracking-[0.18em] md:px-6 md:text-sm md:tracking-[0.2em] ${primaryGlowClass}`}
+                to="/muasir"
               >
-                Kütüphane
+                Muasır Sözler
               </Link>
               <a
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full border border-border/80 bg-background/70 text-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] hover:bg-background transition-colors"
-                href="#saatlik-ilham"
-              >
-                Saatlik Sahih Hadis
-              </a>
-              <a
-                className="inline-flex w-full sm:w-auto justify-center px-5 md:px-6 py-3 rounded-full bg-primary text-primary-foreground text-xs md:text-sm uppercase tracking-[0.18em] md:tracking-[0.2em] shadow-elevated hover:shadow-glow transition-[background-color,box-shadow]"
+                className="inline-flex w-full justify-center rounded-full border border-border/80 bg-background/70 px-5 py-3 text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background md:px-6 md:text-sm md:tracking-[0.2em]"
                 href="#selef-incileri"
               >
                 Selef İncileri
+              </a>
+              <Link
+                className="inline-flex w-full justify-center rounded-full border border-border/80 bg-background/70 px-5 py-3 text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background md:px-6 md:text-sm md:tracking-[0.2em]"
+                to="/kutuphane"
+              >
+                Dua Arşivi
+              </Link>
+              <a
+                className="inline-flex w-full justify-center rounded-full border border-border/80 bg-background/70 px-5 py-3 text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background md:px-6 md:text-sm md:tracking-[0.2em]"
+                href="#saatlik-ilham"
+              >
+                Saatlik Sahih Hadis
               </a>
             </div>
           </motion.div>
@@ -160,14 +180,16 @@ export const Hero = () => {
                   <span>Gözat</span>
                 </div>
                 <div className="text-2xl font-display">
-                  Dua Arşivi, Selef İncileri ve Saatlik Sahih Hadisler.
+                  Muasır sözler, Selef İncileri, Dua Arşivi ve saatlik sahih hadis akışı tek yerde.
                 </div>
                 <div className="h-px bg-border/70" />
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {[
+                    "Çağdaş alim ve davetçilerden seçme sözler",
+                    "Selef imamlarından veciz sözler",
+                    "Dua arşivine hızlı erişim",
                     "Sahih kaynaklı içerik",
                     "Her Saat Yenilenir",
-                    "Selef imamlarından veciz sözler",
                     "Oku, paylaş ve tefekkür et",
                   ].map((line) => (
                     <div key={line} className="flex items-start gap-2">
@@ -178,11 +200,18 @@ export const Hero = () => {
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                   <Link
-                    to="/kutuphane"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs uppercase tracking-[0.25em] text-primary-foreground shadow-soft hover:bg-primary/90 transition-[background-color,box-shadow]"
+                    to="/muasir"
+                    className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs uppercase tracking-[0.25em] ${primaryGlowClass}`}
                   >
-                    Kütüphaneye Git
+                    Muasır Sözler
                     <span className="w-2 h-2 rounded-full bg-primary-foreground/80" />
+                  </Link>
+                  <Link
+                    to="/kutuphane"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-colors"
+                  >
+                    Dua Arşivi
+                    <span className="w-2 h-2 rounded-full bg-primary" />
                   </Link>
                   <a
                     href="#saatlik-ilham"

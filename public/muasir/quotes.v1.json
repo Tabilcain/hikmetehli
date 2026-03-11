@@ -1,0 +1,1203 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-11T20:04:54.038Z",
+  "people": [
+    {
+      "id": "seyh-suleyman-ulvan",
+      "name": "Şeyh Süleyman Ulvân",
+      "count": 24
+    },
+    {
+      "id": "muhammed-muhtar-sankiti",
+      "name": "Muhammed Muhtar Şankiti",
+      "count": 69
+    },
+    {
+      "id": "muhammed-saravi",
+      "name": "Muhammed Şa'ravi",
+      "count": 35
+    },
+    {
+      "id": "ibrahim-sekran",
+      "name": "İbrahim Sekran",
+      "count": 35
+    },
+    {
+      "id": "mustafa-es-sibai",
+      "name": "Mustafa es-Sibaî",
+      "count": 32
+    }
+  ],
+  "quotes": [
+    {
+      "id": "seyh-suleyman-ulvan-001",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Sabah, akşam ve namazlardan sonraki zikirler; sihir, nazar, vesvese ve psikolojik rahatsızlıklara karşı koruyucu, sağlam bir kale hükmündedir. Bu zikirler, başa gelen musibetlerin etkisini hafifletir, gam ve kederi defeder. Öyleyse zikre sabırla devam et; zira bir kulun insan ve cin şeytanlarına karşı en güçlü zırhı zikirdir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-002",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Ramazan ayındaki ibadetlerin türü, -her ibadet için özel bir ecir bildirilmemiş olsa bile- diğer zamanlardaki ibadetlerden daha faziletlidir. Buhari ve Müslim'de geçtiği üzere, Nebi (sav) Rabbinden naklen şöyle buyurmuştur: \"Oruç hariç; çünkü o doğrudan Benim içindir ve onun mükafatını Ben veririm.\""
+    },
+    {
+      "id": "seyh-suleyman-ulvan-003",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Çocukları oruca alıştırmak, onlara henüz farz olmasa bile eğitim ve terbiye açısından takdire şayandır. Sahabe efendilerimiz çocuklarına oruç tuttururdu. Hz. Ömer (ra), Ramazan ayında sarhoş birini gördüğünde onu cezalandırmış ve \"Yazıklar olsun sana! Bizim çocuklarımız bile oruçluyken sen nasıl iftar edersin?\" demiştir. Babalar, güçleri yettiği sürece -günün bir kısmında bile olsa- çocuklarını, alışmaları için kademeli olarak oruca teşvik etmelidir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-004",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Maslahatlar (kamu yararı), ancak şeriat ilmine ve takvaya sahip olanlar tarafından doğru değerlendirilebilir. Allah'ın ayetlerini az bir pahaya satan, fetvayı kişisel çıkarlara veya siyasi amaçlara göre şekillendiren kimselerin \"maslahat\" yorumuna itibar edilmez."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-005",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Eğer bir ilim adamının, makamını korumak için hakkı söylemediğini görürsen; bil ki o, itibar edilmemesi gereken, himmeti zayıf biridir ve makam ondan daha büyüktür. Eğer Allah'ın emrini yerine getirip hakkı açıkça haykırıyorsa; bu onun dinine sadakatinin, yüksek himmetinin ve makamın onun gözünde ne kadar küçük olduğunun kanıtıdır."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-006",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Zindan dünyanın sonu değildir, zalimin zaferine de delil olmaz. Günler insanlar arasında evirip çevrilir, bir hal üzere kalmak imkansızdır. \"Hayırlı akıbet, takva sahiplerinindir.\""
+    },
+    {
+      "id": "seyh-suleyman-ulvan-007",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Efendimiz’e (sav) çokça salavat getirmek, O’na olan sevginin alametidir. Kalpte bu sevgi arttıkça, O’nun ahlakıyla ahlaklanma ve sünnetine uyma gayreti de artar. Allah Teâlâ şöyle buyurur: \"Eğer O’na itaat ederseniz, hidayete erersiniz.\""
+    },
+    {
+      "id": "seyh-suleyman-ulvan-008",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Sadık bir alim Allah'tan başka kimseden korkmaz. İnsanlara Rablerini tanıtır, onlara Rabbinin yolunu gösterir, şevkleri kırıldığında heyecanlarını ateşler ve haktan saptıklarında onları doğru yola döndürür."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-009",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Kim Allah’tan gereği gibi korkarsa, Allah'ın kendisine heybet vermesiyle insanların saygısını celbeder. Çünkü o, baktığı hiçbir şeyi Allah’ın azametinden bağımsız görmez. Bu yüzden de ona göre her şey küçülür; zira Allah, onun nazarında her şeyden daha büyüktür."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-010",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Eğer kötü bir işe niyet ile birlikte irade ve çaba da eklenirse ancak başarılı olamazsa, o işi yapmamış olsa bile aleyhine bir günah yazılır. Tıpkı bir kadınla zina konusunda anlaşıp da aralarına engel çıkan ve o günahı kaçırdığına pişman olan kimse gibi."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-011",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Ahmak kişi, Allah’ın kendi kusur ve günahlarını bildiğini unutur da yine de insanların övgüsünü bekler. Oysa insanlar da onun gizli ayıplarını bilselerdi, onu övmek bir yana, yüzüne toprak saçarlardı."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-012",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Kötü sözler kötülere, temiz sözler temizlere yakışır. Dil kalbin kepçesidir; içinde ne varsa onu dışarı çıkarır. Çirkin konuşmak nifak alametidir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-013",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "İslam; güçlülerin zayıfları istismar etmesinden, iş adamlarının işçilerin hakkını yemesinden ve yöneticilerin halkın malına el uzatmasından şiddetle sakındırmıştır. Bunları ihanet ve en büyük haramlardan saymıştır."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-014",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Sen ne kadar affedici olursan, insanlar da senin hatalarını o kadar görmezden gelir. Fakat sen insanların açıklarını detaylıca arar, onlara eziyet eder ve peşlerine düşersen; insanlar da senin hatalarının peşine düşer."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-015",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Bir adam hayasını ve emanet bilincini kaybettiğinde, bir rezillikten diğerine yuvarlanır; artık kendi iradesiyle değil başkalarının yönlendirmesiyle hareket eden değersiz bir araca dönüşür ve şehvetlerinin peşinden koşarken onurunu ayaklar altına alır."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-016",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Dua müminin silahıdır; zalimlere ve zorbalara karşı mızraktan daha etkilidir. Gecenin son üçte birindeki dualar asla hedefinden sapmaz. Allah'a duada ısrarcı olmak ve helal lokma yemek, duaların kabulünün anahtarlarındandır."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-017",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Allah Teâlâ: \"Eğer O’na itaat ederseniz hidayete erersiniz\" buyurmuştur. Hidayet ancak itaatle gerçekleşir; itaat varsa hidayet vardır, yoksa hidayet de yoktur."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-018",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Tüm kulların vazifesi; yerlerin ve göklerin Rabbinin emrine ve rahmet olarak gönderilen Peygamber'in emrine uymaktır. Kitap ve Sünnet'e aykırı her sözü, inatlaşmadan terk etmek gerekir. Bu, \"Lâ ilâhe illallâh\"ın şartlarından biri olan tam teslimiyetin gereğidir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-019",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Gösteriş yapanlar, riyakarlıkla istediklerine ulaşamayacaklarını bilselerdi derhal tövbe ederlerdi. \"Kim duyulsun diye yaparsa, Allah onun niyetini duyurur.\" Kim tövbe ederse Allah tövbesini kabul eder. Allah Teâlâ şöyle buyurur: \"İşte ahiret yurdu! Biz onu yeryüzünde büyüklük taslamayan ve bozgunculuk çıkarmayanlara veririz. Hayırlı akıbet takva sahiplerinindir.\""
+    },
+    {
+      "id": "seyh-suleyman-ulvan-020",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Gerçek erleri yetiştiren, onlara güç ve cesaret aşılayan şey; sağlam akide ve ilkeler üzerinde sebat etmektir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-021",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Şüphesiz İslam dini, hem Müslümanların şahsiyetinde hem de hayatın gerçeğinde (pratiğinde) ancak cihadın her türlüsünün ikame edilmesiyle tam manasıyla gerçekleşir ve tek otorite haline gelir. Yeryüzündeki bozguncuların şerri, ancak onları korkutacak bir güç ve otoritelerini kıracak bir cihadla bastırılır."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-022",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Bazı insanlar gıybet, dedikodu ve boş söz ile meşguldür; ne bir iyiliği emreder ne bir kötülükten sakındırır ne de bir iş yapar. Bu durum, işlenen günahların bir neticesidir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-023",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Alimler, Allah'a ve Resulüne (sav) sövmenin küfür olduğunda ittifak etmişlerdir. Hiçbir alim bunun küfür olması için \"helal sayma\" (istihlal) şartı koşmamıştır; açık hakaretin sabit olması, kişinin dinden çıkması için yeterlidir."
+    },
+    {
+      "id": "seyh-suleyman-ulvan-024",
+      "personId": "seyh-suleyman-ulvan",
+      "personName": "Şeyh Süleyman Ulvân",
+      "text": "Kim Allah'a iman ettiğini, O'nu birlediğini ve O'nu sevdiğini iddia eder de; Allah ve Resulü'nün (sav) emirlerine teslim olmaz, Allah'ın şeriatından başkasıyla hükmeder ve Allah'ın düşmanlarını dost edinirse; o iddiasında samimi değildir. Aksine o, şeytana uyan ve ona itaat eden biridir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-001",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kalpler ancak Allah ile huzur bulur. Ruhun sükûnu, kalbin ünsiyeti ve hayatın gerçek güzelliği Allah’a yakınlıkla elde edilir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-002",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kim Allah'tan isteme ile yetinirse, Allah onun kırgınlığını onarır, işini düzeltir, sıkıntısını hafifletir ve kederini giderir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-003",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Dünyadaki en büyük mutluluklardan biri, Allah’ı tanımaktır. Marifetullahın yollarından biri de nimetlerin farkına varmak ve onları tefekkür etmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-004",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Her hayrın özü takvadır. İnsan, bir işe yönelirken de ondan vazgeçerken de kendine şu soruyu sormalıdır: Bu işte Allah’ın rızası var mı?"
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-005",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Gerçek mutluluk, Allah’ın rızasını gözeten bir hayat yaşamaktadır. Kul, Allah için bir şeyi terk ettiğinde veya Allah için bir adım attığında sonunda mutlaka hayır bulur."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-006",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’a açılan eller boş dönmez. Kerem sahibi olan Rab, kendisine yönelen kulunu karşılıksız bırakmaz."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-007",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Hayat, Allah’a yakınlıkla güzelleşir. Farzları yerine getirmek ve haramlardan sakınmak, kalbe başka hiçbir şeyin veremeyeceği bir tat verir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-008",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Hidayet sevgisi, Allah’ın kuluna verdiği en büyük nimetlerden biridir. Bu, Allah’ın kul için hayır murat ettiğinin işaretlerindendir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-009",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İhtiyaçlar ve arzular Allah’a yöneltildiğinde, kul hiçbir zaman sahipsiz, karşılıksız kalmaz. Duadaki sadakat ise makbul kulluğun en büyük sırlarından biridir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-010",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kayıpların ve kırıklıkların gerçek telafisi Allah katındadır. İnsan bazen yitirdiğini dünyada değil, Rabbinin lütfunda bulur."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-011",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kişi işlerinde önce Allah’a yönelmeli ve O’na güvenmelidir. Çünkü kalbin huzuru, sebeplerden önce Rabbine dayanmakla gelir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-012",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Mutluluk, Rabbini razı ettiğinde kalbinde belirir. Dış şartlardan bağımsız bir huzur, çoğu zaman Allah'a itaatle gelir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-013",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Güzel son, iman, İslam ve itaat üzere bir ömür sürmekle umulur. En bahtiyar insan, ömrünü bir hayırdan diğerine koşarak tamamlayandır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-014",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İbadetle gururlanmak tehlikelidir. Kul, yaptığı itaati kendi gücüne değil, Allah’ın lütfuna bağlamalıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-015",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İnsanların kapıları kapanabilir, fakat Allah’ın kapısı kapanmaz. Darlık anında kulun en güvenli sığınağı Rabbidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-016",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’a teslimiyetin nişanesi, dünyanın süsleri karşısında ölçüyü kaybetmemek ve ahireti daha büyük bir gaye hâline getirmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-017",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’a yönelmek, yoksulluk taşımayan bir zenginlik, korku taşımayan bir emniyet ve kaygı taşımayan bir huzurdur."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-018",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’ın rızasını gözetmenin alametlerinden biri, güne O’nu razı etme düşüncesiyle başlamak ve günü kendini hesaba çekerek bitirmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-019",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İhlas, amelin yalnızca Allah için yapılmasıdır. Kul, yaptığı iyiliklerde insanların değil, yalnızca Rabbinin rızasını gözetmelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-020",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Hayat ancak sözde, davranışta, görünürde (zahirde) ve iç dünyada Allah’ın rızası gözetilirse güzelleşir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-021",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Fitnelerin çoğaldığı zamanlarda ihlasın değeri daha da büyür. Zor zamanlarda samimiyetle yapılan amel, Allah katında daha kıymetlidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-022",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim yolunda da ihlas esastır. Kalbin Allah’tan başkasına bağlanmaması ve dayanmaması, ilim talebesinin en büyük sermayelerindendir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-023",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İstihare, kulun işini Allah’a havale etmesidir. İstiharenin özü; teslimiyet, tevekkül ve sonucun Allah’tan hayır olarak geleceğine güvenmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-024",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İstihareden sonra kalbin huzur bulması gerekir. Kul, Rabbine danıştıktan sonra endişesini azaltmalı ve sonucu hayır bilmelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-025",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Her hayra vesile olma niyeti, sahibine ecir kazandırır. Samimi niyet, amelin değerini büyütür."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-026",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Gerçek saygınlık, gönlü temiz olmak, kardeşi için de kendisi için istediğini istemek ve kıskançlıktan, hasetten uzak kalmaktır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-027",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Sadık dost, kusuru örten, eksiği tamamlayan, yanlışa düşeni incitmeden uyaran ve hayırda destek olandır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-028",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Fitnelerden korunmanın yolu, gözü, kulağı ve zamanı Allah’ın razı olacağı şeylerle meşgul etmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-029",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Bir kadın için büyük nimetlerden biri, kendisini Allah’a itaate teşvik eden salih bir eşe sahip olmasıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-030",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Şeytan bazen ibadetin eşiğinde kişiye sıkıntı ve ağırlık verir. Fakat kişi ibadete yönelirse çoğu zaman o ağırlık hafifler ve kalbi açılır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-031",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Riyadan korunmak, sürekli Allah’tan yardım istemeyi gerektirir. İhlas, kendiliğinden değil, Allah'ın yardım ile kuvetlenir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-032",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’ı en iyi tanıyanlar, O’na karşı en çok haşyet duyanlardır. Bu yüzden ilim, nur ve hidayetin büyük kaynaklarından biridir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-033",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’a karşı sadık olanın, zahiri de batını da bereket bulur. Samimiyet çoğu zaman umulmadık kolaylıkların kapısını açar."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-034",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah bir kuluna hayır dilediğinde, ona ilim sevgisi, öğrenme arzusu ve ehil kimselerden istifade etme isteği verir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-035",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Gerçek makam, Allah katındaki makamdır. İnsanı kurtaracak olan da, Allah’a yaklaştıracak ilim ve ameldir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-036",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim ehline muhabbet, hayır alametlerindendir. Alimlerden ve salihlerin sözlerinden istifade etme arzusu, gönlün diri olduğuna işarettir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-037",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’ın zikredildiği meclisler, kalbe sevinç ve dirilik verir. Kısa bir süre bile olsa böyle ortamlarda bulunmak insana bereket kazandırır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-038",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Bir ilim talebesi için en büyük makam, öğrendiğiyle amel etmesi ve onu insanlara faydalı hâle getirmesidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-039",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Asıl sermaye vakittir. Özellikle ilim yolunda olan kişi, vaktin kıymetini bilip sabırla çalışmalıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-040",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim kolay kazanılmaz. Ciddiyet, gayret, sabır ve nefisle mücadele ister."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-041",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim aynı zamanda bir imtihandır. Kişinin dikkatini, niyetini ve kalbini arındırmasını gerektirir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-042",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim yolunda karşılaşılan isteksizlik ve gevşeklik, bazen şeytanın yıldırmalarından olabilir. Bu yüzden kişi vazgeçmemeli, yardımını Allah’tan istemelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-043",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah için gayret eden ilim talebesine, Allah zorlukları kolaylaştırır ve hayır kapıları açar."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-044",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim, Allah’a samimiyetle yönelen için büyük bir mutluluk kapısı olabilir. Nice insan bu yolda huzur bulmuştur."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-045",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Günahlar, ilmin bereketini azaltır. Bu yüzden ilimle beraber takva ve muhasebe de gerekir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-046",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kişi ilmiyle veya zekasıyla gururlanmamalıdır. Her iyiliği Allah’ın lütfu bilmeli, sürekli Allah'tan yardım istemelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-047",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Kibir, hakkı kabul etmeye engel olan büyük bir hastalıktır. Onun şifası, tevazu ve Allah’a içten bir yöneliştir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-048",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İnsan bazen dünya lezzetlerini Allah için terk eder ve kalbinde terkettiğinden daha üstün bir lezzet bulur."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-049",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlimde çokluktan çok sağlamlık ve derinlik önemlidir. Az ama yerleşmiş bilgi, dağınık çok bilgiden hayırlıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-050",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Faydasız bilgi, sahibinin onunla amel etmediği ve başkasına da fayda vermediği bilgidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-051",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlim talebesi niyetini sık sık yenilemeli, bıkkınlığa teslim olmamalı ve selefin gayretini hatırlayarak azmini tazelemelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-052",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Az ama ihlaslı ve kendisi ile amel edilen ilim, çok ama tesirsiz ilimden daha değerlidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-053",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlmin hakkı, onunla amel etmek ve onu hayra vesile kılmaktır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-054",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İlmin en bereketli hâli, önce sahibini ıslah etmesi, sonra başkalarına fayda vermesidir. Bu bazen bir hocada, bazen evladına hayrı öğreten bir anne babada ortaya çıkar."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-055",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İnsanlara rehberlik etmek ciddi bir sorumluluktur. Kişi, ehil olmadan kendisini bu makamda görmemelidir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-056",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Sıkıntı anında ilk sığınak Allah olmalıdır. Kulun gerçekten kurtuluşa yakın olduğu anlardan biri, darlıkta Rabbine yöneldiği andır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-057",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’a dayanan kul, hayal kırıklığına uğramaz. Dua etmeye yönelmiş olmak dahi Allah'ın yardımın tecellisinin başıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-058",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İhtiyacını Allah’a arz edenin darlığı genişliğe döner. Çünkü kulların çözemediğini Allah çözer."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-059",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İnsan dertleşebilir, fakat kader karşısında isyana düşmemeli ve şikayet adabını aşmamalıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-060",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Belaya sabredip onu vakar ile karşılamak, imanın güzelliklerindendir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-061",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Sürekli şikayet eden ve nimetleri görmeyen kişi, ruhunu yorar. Mümin kendini razı olmaya ve Allah’a sığınmaya alıştırmalıdır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-062",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Halini Rabbine arz eden kişi, kalbinde hafifleme bulur. Çünkü en sağlam dayanak, Hayy ve Kayyum olan Allah’a yönelmektir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-063",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah bazen kulunu sıkıntıyla kuşatır ki, kul O’nun kapısını çalsın ve acziyetini daha iyi bilsin."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-064",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Sabreden kul mutlaka karşılığını alır. Allah sabredenlerle beraber olduğunu, onları sevdiğini ve sabırlarının boşa çıkmayacağını vaat etmiştir."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-065",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "En mutlu insan, sebeplere sarıldığı halde ümidini yalnız Rabbine bağlayandır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-066",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "İmtihanlar karşısında rıza ve sabır, kulun derecesini yükseltir. Bela, Allah dostlarını çoğu zaman Rabbine daha da yaklaştırır."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-067",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah’ın kulu olmak başlı başına bir izzettir. Allah’ın koruduğu, izzetli kıldığı kimseyi insanlar zelil edemez."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-068",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Mazluma yardım etmek ve onun halini gözetmek, büyük bir hayır kapısıdır. Özellikle zayıf, yalnız ve yük altında ezilen kimselere yapılan iyilik, insanın hayatında büyük bereketlerin kapısını açar."
+    },
+    {
+      "id": "muhammed-muhtar-sankiti-069",
+      "personId": "muhammed-muhtar-sankiti",
+      "personName": "Muhammed Muhtar Şankiti",
+      "text": "Allah kimi yüceltirse, onu gerçekten alçaltabilecek kimse yoktur. İzzet de zillet de Allah’ın elindedir."
+    },
+    {
+      "id": "muhammed-saravi-001",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Resulullah’ın (s.a.v) ümmi olmasının (okuma-yazma bilmemesinin) bir ayıp olduğunu sakın sanma. Başkaları için bir kusur olsa da onun için bu bir şereftir. Çünkü “ümmi” demek; annesinden doğduğu fıtrat üzere olan demektir. Resulullah da yaratılmışlardan bir şey öğrenmemiş, bizzat Yaratan’dan öğrenmiştir; bu yüzden ilminin mertebesi tüm mahlukatın üstüne çıkmıştır."
+    },
+    {
+      "id": "muhammed-saravi-002",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Allah’ın emrini asla cahilce reddetme. Eğer namaz kılmıyorsan “Namazın ne faydası var?” deme; zekat vermiyorsan “Zekat zenginlere zulümdür” deme. Bunun yerine: “Ya Rabbi! Namaz haktır, zekat haktır; fakat ben nefsime söz geçiremiyorum, acizliğime merhamet et” de."
+    },
+    {
+      "id": "muhammed-saravi-003",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Hicret ilkesini benimsiyorsak, hicretin şartları olduğunu bilmeliyiz. İlki, imanını muhafaza edeceğin ve eksiltmeyeceğin bir yere göç etmektir. Ülkenden çıkmadan önce bir bak: Gideceğin yerde dini vecibelerini Allah’ın emrettiği şekilde yerine getirebilecek misin? Eğer öyleyse mahsuru yoktur. Aksi takdirde dininin emirlerini yapmana engel olan bir yere hicret etmen caiz değildir."
+    },
+    {
+      "id": "muhammed-saravi-004",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Allah ile görüşmek istediğinde (Allah'ın izin vermesiyle) bu yetkinin senin elinde olması sana izzet ve kerem olarak yeter. Tek yapman gereken abdest alıp görüşmeye niyet ederek “Allahu Ekber” demektir. O an, mekanını, vaktini ve süresini senin belirlediğin bir buluşmada Allah Teâlâ’nın huzurunda olursun."
+    },
+    {
+      "id": "muhammed-saravi-005",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "İçinde zerre kadar fikir olan hiçbir akıl, Allah’a bir benzer veya denk koşmaz. Allah; kudretinde birdir, kuvvetinde birdir, yaratmasında birdir, zatında birdir ve sıfatlarında birdir."
+    },
+    {
+      "id": "muhammed-saravi-006",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Kur’an bize, onlar olmadan dünyanın hiçbir değerinin kalmayacağı hayat değerlerini verir. Çünkü dünya, ahiretteki hayat için bir sınavdır. Eğer dünyayı seni cennete ulaştıran bir yol olma göreviyle ele almazsan, değerini ihmal etmiş olursun."
+    },
+    {
+      "id": "muhammed-saravi-007",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Rızık, faydalanılan şeydir; elde edilen şey değil. Çok para kazanabilirsin ama onu harcamayıp istifade etmiyorsan o senin rızkın değildir. Peygamber (s.a.v) şöyle buyurmuştur: “Ademoğlu ‘malım malım’ der. Ey Ademoğlu! Senin malından sana kalan; yiyip tükettiğin, giyip eskittiğin veya sadaka verip (ahirete) gönderdiğinden başkası değildir”"
+    },
+    {
+      "id": "muhammed-saravi-008",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Münafıklar hayattaki gerçek değerlere dönüp bakmazlar, sadece zahiri yani görüneni alırlar/aldanırlar. Anlık gelecek menfaatler isterler; kalplerinin karanlığı iman nurunu görmelerine engel olur. Geçici olmasına rağmen dünyanın parıltısı onları büyüler."
+    },
+    {
+      "id": "muhammed-saravi-009",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "“O gün dilleri, elleri ve ayakları yaptıklarına dair aleyhlerine şahitlik edecektir.” Duyuların dünya hayatında Allah’ın emriyle senin emrine verişmiş, sana musahhar kılınmıştır. Eğer onları günahta kullanırsan, kıyamet günü aleyhine şahitlik ederler."
+    },
+    {
+      "id": "muhammed-saravi-010",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Namaz bittikten sonra yeryüzüne dağılın ve Allah’ın lütfundan nasibinizi arayın. (Cuma, 10)"
+    },
+    {
+      "id": "muhammed-saravi-011",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Bu ayet, sanki insana şunu hatırlatır: Camiye yalnızca bir ibadeti yerine getirmek için değil; ticarette, üretimde ve hayatın her alanında duygularını, niyetini ve davranışlarını Allah’ın rızasına göre yönlendirecek bir iman gücü yüklenmeyi hedefler. Rabbin seni namaza çağırdığında, senden hayatı durdurmanı istemez. Bilakis namazla sana, hayatını Allah’ın istediği istikamette sürdürebilmen için gerekli olan manevi gücü verir."
+    },
+    {
+      "id": "muhammed-saravi-012",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Hüdhüd bir peygambere şöyle diyor: “Senin bilmediğin bir şeyi öğrendim.” (Neml, 22). Süleyman (a.s)’dan mertebece aşağı olan bir yaratık, ona “Senin bilmediğini bildim” diyor. Bu, bizden aşağı mertebede olanlara karşı edep sahibi olmamızı öğretir; Allah bizden aşağıdakilere bizim bilmediğimizi öğreterek ikramda bulunabilir."
+    },
+    {
+      "id": "muhammed-saravi-013",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Müminin her işin başında “Besmele” çekmesi, Allah’ın o işi kendisine kolaylaştırdığına güvenmesidir. İş bittikten sonra “Hamd” ettiğinde de, kendisine verenin Allah olduğunu teyit eder; böylece gurura kapılmaz."
+    },
+    {
+      "id": "muhammed-saravi-014",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Sebeplere güvenerek kibirlenen kişi için öyle bir zaman gelir ki, o sebepler artık ona cevap vermez."
+    },
+    {
+      "id": "muhammed-saravi-015",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Mümin yarından, karşılaşacağı şeyden korkmaz. Allah alemlerin Rabbi iken nasıl korksun? Yiyeceği yoksa Allah’ın onu rızıklandıracağına güvenir. Bir krizle karşılaşırsa kalbi huzurludur çünkü Allah’ın bu krizi çözeceğini bilir. Bir nimete ererse şükreder."
+    },
+    {
+      "id": "muhammed-saravi-016",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Münafığın karakteri; onuru olmayan, yüzleşemeyen, gizlice tuzak kuran biridir. Kusurlarını insanlardan gizlese bile, kendinin yalancısı olması onun derekesini bilme hususunda yeterlidir."
+    },
+    {
+      "id": "muhammed-saravi-017",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Ağzını sadece iki şey için kullan: Sessizlik ve tebessüm. Tebessüm problemleri çözmek için, sessizlik ise problemlerden kaçınmak için."
+    },
+    {
+      "id": "muhammed-saravi-018",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Hak Teâlâ, emir veren olarak O’na iman etmemizi ister. Eğer her şey tam olarak kavranabilir olsaydı, imanın değeri kavranamazdı. İmanın büyüklüğü, hikmetini bilmediğin hükümleri yerine getirmendedir."
+    },
+    {
+      "id": "muhammed-saravi-019",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Gerçek devrimci, fesadı devirmeye çalışandır. Başarılı olduğunda ise zaferler ve eserler inşa etmeye başlar."
+    },
+    {
+      "id": "muhammed-saravi-020",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "İmani yükümlülüğün hikmeti, onun Allah’tan gelmesidir. Allah “yap” dediyse yapmak, “yapma” dediyse yapmamak yeterli bir sebeptir."
+    },
+    {
+      "id": "muhammed-saravi-021",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Şüphe götürmeyen gerçek şudur ki hepimiz kıyamet günü Allah ile karşılaşacağız. İnsanların çoğu belirsiz bir gelecek için koşar ama ahiret yakinini hissetmezler."
+    },
+    {
+      "id": "muhammed-saravi-022",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Ölüm, duyularla gözlemlenen bir olaydır. Allah’ın, gaybi gerçekleri aklımıza yaklaştırmak için bunları gözlemlenebilir şeylerle anlatması bir rahmettir."
+    },
+    {
+      "id": "muhammed-saravi-023",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Bazı insanlar Firavun veya Zülkarneyn kimdi diye meşgul olurlar. Amaç belirli bir kişi değil, kıssadan alınacak hikmettir."
+    },
+    {
+      "id": "muhammed-saravi-024",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Babası varlıklı olan endişe etmez; ya Rabbi olan nasıl endişe etsin?"
+    },
+    {
+      "id": "muhammed-saravi-025",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Her birimizin elinde cennete veya cehenneme giden yolun anahtarı vardır. Sen ahdine vefa gösterirsen Allah da gösterir, sen O’nu anarsan O da seni anar."
+    },
+    {
+      "id": "muhammed-saravi-026",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Dertler seni yorduğunda üzülme; belki de Allah sesini duymayı ve O’na dua etmeni sevmiştir."
+    },
+    {
+      "id": "muhammed-saravi-027",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Allah’ı nimetlerin sayısı kadar, bir o kadar da belaların sayısı kadar anmalıyız. Nimetlere şükredersen Allah onları artırır. Belalara karşı Allah’ı zikredersen, Allah o belaları nimete dönüştürür."
+    },
+    {
+      "id": "muhammed-saravi-028",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Eğitimdeki en önemli şey örnek olmaktır. Eğer salih bir örnek varsa, çocuk onu taklit eder. Kötü bir davranış örneği, inşa edilen bir çok şeyi yıkabilir."
+    },
+    {
+      "id": "muhammed-saravi-029",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Kusurlu birini hor görme. Eğer bu kusur ahlakındaysa onu düzelt; eğer yaratılışındaysa onu yaratana karşı edepli ol."
+    },
+    {
+      "id": "muhammed-saravi-030",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Bakara suresindeki inek kıssasındaki zorluklar, İsrailoğullarının oyalanmalarına bir karşılıktır. Müminin özelliği ise emri hemen yerine getirmektir."
+    },
+    {
+      "id": "muhammed-saravi-031",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "İman, mümini Allah’ın emrini “baş üstüne” diyerek sorumluluk bilmeye yöneltir. Bu yüzden Allah her yükümlülüğe “Ey iman edenler” diye başlar."
+    },
+    {
+      "id": "muhammed-saravi-032",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "İnsan organlarını helal yolda kullanırken ferahtır, endişesizdir. Allah’ı gazaplandıracak bir işe yöneldiğinde ise tedirginlik ortaya çıkar."
+    },
+    {
+      "id": "muhammed-saravi-033",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Ahirette kurtuluşun dereceleri vardır. En küçük kurtuluş bile büyük bir lütuftur."
+    },
+    {
+      "id": "muhammed-saravi-034",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Gerçek alim; kendisini kimin ve niçin yarattığını bilendir."
+    },
+    {
+      "id": "muhammed-saravi-035",
+      "personId": "muhammed-saravi",
+      "personName": "Muhammed Şa'ravi",
+      "text": "Rızkın senin adresini bilmesi, senin rızkın sebeplerini bilmenden daha kesindir. Ademoğluna şaşılır; garanti edilen için çabalıyor ama kendisi için yaratıldığı sebebi (ibadeti) terk ediyor."
+    },
+    {
+      "id": "ibrahim-sekran-001",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kur’an-ı Kerim, genel olarak onu dinleyenin kalbini fetheden bir tesire sahiptir. Fakat son zamanlarda ayrıca şunu hissediyorum: Gecenin sessizliği çöktüğünde Kur’an bambaşka bir âleme dönüşüyor. Gecenin sükûnetinde onun heybeti ve derinliği çok daha güçlü hissediliyor."
+    },
+    {
+      "id": "ibrahim-sekran-002",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Yüksek hedeflerin yüklediği yorgunluğa dayanabilmek için nefse en çok yardım eden şey, varılacak neticeyi göz önünde tutmak ve güzel akıbeti zihinde canlı tutmaktır."
+    },
+    {
+      "id": "ibrahim-sekran-003",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Bu alandaki araştırmalar, internet bağımlılığının çoğu zaman ilmî ve amelî sorumlulukların ağırlığından kaçmak için başvurulan bir psikolojik sığınak olduğunu göstermiştir."
+    },
+    {
+      "id": "ibrahim-sekran-004",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kur’an’daki en büyük bağ ve en temel hakikat şudur: Kalbin, imanla sürekli Allah’a yönelmesi ve O’na sımsıkı tutunması."
+    },
+    {
+      "id": "ibrahim-sekran-005",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kur’an, sadece bilgi veren bir kitap yahut merasimlerde okunan bir metin değildir. O, her meselenin üstünde yer alan en büyük davayı taşıyan ilâhî bir hitaptır. Onun uğruna kopmaz denilen bağlar kopmuş, kınındaki kılıçlar çekilmiş, sarsılmaz sanılan tahtlar yıkılmış ve nice sıradan insanlar onunla en yüksek mertebelere yükselmiştir."
+    },
+    {
+      "id": "ibrahim-sekran-006",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Sen her an ömründen harcıyorsun. Bu sermayeyle ya kârlı bir ilim ve salih amel kazanırsın ya da ömrün, kaybedilmiş fırsatların ardından bakmakla tükenir."
+    },
+    {
+      "id": "ibrahim-sekran-007",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Zikir ile heva, kalpte birbiriyle mücadele eder. Zikir azaldıkça heva güç kazanır. Nitekim Allah Teâlâ şöyle buyurur: Kalbini bizi anmaktan gafil kıldığımız ve hevasına uyan kimseye itaat etme."
+    },
+    {
+      "id": "ibrahim-sekran-008",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Bazen seher vaktine kadar uyanık kalırsın, bazen de gecenin sonunda uyanırsın. Böyle bir vakitte yapılacak en güzel iş istiğfar etmektir: Onlar seher vakitlerinde istiğfar ederlerdi.(Zariyat/18)"
+    },
+    {
+      "id": "ibrahim-sekran-009",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Namazın lezzetini mi kaybettin? Kendini bir anda tahiyyatta buluyor, önceki rükünlerden hiçbir şey hissetmediğini mi fark ediyorsun? O halde imanını yeniden kontrol et. Çünkü Allah Teâlâ şöyle buyurur: Müminler gerçekten kurtuluşa ermiştir; onlar namazlarında huşû içindedirler."
+    },
+    {
+      "id": "ibrahim-sekran-010",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Zikrin pek çok fazileti vardır. Fakat en sarsıcı olanı şudur: Kainatın Rabbi, seni yüce mecliste adınla anar. Siz beni anın ki ben de sizi anayım. Düşünsene, Allah senin adını anıyor."
+    },
+    {
+      "id": "ibrahim-sekran-011",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Ey borç veren kardeşim, Buhari’de geçen şu büyük müjdeyi kaçırma: İnsanlara borç veren bir tüccar vardı. Darda kalmış birini gördüğünde yardımcılarına, onun borcunu silin; umulur ki Allah da bizim günahlarımızı siler derdi. Bunun üzerine Allah da onun günahlarını bağışladı."
+    },
+    {
+      "id": "ibrahim-sekran-012",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İmam secdeden kalktığında sen onu son teşehhüd sanırken, o son rekâta kalkarsa bunu yük gibi görme. Bilakis, önceki huşu eksikliğini telafi edebilmen için sana verilmiş son bir fırsat olarak gör."
+    },
+    {
+      "id": "ibrahim-sekran-013",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Bir günah işleyip ardından istiğfar ettiğimizde bize bir günah yazılır. Fakat günah işleyip bir de onu tevil ederek meşrulaştırmaya kalkışırsak, iki günah yüklenmiş oluruz: Biri günahı işlemek, diğeri ise dini bozacak şekilde onu savunmak. Tek günah, iki günahtan daha hafiftir."
+    },
+    {
+      "id": "ibrahim-sekran-014",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Bazıları, imam Fâtiha’yı bitirene kadar bekleyip sonrasını daha iyi tefekkür etmeye çalışır. Oysa Fâtiha’nın kendisi çok daha büyük ve onun tefekkürü çok daha derindir. Nebî sallallahu aleyhi ve sellem onun hakkında şöyle buyurmuştur: Sana Kur’an’daki en büyük sureyi öğreteceğim. (Fatihayı kastederek)"
+    },
+    {
+      "id": "ibrahim-sekran-015",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Allah, günahın içine bir lezzet, itaatin içine ise bambaşka bir tatlılık koymuştur. Alimler, gece yarısı O’na münacatta bulunmanın ve oruçluya iftar vermenin verdiği tadın, dünya lezzetlerinden çok daha üstün olduğunu söylemişlerdir."
+    },
+    {
+      "id": "ibrahim-sekran-016",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İzzet ve gücü dünya mevkiilerinde arayanlar, sonunda zillet ve kırılma yoluna düşerler. Kur’an ise gerçek izzetin kaynağını açıkça gösterir: \"Her kim izzet (şeref ve itibar) istiyorsa, bilsin ki izzetin tamamı Allah’ındır.\" (Fatır/10)"
+    },
+    {
+      "id": "ibrahim-sekran-017",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Abdest almak için musluğu açtığında, suyun soğukluğunu şu hadisin niyetiyle karşıla: Size Allah’ın kendisiyle günahları sildiği ve dereceleri yükselttiği şeyi haber vereyim mi? Zorluklara rağmen abdesti tam almak...(Tirmizi)"
+    },
+    {
+      "id": "ibrahim-sekran-018",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Onlar sadece zanna ve nefislerinin arzusuna uyuyorlar. Fikri sapma yaşayanların sözlerini dikkatle incelediğinde görürsün ki, düşüncelerinin temelinde çoğu zaman görüşünü şer‘î bir delile dayandırdığını zannetme ile gizli bir heva birlikte bulunur."
+    },
+    {
+      "id": "ibrahim-sekran-019",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Bazıları camiye giderken özenle giyinir, fakat evinde sıradan kıyafetlerle namaz kılar. Oysa Her mescidde ziynetinizi takının (güzel elbiselerinizi giyinin) ayeti (Araf/31), namaz kılınan her yeri kapsar. İbn Ömer de şöyle demiştir: Kendisi için süslenilmeye en layık olan Allah’tır."
+    },
+    {
+      "id": "ibrahim-sekran-020",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İlmi sağlamlaştırmanın özü emek ve zahmettir. Talebe bir mesele üzerinde ne kadar çok düşünür ve uğraşırsa, onu o kadar iyi kavrar. İlmi yerleştirmenin yolları da çoktur: tefekkür, mütalaa, ders verme, tekrar, özet çıkarma ve pratik uygulama."
+    },
+    {
+      "id": "ibrahim-sekran-021",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Arapçayı en iyi anlayan, Kur’an’ı da en iyi anlamaya yaklaşır. Çünkü Allah Teâlâ şöyle buyurmuştur: Anlayasınız diye biz onu Arapça bir Kur’an olarak indirdik. Bu yüzden dil ilmini öğrenmeyi ihmal etmeyin."
+    },
+    {
+      "id": "ibrahim-sekran-022",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İnsan, sadece kendi gayreti ve planlamasıyla ibadet kapılarının kendisine açılmasını sağlayamaz. İbadette muvaffakiyet, Allah’a sığınmanın ve O’ndan yardım istemenin bereketiyle gelir."
+    },
+    {
+      "id": "ibrahim-sekran-023",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kim Allah’tan yardım ister ve O’na sığınırsa, Allah ona muvaffakiyet kapılarını hiç ummadığı, aklına bile gelmeyecek ince sebeplerle açar."
+    },
+    {
+      "id": "ibrahim-sekran-024",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İslam tarihi boyunca sahabe fakihleri, tâbiîn, tebeu’t-tâbiîn ve dört mezhep imamları, kadın erkek ilişkileri konusunda daima ihtiyatlı davranmışlardır. Fakat bugün bu mesele bazılarına kriz gibi görünmeye başladı. Şimdi sormak gerekir: Bunca âlim, Allah ve Resûlü’nün muradını anlayamadı da bunu bir avuç modern düşünür mü anladı?"
+    },
+    {
+      "id": "ibrahim-sekran-025",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İlim talebesini içine çekip zamanını tüketen, sonunda da eline sağlam hiçbir şey bırakmayan en büyük kara deliklerden biri; sürekli en kapsamlı kaynağın peşinden koşmak ve kitaplar arasında, hocaların dersleri arasında istikrarsız biçimde gidip gelmektir."
+    },
+    {
+      "id": "ibrahim-sekran-026",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Pek çok insan, kalp katılığını sadece günahın bir sebebi sanır. Oysa kalp katılığı, bazen bizzat günahın bir sonucu ve Allah’ın bir cezası da olabilir. Nitekim Allah Teâlâ şöyle buyurur: Sözlerini bozmaları sebebiyle onları lanetledik ve kalplerini katılaştırdık."
+    },
+    {
+      "id": "ibrahim-sekran-027",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kalp katılığının sonuçları şunlardır: şeriatı eğip bükmek, hevaya uymak, ibadetlerde gevşeklik göstermek, günaha koşarcasına yönelmek, ahiretten gafil kalmak ve dünyaya aldanmak."
+    },
+    {
+      "id": "ibrahim-sekran-028",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Çoğumuz dua ederken Allah’tan dünyaya veya ahirete dair belli isteklerimizin gerçekleşmesini dileriz. Fakat pek azımız, isteklerimizinn kabul olunmasına vesile olacak ibadetleri yapabilmek için Allah’tan yardım istemeyi akıl eder."
+    },
+    {
+      "id": "ibrahim-sekran-029",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Pek çok insan ibadete yönelirken, azmetmeyi plan yapmak ve kararlı olmak zanneder. Oysa bunların hepsi ikinci planda kalan sebeplerdir. Asıl olan istiânedir (Allah'tan yardım istmektir). Bu yüzden Allah Teâlâ, istiâneyi kendi başına bir ibadet olduğu hâlde ayrıca zikretmiş ve şöyle buyurmuştur: Yalnızca Sana ibadet eder, yalnızca Senden yardım dileriz."
+    },
+    {
+      "id": "ibrahim-sekran-030",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Zikir eksikliği, şeytanın kula sızabileceği en geniş kapılardan biridir ve ona hâkim olmasının yollarından biridir. Zikrin gücü ise şeytanı engelleyen en büyük kalelerden biridir. Allah’ın şu sözünü tefekkür et: Kim Rahmân’ın zikrinden yüz çevirirse, ona bir şeytanı musallat ederiz; artık o, onun yakın dostu olur."
+    },
+    {
+      "id": "ibrahim-sekran-031",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Namazın makamını gösteren en çarpıcı hususlardan biri şudur: Allah, diğer ibadetleri yeryüzünde indirme suretiyle vahiy yoluyla farz kılmış; fakat namaz için Resûlullah sallallahu aleyhi ve sellemi hicretten üç yıl önce miraca, katına yükseltmiş ve onun farziyetini bizzat bildirmiştir."
+    },
+    {
+      "id": "ibrahim-sekran-032",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İlmin genişliğini, ömrün kısalığını ve hayatın sayısız meşgalesinin farkında olan kimse, Yahyâ b. Ebî Kesîr’in şu sözünün gelişigüzel söylenmediğini, edebî bir süs olsun diye yazılmadığını; aksine tecrübenin içinden süzülüp geldiğini çok iyi anlar: İlim, beden rahatlığıyla elde edilmez."
+    },
+    {
+      "id": "ibrahim-sekran-033",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kalbi, Allah’ın zikrinden uzak kalmak kadar kurutup katılaştıran başka bir sebep bilmiyorum. Yine kalbi, Allah’ı zikretmek kadar hızlı dirilten ve aydınlatan başka bir sebep de bilmiyorum."
+    },
+    {
+      "id": "ibrahim-sekran-034",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "İnsan çoğu zaman, kendisine fayda verecek bir nasihati tecrübeli birinden duymak ister. Oysa Allah Teâlâ kullarına, vasiyet üslubuyla hitap ederek şöyle buyurur: Biz insana, anne babasına iyi davranmasını tavsiye ettik. Annesi onu güçsüzlük üstüne güçsüzlük çekerek taşıdı. Azamet sahibi Allah, anne babaya iyiliği bizzat vasiyet ediyorsa, onların hakkının büyüklüğünü artık sen düşün."
+    },
+    {
+      "id": "ibrahim-sekran-035",
+      "personId": "ibrahim-sekran",
+      "personName": "İbrahim Sekran",
+      "text": "Kendime de, bu satırları okuyan kardeşime de tavsiyem şudur: Niyetinin mahlukatı razı etmye kaydığını fark ettiğin her anda şu ayeti hemen hatırla: Allah mı daha hayırlıdır, yoksa O’na ortak koştukları mı?"
+    },
+    {
+      "id": "mustafa-es-sibai-001",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Bu muazzam kâinat, dürülmüş bir kitap gibidir. Bilim insanları ise henüz onun kapak sayfasından ancak birkaç kelime okuyabilmiştir."
+    },
+    {
+      "id": "mustafa-es-sibai-002",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "İnsanların sapmalarının çoğu, akıllarından değil; heva ve heveslerinden kaynaklanır."
+    },
+    {
+      "id": "mustafa-es-sibai-003",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Hayatın güzelliği, senin helal dairesi içinde bulunduğun hâlden razı olmanda ve aklıselim sahibi insanların da bu duruşunu takdir etmesinde saklıdır."
+    },
+    {
+      "id": "mustafa-es-sibai-004",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Fakirliğin en ağır dört türü şunlardır: Din fakirliği, akıl fakirliği, sabır fakirliği ve mürüvvet (kişilik-karakter) fakirliği."
+    },
+    {
+      "id": "mustafa-es-sibai-005",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Malını açgözlüye, sırrını yalancıya, dinini şarlatana, aklını hilekâra, güvenliğini pervasız kimseye, ilmini cahile, hedeflerini ise art niyetli zeki kimseye emanet etme."
+    },
+    {
+      "id": "mustafa-es-sibai-006",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "En şiddetli acı; doktorun teşhis edemediği, sahibinin ise kelimelere anlatamadığı acılardır."
+    },
+    {
+      "id": "mustafa-es-sibai-007",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Sağlığın, malın veya dünya nimetlerinden biri elinden gittiğinde, acın ne kadar şiddetlenirse şiddetlensin; geriye kalan nimetlerin, ebedî saadet için hâlâ büyük bir sermaye olduğunu unutma."
+    },
+    {
+      "id": "mustafa-es-sibai-008",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Sadık bir dosta veya vakarlı bir dert ortağına açılmak dışında, şikâyetini herkese taşımak; düşmanın ya da hasetçinin eline koz vermektir. Buna karşılık hâlini Rahmân ve Rahîm olan Allah’a arz etmek, sevap bakımından en büyük kazanç, vakit bakımından da en bereketli yoldur."
+    },
+    {
+      "id": "mustafa-es-sibai-009",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Gerçek dost, senin acınla uykusuz kalan; mert insan ise gücü yettiğince yardıma koşandır."
+    },
+    {
+      "id": "mustafa-es-sibai-010",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Çağın ruhuna körü körüne direnmek ahmaklıktır. Fakat çağın ahmaklıklarına ve haramlarına direnmek, övgüye layık bir hikmettir."
+    },
+    {
+      "id": "mustafa-es-sibai-011",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Sen, bilmediğin şeyleri öğrenmekten önce, bildiğin hakikatlerle amel etmeye daha çok muhtaçsın."
+    },
+    {
+      "id": "mustafa-es-sibai-012",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Dinin yön vermediği bir yöneticide, aklını hakkıyla kullanmayan bir akıllıda, ilmiyle amel etmeyen bir âlimde ve adaletle sınırlandırılmayan bir güçlüde hayır yoktur."
+    },
+    {
+      "id": "mustafa-es-sibai-013",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Batıl üzerinde birleşmek, hak üzere ihtilaf etmekten daha kötüdür. Günahta yardımlaşmak ise haktan geri durmaktan daha büyük bir şerdir."
+    },
+    {
+      "id": "mustafa-es-sibai-014",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Kalbi Allah korkusuyla dolmamış kimseye ne vatanını, ne fikrini ne de malını emanet et."
+    },
+    {
+      "id": "mustafa-es-sibai-015",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "İnsanların peşinden koştuğu sayısız yollar ve hedefler vardır. Müminin dünyası ise, inandığı hakikatin çizdiği tek bir yol etrafında şekillenir."
+    },
+    {
+      "id": "mustafa-es-sibai-016",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Dostlar arasındaki ayrılık, düşmanları sevindirir; kardeşler arasındaki çekişme ise pusuda bekleyenlere fırsat verir."
+    },
+    {
+      "id": "mustafa-es-sibai-017",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Zorunlu sebepler hayırlı işlerini tamamıyla terk etmeyi gerektirmesin, vaktinden kurtarabildiğin kadarıyla yine hayır üretmeye bak."
+    },
+    {
+      "id": "mustafa-es-sibai-018",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Üzerine evi yıkılan kimse, sadece inleyip sızlanmakla yetinirse enkazın altında kalır. Fakat bir eliyle yarasını sararken ötekiyle çıkış yolu arayan kimse, ya izzetiyle yaşar ya da onuruyla ölür."
+    },
+    {
+      "id": "mustafa-es-sibai-019",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Aciz insan felaket anında şikâyete sarılır. Azimli insan ise çalışmaya ve sabra yönelir."
+    },
+    {
+      "id": "mustafa-es-sibai-020",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Başarısızlığı başarıya çıkan bir basamak, hastalığı ibadet için bir fırsat, fakirliği ise mücadeleyi derinleştiren bir vesile haline getir."
+    },
+    {
+      "id": "mustafa-es-sibai-021",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Bir fikri sağlam bir makaleyle yaymak, inatçı rakiplerle bir ay boyunca sonuçsuz tartışmalara girmekten daha faydalıdır."
+    },
+    {
+      "id": "mustafa-es-sibai-022",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Zaman en iyi terbiyecidir, düşman ise en iyi uyarıcıdır."
+    },
+    {
+      "id": "mustafa-es-sibai-023",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Bir musibetle karşılaştığında en kötü ihtimali hesaba kat ki gerçekleşirse sarsılmayasın; gerçekleşmezse de bunu büyük bir nimet bilip ferahlayasın."
+    },
+    {
+      "id": "mustafa-es-sibai-024",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Ansızın gelen felaketler karşısında ümitsizliğe kapılma. Dünyada hoşuna gitmeyen şeyler gördüğünde, bunun hayatın imtihan kanunu olduğunu hatırla."
+    },
+    {
+      "id": "mustafa-es-sibai-025",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Yalan ve batıl bir süre rağbet görse de, Allah’ın onu er ya da geç rezil edeceğinden asla şüphe etme."
+    },
+    {
+      "id": "mustafa-es-sibai-026",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Gözlerini kapatarak güneşi inkâr edebilirsin; ama onun ışığını ortadan kaldıramazsın."
+    },
+    {
+      "id": "mustafa-es-sibai-027",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Sevgini müminlere dağıt, öfkeni ise zalimlere sakla."
+    },
+    {
+      "id": "mustafa-es-sibai-028",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Hüsnüzan bir erdemdir. Fakat apaçık gerçeklere rağmen körü körüne inanmak yerilen bir saflıktır."
+    },
+    {
+      "id": "mustafa-es-sibai-029",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Kötülerin kendi aralarındaki ihtilafı, çöküşlerinin başlangıcıdır."
+    },
+    {
+      "id": "mustafa-es-sibai-030",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Korkaklığın en çirkini, insanların dilinden korkup hakkı gizlemektir."
+    },
+    {
+      "id": "mustafa-es-sibai-031",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Karakteri kökten değiştirmek çoğu zaman mümkün değildir. Esas olan, Allah’ın verdiği mizacı terbiye etmektir."
+    },
+    {
+      "id": "mustafa-es-sibai-032",
+      "personId": "mustafa-es-sibai",
+      "personName": "Mustafa es-Sibaî",
+      "text": "Resulullah sallallahu aleyhi ve sellem, dünyada bir krallık kurmak için değil; insanlığa rehberlik etmek ve ona yön vermek için gönderildi."
+    }
+  ]
+}

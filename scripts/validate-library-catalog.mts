@@ -21,6 +21,7 @@ const catalogPath = path.resolve(publicDir, "library", "catalog.v1.json");
 const maxPdfBytes = 25 * 1024 * 1024;
 
 const errors: string[] = [];
+const warnings: string[] = [];
 
 const fileExists = async (filePath: string) => {
   try {
@@ -31,7 +32,46 @@ const fileExists = async (filePath: string) => {
   }
 };
 
-const resolvePublicPath = (assetPath: string) => path.resolve(publicDir, assetPath.replace(/^\/+/, ""));
+const normalizeAssetPath = (assetPath: string) => assetPath.replace(/^\/+/, "");
+
+const resolvePublicPath = (assetPath: string) => path.resolve(publicDir, normalizeAssetPath(assetPath));
+
+const encodeAssetPath = (assetPath: string) =>
+  normalizeAssetPath(assetPath)
+    .split("/")
+    .map((segment) => encodeURIComponent(segment.normalize("NFC")))
+    .join("/");
+
+const decodeAssetPath = (encodedAssetPath: string) =>
+  encodedAssetPath
+    .split("/")
+    .map((segment) => decodeURIComponent(segment))
+    .join("/");
+
+const hasNfcDrift = (value: string) => value !== value.normalize("NFC");
+
+const uniqueStrings = (values: string[]) => Array.from(new Set(values));
+
+const fileExistsInAnyForm = async (assetPath: string) => {
+  const encoded = encodeAssetPath(assetPath);
+  const decoded = decodeAssetPath(encoded);
+  const candidates = uniqueStrings([
+    normalizeAssetPath(assetPath),
+    normalizeAssetPath(assetPath).normalize("NFC"),
+    normalizeAssetPath(assetPath).normalize("NFD"),
+    decoded,
+    decoded.normalize("NFC"),
+    decoded.normalize("NFD"),
+  ]);
+
+  for (const candidate of candidates) {
+    if (await fileExists(resolvePublicPath(candidate))) {
+      return true;
+    }
+  }
+
+  return false;
+};
 
 const isIsoDate = (value: string) => !Number.isNaN(Date.parse(value));
 
@@ -82,6 +122,14 @@ const validate = async () => {
           errors.push(`${idLabel} pdf 25 MiB sınırını aşıyor: ${book.pdfPath}`);
         }
       }
+
+      if (hasNfcDrift(book.pdfPath)) {
+        warnings.push(`${idLabel} pdfPath NFC farklı: ${book.pdfPath}`);
+      }
+
+      if (!(await fileExistsInAnyForm(book.pdfPath))) {
+        errors.push(`${idLabel} url encode sonrası pdf çözümlenemedi: /${encodeAssetPath(book.pdfPath)}`);
+      }
     }
 
     const fallbackCover = book.coverPathPng || book.coverPath;
@@ -92,12 +140,28 @@ const validate = async () => {
       if (!(await fileExists(absoluteFallbackCover))) {
         errors.push(`${idLabel} fallback cover bulunamadı: ${fallbackCover}`);
       }
+
+      if (hasNfcDrift(fallbackCover)) {
+        warnings.push(`${idLabel} fallback cover NFC farklı: ${fallbackCover}`);
+      }
+
+      if (!(await fileExistsInAnyForm(fallbackCover))) {
+        errors.push(`${idLabel} url encode sonrası fallback cover çözümlenemedi: /${encodeAssetPath(fallbackCover)}`);
+      }
     }
 
     if (book.coverPathWebp) {
       const absoluteWebpCover = resolvePublicPath(book.coverPathWebp);
       if (!(await fileExists(absoluteWebpCover))) {
         errors.push(`${idLabel} webp cover bulunamadı: ${book.coverPathWebp}`);
+      }
+
+      if (hasNfcDrift(book.coverPathWebp)) {
+        warnings.push(`${idLabel} webp cover NFC farklı: ${book.coverPathWebp}`);
+      }
+
+      if (!(await fileExistsInAnyForm(book.coverPathWebp))) {
+        errors.push(`${idLabel} url encode sonrası webp cover çözümlenemedi: /${encodeAssetPath(book.coverPathWebp)}`);
       }
     }
   }
@@ -108,6 +172,14 @@ const validate = async () => {
       console.error(`- ${item}`);
     }
     process.exit(1);
+  }
+
+  if (warnings.length > 0) {
+    console.warn("Unicode path report:\n");
+    for (const item of warnings) {
+      console.warn(`- ${item}`);
+    }
+    console.warn("");
   }
 
   console.log(`Library catalog valid. ${catalog.length} kitap kontrol edildi.`);

@@ -6,6 +6,7 @@ import { GradientMesh } from "@/components/GradientMesh";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { PageTransition } from "@/components/PageTransition";
 import { LibraryPreviewSection } from "@/components/LibraryPreviewSection";
+import { MuasirPreviewSection } from "@/components/MuasirPreviewSection";
 import { SelefPreviewSection } from "@/components/SelefPreviewSection";
 
 const HourlyContentSection = lazy(() =>
@@ -74,11 +75,15 @@ const Index = () => {
         <Hero />
 
         <div className="content-visibility-auto">
-          <LibraryPreviewSection />
+          <MuasirPreviewSection />
         </div>
 
         <div className="content-visibility-auto">
           <SelefPreviewSection />
+        </div>
+
+        <div className="content-visibility-auto">
+          <LibraryPreviewSection />
         </div>
 
         <div className="content-visibility-hourly">

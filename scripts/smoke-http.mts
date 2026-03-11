@@ -144,8 +144,11 @@ const run = async () => {
     const spaRoutes = [
       "/",
       "/hourly",
+      "/muasir",
+      "/muasir/kisi/seyh-suleyman-ulvan",
       "/kutuphane",
       "/selef-incileri",
+      "/selef-incileri/imam/imam-safii",
       `/kutuphane/${firstBook.slug}`,
       `/kutuphane/${firstBook.slug}/oku`,
     ];
@@ -165,10 +168,12 @@ const run = async () => {
     assert(Array.isArray(catalogFromServer), "Sunucudan dönen katalog JSON dizi değil.");
     assert(catalogFromServer.length >= catalog.length, "Sunucu katalog kaydı beklenenden az.");
 
+    await expectHttpOk("/muasir/quotes.v1.json", "application/json");
     await expectHttpOk("/selef/quotes.v1.json", "application/json");
     const indexAssetPath = await getIndexAssetPath();
     await expectHeaderContains(indexAssetPath, "cache-control", "immutable");
     await expectHeaderContains(indexAssetPath, "cache-control", "max-age=31536000");
+    await expectHeaderContains("/muasir/quotes.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/selef/quotes.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/library/catalog.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/", "cache-control", "max-age=0");

@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound";
 const LibraryIndex = lazy(() => import("./pages/LibraryIndex"));
 const LibraryDetail = lazy(() => import("./pages/LibraryDetail"));
 const LibraryReader = lazy(() => import("./pages/LibraryReader"));
+const MuasirSozler = lazy(() => import("./pages/MuasirSozler"));
+const MuasirKisiDetay = lazy(() => import("./pages/MuasirKisiDetay"));
 const SelefIncileri = lazy(() => import("./pages/SelefIncileri"));
 const SelefImamDetay = lazy(() => import("./pages/SelefImamDetay"));
 
@@ -64,6 +66,22 @@ const App = () => (
             element={(
               <Suspense fallback={RouteFallback}>
                 <LibraryReader />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/muasir"
+            element={(
+              <Suspense fallback={RouteFallback}>
+                <MuasirSozler />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/muasir/kisi/:personId"
+            element={(
+              <Suspense fallback={RouteFallback}>
+                <MuasirKisiDetay />
               </Suspense>
             )}
           />

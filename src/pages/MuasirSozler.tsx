@@ -7,9 +7,9 @@ import { toast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { normalizeSearchText } from "@/lib/library";
-import { loadSelefQuotesPayload, type SelefImam, type SelefQuote } from "@/services/selefService";
+import { loadMuasirQuotesPayload, type MuasirPerson, type MuasirQuote } from "@/services/muasirService";
 
-const FAVORITES_STORAGE_KEY = "hikmetehli:selef-favorites:v1";
+const FAVORITES_STORAGE_KEY = "hikmetehli:muasir-favorites:v1";
 
 const readFavoriteIds = () => {
   if (typeof window === "undefined") return new Set<string>();
@@ -33,14 +33,14 @@ const persistFavoriteIds = (favoriteIds: Set<string>) => {
   window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(ordered));
 };
 
-const shareQuote = async (quote: SelefQuote) => {
-  const shareUrl = `${window.location.origin}/selef-incileri`;
-  const text = `✨ ${quote.imamName}\n“${quote.text}”\n\n${shareUrl}`;
+const shareQuote = async (quote: MuasirQuote) => {
+  const shareUrl = `${window.location.origin}/muasir`;
+  const text = `✨ ${quote.personName}\n“${quote.text}”\n\n${shareUrl}`;
 
   try {
     if (navigator.share) {
       await navigator.share({
-        title: "Selef İncileri",
+        title: "Muasır Alimlerden ve Davetçilerden Sözler",
         text,
       });
       return true;
@@ -73,16 +73,16 @@ const hashString = (value: string) => {
   return hash >>> 0;
 };
 
-const shuffleQuotesForDay = (quotes: SelefQuote[], imams: SelefImam[]) => {
+const shuffleQuotesForDay = (quotes: MuasirQuote[], people: MuasirPerson[]) => {
   const seed = getDaySeed();
 
-  const grouped = new Map<string, SelefQuote[]>();
+  const grouped = new Map<string, MuasirQuote[]>();
   for (const quote of quotes) {
-    const group = grouped.get(quote.imamId);
+    const group = grouped.get(quote.personId);
     if (group) {
       group.push(quote);
     } else {
-      grouped.set(quote.imamId, [quote]);
+      grouped.set(quote.personId, [quote]);
     }
   }
 
@@ -97,35 +97,27 @@ const shuffleQuotesForDay = (quotes: SelefQuote[], imams: SelefImam[]) => {
     });
   }
 
-  const imamOrder = [...imams].sort((imamA, imamB) => {
-    const orderA = hashString(`${seed}:${imamA.id}`);
-    const orderB = hashString(`${seed}:${imamB.id}`);
-    if (orderA !== orderB) {
-      return orderA - orderB;
-    }
-    return imamA.id.localeCompare(imamB.id, "tr");
-  }).map((imam) => imam.id);
-
-  for (const imamId of grouped.keys()) {
-    if (!imamOrder.includes(imamId)) {
-      imamOrder.push(imamId);
+  const personOrder = [...people].map((person) => person.id);
+  for (const personId of grouped.keys()) {
+    if (!personOrder.includes(personId)) {
+      personOrder.push(personId);
     }
   }
 
-  const cursors = new Map(imamOrder.map((imamId) => [imamId, 0]));
-  const mixed: SelefQuote[] = [];
+  const cursors = new Map(personOrder.map((personId) => [personId, 0]));
+  const mixed: MuasirQuote[] = [];
 
   while (mixed.length < quotes.length) {
     let progressed = false;
-    for (const imamId of imamOrder) {
-      const items = grouped.get(imamId);
+    for (const personId of personOrder) {
+      const items = grouped.get(personId);
       if (!items?.length) continue;
 
-      const cursor = cursors.get(imamId) ?? 0;
+      const cursor = cursors.get(personId) ?? 0;
       if (cursor >= items.length) continue;
 
       mixed.push(items[cursor]);
-      cursors.set(imamId, cursor + 1);
+      cursors.set(personId, cursor + 1);
       progressed = true;
     }
 
@@ -135,7 +127,7 @@ const shuffleQuotesForDay = (quotes: SelefQuote[], imams: SelefImam[]) => {
   return mixed;
 };
 
-const SelefIncileri = () => {
+const MuasirSozler = () => {
   const { isMobile } = usePerformanceMode();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -144,37 +136,37 @@ const SelefIncileri = () => {
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(() => readFavoriteIds());
 
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["selef-quotes"],
-    queryFn: loadSelefQuotesPayload,
+    queryKey: ["muasir-quotes"],
+    queryFn: loadMuasirQuotesPayload,
     staleTime: 1000 * 60 * 60,
   });
 
   const quotes = useMemo(() => data?.quotes ?? [], [data]);
-  const imams = useMemo(() => data?.imams ?? [], [data]);
+  const people = useMemo(() => data?.people ?? [], [data]);
 
   useEffect(() => {
     persistFavoriteIds(favoriteIds);
   }, [favoriteIds]);
 
   useEffect(() => {
-    if (!imams.length) return;
+    if (!people.length) return;
 
-    const imamFromQuery = searchParams.get("imam");
-    if (!imamFromQuery) return;
+    const personFromQuery = searchParams.get("kisi");
+    if (!personFromQuery) return;
 
-    const hasValidImam = imams.some((imam) => imam.id === imamFromQuery);
-    if (hasValidImam) {
-      navigate(`/selef-incileri/imam/${imamFromQuery}`, { replace: true });
+    const hasValidPerson = people.some((person) => person.id === personFromQuery);
+    if (hasValidPerson) {
+      navigate(`/muasir/kisi/${personFromQuery}`, { replace: true });
       return;
     }
 
     const nextParams = new URLSearchParams(searchParams);
-    nextParams.delete("imam");
+    nextParams.delete("kisi");
     setSearchParams(nextParams, { replace: true });
-  }, [imams, navigate, searchParams, setSearchParams]);
+  }, [navigate, people, searchParams, setSearchParams]);
 
   const normalizedSearch = useMemo(() => normalizeSearchText(search), [search]);
-  const mixedQuotes = useMemo(() => shuffleQuotesForDay(quotes, imams), [imams, quotes]);
+  const mixedQuotes = useMemo(() => shuffleQuotesForDay(quotes, people), [people, quotes]);
   const filteredQuotes = useMemo(() => {
     return mixedQuotes.filter((quote) => {
       if (favoritesOnly && !favoriteIds.has(quote.id)) {
@@ -185,14 +177,14 @@ const SelefIncileri = () => {
         return true;
       }
 
-      const haystack = normalizeSearchText(`${quote.imamName} ${quote.text}`);
+      const haystack = normalizeSearchText(`${quote.personName} ${quote.text}`);
       return haystack.includes(normalizedSearch);
     });
   }, [favoriteIds, favoritesOnly, mixedQuotes, normalizedSearch]);
 
   usePageMeta({
-    title: "Selef İncileri | Hikmet Ehli",
-    description: "Selef imamlarının sözlerinden oluşan arşivi imam filtreleriyle keşfedin.",
+    title: "Muasır Alimlerden ve Davetçilerden Sözler | Hikmet Ehli",
+    description: "Çağdaş alim ve davetçilerin sözlerinden oluşan arşivi kişi filtreleriyle keşfedin.",
     url: typeof window !== "undefined" ? window.location.href : undefined,
   });
 
@@ -208,7 +200,7 @@ const SelefIncileri = () => {
     });
   };
 
-  const handleShare = async (quote: SelefQuote) => {
+  const handleShare = async (quote: MuasirQuote) => {
     const success = await shareQuote(quote);
 
     if (success) {
@@ -223,10 +215,11 @@ const SelefIncileri = () => {
     });
   };
 
-  const handleOpenImam = (imamId: string) => {
-    navigate(`/selef-incileri/imam/${imamId}`);
+  const handleOpenPerson = (personId: string) => {
+    navigate(`/muasir/kisi/${personId}`);
   };
-  const imamSkeletonCount = isMobile ? 7 : 10;
+
+  const personSkeletonCount = isMobile ? 5 : 5;
 
   return (
     <PageTransition>
@@ -240,19 +233,19 @@ const SelefIncileri = () => {
             className={`rounded-2xl md:rounded-3xl border border-border/80 p-4 md:p-7 shadow-elevated ${
               isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
             }`}
-            data-selef-header-shell
+            data-muasir-header-shell
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="min-h-[146px] md:min-h-[174px]">
                 <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-primary">
                   <Sparkles className="h-4 w-4" />
-                  Selef İncileri
+                  Muasır Sözler
                 </p>
                 <h1 className="mt-3 text-2xl md:text-5xl font-display tracking-tight">
-                  Selef İmamlarının Sözlerinden İnciler
+                  Muasır Alimlerden ve Davetçilerden Sözler
                 </h1>
                 <p className="mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-                  İmam seçtiğinde doğrudan onun sayfasına geçersin. Tümü görünümünde sözler günlük karışık sırada listelenir.
+                  Kişi seçtiğinde doğrudan onun sayfasına geçersin. Tümü görünümünde sözler günlük karışık sırada, kişi sırası ise sabit düzende kalır.
                 </p>
               </div>
 
@@ -290,12 +283,12 @@ const SelefIncileri = () => {
             </div>
 
             {isMobile ? (
-              <div className="mt-4 min-h-[352px]" data-selef-filter-list>
+              <div className="mt-4 min-h-[180px]" data-muasir-filter-list>
                 <div className="grid grid-cols-1 gap-2">
                   {isLoading ? (
-                    Array.from({ length: imamSkeletonCount }).map((_, index) => (
+                    Array.from({ length: personSkeletonCount }).map((_, index) => (
                       <div
-                        key={`imam-skeleton-${index}`}
+                        key={`person-skeleton-${index}`}
                         className="min-h-12 animate-pulse rounded-xl border border-border/60 bg-background/55"
                       />
                     ))
@@ -303,23 +296,23 @@ const SelefIncileri = () => {
                     <>
                       <button
                         type="button"
-                        data-selef-imam-filter="all"
+                        data-muasir-person-filter="all"
                         className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-primary/60 bg-primary px-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground"
                       >
                         <span>Tümü</span>
                         <span className="text-[10px] opacity-90">{quotes.length}</span>
                       </button>
 
-                      {imams.map((imam) => (
+                      {people.map((person) => (
                         <button
-                          key={imam.id}
+                          key={person.id}
                           type="button"
-                          data-selef-imam-filter={imam.id}
-                          onClick={() => handleOpenImam(imam.id)}
+                          data-muasir-person-filter={person.id}
+                          onClick={() => handleOpenPerson(person.id)}
                           className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-border/70 bg-background/70 px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors"
                         >
-                          <span>{imam.name}</span>
-                          <span className="text-[10px] opacity-90">{imam.count}</span>
+                          <span>{person.name}</span>
+                          <span className="text-[10px] opacity-90">{person.count}</span>
                         </button>
                       ))}
                     </>
@@ -327,34 +320,34 @@ const SelefIncileri = () => {
                 </div>
               </div>
             ) : (
-              <div className="mt-4 min-h-[56px] overflow-x-auto pb-1" data-selef-filter-list>
+              <div className="mt-4 min-h-[56px] overflow-x-auto pb-1" data-muasir-filter-list>
                 <div className="flex min-w-max items-center gap-2">
                   {isLoading ? (
-                    Array.from({ length: imamSkeletonCount }).map((_, index) => (
+                    Array.from({ length: personSkeletonCount }).map((_, index) => (
                       <div
-                        key={`imam-desktop-skeleton-${index}`}
-                        className="h-11 w-28 animate-pulse rounded-full border border-border/60 bg-background/55"
+                        key={`person-desktop-skeleton-${index}`}
+                        className="h-11 w-36 animate-pulse rounded-full border border-border/60 bg-background/55"
                       />
                     ))
                   ) : (
                     <>
                       <button
                         type="button"
-                        data-selef-imam-filter="all"
+                        data-muasir-person-filter="all"
                         className="inline-flex min-h-11 items-center rounded-full border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
                       >
                         Tümü
                       </button>
 
-                      {imams.map((imam) => (
+                      {people.map((person) => (
                         <button
-                          key={imam.id}
+                          key={person.id}
                           type="button"
-                          data-selef-imam-filter={imam.id}
-                          onClick={() => handleOpenImam(imam.id)}
+                          data-muasir-person-filter={person.id}
+                          onClick={() => handleOpenPerson(person.id)}
                           className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors"
                         >
-                          {imam.name}
+                          {person.name}
                         </button>
                       ))}
                     </>
@@ -374,7 +367,7 @@ const SelefIncileri = () => {
 
             {isError ? (
               <div className="rounded-2xl border border-destructive/40 bg-destructive/10 p-5 text-sm text-destructive-foreground">
-                Selef sözleri yüklenemedi. Lütfen tekrar deneyin.
+                Muasır sözleri yüklenemedi. Lütfen tekrar deneyin.
               </div>
             ) : null}
 
@@ -399,12 +392,12 @@ const SelefIncileri = () => {
                   return (
                     <article
                       key={quote.id}
-                      data-imam-id={quote.imamId}
+                      data-person-id={quote.personId}
                       data-quote-id={quote.id}
                       className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_270px] [content-visibility:auto]"
                     >
-                      <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.imamName}</p>
-                      <p className="mt-3 break-words text-sm leading-7 md:text-base text-foreground/95">“{quote.text}”</p>
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.personName}</p>
+                      <p className="mt-3 break-words text-sm leading-7 text-foreground/95 md:text-base">“{quote.text}”</p>
 
                       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <button
@@ -447,4 +440,4 @@ const SelefIncileri = () => {
   );
 };
 
-export default SelefIncileri;
+export default MuasirSozler;

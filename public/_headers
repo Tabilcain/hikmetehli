@@ -4,6 +4,9 @@
 /selef/quotes.v1.json
   Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
 
+/muasir/quotes.v1.json
+  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+
 /library/catalog.v1.json
   Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
 

@@ -45,8 +45,9 @@ export const useHourlySelefQuote = (): UseHourlySelefQuoteResult => {
         if (!isMounted) return;
         setIsError(true);
       } finally {
-        if (!isMounted) return;
-        setIsLoading(false);
+        if (isMounted) {
+          setIsLoading(false);
+        }
       }
     };
 
