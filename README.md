@@ -49,4 +49,4 @@ DNS kayitlari Pages'in verdigi degerlere gore guncellenmelidir.
 
 ## Not
 
-`npm run lint` su anda projedeki eski `ui/*` dosyalarinda bulunan mevcut lint borclari nedeniyle temiz degil. Yayin kapisi olarak `npm run build` kullanilir.
+Bu proje public/statik yayin mantigiyla calisir; admin paneli veya browser tabanli icerik duzenleme alani yoktur.

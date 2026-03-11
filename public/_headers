@@ -11,10 +11,31 @@
   Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
 
 /
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /index.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/hourly
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/muasir
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/muasir/*
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/selef-incileri
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/selef-incileri/*
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/kutuphane
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/kutuphane/*
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /favicon.ico
   Cache-Control: public, max-age=300, must-revalidate

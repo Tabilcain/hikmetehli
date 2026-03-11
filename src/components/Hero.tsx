@@ -79,20 +79,6 @@ export const Hero = () => {
           </a>
         </div>
         <div className="hidden md:flex items-center gap-2">
-          <Link
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-xs uppercase tracking-[0.25em] hover:bg-foreground/5 transition-colors"
-            to="/muasir"
-          >
-            Muasır
-            <span className="w-2 h-2 rounded-full bg-primary" />
-          </Link>
-          <Link
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-xs uppercase tracking-[0.25em] hover:bg-foreground/5 transition-colors"
-            to="/kutuphane"
-          >
-            Kütüphane
-            <span className="w-2 h-2 rounded-full bg-primary" />
-          </Link>
           <a
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.25em] hover:bg-foreground/90 transition-colors"
             href="#baglan"

@@ -13,7 +13,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 
 public final class WidgetContentEngine {
-    private static JSONArray verseCache;
     private static JSONArray hadithCache;
 
     private WidgetContentEngine() {}
@@ -22,21 +21,15 @@ public final class WidgetContentEngine {
         ensureLoaded(context);
         int seed = getHourlySeed();
 
-        if (verseCache == null || hadithCache == null || verseCache.length() == 0 || hadithCache.length() == 0) {
+        if (hadithCache == null || hadithCache.length() == 0) {
             return HourlyContent.fallback();
         }
 
-        int verseIndex = (int) Math.floor(seededRandom(seed) * verseCache.length());
         int hadithIndex = (int) Math.floor(seededRandom(seed * 7 + 13) * hadithCache.length());
 
         try {
-            JSONObject verse = verseCache.getJSONObject(verseIndex);
             JSONObject hadith = hadithCache.getJSONObject(hadithIndex);
             return new HourlyContent(
-                verse.optString("t", "Ayet yüklenemedi."),
-                verse.optString("s", ""),
-                verse.optInt("sn", 0),
-                verse.optInt("an", 0),
                 hadith.optString("t", "Hadis yüklenemedi."),
                 hadith.optString("s", ""));
         } catch (Exception ignored) {
@@ -45,10 +38,9 @@ public final class WidgetContentEngine {
     }
 
     private static void ensureLoaded(Context context) {
-        if (verseCache != null && hadithCache != null) {
+        if (hadithCache != null) {
             return;
         }
-        verseCache = loadJsonArray(context.getAssets(), "widget_verses.json");
         hadithCache = loadJsonArray(context.getAssets(), "widget_hadiths.json");
     }
 
@@ -82,35 +74,19 @@ public final class WidgetContentEngine {
     }
 
     public static class HourlyContent {
-        public final String verseText;
-        public final String verseSurah;
-        public final int verseSurahNo;
-        public final int verseAyahNo;
         public final String hadithText;
         public final String hadithSource;
 
         public HourlyContent(
-            String verseText,
-            String verseSurah,
-            int verseSurahNo,
-            int verseAyahNo,
             String hadithText,
             String hadithSource
         ) {
-            this.verseText = verseText;
-            this.verseSurah = verseSurah;
-            this.verseSurahNo = verseSurahNo;
-            this.verseAyahNo = verseAyahNo;
             this.hadithText = hadithText;
             this.hadithSource = hadithSource;
         }
 
         static HourlyContent fallback() {
             return new HourlyContent(
-                "Saatlik ayet içeriği yüklenemedi.",
-                "",
-                0,
-                0,
                 "Saatlik hadis içeriği yüklenemedi.",
                 ""
             );

@@ -4,5 +4,5 @@
     <string name="title_activity_main">Hikmet Ehli</string>
     <string name="package_name">com.hikmetehli.app</string>
     <string name="custom_url_scheme">hikmetehli</string>
-    <string name="hourly_widget_desc">Saatlik ayet ve hadis widgetı</string>
+    <string name="hourly_widget_desc">Saatlik sahih hadis widgetı</string>
 </resources>

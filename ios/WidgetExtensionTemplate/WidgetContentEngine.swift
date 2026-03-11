@@ -1,40 +1,26 @@
 import Foundation
 
 struct HourlyWidgetContent {
-    let verseReference: String
-    let verseText: String
     let hadithSource: String
     let hadithText: String
 }
 
 enum WidgetContentEngine {
     static func pickHourlyContent(date: Date = Date()) -> HourlyWidgetContent {
-        let verses = loadArray(named: "widget_verses")
         let hadiths = loadArray(named: "widget_hadiths")
 
-        guard !verses.isEmpty, !hadiths.isEmpty else {
+        guard !hadiths.isEmpty else {
             return HourlyWidgetContent(
-                verseReference: "Ayet",
-                verseText: "Saatlik içerik yüklenemedi.",
                 hadithSource: "Hadis",
                 hadithText: "Saatlik içerik yüklenemedi."
             )
         }
 
         let seed = hourlySeed(for: date)
-        let verseIndex = Int(floor(seededRandom(seed) * Double(verses.count)))
         let hadithIndex = Int(floor(seededRandom(seed * 7 + 13) * Double(hadiths.count)))
-
-        let verse = verses[verseIndex]
         let hadith = hadiths[hadithIndex]
 
-        let surah = verse["s"] as? String ?? "Ayet"
-        let surahNo = verse["sn"] as? Int ?? 0
-        let ayahNo = verse["an"] as? Int ?? 0
-
         return HourlyWidgetContent(
-            verseReference: surahNo > 0 ? "\(surah) \(surahNo):\(ayahNo)" : surah,
-            verseText: verse["t"] as? String ?? "",
             hadithSource: hadith["s"] as? String ?? "Hadis",
             hadithText: hadith["t"] as? String ?? ""
         )

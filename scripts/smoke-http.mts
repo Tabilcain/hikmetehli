@@ -16,6 +16,7 @@ const rootDir = process.cwd();
 const distDir = path.resolve(rootDir, "dist");
 const publicDir = path.resolve(rootDir, "public");
 const wranglerPath = path.resolve(rootDir, "wrangler.toml");
+const headersPath = path.resolve(publicDir, "_headers");
 const catalogPath = path.resolve(publicDir, "library", "catalog.v1.json");
 const port = Number(process.env.SMOKE_HTTP_PORT || "8788");
 const baseUrl = `http://127.0.0.1:${port}`;
@@ -110,6 +111,11 @@ const run = async () => {
   const catalogRaw = await fs.readFile(catalogPath, "utf8");
   const catalog = JSON.parse(catalogRaw) as CatalogBook[];
   assert(Array.isArray(catalog) && catalog.length > 0, "catalog.v1.json boş veya geçersiz.");
+  const headersRaw = await fs.readFile(headersPath, "utf8");
+  assert(headersRaw.includes("/muasir"), "_headers içinde /muasir cache kuralı eksik.");
+  assert(headersRaw.includes("/selef-incileri"), "_headers içinde /selef-incileri cache kuralı eksik.");
+  assert(headersRaw.includes("/kutuphane"), "_headers içinde /kutuphane cache kuralı eksik.");
+  assert(headersRaw.includes("s-maxage=300"), "_headers içinde SPA shell cache politikası eksik.");
   const firstBook = catalog[0];
   assert(firstBook?.slug, "catalog.v1.json içinde slug bulunamadı.");
 

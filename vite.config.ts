@@ -35,7 +35,6 @@ export default defineConfig(() => ({
         "og-image.png",
         "robots.txt",
         "manifest.json",
-        "quran.json",
         "sitemap.xml",
       ],
       manifest: {
@@ -78,17 +77,6 @@ export default defineConfig(() => ({
               cacheableResponse: {
                 statuses: [0, 200],
               },
-              expiration: {
-                maxEntries: 1,
-                maxAgeSeconds: 60 * 60 * 24 * 30,
-              },
-            },
-          },
-          {
-            urlPattern: ({ url }) => url.pathname.endsWith("/quran.json"),
-            handler: "CacheFirst",
-            options: {
-              cacheName: "quran-cache",
               expiration: {
                 maxEntries: 1,
                 maxAgeSeconds: 60 * 60 * 24 * 30,

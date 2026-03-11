@@ -7,11 +7,8 @@ Widget icerigi backend kullanmadan uretilir.
 - Ortak seed algoritmasi: `src/lib/hourlyContentEngine.ts`
 - Export script: `npm run export:widget-data`
 - Cikti dosyalari:
-  - `native-shared/verses.compact.json`
   - `native-shared/hadiths.compact.json`
-  - `android/app/src/main/assets/widget_verses.json`
   - `android/app/src/main/assets/widget_hadiths.json`
-  - `ios/App/App/widget_verses.json`
   - `ios/App/App/widget_hadiths.json`
 
 ## Android

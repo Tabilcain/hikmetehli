@@ -3,8 +3,6 @@ import SwiftUI
 
 struct HikmetHourlyEntry: TimelineEntry {
     let date: Date
-    let verseTitle: String
-    let verseText: String
     let hadithTitle: String
     let hadithText: String
 }
@@ -13,8 +11,6 @@ struct HikmetHourlyProvider: TimelineProvider {
     func placeholder(in context: Context) -> HikmetHourlyEntry {
         HikmetHourlyEntry(
             date: Date(),
-            verseTitle: "Bakara 2:269",
-            verseText: "O, hikmeti dilediğine verir...",
             hadithTitle: "Buhari",
             hadithText: "İki nimet vardır ki insanların çoğu..."
         )
@@ -34,8 +30,6 @@ struct HikmetHourlyProvider: TimelineProvider {
         let content = WidgetContentEngine.pickHourlyContent()
         return HikmetHourlyEntry(
             date: Date(),
-            verseTitle: content.verseReference,
-            verseText: content.verseText,
             hadithTitle: content.hadithSource,
             hadithText: content.hadithText
         )
@@ -54,26 +48,13 @@ struct HikmetHourlyWidgetEntryView: View {
                 Text(entry.date, style: .time)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
-                HStack(alignment: .top, spacing: 8) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(entry.verseTitle)
-                            .font(.caption2)
-                            .foregroundStyle(Color.white.opacity(0.8))
-                        Text(entry.verseText)
-                            .font(.caption)
-                            .foregroundStyle(.white)
-                            .lineLimit(3)
-                    }
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(entry.hadithTitle)
-                            .font(.caption2)
-                            .foregroundStyle(Color.white.opacity(0.8))
-                        Text(entry.hadithText)
-                            .font(.caption)
-                            .foregroundStyle(.white)
-                            .lineLimit(3)
-                    }
-                }
+                Text(entry.hadithTitle)
+                    .font(.caption2)
+                    .foregroundStyle(Color.white.opacity(0.8))
+                Text(entry.hadithText)
+                    .font(.caption)
+                    .foregroundStyle(.white)
+                    .lineLimit(6)
             }
             .padding(12)
         }
@@ -90,6 +71,6 @@ struct HikmetHourlyWidget: Widget {
         }
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryInline, .accessoryRectangular])
         .configurationDisplayName("Hikmet Ehli")
-        .description("Saatlik ayet ve hadis")
+        .description("Saatlik sahih hadis")
     }
 }

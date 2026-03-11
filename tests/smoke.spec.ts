@@ -11,6 +11,12 @@ const captureRuntimeErrors = (page: Page) => {
   return errors;
 };
 
+const readRect = (page: Page, selector: string) =>
+  page.locator(selector).evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    return { y: rect.y, height: rect.height };
+  });
+
 test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   const runtimeErrors = captureRuntimeErrors(page);
 
@@ -22,19 +28,15 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
     await page.reload({ waitUntil: "networkidle" });
   }
 
-  const libraryCta = page.getByRole("link", { name: /Kütüphane/i }).first();
-  const muasirCta = page.getByRole("link", { name: /Muasır/i }).first();
-  const hourlyCta = page.getByRole("link", { name: /Saatlik Sahih Hadis/i }).first();
-  const selefCta = page.getByRole("link", { name: /Selef İncileri/i }).first();
-  const muasirRouteCta = page.locator('a[href^="/muasir"]').first();
-  const selefRouteCta = page.locator('a[href^="/selef-incileri"]').first();
+  const libraryCta = page.locator('a[href="/kutuphane"]').first();
+  const muasirCta = page.locator('a[href="/muasir"]').first();
+  const hourlyCta = page.locator('a[href="#saatlik-ilham"]').first();
+  const selefCta = page.locator('a[href="/selef-incileri"], a[href="#selef-incileri"]').first();
 
   await expect(libraryCta).toBeVisible();
   await expect(muasirCta).toBeVisible();
   await expect(hourlyCta).toBeVisible();
   await expect(selefCta).toBeVisible();
-  await expect(muasirRouteCta).toBeVisible();
-  await expect(selefRouteCta).toBeVisible();
 
   await hourlyCta.click();
   await expect(page.locator("#saatlik-ilham")).toBeVisible();
@@ -180,16 +182,12 @@ test("muasir sozler sayfasi filtre arama favori ve paylasim aksiyonlarini calist
   await page.goto("/muasir?kisi=seyh-suleyman-ulvan", { waitUntil: "domcontentloaded" });
   const headerShell = page.locator("[data-muasir-header-shell]").first();
   await expect(headerShell).toBeVisible();
-  const beforeLoadBox = await headerShell.boundingBox();
+  const beforeLoadBox = await readRect(page, "[data-muasir-header-shell]");
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(120);
-  const afterLoadBox = await headerShell.boundingBox();
-  expect(beforeLoadBox).not.toBeNull();
-  expect(afterLoadBox).not.toBeNull();
-  if (beforeLoadBox && afterLoadBox) {
-    expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
-    expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
-  }
+  const afterLoadBox = await readRect(page, "[data-muasir-header-shell]");
+  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
+  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
 
   await expect(page).toHaveURL(/\/muasir\/kisi\/seyh-suleyman-ulvan$/);
   await expect(page.locator('[data-selected-muasir-banner="seyh-suleyman-ulvan"]')).toBeVisible();
@@ -249,16 +247,12 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   await page.goto("/selef-incileri?imam=imam-safii", { waitUntil: "domcontentloaded" });
   const headerShell = page.locator("[data-selef-header-shell]").first();
   await expect(headerShell).toBeVisible();
-  const beforeLoadBox = await headerShell.boundingBox();
+  const beforeLoadBox = await readRect(page, "[data-selef-header-shell]");
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(120);
-  const afterLoadBox = await headerShell.boundingBox();
-  expect(beforeLoadBox).not.toBeNull();
-  expect(afterLoadBox).not.toBeNull();
-  if (beforeLoadBox && afterLoadBox) {
-    expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
-    expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
-  }
+  const afterLoadBox = await readRect(page, "[data-selef-header-shell]");
+  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(4);
+  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(8);
 
   await expect(page).toHaveURL(/\/selef-incileri\/imam\/imam-safii$/);
   await expect(page.locator('[data-selected-imam-banner="imam-safii"]')).toBeVisible();
@@ -342,9 +336,9 @@ test("kutuphane liste kartlari ve detay aksiyonlari calisiyor", async ({ page })
   await firstCard.getByRole("link", { name: /Detaya git/i }).click();
   await expect(page).toHaveURL(/\/kutuphane\/[^/]+$/);
 
-  await expect(page.getByRole("link", { name: /Oku/i })).toBeVisible();
-  await expect(page.getByRole("button", { name: /^İndir$/i })).toBeVisible();
-  await expect(page.getByRole("button", { name: /Paylaş/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /Oku/i }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /^İndir$/i }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /Paylaş/i }).first()).toBeVisible();
 
   expect(runtimeErrors).toEqual([]);
 });

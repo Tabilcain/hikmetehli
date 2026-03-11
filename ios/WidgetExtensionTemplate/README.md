@@ -6,7 +6,7 @@ Bu klasor, `WidgetKit` icin hazir widget dosya iskeletini icerir.
 
 1. Xcode icinde `App` projesine `Widget Extension` target ekle.
 2. Bu klasordeki `HikmetHourlyWidget.swift` ve `WidgetContentEngine.swift` dosyalarini yeni target'a ekle.
-3. `widget_verses.json` ve `widget_hadiths.json` dosyalarini extension target'a dahil et.
+3. `widget_hadiths.json` dosyasini extension target'a dahil et.
 4. Widget `supportedFamilies` olarak:
    - `.systemSmall`
    - `.systemMedium`

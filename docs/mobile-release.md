@@ -36,7 +36,7 @@ Bu komutlar:
 ```md
 ## vX.Y.Z - YYYY-MM-DD
 - Perf: iPhone animasyonlarinda hafif mod
-- Widget: Saatlik ayet/hadis home widget
+- Widget: Saatlik sahih hadis home widget
 - Install: iOS/Android ana ekrana ekleme kilavuzu
 - Fix: ...
 ```

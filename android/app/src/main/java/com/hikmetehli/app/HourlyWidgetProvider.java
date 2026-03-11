@@ -45,14 +45,7 @@ public class HourlyWidgetProvider extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_hourly_medium);
         views.setTextViewText(R.id.widget_time, new SimpleDateFormat("HH:mm", Locale.forLanguageTag("tr-TR")).format(new Date()));
         views.setTextViewText(R.id.widget_date, new SimpleDateFormat("d MMMM EEEE", Locale.forLanguageTag("tr-TR")).format(new Date()));
-
-        String verseRef = content.verseSurahNo > 0
-            ? content.verseSurah + " " + content.verseSurahNo + ":" + content.verseAyahNo
-            : "Ayet";
-
-        views.setTextViewText(R.id.widget_verse_title, verseRef);
-        views.setTextViewText(R.id.widget_verse_text, content.verseText);
-        views.setTextViewText(R.id.widget_hadith_title, content.hadithSource.isEmpty() ? "Hadis" : content.hadithSource);
+        views.setTextViewText(R.id.widget_hadith_title, content.hadithSource.isEmpty() ? "Sahih Hadis" : content.hadithSource);
         views.setTextViewText(R.id.widget_hadith_text, content.hadithText);
 
         Intent intent = new Intent(context, MainActivity.class);
