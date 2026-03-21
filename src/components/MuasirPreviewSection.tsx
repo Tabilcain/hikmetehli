@@ -25,13 +25,8 @@ const hashString = (value: string) => {
 const pickFeaturedQuote = (quotes: MuasirQuote[]) => {
   if (!quotes.length) return null;
   const seed = getDaySeed();
-  const sorted = [...quotes].sort((quoteA, quoteB) => {
-    const orderA = hashString(`${seed}:${quoteA.id}`);
-    const orderB = hashString(`${seed}:${quoteB.id}`);
-    if (orderA !== orderB) return orderA - orderB;
-    return quoteA.id.localeCompare(quoteB.id, "tr");
-  });
-  return sorted[0];
+  const index = hashString(seed) % quotes.length;
+  return quotes[index] ?? quotes[0];
 };
 
 export const MuasirPreviewSection = () => {
@@ -124,21 +119,18 @@ export const MuasirPreviewSection = () => {
       <div className="container relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Muasır Sözler</p>
+            <p className="kicker">Muasır Sözler</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
               Muasır Alimlerden ve Davetçilerden Sözler
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              Çağdaş alim ve davetçilerin sözleri arasında gezinebilir, dilediğin kişinin üzerine dokunarak onun hikmetli sözlerine doğrudan geçebilirsin.
-            </p>
-            <p className="text-xs md:text-sm text-muted-foreground/90">
-              Önce kişiyi seç, sonra doğrudan onun sözlerine geç.
+              Çağdaş alim ve davetçilerin sözlerinden rastgele seçmeleri gör, kişi adından doğrudan detay akışına geç.
             </p>
           </div>
 
           <Link
             to="/muasir"
-            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-[box-shadow,background-color] hover:shadow-glow"
+            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-soft transition-[box-shadow,background-color] hover:shadow-glow"
           >
             Tümünü Gör
             <Sparkles className="h-4 w-4" />
@@ -146,8 +138,8 @@ export const MuasirPreviewSection = () => {
         </div>
 
         <article
-          className={`mt-8 min-h-[500px] md:mt-10 md:min-h-[420px] rounded-[24px] md:rounded-[30px] border border-border/80 p-4 md:p-6 shadow-soft ${
-            isMobile ? "bg-card/90" : "bg-card/85 backdrop-blur-sm"
+          className={`mt-8 min-h-[470px] md:mt-10 md:min-h-[390px] rounded-[24px] md:rounded-[30px] border border-border/75 p-4 md:p-6 shadow-soft ${
+            isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
           }`}
           data-muasir-preview-shell
         >
@@ -165,7 +157,7 @@ export const MuasirPreviewSection = () => {
           ) : people.length > 0 ? (
             <>
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Kişiler</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Kişiler</p>
                 <p className="text-xs text-muted-foreground">{people.length} isim</p>
               </div>
 
@@ -179,7 +171,7 @@ export const MuasirPreviewSection = () => {
                           key={person.id}
                           to={`/muasir/kisi/${person.id}`}
                           data-muasir-preview-person={person.id}
-                          className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
+                          className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
                             isFeatured
                               ? "border-primary/60 bg-primary text-primary-foreground"
                               : "border-border/70 bg-background/70 text-foreground"
@@ -202,7 +194,7 @@ export const MuasirPreviewSection = () => {
                           key={person.id}
                           to={`/muasir/kisi/${person.id}`}
                           data-muasir-preview-person={person.id}
-                          className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                          className={`snap-start inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-medium uppercase tracking-[0.14em] transition-colors ${
                             isFeatured
                               ? "border-primary/60 bg-primary text-primary-foreground"
                               : "border-border/70 bg-background/70 text-foreground"
@@ -217,7 +209,7 @@ export const MuasirPreviewSection = () => {
               )}
 
               {featuredPerson ? (
-                <div className="mt-5 min-h-[188px] rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
+                <div className="mt-5 min-h-[176px] rounded-2xl border border-border/65 bg-background/45 p-4 md:p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-semibold">{featuredPerson.name}</p>
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
@@ -236,7 +228,7 @@ export const MuasirPreviewSection = () => {
                       onClick={handleRefreshFeaturedQuote}
                       disabled={!featuredQuote || quotes.length <= 1}
                       data-muasir-preview-refresh
-                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-border/80 bg-background/70 px-5 text-xs font-semibold uppercase tracking-[0.22em] text-foreground transition-colors hover:bg-background disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                      className="action-pill min-h-12 w-full px-5 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                     >
                       Yenile
                       <RefreshCw className="h-4 w-4" />
@@ -247,7 +239,7 @@ export const MuasirPreviewSection = () => {
                         void handleShareFeaturedQuote();
                       }}
                       disabled={!featuredQuote}
-                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground sm:w-auto"
+                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground sm:w-auto"
                     >
                       Paylaş
                       <Share2 className="h-4 w-4" />

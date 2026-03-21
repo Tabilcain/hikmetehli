@@ -16,7 +16,7 @@ const isSafari = () => {
 };
 
 export const InstallCTA = () => {
-  const { lowPerformanceMode } = usePerformanceMode();
+  const { lowPerformanceMode, isMobile } = usePerformanceMode();
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [installed, setInstalled] = useState(false);
 
@@ -52,46 +52,50 @@ export const InstallCTA = () => {
   return (
     <div
       className={cn(
-        "rounded-[28px] border border-border/70 p-6 shadow-soft",
+        "rounded-[26px] border border-border/70 p-4 shadow-soft md:rounded-[30px] md:p-6",
         lowPerformanceMode ? "bg-card/95" : "bg-card/80 backdrop-blur-sm",
       )}
+      data-install-cta-shell
     >
-      <p className="text-xs uppercase tracking-[0.35em] text-muted-foreground">Ana Ekrana Ekle</p>
-      <h3 className="mt-4 text-2xl font-display">Saatlik İlhamı bir uygulama gibi kullan.</h3>
-      <p className="mt-3 text-sm text-muted-foreground">
-        Bildirim beklemeden her saat taze sahih hadis. Ana ekranına ekleyerek tek dokunuşla eriş.
+      <p className="kicker">Ana Ekrana Ekle</p>
+      <h3 className="mt-3 text-xl font-display md:text-2xl">Mobil uygulama gibi kullanabilirsiniz.</h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+        Hikmet Ehli’ni ana ekrana eklediğinde tek dokunuşla açılır ve mobil uygulama deneyimine yakın bir kullanım sağlar.
       </p>
 
       {installed ? (
-        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border/70 px-4 py-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border/70 px-4 py-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
           Kurulu
         </div>
       ) : (
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          {deferredPrompt && !showIosGuide && (
+        <div className="mt-5 flex flex-wrap items-center gap-2.5">
+          {deferredPrompt && !showIosGuide ? (
             <button
               onClick={handleInstall}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-xs uppercase tracking-[0.25em] shadow-elevated hover:shadow-glow transition-all"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground shadow-soft transition-all hover:shadow-glow"
+              data-install-cta-action
             >
               <Download className="h-4 w-4" />
               Yükle
             </button>
-          )}
-          {showIosGuide && (
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">
+          ) : null}
+
+          {showIosGuide ? (
+            <div className="flex w-full items-start rounded-2xl border border-border/70 bg-background/70 px-4 py-3 text-xs font-medium leading-relaxed text-foreground md:w-auto">
               <Share2 className="h-4 w-4 text-primary" />
-              Paylaş → Ana Ekrana Ekle
+              <span className="ml-2">Safari’den Paylaş ➡️ Ana Ekrana Ekle</span>
             </div>
-          )}
-          {!deferredPrompt && !showIosGuide && (
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              Tarayıcı menüsü → Ana Ekrana Ekle
+          ) : null}
+
+          {!deferredPrompt && !showIosGuide ? (
+            <div className="w-full rounded-2xl border border-border/70 bg-background/70 px-4 py-3 text-xs font-medium leading-relaxed text-foreground md:w-auto">
+              Chrome’dan sağ üst köşedeki üç nokta (⋮) ➡️ Ana Ekrana Ekle
             </div>
-          )}
+          ) : null}
         </div>
       )}
 
-      <div className="mt-6">
+      <div className={cn("mt-5", isMobile ? "w-full" : "w-auto")}>
         <InstallGuide />
       </div>
     </div>

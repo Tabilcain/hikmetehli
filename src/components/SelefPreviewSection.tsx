@@ -25,13 +25,8 @@ const hashString = (value: string) => {
 const pickFeaturedQuote = (quotes: SelefQuote[]) => {
   if (!quotes.length) return null;
   const seed = getDaySeed();
-  const sorted = [...quotes].sort((quoteA, quoteB) => {
-    const orderA = hashString(`${seed}:${quoteA.id}`);
-    const orderB = hashString(`${seed}:${quoteB.id}`);
-    if (orderA !== orderB) return orderA - orderB;
-    return quoteA.id.localeCompare(quoteB.id, "tr");
-  });
-  return sorted[0];
+  const index = hashString(seed) % quotes.length;
+  return quotes[index] ?? quotes[0];
 };
 
 export const SelefPreviewSection = () => {
@@ -100,21 +95,18 @@ export const SelefPreviewSection = () => {
       <div className="container relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Selef İncileri</p>
+            <p className="kicker">Selef İncileri</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
               Satırlardan Sadırlara
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              İsimler arasında gezinebilir, dilediğin kişinin üzerine dokunarak ona ait hikmetli sözleri anında görüntüleyebilirsin.
-            </p>
-            <p className="text-xs md:text-sm text-muted-foreground/90">
-              Önce imamı seç, sonra doğrudan onun sözlerine geç.
+              Seçili imamların sözlerini hızlıca gör, isme dokunup doğrudan ilgili detay sayfasına geç.
             </p>
           </div>
 
           <Link
             to="/selef-incileri"
-            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-[box-shadow,background-color] hover:shadow-glow"
+            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-soft transition-[box-shadow,background-color] hover:shadow-glow"
           >
             Tümünü Gör
             <Sparkles className="h-4 w-4" />
@@ -122,8 +114,8 @@ export const SelefPreviewSection = () => {
         </div>
 
         <article
-          className={`mt-8 min-h-[500px] md:mt-10 md:min-h-[420px] rounded-[24px] md:rounded-[30px] border border-border/80 p-4 md:p-6 shadow-soft ${
-            isMobile ? "bg-card/90" : "bg-card/85 backdrop-blur-sm"
+          className={`mt-8 min-h-[470px] md:mt-10 md:min-h-[390px] rounded-[24px] md:rounded-[30px] border border-border/75 p-4 md:p-6 shadow-soft ${
+            isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
           }`}
           data-selef-preview-shell
         >
@@ -141,7 +133,7 @@ export const SelefPreviewSection = () => {
           ) : imams.length > 0 ? (
             <>
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">İmamlar</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">İmamlar</p>
                 <p className="text-xs text-muted-foreground">
                   İlk {previewImams.length} isim gösteriliyor
                 </p>
@@ -156,13 +148,13 @@ export const SelefPreviewSection = () => {
                         key={imam.id}
                         to={`/selef-incileri/imam/${imam.id}`}
                         data-selef-preview-imam={imam.id}
-                        className={`group inline-flex min-h-[76px] w-full items-center justify-between rounded-2xl border px-4 py-4 transition-[transform,box-shadow,background-color] hover:-translate-y-0.5 ${
+                        className={`group inline-flex min-h-[74px] w-full items-center justify-between rounded-2xl border px-4 py-4 transition-[transform,box-shadow,background-color] hover:-translate-y-0.5 ${
                           isFeatured
                             ? "border-primary/60 bg-primary text-primary-foreground shadow-soft"
                             : "border-border/70 bg-background/70 text-foreground hover:bg-background"
                         }`}
                       >
-                        <span className="max-w-[80%] text-left text-[11px] font-semibold uppercase tracking-[0.16em] md:text-xs md:tracking-[0.18em]">
+                        <span className="max-w-[80%] text-left text-xs font-medium uppercase tracking-[0.14em]">
                           {imam.name}
                         </span>
                         <span className="text-[10px] uppercase tracking-[0.2em] opacity-90">{imam.count}</span>
@@ -172,9 +164,9 @@ export const SelefPreviewSection = () => {
                   <Link
                     to="/selef-incileri"
                     data-selef-preview-more="true"
-                    className="inline-flex min-h-[76px] w-full items-center justify-between rounded-2xl border border-dashed border-primary/45 bg-primary/10 px-4 py-4 text-primary transition-[transform,box-shadow,background-color] hover:-translate-y-0.5 hover:bg-primary/15 hover:shadow-soft"
+                    className="inline-flex min-h-[74px] w-full items-center justify-between rounded-2xl border border-dashed border-primary/45 bg-primary/10 px-4 py-4 text-primary transition-[transform,box-shadow,background-color] hover:-translate-y-0.5 hover:bg-primary/15 hover:shadow-soft"
                   >
-                    <span className="text-left text-[11px] font-semibold uppercase tracking-[0.16em] md:text-xs md:tracking-[0.18em]">
+                    <span className="text-left text-xs font-medium uppercase tracking-[0.14em]">
                       ... Tümünü Gör
                     </span>
                     <span className="text-[10px] uppercase tracking-[0.2em] opacity-80">
@@ -185,7 +177,7 @@ export const SelefPreviewSection = () => {
               </div>
 
               {featuredImam ? (
-                <div className="mt-5 min-h-[188px] rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
+                <div className="mt-5 min-h-[176px] rounded-2xl border border-border/65 bg-background/45 p-4 md:p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-sm font-semibold">{featuredImam.name}</p>
                     <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
@@ -202,7 +194,7 @@ export const SelefPreviewSection = () => {
                         void handleShareFeaturedQuote();
                       }}
                       disabled={!featuredQuote}
-                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground sm:w-auto"
+                      className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground sm:w-auto"
                     >
                       Paylaş
                       <Share2 className="h-4 w-4" />

@@ -9,6 +9,7 @@ import { LibraryPreviewSection } from "@/components/LibraryPreviewSection";
 import { MuasirPreviewSection } from "@/components/MuasirPreviewSection";
 import { SelefPreviewSection } from "@/components/SelefPreviewSection";
 import { SahabedenPreviewSection } from "@/components/SahabedenPreviewSection";
+import { InstallCTA } from "@/components/InstallCTA";
 
 const HourlyContentSection = lazy(() =>
   import("@/components/HourlyContentSection").then((module) => ({ default: module.HourlyContentSection })),
@@ -104,6 +105,16 @@ const Index = () => {
                 </div>
               </div>
             )}
+          </section>
+        </div>
+
+        <div className="content-visibility-auto">
+          <section className="py-5 md:py-8" id="ana-ekrana-ekle">
+            <div className="container">
+              <div className="mx-auto max-w-3xl">
+                <InstallCTA />
+              </div>
+            </div>
           </section>
         </div>
 

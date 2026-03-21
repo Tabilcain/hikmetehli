@@ -230,14 +230,12 @@ const MuasirSozler = () => {
 
         <div className="container relative z-10 py-6 md:py-10">
           <header
-            className={`rounded-2xl md:rounded-3xl border border-border/80 p-4 md:p-7 shadow-elevated ${
-              isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
-            }`}
+            className={`surface-shell ${isMobile ? "bg-card/90" : "bg-card/80"}`}
             data-muasir-header-shell
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="min-h-[146px] md:min-h-[174px]">
-                <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-primary">
+              <div className="min-h-[128px] md:min-h-[156px]">
+                <p className="kicker inline-flex items-center gap-2 text-primary">
                   <Sparkles className="h-4 w-4" />
                   Muasır Sözler
                 </p>
@@ -245,14 +243,14 @@ const MuasirSozler = () => {
                   Muasır Alimlerden ve Davetçilerden Sözler
                 </h1>
                 <p className="mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-                  Kişi seçtiğinde doğrudan onun sayfasına geçersin. Tümü görünümünde sözler günlük karışık sırada, kişi sırası ise sabit düzende kalır.
+                  Kişi seçtiğinde doğrudan onun sayfasına geçersin. Tümü görünümünde sözler günlük karışık sırada listelenir.
                 </p>
               </div>
 
               <div className="flex items-center gap-2">
                 <Link
                   to="/"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/80 px-5 text-xs font-semibold uppercase tracking-[0.2em]"
+                  className="action-pill px-5"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Ana Sayfa
@@ -274,7 +272,7 @@ const MuasirSozler = () => {
               <button
                 type="button"
                 onClick={() => setFavoritesOnly((current) => !current)}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
+                className="action-pill px-4"
                 aria-pressed={favoritesOnly}
               >
                 {favoritesOnly ? <HeartOff className="h-4 w-4" /> : <Heart className="h-4 w-4" />}
@@ -283,7 +281,7 @@ const MuasirSozler = () => {
             </div>
 
             {isMobile ? (
-              <div className="mt-4 min-h-[180px]" data-muasir-filter-list>
+              <div className="mt-4 min-h-[164px]" data-muasir-filter-list>
                 <div className="grid grid-cols-1 gap-2">
                   {isLoading ? (
                     Array.from({ length: personSkeletonCount }).map((_, index) => (
@@ -297,7 +295,7 @@ const MuasirSozler = () => {
                       <button
                         type="button"
                         data-muasir-person-filter="all"
-                        className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-primary/60 bg-primary px-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground"
+                        className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground"
                       >
                         <span>Tümü</span>
                         <span className="text-[10px] opacity-90">{quotes.length}</span>
@@ -309,7 +307,7 @@ const MuasirSozler = () => {
                           type="button"
                           data-muasir-person-filter={person.id}
                           onClick={() => handleOpenPerson(person.id)}
-                          className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-border/70 bg-background/70 px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors"
+                          className="inline-flex min-h-12 w-full items-center justify-between rounded-xl border border-border/70 bg-background/70 px-4 text-xs font-medium uppercase tracking-[0.14em] transition-colors"
                         >
                           <span>{person.name}</span>
                           <span className="text-[10px] opacity-90">{person.count}</span>
@@ -320,7 +318,7 @@ const MuasirSozler = () => {
                 </div>
               </div>
             ) : (
-              <div className="mt-4 min-h-[56px] overflow-x-auto pb-1" data-muasir-filter-list>
+              <div className="mt-4 min-h-[52px] overflow-x-auto pb-1" data-muasir-filter-list>
                 <div className="flex min-w-max items-center gap-2">
                   {isLoading ? (
                     Array.from({ length: personSkeletonCount }).map((_, index) => (
@@ -334,7 +332,7 @@ const MuasirSozler = () => {
                       <button
                         type="button"
                         data-muasir-person-filter="all"
-                        className="inline-flex min-h-11 items-center rounded-full border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
+                        className="inline-flex min-h-11 items-center rounded-full border border-primary/60 bg-primary px-4 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground"
                       >
                         Tümü
                       </button>
@@ -345,7 +343,7 @@ const MuasirSozler = () => {
                           type="button"
                           data-muasir-person-filter={person.id}
                           onClick={() => handleOpenPerson(person.id)}
-                          className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors"
+                          className="inline-flex min-h-11 items-center rounded-full border border-border/70 bg-background/70 px-4 text-xs font-medium uppercase tracking-[0.14em] transition-colors"
                         >
                           {person.name}
                         </button>
@@ -394,10 +392,10 @@ const MuasirSozler = () => {
                       key={quote.id}
                       data-person-id={quote.personId}
                       data-quote-id={quote.id}
-                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_270px] [content-visibility:auto]"
+                      className="rounded-[22px] border border-border/70 bg-card/80 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_260px] [content-visibility:auto]"
                     >
-                      <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.personName}</p>
-                      <p className="mt-3 break-words text-sm leading-7 text-foreground/95 md:text-base">“{quote.text}”</p>
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-primary">{quote.personName}</p>
+                      <p className="mt-3 break-words text-sm leading-6 text-foreground/95 md:text-base">“{quote.text}”</p>
 
                       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <button
@@ -406,7 +404,7 @@ const MuasirSozler = () => {
                           aria-label={isFavorite ? "Favoriden çıkar" : "Favorilere ekle"}
                           aria-pressed={isFavorite}
                           onClick={() => handleToggleFavorite(quote.id)}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 text-xs font-semibold uppercase tracking-[0.2em]"
+                          className="action-pill px-3"
                         >
                           {isFavorite ? <HeartOff className="h-4 w-4" /> : <Heart className="h-4 w-4" />}
                           {isFavorite ? "Favoriden çıkar" : "Favori"}
@@ -417,7 +415,7 @@ const MuasirSozler = () => {
                           onClick={() => {
                             void handleShare(quote);
                           }}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground"
                         >
                           <Share2 className="h-4 w-4" />
                           Paylaş

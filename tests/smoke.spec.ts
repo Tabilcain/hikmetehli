@@ -80,6 +80,10 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(previewSahabedenQuote).toBeVisible();
   const previewSahabedenQuoteId = await previewSahabedenQuote.getAttribute("data-sahabeden-preview-quote");
   expect(previewSahabedenQuoteId).toBeTruthy();
+  const refreshSahabedenPreviewButton = page.locator("[data-sahabeden-preview-refresh]").first();
+  await expect(refreshSahabedenPreviewButton).toBeVisible();
+  await refreshSahabedenPreviewButton.click();
+  await expect(previewSahabedenQuote).not.toHaveAttribute("data-sahabeden-preview-quote", previewSahabedenQuoteId || "");
   await expect(page.locator('#sahabeden a[href="/sahabeden"]').first()).toBeVisible();
 
   const muasirDetailLink = page.locator('#muasir a[href="/muasir"]').first();
@@ -207,6 +211,24 @@ test("mobilde sahabeden preview ve detay gorunuyor", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await page.waitForLoadState("networkidle");
+
+  const installCta = page.locator("[data-install-cta-shell]").first();
+  await installCta.scrollIntoViewIfNeeded();
+  await expect(installCta).toBeVisible();
+
+  const installHasHorizontalOverflow = await installCta.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(installHasHorizontalOverflow).toBeFalsy();
+
+  const installGuideTrigger = page.locator("[data-install-guide-trigger]").first();
+  await expect(installGuideTrigger).toBeVisible();
+  await installGuideTrigger.click();
+  const installGuideDialog = page.getByRole("dialog").first();
+  await expect(installGuideDialog.getByText(/Safari.?den Paylaş.*Ana Ekrana Ekle/i)).toBeVisible();
+  await installGuideDialog.getByRole("tab", { name: "Android" }).click();
+  await expect(installGuideDialog.getByText(/Chrome.?dan sağ üst köşedeki üç nokta.*Ana Ekrana Ekle/i)).toBeVisible();
+  await page.keyboard.press("Escape");
 
   await page.locator("#sahabeden").scrollIntoViewIfNeeded();
   await expect(page.locator("[data-sahabeden-preview-quote]").first()).toBeVisible();

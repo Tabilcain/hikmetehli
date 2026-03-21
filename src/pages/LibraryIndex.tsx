@@ -42,10 +42,10 @@ const LibraryIndex = () => {
         <div className="absolute inset-0 grid-overlay opacity-35" />
 
         <div className="container relative z-10 py-6 md:py-12">
-          <header className="rounded-2xl md:rounded-3xl border border-border/80 bg-card/80 p-4 md:p-7 shadow-elevated backdrop-blur-sm">
+          <header className="surface-shell">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary">
+                <p className="kicker inline-flex items-center gap-2 text-primary">
                   <LibraryBig className="h-4 w-4" />
                   Hikmet Ehli Kütüphane
                 </p>
@@ -57,7 +57,7 @@ const LibraryIndex = () => {
 
               <Link
                 to="/"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/80 px-5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-background"
+                className="action-pill px-5"
               >
                 <Home className="h-4 w-4" />
                 Ana Sayfa

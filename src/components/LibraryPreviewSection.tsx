@@ -22,7 +22,7 @@ export const LibraryPreviewSection = () => {
       <div className="container relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Kütüphane</p>
+            <p className="kicker">Kütüphane</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
               Dualar arşivi artık tek sayfada.
             </h2>
@@ -33,7 +33,7 @@ export const LibraryPreviewSection = () => {
 
           <Link
             to="/kutuphane"
-            className="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated hover:shadow-glow transition-all"
+            className="inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-soft transition-all hover:shadow-glow"
           >
             Tümünü Gör
             <MoveRight className="h-4 w-4" />
@@ -61,7 +61,7 @@ export const LibraryPreviewSection = () => {
                     return (
                       <article
                         key={book.id}
-                        className="group relative overflow-hidden rounded-[22px] md:rounded-[26px] border border-border/80 bg-card/85 p-3 md:p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-elevated"
+                        className="group relative overflow-hidden rounded-[22px] md:rounded-[26px] border border-border/70 bg-card/80 p-3 md:p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-elevated"
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-70" />
                         <div className="relative space-y-4">
@@ -83,7 +83,7 @@ export const LibraryPreviewSection = () => {
                             )}
                           </div>
                           <div>
-                            <p className="text-[10px] uppercase tracking-[0.28em] text-primary">Dualar</p>
+                            <p className="text-[10px] uppercase tracking-[0.2em] text-primary">Dualar</p>
                             <h3 className="mt-2 line-clamp-2 min-h-[3.2rem] text-sm md:text-base font-semibold leading-snug text-foreground">
                               {book.title}
                             </h3>
@@ -96,7 +96,7 @@ export const LibraryPreviewSection = () => {
                           <div className="grid grid-cols-3 gap-2">
                             <Link
                               to={`/kutuphane/${book.slug}/oku`}
-                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-background"
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 text-[11px] font-medium uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-background"
                             >
                               Oku
                             </Link>
@@ -105,14 +105,14 @@ export const LibraryPreviewSection = () => {
                               onClick={() => {
                                 triggerPdfDownload({ fileUrl: pdfUrl, title: book.title });
                               }}
-                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-primary px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary/90"
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-primary px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
                             >
                               <Download className="h-4 w-4" />
                               İndir
                             </button>
                             <Link
                               to={`/kutuphane/${book.slug}`}
-                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
+                              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-border/70 px-3 text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
                             >
                               <BookMarked className="h-4 w-4" />
                               Detay

@@ -4,36 +4,34 @@ import { Button } from "@/components/ui/button";
 import { Smartphone } from "lucide-react";
 
 const iosSteps = [
-  "Safari ile Hikmet Ehli'ni aç.",
-  "Paylaş ikonuna dokun.",
-  '"Ana Ekrana Ekle" seçeneğini seç.',
+  "Safari’den Paylaş ➡️ Ana Ekrana Ekle",
+  "Onayla ve ana ekrana sabitle.",
+  "Hikmet Ehli’ni mobil uygulama gibi kullan.",
 ];
 
 const androidSteps = [
-  "Chrome ile Hikmet Ehli'ni aç.",
-  'Menüden "Ana ekrana ekle" veya "Yükle" seç.',
+  "Chrome’dan sağ üst köşedeki üç nokta (⋮) ➡️ Ana Ekrana Ekle",
   "Onayla ve ana ekrana sabitle.",
-];
-
-const widgetSteps = [
-  "Ana ekranda boş alana uzun bas.",
-  '"Widget" menüsünü aç.',
-  "Hikmet Ehli widgetını ekle.",
+  "Hikmet Ehli’ni mobil uygulama gibi kullan.",
 ];
 
 export const InstallGuide = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" className="rounded-full text-xs uppercase tracking-[0.22em]">
+        <Button
+          variant="outline"
+          className="rounded-full text-xs uppercase tracking-[0.16em]"
+          data-install-guide-trigger
+        >
           <Smartphone className="h-4 w-4" />
           Kurulum Kılavuzu
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="max-w-2xl bg-card border-border">
+      <DialogContent className="max-w-xl border-border bg-card">
         <DialogHeader>
-          <DialogTitle className="font-display text-2xl">Uygulama ve Widget Kurulumu</DialogTitle>
+          <DialogTitle className="font-display text-2xl">Mobil Uygulama Gibi Kullanım</DialogTitle>
         </DialogHeader>
 
         <Tabs defaultValue="ios" className="w-full">
@@ -42,57 +40,28 @@ export const InstallGuide = () => {
             <TabsTrigger value="android">Android</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="ios" className="space-y-6">
-            <div>
-              <p className="text-sm text-muted-foreground">Ana ekrana ekleme</p>
-              <ol className="mt-3 space-y-2 text-sm">
-                {iosSteps.map((step) => (
-                  <li key={step} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Widget ekleme</p>
-              <ol className="mt-3 space-y-2 text-sm">
-                {widgetSteps.map((step) => (
-                  <li key={step} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
+          <TabsContent value="ios" className="space-y-4">
+            <p className="text-sm text-muted-foreground">Safari kullanıcıları için hızlı kurulum</p>
+            <ol className="space-y-2 text-sm">
+              {iosSteps.map((step) => (
+                <li key={step} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
           </TabsContent>
 
-          <TabsContent value="android" className="space-y-6">
-            <div>
-              <p className="text-sm text-muted-foreground">Ana ekrana ekleme</p>
-              <ol className="mt-3 space-y-2 text-sm">
-                {androidSteps.map((step) => (
-                  <li key={step} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Widget ekleme</p>
-              <ol className="mt-3 space-y-2 text-sm">
-                {widgetSteps.map((step) => (
-                  <li key={step} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <p className="mt-3 text-xs text-muted-foreground">
-                Not: Android'de kilit ekranı widget desteği cihaz ve launcher'a göre değişir. Destek yoksa ana ekran widgetı kullanılır.
-              </p>
-            </div>
+          <TabsContent value="android" className="space-y-4">
+            <p className="text-sm text-muted-foreground">Chrome kullanıcıları için hızlı kurulum</p>
+            <ol className="space-y-2 text-sm">
+              {androidSteps.map((step) => (
+                <li key={step} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
           </TabsContent>
         </Tabs>
       </DialogContent>

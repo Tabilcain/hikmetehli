@@ -106,9 +106,11 @@ const shuffleQuotesForDay = (quotes: SahabedenQuote[], companions: SahabedenComp
     return companionA.id.localeCompare(companionB.id, "tr");
   }).map((companion) => companion.id);
 
+  const orderedCompanionIds = new Set(companionOrder);
   for (const companionId of grouped.keys()) {
-    if (!companionOrder.includes(companionId)) {
+    if (!orderedCompanionIds.has(companionId)) {
       companionOrder.push(companionId);
+      orderedCompanionIds.add(companionId);
     }
   }
 
@@ -213,14 +215,12 @@ const SahabedenSozler = () => {
 
         <div className="container relative z-10 py-6 md:py-10">
           <header
-            className={`rounded-2xl md:rounded-3xl border border-border/80 p-4 md:p-7 shadow-elevated ${
-              isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
-            }`}
+            className={`surface-shell ${isMobile ? "bg-card/90" : "bg-card/80"}`}
             data-sahabeden-header-shell
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="min-h-[146px] md:min-h-[174px]">
-                <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-primary">
+              <div className="min-h-[128px] md:min-h-[156px]">
+                <p className="kicker inline-flex items-center gap-2 text-primary">
                   <Sparkles className="h-4 w-4" />
                   Sahabeden Seçmeler
                 </p>
@@ -235,7 +235,7 @@ const SahabedenSozler = () => {
               <div className="flex items-center gap-2">
                 <Link
                   to="/"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/80 px-5 text-xs font-semibold uppercase tracking-[0.2em]"
+                  className="action-pill px-5"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Ana Sayfa
@@ -257,7 +257,7 @@ const SahabedenSozler = () => {
               <button
                 type="button"
                 onClick={() => setFavoritesOnly((current) => !current)}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-semibold uppercase tracking-[0.2em]"
+                className="action-pill px-4"
                 aria-pressed={favoritesOnly}
               >
                 {favoritesOnly ? <HeartOff className="h-4 w-4" /> : <Heart className="h-4 w-4" />}
@@ -303,11 +303,11 @@ const SahabedenSozler = () => {
                       key={quote.id}
                       data-companion-id={quote.companionId}
                       data-quote-id={quote.id}
-                      className="rounded-[22px] border border-border/80 bg-card/85 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_270px] [content-visibility:auto]"
+                      className="rounded-[22px] border border-border/70 bg-card/80 p-4 md:p-5 shadow-soft [contain-intrinsic-size:1px_260px] [content-visibility:auto]"
                     >
-                      <p className="text-[11px] uppercase tracking-[0.28em] text-primary">{quote.companionName}</p>
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-primary">{quote.companionName}</p>
                       <p className="mt-2 text-xs text-muted-foreground">{quote.leadIn}</p>
-                      <p className="mt-3 break-words text-sm leading-7 text-foreground/95 md:text-base">“{quote.text}”</p>
+                      <p className="mt-3 break-words text-sm leading-6 text-foreground/95 md:text-base">“{quote.text}”</p>
 
                       <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <button
@@ -316,7 +316,7 @@ const SahabedenSozler = () => {
                           aria-label={isFavorite ? "Favoriden çıkar" : "Favorilere ekle"}
                           aria-pressed={isFavorite}
                           onClick={() => handleToggleFavorite(quote.id)}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 text-xs font-semibold uppercase tracking-[0.2em]"
+                          className="action-pill px-3"
                         >
                           {isFavorite ? <HeartOff className="h-4 w-4" /> : <Heart className="h-4 w-4" />}
                           {isFavorite ? "Favoriden çıkar" : "Favori"}
@@ -327,7 +327,7 @@ const SahabedenSozler = () => {
                           onClick={() => {
                             void handleShare(quote);
                           }}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-primary px-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground"
                         >
                           <Share2 className="h-4 w-4" />
                           Paylaş

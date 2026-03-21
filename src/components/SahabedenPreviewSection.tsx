@@ -1,37 +1,14 @@
-import { useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Share2, Sparkles } from "lucide-react";
+import { RefreshCw, Share2, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { loadSahabedenQuotesPayload, type SahabedenQuote } from "@/services/sahabedenService";
 
-const getDaySeed = () => {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-};
-
-const hashString = (value: string) => {
-  let hash = 5381;
-  for (let index = 0; index < value.length; index += 1) {
-    hash = ((hash << 5) + hash) ^ value.charCodeAt(index);
-  }
-  return hash >>> 0;
-};
-
-const pickFeaturedQuote = (quotes: SahabedenQuote[]) => {
+const pickRandomQuote = (quotes: SahabedenQuote[]) => {
   if (!quotes.length) return null;
-  const seed = getDaySeed();
-  const sorted = [...quotes].sort((quoteA, quoteB) => {
-    const orderA = hashString(`${seed}:${quoteA.id}`);
-    const orderB = hashString(`${seed}:${quoteB.id}`);
-    if (orderA !== orderB) return orderA - orderB;
-    return quoteA.id.localeCompare(quoteB.id, "tr");
-  });
-  return sorted[0];
+  return quotes[Math.floor(Math.random() * quotes.length)] ?? quotes[0];
 };
 
 export const SahabedenPreviewSection = () => {
@@ -43,7 +20,37 @@ export const SahabedenPreviewSection = () => {
   });
 
   const quotes = useMemo(() => data?.quotes ?? [], [data]);
-  const featuredQuote = useMemo(() => pickFeaturedQuote(quotes), [quotes]);
+  const [activeQuoteId, setActiveQuoteId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!quotes.length) {
+      setActiveQuoteId(null);
+      return;
+    }
+
+    setActiveQuoteId((current) => {
+      if (current && quotes.some((quote) => quote.id === current)) {
+        return current;
+      }
+      return pickRandomQuote(quotes)?.id ?? quotes[0].id;
+    });
+  }, [quotes]);
+
+  const featuredQuote = useMemo(() => {
+    if (!quotes.length) return null;
+    if (!activeQuoteId) return pickRandomQuote(quotes);
+    return quotes.find((quote) => quote.id === activeQuoteId) ?? pickRandomQuote(quotes) ?? quotes[0];
+  }, [activeQuoteId, quotes]);
+
+  const handleRefreshFeaturedQuote = useCallback(() => {
+    if (quotes.length <= 1) return;
+
+    setActiveQuoteId((current) => {
+      const pool = current ? quotes.filter((quote) => quote.id !== current) : quotes;
+      const nextQuote = pickRandomQuote(pool) ?? quotes[0];
+      return nextQuote.id;
+    });
+  }, [quotes]);
 
   const handleShareFeaturedQuote = async () => {
     if (!featuredQuote) return;
@@ -87,18 +94,18 @@ export const SahabedenPreviewSection = () => {
       <div className="container relative z-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">Sahabeden Seçmeler</p>
+            <p className="kicker">Sahabeden Seçmeler</p>
             <h2 className="text-3xl md:text-5xl font-display tracking-tight">
               Sahabe’den, رضي الله عنهم, Öğütlerinden Seçmeler
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground">
-              Sahabe sözlerinden her gün seçilen bir hikmeti ana sayfada görür, dilediğinde tüm sözlere tek sayfadan geçiş yaparsın.
+              Ana sayfada rastgele bir sözü gör, tek tuşla yenile ve tüm sözleri tek sayfada birlikte keşfet.
             </p>
           </div>
 
           <Link
             to="/sahabeden"
-            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground shadow-elevated transition-[box-shadow,background-color] hover:shadow-glow"
+            className="inline-flex min-h-11 items-center gap-3 rounded-full bg-primary px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-soft transition-[box-shadow,background-color] hover:shadow-glow"
           >
             Tümünü Gör
             <Sparkles className="h-4 w-4" />
@@ -106,8 +113,8 @@ export const SahabedenPreviewSection = () => {
         </div>
 
         <article
-          className={`mt-8 min-h-[320px] md:mt-10 md:min-h-[260px] rounded-[24px] md:rounded-[30px] border border-border/80 p-4 md:p-6 shadow-soft ${
-            isMobile ? "bg-card/90" : "bg-card/85 backdrop-blur-sm"
+          className={`mt-8 min-h-[320px] md:mt-10 md:min-h-[260px] rounded-[24px] md:rounded-[30px] border border-border/75 p-4 md:p-6 shadow-soft ${
+            isMobile ? "bg-card/90" : "bg-card/80 backdrop-blur-sm"
           }`}
           data-sahabeden-preview-shell
         >
@@ -123,10 +130,10 @@ export const SahabedenPreviewSection = () => {
               Sahabeden sözler yüklenemedi. Lütfen bağlantınızı kontrol edip tekrar deneyin.
             </div>
           ) : featuredQuote ? (
-            <div className="rounded-2xl border border-border/70 bg-background/50 p-4 md:p-5">
+            <div className="rounded-2xl border border-border/65 bg-background/45 p-4 md:p-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm font-semibold">{featuredQuote.companionName}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Günün seçmesi</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Rastgele seçme</p>
               </div>
               <p
                 className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base"
@@ -134,13 +141,23 @@ export const SahabedenPreviewSection = () => {
               >
                 “{featuredQuote.text}”
               </p>
-              <div className="mt-4">
+              <div className="mt-4 flex flex-wrap gap-2.5">
+                <button
+                  type="button"
+                  onClick={handleRefreshFeaturedQuote}
+                  disabled={quotes.length <= 1}
+                  data-sahabeden-preview-refresh
+                  className="action-pill w-full sm:w-auto disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  Yenile
+                  <RefreshCw className="h-4 w-4" />
+                </button>
                 <button
                   type="button"
                   onClick={() => {
                     void handleShareFeaturedQuote();
                   }}
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.22em] text-primary-foreground sm:w-auto"
+                  className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full bg-primary px-5 text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground sm:w-auto"
                 >
                   Paylaş
                   <Share2 className="h-4 w-4" />
