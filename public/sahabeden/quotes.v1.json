@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "generatedAt": "2026-03-21T17:22:27.804Z",
+  "companions": [
+    {
+      "id": "omer-b-hattab",
+      "name": "Ömer b. Hattâb",
+      "count": 12
+    },
+    {
+      "id": "omer-b-abdulaziz",
+      "name": "Ömer b. Abdülaziz",
+      "count": 1
+    },
+    {
+      "id": "ebu-bekir-es-siddik",
+      "name": "Ebû Bekir es-Sıddîk",
+      "count": 6
+    },
+    {
+      "id": "osman-b-affan",
+      "name": "Osman b. Affân",
+      "count": 9
+    },
+    {
+      "id": "ali-b-ebi-talib",
+      "name": "Ali b. Ebî Tâlib",
+      "count": 11
+    },
+    {
+      "id": "ebu-ubeyde-b-cerrah",
+      "name": "Ebû Ubeyde b. Cerrâh",
+      "count": 4
+    },
+    {
+      "id": "talha-b-ubeydullah",
+      "name": "Talha b. Ubeydullah",
+      "count": 1
+    },
+    {
+      "id": "abdurrahman-b-avf",
+      "name": "Abdurrahman b. Avf",
+      "count": 1
+    },
+    {
+      "id": "sad-b-ebi-vakkas",
+      "name": "Sa‘d b. Ebî Vakkas",
+      "count": 2
+    },
+    {
+      "id": "abdullah-b-mesud",
+      "name": "Abdullah b. Mes‘ud",
+      "count": 7
+    },
+    {
+      "id": "ebu-musa-el-esari",
+      "name": "Ebû Mûsâ el-Eş‘arî",
+      "count": 1
+    },
+    {
+      "id": "huzeyfe-b-yeman",
+      "name": "Huzeyfe b. Yemân",
+      "count": 3
+    }
+  ],
+  "quotes": [
+    {
+      "id": "omer-b-hattab-001",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb şöyle der",
+      "text": "Kimin niyeti hâlis olursa, Allah onun insanlarla olan işlerinde kendisine yeter."
+    },
+    {
+      "id": "omer-b-abdulaziz-001",
+      "companionId": "omer-b-abdulaziz",
+      "companionName": "Ömer b. Abdülaziz",
+      "leadIn": "Ömer b. Abdülaziz şöyle demiştir",
+      "text": "Bir kadıda şu beş özellikten biri eksik olursa, bu onun için bir kusur sayılır: anlayış sahibi olması, yumuşak huylu olması, iffetli olması, metanetli olması ve âlim olup ilme nasıl başvuracağını bilmesi."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-001",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Ebû Bekir es-Sıddîk radıyallahu anh şöyle demiştir",
+      "text": "Bir topluluk, kendilerinden daha güçlü kimselerin işlediği günahlara engel olmazsa, Allah onlara bir bela indirir; sonra da o belayı üzerlerinden kaldırmaz."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-002",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Ebû Bekir es-Sıddîk radıyallahu anh, Allah’a hamd ve senadan sonra şöyle buyurmuştur",
+      "text": "Ey insanlar! Siz şu ayeti okuyor, fakat onu yanlış yerde kullanıyorsunuz: ''Ey iman edenler! Siz kendinize bakın. Siz doğru yolda olursanız, sapanlar size zarar vermez.'' Maide/105 Oysa biz Nebi sallallahu aleyhi ve sellemin şöyle buyurduğunu işittik: İnsanlar bir zalimi görür de onun elinden tutmaz, yani ona engel olmazlarsa, Allah’ın hepsini bir azaba uğratması yakındır."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-003",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Zeyd b. Eslem, babasından rivayet eder",
+      "text": "Ebû Bekir radıyallahu anhı dilini tutmuş halde şöyle derken gördüm: Beni tehlikeli yerlere sürükleyen işte budur."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-004",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Ebû Bekir es-Sıddîk radıyallahu anh şöyle demiştir",
+      "text": "Bize ulaştığına göre, kıyamet günü bir münadi şöyle seslenecektir: Affedenler nerede? Bunun üzerine Allah, insanları affetmelerine karşılık mükafatlarını onlara bizzat verecektir."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-005",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Ebû Bekir es-Sıddîk radıyallahu anh şöyle demiştir",
+      "text": "Allah’a en çok itaat eden kimse, O’nun yasakladığı günahlardan en çok sakınan kimsedir."
+    },
+    {
+      "id": "ebu-bekir-es-siddik-006",
+      "companionId": "ebu-bekir-es-siddik",
+      "companionName": "Ebû Bekir es-Sıddîk",
+      "leadIn": "Ebû Bekir es-Sıddîk radıyallahu anh şöyle demiştir",
+      "text": "Cömertliği takvada, zenginliği yakin sahibi olmakta, şerefi ise tevazuda bulduk."
+    },
+    {
+      "id": "omer-b-hattab-002",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Ahiret işleri dışında her işte teenni, yani acele etmemek hayırdır."
+    },
+    {
+      "id": "omer-b-hattab-003",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Hesaba çekilmeden önce kendinizi hesaba çekin, tartılmadan önce kendinizi tartın. Çünkü yarınki büyük hesap için bugün kendinizi hesaba çekmeniz sizin için daha kolaydır. O büyük huzura çıkış günü için hazırlanın. O gün huzura çıkarılacaksınız ve sizden hiçbir şey gizli kalmayacaktır."
+    },
+    {
+      "id": "omer-b-hattab-004",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Hangi hal üzere sabahladığıma aldırmam; ister hoşuma giden bir durum olsun, ister hoşuma gitmeyen bir durum. Çünkü hayrın sevdiğim şeyde mi, sevmediğim şeyde mi olduğunu bilemem."
+    },
+    {
+      "id": "omer-b-hattab-005",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Kötü yerlere girip çıkan kimse, töhmet altında kalır."
+    },
+    {
+      "id": "omer-b-hattab-006",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Göklerin Hâkimi ile karşılaşacakları gün, yeryüzü hâkimlerinin vay haline. Ancak adaleti gözeten, hak ile hükmeden, hevasına, akrabalığına, bir şeye olan rağbetine ya da korkusuna göre hüküm vermeyen ve Allah’ın kitabını gözünün önünden ayırmayanlar bunun dışındadır."
+    },
+    {
+      "id": "omer-b-hattab-007",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Fırat kenarında sahipsiz bir koyun ölse, kıyamet günü Allah’ın onun hesabını benden soracağından korkarım."
+    },
+    {
+      "id": "omer-b-hattab-008",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Ahiret ameline, dünyaya karşı zühd sahibi olmak kadar fayda veren başka bir şeyle ulaşamazsın."
+    },
+    {
+      "id": "omer-b-hattab-009",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Câbir b. Abdullah radıyallahu anh omzunda etle geçerken Ömer radıyallahu anh onu görüp sordu",
+      "text": "Bu nedir ey Câbir? Câbir dedi ki: Canım çekti, ben de satın aldım. Bunun üzerine Ömer radıyallahu anh şöyle buyurdu: Canın her çektiğinde onu satın mı alırsın? Dünyadaki hayatınızda bütün güzel şeylerinizi tüketip bitirdiniz ayetinin muhatabı olmaktan korkmuyor musun?"
+    },
+    {
+      "id": "omer-b-hattab-010",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer radıyallahu anh, Ebû Ubeyde’ye yazdığı mektubun bir kısmında şöyle buyurmuştur",
+      "text": "Dünyaya karşı gözünü kapat, kalbini ondan çevir. Sakın seni helake sürüklemesin; senden öncekileri helake sürüklediği gibi. Onun yıkılan saraylarını gördün; giydirdiğini nasıl çıplak bıraktığını, doyurduğunu nasıl aç bıraktığını, yaşattığını nasıl ölüme teslim ettiğini gördün. Sen ancak bir yolcusun. Suyu çekilmiş, meyvesi dökülmüş bu geçici yurttan asıl yurduna ancak yetecek kadar azıkla giden kimse en akıllı kişidir."
+    },
+    {
+      "id": "omer-b-hattab-011",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Seni ilgilendirmeyen işe karışma. Düşmanından uzak dur. Sadık olan dışında dostundan da sakın. Çünkü bir topluluk içinde sadık kimsenin yerini hiçbir şey tutmaz. Günahkâr kimseyle arkadaşlık etme; sana kendi kötülüğünü öğretir. Sırrını ona verme. İşlerinde ise ancak Allah’tan korkan kimselerle istişare et."
+    },
+    {
+      "id": "omer-b-hattab-012",
+      "companionId": "omer-b-hattab",
+      "companionName": "Ömer b. Hattâb",
+      "leadIn": "Ömer b. Hattâb radıyallahu anh şöyle demiştir",
+      "text": "Allah’ı zikretmeye devam edin; çünkü zikir şifadır. İnsanları çekiştirip durmaktan sakının; çünkü bu bir hastalıktır."
+    },
+    {
+      "id": "osman-b-affan-001",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "Kalpleriniz temiz olsaydı, Allah’ın kelamına asla doymazdınız."
+    },
+    {
+      "id": "osman-b-affan-002",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "Allah’ın kelamına bakmadığım bir günün ve gecenin üzerimden geçmesini istemem."
+    },
+    {
+      "id": "osman-b-affan-003",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh bir hutbesinde şöyle buyurmuştur",
+      "text": "Allah dünyayı size, onunla ahireti kazanasınız diye verdi; ona bağlanasınız diye değil. Dünya geçicidir, ahiret ise kalıcıdır. Geçici olan sizi aldatıp kalıcı olandan uzaklaştırmasın. Kalıcı olanı geçici olana tercih edin. Çünkü dünya mutlaka sona erecektir ve dönüş Allah’adır. Allah’tan korkun. Çünkü O’na karşı takva, azabına karşı bir kalkandır. Cemaatinizden ayrılmayın, bölünüp parçalanmayın. Allah’ın size olan nimetini hatırlayın: Hani siz birbirinize düşmandınız da O, kalplerinizi birleştirdi ve O’nun nimeti sayesinde kardeş oldunuz."
+    },
+    {
+      "id": "osman-b-affan-004",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "Kim bir amel işlerse, Allah o amelin izini, etkisini haline ve yüzüne yansıtır."
+    },
+    {
+      "id": "osman-b-affan-005",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "İnsan kalbinde ne saklarsa, Allah onu er geç yüzüne, diline ve hâline yansıtır. Bir kul, evinin en gizli köşesinde bile bir iş yapsa, sonunda insanlar onu konuşmaya başlar. Çünkü Allah, kişinin yaptığını mutlaka üzerinde görünür kılar; amel hayırsa hayır, şerse şer olarak ortaya çıkar."
+    },
+    {
+      "id": "osman-b-affan-006",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "Allah, Kur’an ile yola gelmeyenleri sultanın gücüyle yola getirir."
+    },
+    {
+      "id": "osman-b-affan-007",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle demiştir",
+      "text": "İçkiden sakının; çünkü o her kötülüğün anahtarıdır. Bir adama şöyle denilmişti: Ya bu kitabı yakacaksın, ya bu çocuğu öldüreceksin, ya bu kadınla zina edeceksin, ya bu içkiyi içeceksin ya da şu haça secde edeceksin. Adam bunlar içinde en hafifini içki içmek sandı. Fakat içince haça secde etti, çocuğu öldürdü, zina etti ve kitabı da yaktı."
+    },
+    {
+      "id": "osman-b-affan-008",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman radıyallahu anha, Cahiliye döneminde seni içki içmekten ne alıkoydu diye sorulunca şöyle dedi",
+      "text": "Onun aklı bütünüyle götürdüğünü gördüm. Gidip de sonra eksiksiz geri dönen bir şey görmedim."
+    },
+    {
+      "id": "osman-b-affan-009",
+      "companionId": "osman-b-affan",
+      "companionName": "Osman b. Affân",
+      "leadIn": "Osman b. Affân radıyallahu anh şöyle buyurmuştur",
+      "text": "Ey insanlar! Allah’tan korkun; çünkü Allah korkusu büyük bir kazançtır. İnsanların en akıllısı, nefsini hesaba çeken, ölümden sonrası için çalışan ve kabrin karanlığı için Allah’ın nurundan kendine bir nur hazırlayan kimsedir. Bilin ki Allah kiminleyse, o artık hiçbir şeyden korkmaz; Allah kime karşıysa, o artık kimden medet umabilir?"
+    },
+    {
+      "id": "ali-b-ebi-talib-001",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "İnsanlara anlayabilecekleri şeyleri anlatın. Allah’ın ve Resûlü’nün yalanlanmasını mı istiyorsunuz?"
+    },
+    {
+      "id": "ali-b-ebi-talib-002",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Nimet şükre bağlıdır, şükür de artışa vesiledir. Bu ikisi birbirinden ayrılmaz. Kuldan şükür kesilmedikçe Allah’tan gelen arttırma da kesilmez."
+    },
+    {
+      "id": "ali-b-ebi-talib-003",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Kimin sözü yumuşak olursa, sevgisi de gönüllerde yer eder."
+    },
+    {
+      "id": "ali-b-ebi-talib-004",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "İstişare, pişmanlığa karşı bir kale; kınanmaya karşı bir güvencedir. Bazı selef âlimleri de şöyle demiştir: Akıllı kişi, kendi görüşüne âlimlerin görüşünü de ekleyen kimsedir."
+    },
+    {
+      "id": "ali-b-ebi-talib-005",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Benden şu beş sözü alın. Onlara ulaşmak için develeri yoruncaya kadar yolculuk etseniz, benzerini zor bulursunuz: Kul yalnız Rabbinden ümit etsin, yalnız günahından korksun. Bilmediği bir şey sorulduğunda bilmiyorum demekten utanmasın. Bilmediğini öğrenmekten çekinmesin. Sabra gelince; imandaki sabır, bedendeki baş gibidir. Başı olmayan bedende hayır olmadığı gibi, sabrı olmayan imanda da hayır yoktur."
+    },
+    {
+      "id": "ali-b-ebi-talib-006",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Hak ve batıl, insanların makamıyla ya da zanla bilinmez. Önce hakkı tanı ki ehlini bilesin; batılı tanı ki ehlini de tanıyasın."
+    },
+    {
+      "id": "ali-b-ebi-talib-007",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Gerçek fakih, insanları Allah’ın rahmetinden ümitsizliğe düşürmeyen ve onlara Allah’ın haramları konusunda gevşeklik kapısı açmayan kimsedir."
+    },
+    {
+      "id": "ali-b-ebi-talib-008",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Sizin hakkınızda en çok iki şeyden korkuyorum: Hevaya uymak ve uzun emel. Hevaya uymak insanı haktan alıkoyar; uzun emel ise ahireti unutturur."
+    },
+    {
+      "id": "ali-b-ebi-talib-009",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Asıl meydan, insanın kendi nefsidir. Eğer ona galip gelirseniz, başkalarına karşı daha kolay üstün gelirsiniz. Nefsinize yenilirseniz, başkalarına karşı daha da aciz kalırsınız. Bu yüzden önce nefsinizle mücadele edin."
+    },
+    {
+      "id": "ali-b-ebi-talib-010",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "Heva körlüktür."
+    },
+    {
+      "id": "ali-b-ebi-talib-011",
+      "companionId": "ali-b-ebi-talib",
+      "companionName": "Ali b. Ebî Tâlib",
+      "leadIn": "Ali b. Ebî Tâlib radıyallahu anh şöyle demiştir",
+      "text": "İnsanlar uykudadır; öldüklerinde uyanırlar."
+    },
+    {
+      "id": "ebu-ubeyde-b-cerrah-001",
+      "companionId": "ebu-ubeyde-b-cerrah",
+      "companionName": "Ebû Ubeyde b. Cerrâh",
+      "leadIn": "Ebû Ubeyde b. Cerrâh radıyallahu anh, vefatı yaklaşınca Müslümanlara şöyle seslendi",
+      "text": "Size bir vasiyette bulunuyorum. Buna uyarsanız hayır üzere kalırsınız: Namazı kılın, zekâtı verin, oruç tutun, sadaka verin, hacca ve umreye gidin, birbirinizle bağınızı koparmayın, birbirinizi sevin, yöneticilerinize karşı dürüst olun ve onları aldatmayın. Dünya sizi oyalamasın. Allah insanlar için ölümü takdir etmiştir. En akıllı kişi, Rabbine en çok itaat eden ve ahireti için en çok çalışan kimsedir."
+    },
+    {
+      "id": "ebu-ubeyde-b-cerrah-002",
+      "companionId": "ebu-ubeyde-b-cerrah",
+      "companionName": "Ebû Ubeyde b. Cerrâh",
+      "leadIn": "Ebû Ubeyde b. Cerrâh radıyallahu anh şöyle demiştir",
+      "text": "Helak, kulun bir günah işleyip ardından hiçbir hayır işlememesidir."
+    },
+    {
+      "id": "ebu-ubeyde-b-cerrah-003",
+      "companionId": "ebu-ubeyde-b-cerrah",
+      "companionName": "Ebû Ubeyde b. Cerrâh",
+      "leadIn": "Ebû Ubeyde b. Cerrâh radıyallahu anh şöyle demiştir",
+      "text": "Nice insanlar vardır ki elbiselerini bembeyaz tutar ama dinlerini kirletirler. Nice insanlar da vardır ki nefislerini aziz tuttuklarını sanırlar, halbuki onu zelil ederler. Geçmiş günahlarınızı yeni iyiliklerle telafi edin. Biriniz yerle gök arasını dolduracak kadar hata yapsa da sonra bir iyilik işlese, o iyilik günahlarına üstün gelene kadar yükselmeye devam eder."
+    },
+    {
+      "id": "ebu-ubeyde-b-cerrah-004",
+      "companionId": "ebu-ubeyde-b-cerrah",
+      "companionName": "Ebû Ubeyde b. Cerrâh",
+      "leadIn": "Ebû Ubeyde b. Cerrâh radıyallahu anh, Şam emiri iken halka şöyle demiştir",
+      "text": "Ey insanlar! Ben Kureyş’ten biriyim. Fakat vallahi, ister beyaz ister siyah olsun, takva bakımından benden üstün olan birinin yerinde olmayı ne çok isterdim."
+    },
+    {
+      "id": "talha-b-ubeydullah-001",
+      "companionId": "talha-b-ubeydullah",
+      "companionName": "Talha b. Ubeydullah",
+      "leadIn": "Talha b. Ubeydullah radıyallahu anh şöyle demiştir",
+      "text": "Mallarımız söz konusu olduğunda biz de cimrilerin hissettiğini hissederiz; fakat sabreder ve infak ederiz."
+    },
+    {
+      "id": "abdurrahman-b-avf-001",
+      "companionId": "abdurrahman-b-avf",
+      "companionName": "Abdurrahman b. Avf",
+      "leadIn": "Abdurrahman b. Avf radıyallahu anh şöyle demiştir",
+      "text": "Mal ne güzeldir; onunla hem onurumu korur hem de Rabbimi razı ederim."
+    },
+    {
+      "id": "sad-b-ebi-vakkas-001",
+      "companionId": "sad-b-ebi-vakkas",
+      "companionName": "Sa‘d b. Ebî Vakkas",
+      "leadIn": "Sa‘d b. Ebî Vakkas radıyallahu anh oğluna şöyle demiştir",
+      "text": "Yavrucuğum! Namaz kılmak istediğinde abdestini güzel al ve namazını, sanki bir daha namaz kılamayacakmışsın gibi kıl. Tamahtan sakın; çünkü o peşin bir fakirliktir. İnsanlardan bir şey beklememeye çalış; asıl zenginlik budur. Sonradan özür dilemek zorunda kalacağın söz ve davranışlardan da sakın."
+    },
+    {
+      "id": "sad-b-ebi-vakkas-002",
+      "companionId": "sad-b-ebi-vakkas",
+      "companionName": "Sa‘d b. Ebî Vakkas",
+      "leadIn": "Sa‘d b. Ebî Vakkas radıyallahu anh oğluna şöyle demiştir",
+      "text": "Kibreden sakın. Kibri terk etmek için nereden geldiğini ve nereye gideceğini düşün. Nutfeden yaratılan ve yediğiyle ayakta duran bir insan nasıl kibirlenebilir?"
+    },
+    {
+      "id": "abdullah-b-mesud-001",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Kim Allah’ı sevip sevmediğini anlamak istiyorsa, kendini Kur’an’a göre yoklasın. Eğer Kur’an’ı seviyorsa, Allah’ı da seviyordur. Çünkü Kur’an, Allah’ın kelamıdır."
+    },
+    {
+      "id": "abdullah-b-mesud-002",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Kur’an ehli olan kimse, insanlar geceyi uykuyla geçirirken onun geceyi ibadetle geçirmesiyle; insanlar gündüzü gafletle geçirirken onun gündüzünü dikkatle değerlendirmesiyle; insanlar gülerken onun kalbindeki hüzünle; insanlar harama karışırken onun takvasıyla; insanlar boş söze dalarken onun susmasıyla; insanlar kibirlenirken onun huşusuyla tanınmalıdır."
+    },
+    {
+      "id": "abdullah-b-mesud-003",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Allah bir kuluna hayır dilerse, onu doğru olana yöneltir; sorusunu kendisine fayda verecek şeye, ilmini de işine yarayacak olana çevirir."
+    },
+    {
+      "id": "abdullah-b-mesud-004",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Kendisinden başka ilah olmayan Allah’a yemin ederim ki, yeryüzünde uzun süre hapsedilmeye dilden daha layık hiçbir şey yoktur."
+    },
+    {
+      "id": "abdullah-b-mesud-005",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "İlim olarak Allah korkusu yeter; cehalet olarak da Allah’ın azabına karşı aldanmak yeter."
+    },
+    {
+      "id": "abdullah-b-mesud-006",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Siz, gece ve gündüz geçtikçe ömürleri kısalan kimselersiniz. Ölüm ise ansızın gelir. Kim hayır ekerse, karşılığını bulması yakındır. Kim şer ekerse, pişmanlık biçmesi de yakındır. Takva sahipleri önder kimselerdir, fakihler ise rehberdir. Onlarla birlikte olmak berekettir."
+    },
+    {
+      "id": "abdullah-b-mesud-007",
+      "companionId": "abdullah-b-mesud",
+      "companionName": "Abdullah b. Mes‘ud",
+      "leadIn": "Abdullah b. Mes‘ud radıyallahu anh şöyle demiştir",
+      "text": "Mümin, günahlarını sanki üzerine düşecek bir dağın altındaymış gibi görür. Günahında ısrarcı olan ise günahını burnunun önünden geçen bir sinek gibi görür."
+    },
+    {
+      "id": "ebu-musa-el-esari-001",
+      "companionId": "ebu-musa-el-esari",
+      "companionName": "Ebû Mûsâ el-Eş‘arî",
+      "leadIn": "Ebû Mûsâ el-Eş‘arî radıyallahu anh şöyle demiştir",
+      "text": "Sizden öncekileri dinar ve dirhem helak etti; sizi de onlar helak edecektir."
+    },
+    {
+      "id": "huzeyfe-b-yeman-001",
+      "companionId": "huzeyfe-b-yeman",
+      "companionName": "Huzeyfe b. Yemân",
+      "leadIn": "Huzeyfe b. Yemân radıyallahu anha, Diriler arasındaki ölü kimdir diye sorulunca şöyle demiştir",
+      "text": "Kalbiyle iyiliği tanımayan ve kötülüğü çirkin görmeyen kimsedir."
+    },
+    {
+      "id": "huzeyfe-b-yeman-002",
+      "companionId": "huzeyfe-b-yeman",
+      "companionName": "Huzeyfe b. Yemân",
+      "leadIn": "Huzeyfe b. Yemân radıyallahu anh şöyle demiştir",
+      "text": "Hak ağırdır ama şifalıdır; batıl ise hafif gelir ama sonu vebaldir. Günahı terk etmek, sonra tövbe aranmaktan daha kolaydır. Bir anlık şehvet, uzun bir hüzün bırakır."
+    },
+    {
+      "id": "huzeyfe-b-yeman-003",
+      "companionId": "huzeyfe-b-yeman",
+      "companionName": "Huzeyfe b. Yemân",
+      "leadIn": "Huzeyfe b. Yemân radıyallahu anha, İsrailoğulları dinlerini bir günde mi terk ettiler diye sorulunca şöyle demiştir",
+      "text": "Hayır. Kendilerine bir şey emredildiğinde onu terk ettiler, yasaklandığında ise yaptılar. Sonunda da bir adamın gömleğini üzerinden çıkarıp atması gibi dinden sıyrılıp çıktılar."
+    }
+  ]
+}

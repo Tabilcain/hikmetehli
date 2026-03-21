@@ -114,6 +114,7 @@ const run = async () => {
   const headersRaw = await fs.readFile(headersPath, "utf8");
   assert(headersRaw.includes("/muasir"), "_headers içinde /muasir cache kuralı eksik.");
   assert(headersRaw.includes("/selef-incileri"), "_headers içinde /selef-incileri cache kuralı eksik.");
+  assert(headersRaw.includes("/sahabeden"), "_headers içinde /sahabeden cache kuralı eksik.");
   assert(headersRaw.includes("/kutuphane"), "_headers içinde /kutuphane cache kuralı eksik.");
   assert(headersRaw.includes("s-maxage=300"), "_headers içinde SPA shell cache politikası eksik.");
   const firstBook = catalog[0];
@@ -155,6 +156,7 @@ const run = async () => {
       "/kutuphane",
       "/selef-incileri",
       "/selef-incileri/imam/imam-safii",
+      "/sahabeden",
       `/kutuphane/${firstBook.slug}`,
       `/kutuphane/${firstBook.slug}/oku`,
     ];
@@ -176,11 +178,13 @@ const run = async () => {
 
     await expectHttpOk("/muasir/quotes.v1.json", "application/json");
     await expectHttpOk("/selef/quotes.v1.json", "application/json");
+    await expectHttpOk("/sahabeden/quotes.v1.json", "application/json");
     const indexAssetPath = await getIndexAssetPath();
     await expectHeaderContains(indexAssetPath, "cache-control", "immutable");
     await expectHeaderContains(indexAssetPath, "cache-control", "max-age=31536000");
     await expectHeaderContains("/muasir/quotes.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/selef/quotes.v1.json", "cache-control", "s-maxage=3600");
+    await expectHeaderContains("/sahabeden/quotes.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/library/catalog.v1.json", "cache-control", "s-maxage=3600");
     await expectHeaderContains("/", "cache-control", "max-age=0");
 

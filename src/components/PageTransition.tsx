@@ -7,7 +7,8 @@ export const PageTransition = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const isPrimaryRoute = location.pathname === "/"
     || location.pathname.startsWith("/muasir")
-    || location.pathname.startsWith("/selef-incileri");
+    || location.pathname.startsWith("/selef-incileri")
+    || location.pathname.startsWith("/sahabeden");
 
   if (lowPerformanceMode && isPrimaryRoute) {
     return <div>{children}</div>;

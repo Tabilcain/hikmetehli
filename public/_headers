@@ -7,6 +7,9 @@
 /muasir/quotes.v1.json
   Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
 
+/sahabeden/quotes.v1.json
+  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+
 /library/catalog.v1.json
   Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
 
@@ -29,6 +32,9 @@
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /selef-incileri/imam/*
+  Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
+
+/sahabeden
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
 /kutuphane

@@ -32,27 +32,33 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   const muasirCta = page.locator('a[href="/muasir"]').first();
   const hourlyCta = page.locator('a[href="#saatlik-ilham"]').first();
   const selefCta = page.locator('a[href="/selef-incileri"], a[href="#selef-incileri"]').first();
+  const sahabedenCta = page.locator('a[href="/sahabeden"], a[href="#sahabeden"]').first();
 
   await expect(libraryCta).toBeVisible();
   await expect(muasirCta).toBeVisible();
   await expect(hourlyCta).toBeVisible();
   await expect(selefCta).toBeVisible();
+  await expect(sahabedenCta).toBeVisible();
 
   await hourlyCta.click();
   await expect(page.locator("#saatlik-ilham")).toBeVisible();
   await expect(page.getByText("Zamana göre değişen sahih hadisler.")).toBeVisible();
   await expect(page.locator("#muasir")).toBeVisible();
   await expect(page.locator("#selef-incileri")).toBeVisible();
+  await expect(page.locator("#sahabeden")).toBeVisible();
   await expect(page.locator("#muasir h2")).toHaveText(/Muasır Alimlerden ve Davetçilerden Sözler/i);
   await expect(page.locator("#selef-incileri h2")).toHaveText(/Satırlardan Sadırlara/i);
+  await expect(page.locator("#sahabeden h2")).toHaveText(/Sahabe.?den/i);
 
   const sectionPositions = await Promise.all([
     page.locator("#muasir").boundingBox(),
     page.locator("#selef-incileri").boundingBox(),
+    page.locator("#sahabeden").boundingBox(),
     page.locator("#kutuphane").boundingBox(),
   ]);
   expect(sectionPositions[0]?.y ?? 0).toBeLessThan(sectionPositions[1]?.y ?? 0);
   expect(sectionPositions[1]?.y ?? 0).toBeLessThan(sectionPositions[2]?.y ?? 0);
+  expect(sectionPositions[2]?.y ?? 0).toBeLessThan(sectionPositions[3]?.y ?? 0);
 
   const previewPeople = page.locator("[data-muasir-preview-person]");
   await expect(previewPeople.first()).toBeVisible();
@@ -70,6 +76,14 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(previewImams).toHaveCount(6);
   await expect(page.locator('[data-selef-preview-more="true"]')).toBeVisible();
 
+  const previewCompanions = page.locator("[data-sahabeden-preview-companion]");
+  await expect(previewCompanions.first()).toBeVisible();
+  await expect(previewCompanions).toHaveCount(6);
+  await expect(page.locator('[data-sahabeden-preview-more="true"]')).toBeVisible();
+  const previewSahabedenQuoteId = await page.locator("[data-sahabeden-preview-quote]").first()
+    .getAttribute("data-sahabeden-preview-quote");
+  expect(previewSahabedenQuoteId).toBeTruthy();
+
   const muasirDetailLink = page.locator('#muasir a[href="/muasir"]').first();
   await expect(muasirDetailLink).toBeVisible();
   await muasirDetailLink.click();
@@ -80,6 +94,12 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(previewDetailLink).toBeVisible();
   await previewDetailLink.click();
   await expect(page).toHaveURL(/\/selef-incileri$/);
+
+  await page.goBack({ waitUntil: "networkidle" });
+  const sahabedenDetailLink = page.locator('#sahabeden a[href="/sahabeden"]').first();
+  await expect(sahabedenDetailLink).toBeVisible();
+  await sahabedenDetailLink.click();
+  await expect(page).toHaveURL(/\/sahabeden$/);
 
   expect(runtimeErrors).toEqual([]);
 });
@@ -179,6 +199,49 @@ test("mobilde selef imam listeleri kaydirmasiz gorunuyor", async ({ page }) => {
   await targetImamFilter.click();
   await expect(page).toHaveURL(new RegExp(`/selef-incileri/imam/${targetImamId}`));
   await expect(page.locator(`[data-selected-imam-banner="${targetImamId}"]`)).toBeVisible();
+
+  expect(runtimeErrors).toEqual([]);
+});
+
+test("mobilde sahabeden liste ve filtreleri kaydirmasiz gorunuyor", async ({ page }) => {
+  const runtimeErrors = captureRuntimeErrors(page);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("networkidle");
+
+  await page.locator("#sahabeden").scrollIntoViewIfNeeded();
+  const previewCompanions = page.locator("[data-sahabeden-preview-companion]");
+  await expect(previewCompanions).toHaveCount(6);
+  await expect(page.locator('[data-sahabeden-preview-more="true"]')).toBeVisible();
+
+  const previewList = page.locator("[data-sahabeden-preview-companion-list]").first();
+  const previewHasHorizontalOverflow = await previewList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(previewHasHorizontalOverflow).toBeFalsy();
+
+  const previewRows = await previewCompanions.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(previewRows[1]).toBeGreaterThan(previewRows[0]);
+
+  await page.locator('#sahabeden a[href="/sahabeden"]').first().click();
+  await expect(page).toHaveURL(/\/sahabeden$/);
+
+  const detailFilterButtons = page.locator("button[data-sahabeden-companion-filter]");
+  await expect(detailFilterButtons).toHaveCount(13);
+
+  const filterList = page.locator("[data-sahabeden-filter-list]").first();
+  const filterHasHorizontalOverflow = await filterList.evaluate(
+    (element) => element.scrollWidth > element.clientWidth + 1,
+  );
+  expect(filterHasHorizontalOverflow).toBeFalsy();
+
+  const filterRows = await detailFilterButtons.evaluateAll((elements) =>
+    elements.slice(0, 3).map((element) => element.getBoundingClientRect().top),
+  );
+  expect(filterRows[1]).toBeGreaterThan(filterRows[0]);
 
   expect(runtimeErrors).toEqual([]);
 });
@@ -309,6 +372,69 @@ test("selef incileri sayfasi filtre arama favori ve paylasim aksiyonlarini calis
   expect(targetFilterId).toBeTruthy();
   await targetFilter.click();
   await expect(page).toHaveURL(new RegExp(`/selef-incileri/imam/${targetFilterId}`));
+
+  expect(runtimeErrors).toEqual([]);
+});
+
+test("sahabeden sayfasi filtre arama favori ve paylasim aksiyonlarini calistiriyor", async ({ page }) => {
+  const runtimeErrors = captureRuntimeErrors(page);
+
+  await page.goto("/sahabeden?sahabi=omer-b-hattab", { waitUntil: "domcontentloaded" });
+  const headerShell = page.locator("[data-sahabeden-header-shell]").first();
+  await expect(headerShell).toBeVisible();
+  const beforeLoadBox = await readRect(page, "[data-sahabeden-header-shell]");
+  await page.waitForLoadState("networkidle");
+  await page.waitForTimeout(120);
+  const afterLoadBox = await readRect(page, "[data-sahabeden-header-shell]");
+  expect(Math.abs(afterLoadBox.y - beforeLoadBox.y)).toBeLessThanOrEqual(48);
+  expect(Math.abs(afterLoadBox.height - beforeLoadBox.height)).toBeLessThanOrEqual(24);
+
+  await expect(page).toHaveURL(/\/sahabeden\?sahabi=omer-b-hattab$/);
+
+  const companionIds = await page.locator("article[data-companion-id]").evaluateAll((elements) =>
+    elements.map((element) => element.getAttribute("data-companion-id")),
+  );
+  expect(companionIds.length).toBeGreaterThan(0);
+  expect(companionIds.every((id) => id === "omer-b-hattab")).toBeTruthy();
+
+  const firstCard = page.locator("article[data-quote-id]").first();
+  await expect(firstCard).toBeVisible();
+
+  const favoriteButton = firstCard.locator("button[data-favorite-button]").first();
+  await favoriteButton.click();
+
+  const quoteId = await firstCard.getAttribute("data-quote-id");
+  expect(quoteId).toBeTruthy();
+
+  const selectedFavorite = page.locator(`button[data-favorite-button="${quoteId}"]`);
+  await expect(selectedFavorite).toHaveAttribute("aria-pressed", "true");
+
+  const searchInput = page.getByPlaceholder("Sözlerde ara...");
+  await searchInput.fill("olmayan-bir-kelime");
+  await expect(page.getByText("Sonuç bulunamadı.")).toBeVisible();
+  await searchInput.clear();
+
+  const shareButton = firstCard.locator("button[data-share-button]").first();
+  await shareButton.click({ trial: true });
+
+  await page.reload({ waitUntil: "domcontentloaded" });
+  const persistedFavorite = page.locator(`button[data-favorite-button="${quoteId}"]`);
+  await expect(persistedFavorite).toHaveAttribute("aria-pressed", "true");
+
+  await page.locator('button[data-sahabeden-companion-filter="all"]').first().click();
+  await expect(page).toHaveURL(/\/sahabeden$/);
+
+  const mixedAllCompanionIds = await page.locator("article[data-companion-id]:visible").evaluateAll((elements) =>
+    elements.slice(0, 8).map((element) => element.getAttribute("data-companion-id")),
+  );
+  expect(new Set(mixedAllCompanionIds).size).toBeGreaterThan(1);
+
+  const filterButtons = page.locator("button[data-sahabeden-companion-filter]");
+  const targetFilter = filterButtons.nth(2);
+  const targetFilterId = await targetFilter.getAttribute("data-sahabeden-companion-filter");
+  expect(targetFilterId).toBeTruthy();
+  await targetFilter.click();
+  await expect(page).toHaveURL(new RegExp(`/sahabeden\\?sahabi=${targetFilterId}$`));
 
   expect(runtimeErrors).toEqual([]);
 });

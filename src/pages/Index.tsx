@@ -8,6 +8,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { LibraryPreviewSection } from "@/components/LibraryPreviewSection";
 import { MuasirPreviewSection } from "@/components/MuasirPreviewSection";
 import { SelefPreviewSection } from "@/components/SelefPreviewSection";
+import { SahabedenPreviewSection } from "@/components/SahabedenPreviewSection";
 
 const HourlyContentSection = lazy(() =>
   import("@/components/HourlyContentSection").then((module) => ({ default: module.HourlyContentSection })),
@@ -80,6 +81,10 @@ const Index = () => {
 
         <div className="content-visibility-auto">
           <SelefPreviewSection />
+        </div>
+
+        <div className="content-visibility-auto">
+          <SahabedenPreviewSection />
         </div>
 
         <div className="content-visibility-auto">

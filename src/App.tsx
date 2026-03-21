@@ -14,6 +14,7 @@ const MuasirSozler = lazy(() => import("./pages/MuasirSozler"));
 const MuasirKisiDetay = lazy(() => import("./pages/MuasirKisiDetay"));
 const SelefIncileri = lazy(() => import("./pages/SelefIncileri"));
 const SelefImamDetay = lazy(() => import("./pages/SelefImamDetay"));
+const SahabedenSozler = lazy(() => import("./pages/SahabedenSozler"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -98,6 +99,14 @@ const App = () => (
             element={(
               <Suspense fallback={RouteFallback}>
                 <SelefImamDetay />
+              </Suspense>
+            )}
+          />
+          <Route
+            path="/sahabeden"
+            element={(
+              <Suspense fallback={RouteFallback}>
+                <SahabedenSozler />
               </Suspense>
             )}
           />

@@ -68,6 +68,9 @@ export const Hero = () => {
           <a className="hover:text-foreground transition-colors" href="#selef-incileri">
             Selef
           </a>
+          <a className="hover:text-foreground transition-colors" href="#sahabeden">
+            Sahabeden
+          </a>
           <Link className="hover:text-foreground transition-colors" to="/kutuphane">
             Dua Arşivi
           </Link>
@@ -99,7 +102,7 @@ export const Hero = () => {
               )}
             >
               <span className="w-2 h-2 rounded-full bg-primary" />
-              Muasır Sözler - Selef İncileri - Dua Arşivi - Saatlik Sahih Hadis
+              Muasır Sözler - Selef İncileri - Sahabeden Seçmeler - Dua Arşivi - Saatlik Sahih Hadis
             </div>
 
             <motion.h1
@@ -132,6 +135,12 @@ export const Hero = () => {
                 href="#selef-incileri"
               >
                 Selef İncileri
+              </a>
+              <a
+                className="inline-flex w-full justify-center rounded-full border border-border/80 bg-background/70 px-5 py-3 text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background md:px-6 md:text-sm md:tracking-[0.2em]"
+                href="#sahabeden"
+              >
+                Sahabeden Seçmeler
               </a>
               <Link
                 className="inline-flex w-full justify-center rounded-full border border-border/80 bg-background/70 px-5 py-3 text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:bg-background md:px-6 md:text-sm md:tracking-[0.2em]"
@@ -166,13 +175,14 @@ export const Hero = () => {
                   <span>Gözat</span>
                 </div>
                 <div className="text-2xl font-display">
-                  Muasır sözler, Selef İncileri, Dua Arşivi ve saatlik sahih hadis akışı tek yerde.
+                  Muasır sözler, Selef İncileri, Sahabeden seçmeler, Dua Arşivi ve saatlik sahih hadis akışı tek yerde.
                 </div>
                 <div className="h-px bg-border/70" />
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   {[
                     "Çağdaş alim ve davetçilerden seçme sözler",
                     "Selef imamlarından veciz sözler",
+                    "Sahabeden öğütlerden seçmeler",
                     "Dua arşivine hızlı erişim",
                     "Sahih kaynaklı içerik",
                     "Her Saat Yenilenir",
@@ -197,6 +207,13 @@ export const Hero = () => {
                     className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-colors"
                   >
                     Dua Arşivi
+                    <span className="w-2 h-2 rounded-full bg-primary" />
+                  </Link>
+                  <Link
+                    to="/sahabeden"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-xs uppercase tracking-[0.25em] text-foreground hover:bg-foreground/5 transition-colors"
+                  >
+                    Sahabeden
                     <span className="w-2 h-2 rounded-full bg-primary" />
                   </Link>
                   <a
