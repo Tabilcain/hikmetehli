@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, Heart, HeartOff, Search, Share2, Sparkles } from "lucide-react";
 import { PageTransition } from "@/components/PageTransition";
@@ -40,7 +40,7 @@ const shareQuote = async (quote: SahabedenQuote) => {
   try {
     if (navigator.share) {
       await navigator.share({
-        title: "Sahabe’den, رضي الله عنهم, Öğütlerden Seçmeler",
+        title: "Sahabe’den, رضي الله عنهم, Öğütlerinden Seçmeler",
         text,
       });
       return true;
@@ -137,10 +137,8 @@ const shuffleQuotesForDay = (quotes: SahabedenQuote[], companions: SahabedenComp
 
 const SahabedenSozler = () => {
   const { isMobile } = usePerformanceMode();
-  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
-  const [selectedCompanionId, setSelectedCompanionId] = useState<string | null>(null);
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(() => readFavoriteIds());
 
   const { data, isLoading, isError } = useQuery({
@@ -156,34 +154,10 @@ const SahabedenSozler = () => {
     persistFavoriteIds(favoriteIds);
   }, [favoriteIds]);
 
-  useEffect(() => {
-    if (!companions.length) return;
-
-    const companionFromQuery = searchParams.get("sahabi");
-    if (!companionFromQuery) {
-      setSelectedCompanionId(null);
-      return;
-    }
-
-    const hasValidCompanion = companions.some((companion) => companion.id === companionFromQuery);
-    if (hasValidCompanion) {
-      setSelectedCompanionId(companionFromQuery);
-      return;
-    }
-
-    const nextParams = new URLSearchParams(searchParams);
-    nextParams.delete("sahabi");
-    setSearchParams(nextParams, { replace: true });
-  }, [companions, searchParams, setSearchParams]);
-
   const normalizedSearch = useMemo(() => normalizeSearchText(search), [search]);
   const mixedQuotes = useMemo(() => shuffleQuotesForDay(quotes, companions), [companions, quotes]);
   const filteredQuotes = useMemo(() => {
     return mixedQuotes.filter((quote) => {
-      if (selectedCompanionId && quote.companionId !== selectedCompanionId) {
-        return false;
-      }
-
       if (favoritesOnly && !favoriteIds.has(quote.id)) {
         return false;
       }
@@ -195,11 +169,11 @@ const SahabedenSozler = () => {
       const haystack = normalizeSearchText(`${quote.companionName} ${quote.leadIn} ${quote.text}`);
       return haystack.includes(normalizedSearch);
     });
-  }, [favoriteIds, favoritesOnly, mixedQuotes, normalizedSearch, selectedCompanionId]);
+  }, [favoriteIds, favoritesOnly, mixedQuotes, normalizedSearch]);
 
   usePageMeta({
-    title: "Sahabe’den, رضي الله عنهم, Öğütlerden Seçmeler | Hikmet Ehli",
-    description: "Sahabe öğütlerinden seçmeleri tek sayfada kişi filtreleriyle keşfedin.",
+    title: "Sahabe’den, رضي الله عنهم, Öğütlerinden Seçmeler | Hikmet Ehli",
+    description: "Sahabe öğütlerinden seçmeleri tek sayfada keşfedin.",
     url: typeof window !== "undefined" ? window.location.href : undefined,
   });
 
@@ -230,19 +204,6 @@ const SahabedenSozler = () => {
     });
   };
 
-  const handleSelectCompanion = (companionId: string | null) => {
-    setSelectedCompanionId(companionId);
-    const nextParams = new URLSearchParams(searchParams);
-    if (companionId) {
-      nextParams.set("sahabi", companionId);
-    } else {
-      nextParams.delete("sahabi");
-    }
-    setSearchParams(nextParams, { replace: true });
-  };
-
-  const companionSkeletonCount = isMobile ? 7 : 10;
-
   return (
     <PageTransition>
       <main className="relative min-h-screen overflow-hidden bg-background">
@@ -264,10 +225,10 @@ const SahabedenSozler = () => {
                   Sahabeden Seçmeler
                 </p>
                 <h1 className="mt-3 text-2xl md:text-5xl font-display tracking-tight">
-                  Sahabe’den, رضي الله عنهم, Öğütlerden Seçmeler
+                  Sahabe’den, رضي الله عنهم, Öğütlerinden Seçmeler
                 </h1>
                 <p className="mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-                  İsim seçtiğinde ayrı sayfaya gitmezsin; tüm akış aynı sayfada filtrelenir ve günlük karışık sırada listelenir.
+                  Tüm sözler tek sayfada listelenir. Arama ve favorilerle kendi akışını sadeleştirebilirsin.
                 </p>
               </div>
 
@@ -303,98 +264,6 @@ const SahabedenSozler = () => {
                 {favoritesOnly ? "Tüm sözler" : "Sadece favoriler"}
               </button>
             </div>
-
-            {isMobile ? (
-              <div className="mt-4 min-h-[352px]" data-sahabeden-filter-list>
-                <div className="grid grid-cols-1 gap-2">
-                  {isLoading ? (
-                    Array.from({ length: companionSkeletonCount }).map((_, index) => (
-                      <div
-                        key={`companion-skeleton-${index}`}
-                        className="min-h-12 animate-pulse rounded-xl border border-border/60 bg-background/55"
-                      />
-                    ))
-                  ) : (
-                    <>
-                      <button
-                        type="button"
-                        data-sahabeden-companion-filter="all"
-                        onClick={() => handleSelectCompanion(null)}
-                        className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] ${
-                          !selectedCompanionId
-                            ? "border-primary/60 bg-primary text-primary-foreground"
-                            : "border-border/70 bg-background/70"
-                        }`}
-                      >
-                        <span>Tümü</span>
-                        <span className="text-[10px] opacity-90">{quotes.length}</span>
-                      </button>
-
-                      {companions.map((companion) => (
-                        <button
-                          key={companion.id}
-                          type="button"
-                          data-sahabeden-companion-filter={companion.id}
-                          onClick={() => handleSelectCompanion(companion.id)}
-                          className={`inline-flex min-h-12 w-full items-center justify-between rounded-xl border px-4 text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
-                            selectedCompanionId === companion.id
-                              ? "border-primary/60 bg-primary text-primary-foreground"
-                              : "border-border/70 bg-background/70"
-                          }`}
-                        >
-                          <span>{companion.name}</span>
-                          <span className="text-[10px] opacity-90">{companion.count}</span>
-                        </button>
-                      ))}
-                    </>
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div className="mt-4 min-h-[56px] overflow-x-auto pb-1" data-sahabeden-filter-list>
-                <div className="flex min-w-max items-center gap-2">
-                  {isLoading ? (
-                    Array.from({ length: companionSkeletonCount }).map((_, index) => (
-                      <div
-                        key={`companion-desktop-skeleton-${index}`}
-                        className="h-11 w-36 animate-pulse rounded-full border border-border/60 bg-background/55"
-                      />
-                    ))
-                  ) : (
-                    <>
-                      <button
-                        type="button"
-                        data-sahabeden-companion-filter="all"
-                        onClick={() => handleSelectCompanion(null)}
-                        className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] ${
-                          !selectedCompanionId
-                            ? "border-primary/60 bg-primary text-primary-foreground"
-                            : "border-border/70 bg-background/70"
-                        }`}
-                      >
-                        Tümü
-                      </button>
-
-                      {companions.map((companion) => (
-                        <button
-                          key={companion.id}
-                          type="button"
-                          data-sahabeden-companion-filter={companion.id}
-                          onClick={() => handleSelectCompanion(companion.id)}
-                          className={`inline-flex min-h-11 items-center rounded-full border px-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
-                            selectedCompanionId === companion.id
-                              ? "border-primary/60 bg-primary text-primary-foreground"
-                              : "border-border/70 bg-background/70"
-                          }`}
-                        >
-                          {companion.name}
-                        </button>
-                      ))}
-                    </>
-                  )}
-                </div>
-              </div>
-            )}
           </header>
 
           <section className="mt-5 md:mt-7">

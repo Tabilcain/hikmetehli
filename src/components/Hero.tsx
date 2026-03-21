@@ -182,7 +182,7 @@ export const Hero = () => {
                   {[
                     "Çağdaş alim ve davetçilerden seçme sözler",
                     "Selef imamlarından veciz sözler",
-                    "Sahabeden öğütlerden seçmeler",
+                    "Sahabeden öğütlerinden seçmeler",
                     "Dua arşivine hızlı erişim",
                     "Sahih kaynaklı içerik",
                     "Her Saat Yenilenir",
