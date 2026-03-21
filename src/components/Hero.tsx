@@ -11,6 +11,8 @@ export const Hero = () => {
   );
   const secondaryActionClass =
     "inline-flex w-full justify-center rounded-full border border-border/70 bg-background/65 px-5 py-3 text-xs font-medium uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-background md:w-auto md:px-6 md:text-sm";
+  const quickActionClass =
+    "inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-foreground transition-[background-color,color,border-color] hover:border-primary/60 hover:bg-primary hover:text-primary-foreground focus-visible:border-primary/60 focus-visible:bg-primary focus-visible:text-primary-foreground";
 
   return (
     <section className="relative min-h-[74svh] overflow-hidden md:min-h-[82svh]">
@@ -54,14 +56,14 @@ export const Hero = () => {
           </div>
         </div>
         <div className="hidden items-center gap-6 text-xs uppercase tracking-[0.16em] text-muted-foreground md:flex">
+          <a className="hover:text-foreground transition-colors" href="#sahabeden">
+            Sahabeden
+          </a>
           <a className="hover:text-foreground transition-colors" href="#muasir">
             Muasır
           </a>
           <a className="hover:text-foreground transition-colors" href="#selef-incileri">
             Selef
-          </a>
-          <a className="hover:text-foreground transition-colors" href="#sahabeden">
-            Sahabeden
           </a>
           <Link className="hover:text-foreground transition-colors" to="/kutuphane">
             Dua Arşivi
@@ -94,7 +96,7 @@ export const Hero = () => {
               )}
             >
               <span className="h-2 w-2 rounded-full bg-primary" />
-              Muasır • Selef • Sahabeden • Kütüphane • Saatlik Hadis
+              Sahabeden • Muasır • Selef • Kütüphane • Saatlik Hadis
             </div>
 
             <h1 className="mt-6 text-balance font-display text-4xl tracking-tight sm:text-5xl md:mt-8 md:text-7xl lg:text-8xl">
@@ -106,13 +108,15 @@ export const Hero = () => {
               >
                 يُؤْتِي الْحِكْمَةَ مَنْ يَشَٓاءُۚ وَمَنْ يُؤْتَ الْحِكْمَةَ فَقَدْ اُو۫تِيَ خَيْراً كَث۪يراًۜ
               </span>
-              <span className="mt-3 block max-w-xl text-sm font-normal leading-relaxed text-muted-foreground md:mt-4 md:max-w-2xl md:text-lg lg:text-xl">
-                O hikmeti dilediğine verir. Kime hikmet verilmişse ona büyük bir hayır verilmiştir.
-                <span className="mt-2 hidden text-[11px] uppercase tracking-[0.24em] text-muted-foreground sm:block">
-                  Bakara Suresi, 2/269
-                </span>
-              </span>
             </h1>
+            <p className="mt-5 max-w-2xl text-base font-normal leading-[1.95] text-muted-foreground md:mt-6 md:text-xl lg:text-2xl">
+              O hikmeti dilediğine verir.
+              <br />
+              Kime hikmet verilmişse ona büyük bir hayır verilmiştir.
+            </p>
+            <p className="mt-2 hidden text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:block">
+              Bakara Suresi, 2/269
+            </p>
 
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
               Hikmetli sözler, sahih hadis akışı ve dua arşivini tek merkezde sade bir deneyimle sunuyoruz. Önce bir bölümü aç,
@@ -122,22 +126,22 @@ export const Hero = () => {
             <div className="mt-8 grid gap-2.5 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-center md:mt-10 md:gap-3">
               <Link
                 className={`inline-flex w-full justify-center rounded-full px-5 py-3 text-xs uppercase tracking-[0.16em] md:px-6 md:text-sm ${primaryGlowClass}`}
-                to="/muasir"
+                to="/sahabeden"
               >
+                Sahabeden Seçmeler
+              </Link>
+              <Link className={secondaryActionClass} to="/muasir">
                 Muasır Sözler
               </Link>
-              <a className={secondaryActionClass} href="#sahabeden">
-                Sahabeden Seçmeler
-              </a>
               <a className={secondaryActionClass} href="#selef-incileri">
                 Selef İncileri
+              </a>
+              <a className={secondaryActionClass} href="#saatlik-ilham">
+                Saatlik Sahih Hadis
               </a>
               <Link className={secondaryActionClass} to="/kutuphane">
                 Dua Arşivi
               </Link>
-              <a className={secondaryActionClass} href="#saatlik-ilham">
-                Saatlik Sahih Hadis
-              </a>
             </div>
           </motion.div>
 
@@ -165,9 +169,9 @@ export const Hero = () => {
                 <div className="muted-rule" />
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   {[
+                    "Sahabe’den, رضي الله عنهم, öğütlerinden seçmeler",
                     "Çağdaş alim ve davetçilerden seçme sözler",
                     "Selef imamlarından veciz sözler",
-                    "Sahabe’den, رضي الله عنهم, öğütlerinden seçmeler",
                     "PDF dua arşivine hızlı erişim",
                     "Sahih kaynaklı içerik",
                     "Saatlik yenilenen hadis akışı",
@@ -180,25 +184,39 @@ export const Hero = () => {
                 </div>
                 <div className="flex flex-wrap items-center gap-2.5">
                   <Link
-                    to="/muasir"
-                    className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] uppercase tracking-[0.16em] ${primaryGlowClass}`}
-                  >
-                    Muasır Sözler
-                    <span className="h-2 w-2 rounded-full bg-primary-foreground/80" />
-                  </Link>
-                  <Link
                     to="/sahabeden"
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-foreground/5"
+                    className={quickActionClass}
                   >
                     Sahabeden
-                    <span className="h-2 w-2 rounded-full bg-primary" />
+                    <span className="h-2 w-2 rounded-full bg-current/80" />
                   </Link>
                   <Link
+                    to="/muasir"
+                    className={quickActionClass}
+                  >
+                    Muasır Sözler
+                    <span className="h-2 w-2 rounded-full bg-current/80" />
+                  </Link>
+                  <Link
+                    to="/selef-incileri"
+                    className={quickActionClass}
+                  >
+                    Selef İncileri
+                    <span className="h-2 w-2 rounded-full bg-current/80" />
+                  </Link>
+                  <a
+                    href="#saatlik-ilham"
+                    className={quickActionClass}
+                  >
+                    Saatlik Hadis
+                    <span className="h-2 w-2 rounded-full bg-current/80" />
+                  </a>
+                  <Link
                     to="/kutuphane"
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-foreground/5"
+                    className={quickActionClass}
                   >
                     Dua Arşivi
-                    <span className="h-2 w-2 rounded-full bg-primary" />
+                    <span className="h-2 w-2 rounded-full bg-current/80" />
                   </Link>
                 </div>
               </div>

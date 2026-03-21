@@ -51,9 +51,9 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   await expect(page.locator("#sahabeden h2")).toHaveText(/Sahabe.?den/i);
 
   const sectionPositions = await Promise.all([
+    page.locator("#sahabeden").boundingBox(),
     page.locator("#muasir").boundingBox(),
     page.locator("#selef-incileri").boundingBox(),
-    page.locator("#sahabeden").boundingBox(),
     page.locator("#kutuphane").boundingBox(),
   ]);
   expect(sectionPositions[0]?.y ?? 0).toBeLessThan(sectionPositions[1]?.y ?? 0);

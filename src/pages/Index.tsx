@@ -77,15 +77,15 @@ const Index = () => {
         <Hero />
 
         <div className="content-visibility-auto">
+          <SahabedenPreviewSection />
+        </div>
+
+        <div className="content-visibility-auto">
           <MuasirPreviewSection />
         </div>
 
         <div className="content-visibility-auto">
           <SelefPreviewSection />
-        </div>
-
-        <div className="content-visibility-auto">
-          <SahabedenPreviewSection />
         </div>
 
         <div className="content-visibility-auto">
