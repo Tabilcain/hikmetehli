@@ -15,7 +15,7 @@ export const LibraryPreviewSection = () => {
   const previewItems = useMemo(() => (catalog || []).slice(0, 3), [catalog]);
 
   return (
-    <section className="relative py-16 md:py-24" id="kutuphane">
+    <section className="relative py-16 md:py-24">
       <div className="absolute inset-0 hero-glow opacity-30" />
       <div className="absolute inset-0 grid-overlay opacity-25" />
 

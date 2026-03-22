@@ -151,7 +151,6 @@ export const HourlyContentSection = ({ tone = "primary", mobileCollapsedByDefaul
   return (
     <section
       className={cn("relative overflow-hidden", isMuted ? "py-16 md:py-20" : "py-24")}
-      id="saatlik-ilham"
       ref={sectionRef}
     >
       <div className={cn("absolute inset-0 hero-glow", isMuted ? "opacity-20" : "opacity-40")} />

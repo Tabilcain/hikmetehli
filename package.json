@@ -11,6 +11,9 @@
     "validate:library-catalog": "tsx scripts/validate-library-catalog.mts",
     "smoke:http": "tsx scripts/smoke-http.mts",
     "analyze:cf": "tsx scripts/cloudflare-audit.mts",
+    "lighthouse:mobile": "lhci autorun --config=./lighthouserc.mobile.json",
+    "lighthouse:desktop": "lhci autorun --config=./lighthouserc.desktop.json",
+    "test:lighthouse": "npm run build && npm run lighthouse:mobile && npm run lighthouse:desktop",
     "test:e2e": "playwright test",
     "test:smoke": "npm run lint && npx tsc --noEmit && npm run build && npm run validate:library-catalog && npm run smoke:http && npm run test:e2e",
     "preview": "vite preview",
@@ -83,6 +86,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@lhci/cli": "^0.15.0",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.16.5",

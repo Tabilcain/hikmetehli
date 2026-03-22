@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 import { cn } from "@/lib/utils";
@@ -24,23 +23,19 @@ export const Hero = () => {
 
       {!lowPerformanceMode && (
         <>
-          <motion.div
-            className="absolute -right-24 -top-24 h-[360px] w-[360px] rounded-full"
+          <div
+            className="absolute -right-24 -top-24 h-[360px] w-[360px] rounded-full hero-orb-float-a"
             style={{
               background: "radial-gradient(circle at 30% 30%, hsl(var(--accent) / 0.24), transparent 70%)",
               filter: "blur(14px)",
             }}
-            animate={{ y: [0, 20, 0], x: [0, -18, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           />
-          <motion.div
-            className="absolute -bottom-20 left-0 h-[320px] w-[320px] rounded-full"
+          <div
+            className="absolute -bottom-20 left-0 h-[320px] w-[320px] rounded-full hero-orb-float-b"
             style={{
               background: "radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.2), transparent 70%)",
               filter: "blur(18px)",
             }}
-            animate={{ y: [0, -22, 0], x: [0, 16, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
           />
         </>
       )}
@@ -88,7 +83,7 @@ export const Hero = () => {
 
       <div className="container relative z-10 pt-12 pb-14 md:pt-16 md:pb-20 lg:pt-20">
         <div className="grid items-start gap-10 lg:grid-cols-[1.06fr_0.94fr]">
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
+          <div className="hero-enter">
             <div
               className={cn(
                 "inline-flex items-center gap-3 rounded-full border border-border/80 px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground md:px-4 md:text-xs md:tracking-[0.28em]",
@@ -143,14 +138,9 @@ export const Hero = () => {
                 Dua Arşivi
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className="relative hidden lg:block"
-          >
+          <div className="relative hidden lg:block hero-enter-delay">
             <div
               className={cn(
                 "relative overflow-hidden rounded-[30px] border border-border/75 p-7 shadow-soft",
@@ -224,35 +214,21 @@ export const Hero = () => {
 
             {!lowPerformanceMode && (
               <>
-                <motion.div
-                  className="absolute -bottom-8 -right-6 h-40 w-40 rounded-full border border-foreground/10 bg-gradient-to-br from-foreground/5 to-transparent"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.div
-                  className="absolute -top-10 left-6 h-24 w-24 rounded-full bg-primary/20 blur-2xl"
-                  animate={{ y: [0, -12, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                />
+                <div className="absolute -bottom-8 -right-6 h-40 w-40 rounded-full border border-foreground/10 bg-gradient-to-br from-foreground/5 to-transparent hero-spin-slow" />
+                <div className="absolute -top-10 left-6 h-24 w-24 rounded-full bg-primary/20 blur-2xl hero-bob-soft" />
               </>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {!lowPerformanceMode ? (
-        <motion.div
-          className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground"
-        >
+        <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
           <span>Kaydır</span>
-          <motion.span
-            className="mt-2 flex h-9 w-5 items-start justify-center rounded-full border border-muted-foreground/50"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
+          <span className="mt-2 flex h-9 w-5 items-start justify-center rounded-full border border-muted-foreground/50 hero-scroll-bob">
             <span className="mt-2 h-1.5 w-1.5 rounded-full bg-muted-foreground" />
-          </motion.span>
-        </motion.div>
+          </span>
+        </div>
       ) : null}
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 section-fade-bottom" />

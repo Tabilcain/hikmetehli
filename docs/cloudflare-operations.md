@@ -39,6 +39,27 @@ Bu dosyalarla uygulananlar:
 6. HTML shell'de kisa sureli cache
 7. HSTS + temel security headers
 
+## 2.1) robots.txt tek otorite kurali
+
+Lighthouse SEO fail'ini tetikleyen `Content-Signal` satiri repo dosyasindan degil, Cloudflare tarafindaki managed robots icerik enjeksiyonundan gelebilir.
+
+Kontrol adimi:
+
+```bash
+curl -s https://hikmetehli.com/robots.txt
+```
+
+Beklenen:
+
+- Sadece `Allow`, `Disallow`, `Sitemap`, `User-agent` gibi standart robots direktifleri.
+- `Content-Signal:` satiri olmamali.
+
+Panel aksiyonu:
+
+1. Cloudflare dashboard'da robots/content signal managed ozelligini kapat.
+2. robots yonetimini repo dosyasina (`public/robots.txt`) sabitle.
+3. Degisiklikten sonra Lighthouse SEO testini tekrar calistir.
+
 ## 3) Pageview dogrulama (SPA)
 
 Route degisimlerinde event gonderimi:

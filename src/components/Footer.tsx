@@ -1,13 +1,6 @@
-import { motion } from "framer-motion";
-
 export const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 1 }}
-      className="relative py-16"
-    >
+    <footer className="relative py-16 footer-reveal">
       <div className="geometric-divider mb-12" />
 
       <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
@@ -20,6 +13,6 @@ export const Footer = () => {
           <span>Her hakkı saklıdır</span>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };

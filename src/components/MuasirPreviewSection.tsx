@@ -112,7 +112,7 @@ export const MuasirPreviewSection = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24" id="muasir">
+    <section className="relative py-16 md:py-24">
       <div className="absolute inset-0 hero-glow opacity-18 md:opacity-25" />
       <div className="absolute inset-0 grid-overlay opacity-14 md:opacity-20" />
 

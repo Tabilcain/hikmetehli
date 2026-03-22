@@ -182,6 +182,79 @@
   }
 }
 
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloatA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-18px, 20px, 0);
+  }
+}
+
+@keyframes heroFloatB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(16px, -22px, 0);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bobSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes scrollBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes meshDrift {
+  0%,
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  30% {
+    transform: translate3d(calc(-50% + 80px), calc(-50% - 72px), 0);
+  }
+  65% {
+    transform: translate3d(calc(-50% - 48px), calc(-50% + 52px), 0);
+  }
+}
+
 @layer components {
   /* Islamic geometric pattern overlay */
   .islamic-pattern {
@@ -317,6 +390,111 @@
 
   .action-pill {
     @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 text-xs font-medium uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-background;
+  }
+
+  .hero-enter {
+    animation: fadeUpIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-enter-delay {
+    animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  }
+
+  .hero-orb-float-a {
+    animation: heroFloatA 18s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .hero-orb-float-b {
+    animation: heroFloatB 16s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .hero-spin-slow {
+    animation: spinSlow 40s linear infinite;
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .hero-bob-soft {
+    animation: bobSoft 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .hero-scroll-bob {
+    animation: scrollBob 2s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .page-fade {
+    animation: fadeUpIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .page-fade-quick {
+    animation: fadeUpIn 0.12s ease-out both;
+  }
+
+  .footer-reveal {
+    animation: fadeUpIn 0.5s ease-out both;
+  }
+
+  .theme-toggle-icon {
+    display: inline-flex;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .theme-toggle-icon.is-dark {
+    transform: rotate(12deg) scale(1);
+    opacity: 1;
+  }
+
+  .theme-toggle-icon.is-light {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  .gradient-mesh {
+    --mesh-x: 50%;
+    --mesh-y: 50%;
+  }
+
+  .mesh-orb {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+
+  .mesh-orb-primary {
+    width: 640px;
+    height: 640px;
+    left: var(--mesh-x);
+    top: var(--mesh-y);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, hsl(var(--primary) / 0.1) 0%, transparent 70%);
+    filter: blur(90px);
+    will-change: transform;
+  }
+
+  .mesh-orb-accent {
+    width: 480px;
+    height: 480px;
+    right: calc(100% - var(--mesh-x));
+    bottom: calc(100% - var(--mesh-y));
+    transform: translate(50%, 50%);
+    background: radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+    will-change: transform;
+  }
+
+  .mesh-orb-gold {
+    width: 520px;
+    height: 520px;
+    left: 50%;
+    top: 42%;
+    background: radial-gradient(circle, hsl(var(--gold) / 0.12) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: meshDrift 26s ease-in-out infinite;
+    will-change: transform;
   }
 
   .kicker {

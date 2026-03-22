@@ -55,7 +55,7 @@ const itemVariants = {
 
 export const SocialLinks = () => {
   return (
-    <section className="relative py-20" id="baglan">
+    <section className="relative py-20">
       <div className="container">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
           <div className="space-y-6 max-w-xl">
