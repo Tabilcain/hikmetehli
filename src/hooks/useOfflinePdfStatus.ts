@@ -10,6 +10,7 @@ const LOW_STORAGE_THRESHOLD_BYTES = 25 * 1024 * 1024;
 
 type UseOfflinePdfStatusOptions = {
   checkStorage?: boolean;
+  enabled?: boolean;
 };
 
 const supportsBrowserCaches = () =>
@@ -37,9 +38,9 @@ const isPdfCached = async (fileUrl: string) => {
 };
 
 export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatusOptions = {}) => {
-  const { checkStorage = false } = options;
+  const { checkStorage = false, enabled = true } = options;
   const [isCached, setIsCached] = useState(false);
-  const [isChecking, setIsChecking] = useState(true);
+  const [isChecking, setIsChecking] = useState(enabled);
   const [isCaching, setIsCaching] = useState(false);
   const [lowStorage, setLowStorage] = useState(false);
   const [isOnline, setIsOnline] = useState(
@@ -47,6 +48,12 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
   );
 
   const refresh = useCallback(async () => {
+    if (!enabled) {
+      setIsChecking(false);
+      setLowStorage(false);
+      return;
+    }
+
     if (!fileUrl || !supportsBrowserCaches()) {
       setIsCached(false);
       setLowStorage(false);
@@ -66,13 +73,15 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
     } finally {
       setIsChecking(false);
     }
-  }, [checkStorage, fileUrl]);
+  }, [checkStorage, enabled, fileUrl]);
 
   useEffect(() => {
     void refresh();
   }, [refresh]);
 
   useEffect(() => {
+    if (!enabled) return;
+
     if (typeof window === "undefined") return;
 
     const handleConnectionChange = () => {
@@ -94,7 +103,7 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
       window.removeEventListener("offline", handleConnectionChange);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [refresh]);
+  }, [enabled, refresh]);
 
   const ensureCached = useCallback(async () => {
     if (!fileUrl || !supportsBrowserCaches()) return false;
@@ -131,16 +140,18 @@ export const useOfflinePdfStatus = (fileUrl: string, options: UseOfflinePdfStatu
 
   const statusLabel = useMemo(() => {
     if (isCached) return "Cihazda mevcut";
+    if (!enabled) return "Detayda kontrol";
     if (isCaching || isChecking) return "İndiriliyor";
     return "İnternet gerekli";
-  }, [isCached, isCaching, isChecking]);
+  }, [enabled, isCached, isCaching, isChecking]);
 
   const statusDescription = useMemo(() => {
     if (isCached) return "Bu kitap internet olmadan da açılabilir.";
+    if (!enabled) return "Çevrimdışı hazır olma durumu kitap detayında kontrol edilir.";
     if (isCaching || isChecking) return "Kitap cihazınız için çevrimdışı hazırlanıyor.";
     if (!isOnline) return "Bu kitap cihazda yok. İlk açılış için internete bağlanın.";
     return "İlk açılışta internet gerekir, sonra çevrimdışı açılır.";
-  }, [isCached, isCaching, isChecking, isOnline]);
+  }, [enabled, isCached, isCaching, isChecking, isOnline]);
 
   return {
     isCached,

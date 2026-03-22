@@ -142,8 +142,8 @@ const SahabedenSozler = () => {
   const [search, setSearch] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(() => readFavoriteIds());
-  const initialVisibleCount = isMobile ? 14 : 24;
-  const loadMoreStep = isMobile ? 12 : 16;
+  const initialVisibleCount = isMobile ? 10 : 24;
+  const loadMoreStep = isMobile ? 8 : 16;
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const { data, isLoading, isError } = useQuery({
@@ -222,8 +222,8 @@ const SahabedenSozler = () => {
     <PageTransition>
       <main className="relative min-h-screen overflow-hidden bg-background">
         <div className="absolute inset-0 gradient-hero opacity-75" />
-        <div className="absolute inset-0 hero-glow opacity-28 md:opacity-45" />
-        <div className="absolute inset-0 grid-overlay opacity-22 md:opacity-35" />
+        <div className={`absolute inset-0 hero-glow ${isMobile ? "opacity-[0.18]" : "opacity-45"}`} />
+        <div className={`absolute inset-0 grid-overlay ${isMobile ? "opacity-[0.12]" : "opacity-35"}`} />
 
         <div className="container relative z-10 py-6 md:py-10">
           <header
@@ -294,7 +294,7 @@ const SahabedenSozler = () => {
 
             {isLoading ? (
               <div className="grid gap-3">
-                {Array.from({ length: 6 }).map((_, index) => (
+                {Array.from({ length: isMobile ? 4 : 6 }).map((_, index) => (
                   <div
                     key={index}
                     className="min-h-[228px] animate-pulse rounded-[22px] border border-border/70 bg-card/70 p-4"

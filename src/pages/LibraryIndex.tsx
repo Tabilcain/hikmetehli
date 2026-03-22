@@ -12,8 +12,8 @@ import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 const LibraryIndex = () => {
   const { isMobile } = usePerformanceMode();
   const [search, setSearch] = useState("");
-  const initialVisibleCount = isMobile ? 8 : 12;
-  const loadMoreStep = isMobile ? 6 : 8;
+  const initialVisibleCount = isMobile ? 6 : 12;
+  const loadMoreStep = isMobile ? 5 : 8;
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const { data: catalog, isLoading, isError } = useQuery({
@@ -98,7 +98,7 @@ const LibraryIndex = () => {
 
             {isLoading ? (
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {Array.from({ length: 6 }).map((_, index) => (
+                {Array.from({ length: isMobile ? 4 : 6 }).map((_, index) => (
                   <div
                     key={index}
                     className="animate-pulse rounded-[22px] md:rounded-[26px] border border-border/70 bg-card/70 p-3 md:p-4"
@@ -112,7 +112,7 @@ const LibraryIndex = () => {
             ) : filtered.length > 0 ? (
               <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {visibleBooks.map((book) => (
-                  <LibraryCard key={book.id} book={book} />
+                  <LibraryCard key={book.id} book={book} enableOfflineStatusCheck={!isMobile} />
                 ))}
               </div>
             ) : (

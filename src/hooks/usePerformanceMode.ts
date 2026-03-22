@@ -8,8 +8,12 @@ const isIosDevice = () =>
   /iphone|ipad|ipod/i.test(navigator.userAgent);
 
 export const usePerformanceMode = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.matchMedia(MOBILE_QUERY).matches : false,
+  );
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
+    typeof window !== "undefined" ? window.matchMedia(REDUCED_MOTION_QUERY).matches : false,
+  );
 
   useEffect(() => {
     const mobileMedia = window.matchMedia(MOBILE_QUERY);

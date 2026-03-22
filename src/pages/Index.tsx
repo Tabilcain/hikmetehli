@@ -1,11 +1,13 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { Home } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { GradientMesh } from "@/components/GradientMesh";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { PageTransition } from "@/components/PageTransition";
 import { InstallCTA } from "@/components/InstallCTA";
+import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 
 const SahabedenPreviewSection = lazy(() =>
   import("@/components/SahabedenPreviewSection").then((module) => ({ default: module.SahabedenPreviewSection })),
@@ -21,6 +23,9 @@ const LibraryPreviewSection = lazy(() =>
 );
 const HourlyContentSection = lazy(() =>
   import("@/components/HourlyContentSection").then((module) => ({ default: module.HourlyContentSection })),
+);
+const HourlyContentSectionLite = lazy(() =>
+  import("@/components/HourlyContentSectionLite").then((module) => ({ default: module.HourlyContentSectionLite })),
 );
 const SocialLinks = lazy(() =>
   import("@/components/SocialLinks").then((module) => ({ default: module.SocialLinks })),
@@ -61,6 +66,7 @@ const useDeferredSection = (forceVisible: boolean, rootMargin: string) => {
 
 const Index = () => {
   const location = useLocation();
+  const { lowPerformanceMode } = usePerformanceMode();
 
   const shouldOpenSahabeden = useMemo(
     () => location.pathname === "/" && location.hash === "#sahabeden",
@@ -86,6 +92,10 @@ const Index = () => {
       location.hash === "#saatlik-ilham"
     );
   }, [location.hash, location.pathname, location.search]);
+  const hourlyFocusMode = useMemo(() => {
+    const searchParams = new URLSearchParams(location.search);
+    return location.pathname === "/hourly" || searchParams.get("open") === "hourly";
+  }, [location.pathname, location.search]);
   const shouldOpenSocial = useMemo(
     () => location.pathname === "/" && location.hash === "#baglan",
     [location.hash, location.pathname],
@@ -97,6 +107,8 @@ const Index = () => {
   const librarySection = useDeferredSection(shouldOpenLibrary, "320px 0px");
   const hourlySection = useDeferredSection(shouldOpenHourly, "360px 0px");
   const socialSection = useDeferredSection(shouldOpenSocial, "260px 0px");
+  const showAllSections = !hourlyFocusMode;
+  const useLiteHourlySection = lowPerformanceMode && hourlyFocusMode;
 
   useEffect(() => {
     if (!location.hash) return;
@@ -133,86 +145,112 @@ const Index = () => {
         <GradientMesh />
         <DarkModeToggle />
 
-        <Hero />
-
-        <div className="content-visibility-auto">
-          <section
-            ref={sahabedenSection.ref}
-            id="sahabeden"
-            className="min-h-[340px] md:min-h-[300px]"
-            data-home-sahabeden-shell
-          >
-            {sahabedenSection.isVisible ? (
-              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Sahabeden bölümü yükleniyor...</div>}>
-                <SahabedenPreviewSection />
-              </Suspense>
-            ) : (
-              <div className="container py-10 text-sm text-muted-foreground">Sahabeden bölümü hazırlanıyor...</div>
-            )}
+        {showAllSections ? (
+          <Hero />
+        ) : (
+          <section className="pt-8 pb-2 md:pt-10">
+            <div className="container">
+              <div className="surface-shell flex items-center justify-between gap-3 py-4 md:py-5">
+                <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Saatlik İlham Modu</p>
+                <Link to="/" className="action-pill px-4">
+                  <Home className="h-4 w-4" />
+                  Ana Sayfa
+                </Link>
+              </div>
+            </div>
           </section>
-        </div>
+        )}
 
-        <div className="content-visibility-auto">
-          <section
-            ref={muasirSection.ref}
-            id="muasir"
-            className="min-h-[340px] md:min-h-[300px]"
-            data-home-muasir-shell
-          >
-            {muasirSection.isVisible ? (
-              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Muasır bölümü yükleniyor...</div>}>
-                <MuasirPreviewSection />
-              </Suspense>
-            ) : (
-              <div className="container py-10 text-sm text-muted-foreground">Muasır bölümü hazırlanıyor...</div>
-            )}
-          </section>
-        </div>
+        {showAllSections ? (
+          <div className="content-visibility-auto">
+            <section
+              ref={sahabedenSection.ref}
+              id="sahabeden"
+              className="min-h-[340px] md:min-h-[300px]"
+              data-home-sahabeden-shell
+            >
+              {sahabedenSection.isVisible ? (
+                <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Sahabeden bölümü yükleniyor...</div>}>
+                  <SahabedenPreviewSection />
+                </Suspense>
+              ) : (
+                <div className="container py-10 text-sm text-muted-foreground">Sahabeden bölümü hazırlanıyor...</div>
+              )}
+            </section>
+          </div>
+        ) : null}
 
-        <div className="content-visibility-auto">
-          <section
-            ref={selefSection.ref}
-            id="selef-incileri"
-            className="min-h-[340px] md:min-h-[300px]"
-            data-home-selef-shell
-          >
-            {selefSection.isVisible ? (
-              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Selef bölümü yükleniyor...</div>}>
-                <SelefPreviewSection />
-              </Suspense>
-            ) : (
-              <div className="container py-10 text-sm text-muted-foreground">Selef bölümü hazırlanıyor...</div>
-            )}
-          </section>
-        </div>
+        {showAllSections ? (
+          <div className="content-visibility-auto">
+            <section
+              ref={muasirSection.ref}
+              id="muasir"
+              className="min-h-[340px] md:min-h-[300px]"
+              data-home-muasir-shell
+            >
+              {muasirSection.isVisible ? (
+                <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Muasır bölümü yükleniyor...</div>}>
+                  <MuasirPreviewSection />
+                </Suspense>
+              ) : (
+                <div className="container py-10 text-sm text-muted-foreground">Muasır bölümü hazırlanıyor...</div>
+              )}
+            </section>
+          </div>
+        ) : null}
 
-        <div className="content-visibility-auto">
-          <section
-            ref={librarySection.ref}
-            id="kutuphane"
-            className="min-h-[340px] md:min-h-[300px]"
-            data-home-library-shell
-          >
-            {librarySection.isVisible ? (
-              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Kütüphane bölümü yükleniyor...</div>}>
-                <LibraryPreviewSection />
-              </Suspense>
-            ) : (
-              <div className="container py-10 text-sm text-muted-foreground">Kütüphane bölümü hazırlanıyor...</div>
-            )}
-          </section>
-        </div>
+        {showAllSections ? (
+          <div className="content-visibility-auto">
+            <section
+              ref={selefSection.ref}
+              id="selef-incileri"
+              className="min-h-[340px] md:min-h-[300px]"
+              data-home-selef-shell
+            >
+              {selefSection.isVisible ? (
+                <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Selef bölümü yükleniyor...</div>}>
+                  <SelefPreviewSection />
+                </Suspense>
+              ) : (
+                <div className="container py-10 text-sm text-muted-foreground">Selef bölümü hazırlanıyor...</div>
+              )}
+            </section>
+          </div>
+        ) : null}
+
+        {showAllSections ? (
+          <div className="content-visibility-auto">
+            <section
+              ref={librarySection.ref}
+              id="kutuphane"
+              className="min-h-[340px] md:min-h-[300px]"
+              data-home-library-shell
+            >
+              {librarySection.isVisible ? (
+                <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Kütüphane bölümü yükleniyor...</div>}>
+                  <LibraryPreviewSection />
+                </Suspense>
+              ) : (
+                <div className="container py-10 text-sm text-muted-foreground">Kütüphane bölümü hazırlanıyor...</div>
+              )}
+            </section>
+          </div>
+        ) : null}
 
         <div className="content-visibility-hourly">
           <section
             ref={hourlySection.ref}
             id="saatlik-ilham"
-            className="min-h-[420px] md:min-h-[520px]"
+            className={showAllSections ? "min-h-[420px] md:min-h-[520px]" : "min-h-[360px] md:min-h-[420px]"}
             data-home-hourly-shell
           >
             {hourlySection.isVisible ? (
               <Suspense fallback={<div className="container py-14 text-sm text-muted-foreground">Saatlik bölüm yükleniyor...</div>}>
-                <HourlyContentSection tone="muted" />
+                {useLiteHourlySection ? (
+                  <HourlyContentSectionLite tone={hourlyFocusMode ? "primary" : "muted"} mobileCollapsedByDefault={hourlyFocusMode} />
+                ) : (
+                  <HourlyContentSection tone={hourlyFocusMode ? "primary" : "muted"} mobileCollapsedByDefault={hourlyFocusMode} />
+                )}
               </Suspense>
             ) : (
               <div className="container py-10">
@@ -224,29 +262,33 @@ const Index = () => {
           </section>
         </div>
 
-        <div className="content-visibility-auto">
-          <section className="py-5 md:py-8" id="ana-ekrana-ekle">
-            <div className="container">
-              <div className="mx-auto max-w-3xl">
-                <InstallCTA />
+        {showAllSections ? (
+          <div className="content-visibility-auto">
+            <section className="py-5 md:py-8" id="ana-ekrana-ekle">
+              <div className="container">
+                <div className="mx-auto max-w-3xl">
+                  <InstallCTA />
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+          </div>
+        ) : null}
 
-        <div className="content-visibility-social">
-          <section ref={socialSection.ref} id="baglan" className="min-h-[220px] md:min-h-[280px]">
-            {socialSection.isVisible ? (
-              <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
-                <SocialLinks />
-              </Suspense>
-            ) : (
-              <div className="container py-10 text-sm text-muted-foreground">
-                Bağlantılar hazırlanıyor...
-              </div>
-            )}
-          </section>
-        </div>
+        {showAllSections ? (
+          <div className="content-visibility-social">
+            <section ref={socialSection.ref} id="baglan" className="min-h-[220px] md:min-h-[280px]">
+              {socialSection.isVisible ? (
+                <Suspense fallback={<div className="container py-10 text-sm text-muted-foreground">Bağlantılar yükleniyor...</div>}>
+                  <SocialLinks />
+                </Suspense>
+              ) : (
+                <div className="container py-10 text-sm text-muted-foreground">
+                  Bağlantılar hazırlanıyor...
+                </div>
+              )}
+            </section>
+          </div>
+        ) : null}
 
         <Footer />
       </main>

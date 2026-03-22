@@ -7,12 +7,13 @@ import { useOfflinePdfStatus } from "@/hooks/useOfflinePdfStatus";
 
 type LibraryCardProps = {
   book: LibraryBook;
+  enableOfflineStatusCheck?: boolean;
 };
 
-export const LibraryCard = ({ book }: LibraryCardProps) => {
+export const LibraryCard = ({ book, enableOfflineStatusCheck = true }: LibraryCardProps) => {
   const { webp: coverWebp, fallback: coverFallback } = getCoverAssetUrls(book);
   const pdfUrl = toVersionedPdfUrl(book);
-  const offlineStatus = useOfflinePdfStatus(pdfUrl);
+  const offlineStatus = useOfflinePdfStatus(pdfUrl, { enabled: enableOfflineStatusCheck });
 
   return (
     <article className="group relative overflow-hidden rounded-[22px] md:rounded-[26px] border border-border/80 bg-card/85 p-3 md:p-4 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-elevated">
@@ -43,9 +44,11 @@ export const LibraryCard = ({ book }: LibraryCardProps) => {
           ) : (
             <p className="mt-2 text-xs text-muted-foreground">Sayfa bilgisi yakında</p>
           )}
-          <p className="mt-2 text-[11px] text-muted-foreground">
-            Offline: {offlineStatus.statusLabel}
-          </p>
+          {enableOfflineStatusCheck ? (
+            <p className="mt-2 text-[11px] text-muted-foreground">
+              Offline: {offlineStatus.statusLabel}
+            </p>
+          ) : null}
         </div>
 
         <div className="grid grid-cols-2 gap-2">
