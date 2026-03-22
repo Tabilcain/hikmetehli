@@ -50,3 +50,9 @@ DNS kayitlari Pages'in verdigi degerlere gore guncellenmelidir.
 ## Not
 
 Bu proje public/statik yayin mantigiyla calisir; admin paneli veya browser tabanli icerik duzenleme alani yoktur.
+
+## Cloudflare operasyon notlari
+
+- Operasyon runbook: `docs/cloudflare-operations.md`
+- HTTP smoke: `npm run smoke:http`
+- Cloudflare analiz raporu: `npm run analyze:cf`

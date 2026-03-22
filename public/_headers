@@ -1,17 +1,29 @@
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/library/covers/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/library/pdf/*
+  Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=2592000
+
 /selef/quotes.v1.json
-  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=0, s-maxage=21600, stale-while-revalidate=259200
 
 /muasir/quotes.v1.json
-  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=0, s-maxage=21600, stale-while-revalidate=259200
 
 /sahabeden/quotes.v1.json
-  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=0, s-maxage=21600, stale-while-revalidate=259200
 
 /library/catalog.v1.json
-  Cache-Control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+  Cache-Control: public, max-age=0, s-maxage=21600, stale-while-revalidate=259200
 
 /
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
@@ -43,29 +55,41 @@
 /kutuphane/*
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=3600
 
+/workbox-*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/robots.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+
 /favicon.ico
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /favicon.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /favicon-192.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /favicon-32.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /favicon-16.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /apple-touch-icon.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /og-image.png
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /manifest.json
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=86400, must-revalidate
 
 /manifest.webmanifest
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=86400, must-revalidate

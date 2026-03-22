@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { RouteAnalyticsTracker } from "@/components/RouteAnalyticsTracker";
 
 const LibraryIndex = lazy(() => import("./pages/LibraryIndex"));
 const LibraryDetail = lazy(() => import("./pages/LibraryDetail"));
@@ -43,6 +44,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteAnalyticsTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/hourly" element={<Index />} />

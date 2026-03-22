@@ -42,6 +42,13 @@ Pages -> `hikmetehli` -> Custom Domains:
 
 SSL durumu `Active` olmadan production kontrolu yapma.
 
+Zone -> SSL/TLS -> Edge Certificates:
+
+- `Always Use HTTPS`: ON
+- `HTTP Strict Transport Security (HSTS)`: kademeli ac
+  - 1. asama: `max-age=2592000` (30 gun)
+  - 2. asama: `max-age=31536000` (1 yil)
+
 ## 5) Yayindan sonra kontrol
 
 - `https://hikmetehli.com`
@@ -55,6 +62,8 @@ Kontrol listesi:
 - Widget/ana ekrana ekle/kurulum kilavuzu bolumleri yok
 - `/muasir`, `/selef-incileri`, `/kutuphane` route'lari 200 donuyor
 - Ana HTML shell ve JSON endpoint'lerinde beklenen `cache-control` header'lari gorunuyor
+- `http://` istekleri `https://` adresine 301 ile yonleniyor
+- `www.hikmetehli.com` istekleri kanonik host'a yonleniyor
 
 ## 6) Sorun giderme
 

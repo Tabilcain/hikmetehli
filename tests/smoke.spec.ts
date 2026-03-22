@@ -106,6 +106,38 @@ test("landing cta ve saatlik sahih hadis bolumu aciliyor", async ({ page }) => {
   expect(runtimeErrors).toEqual([]);
 });
 
+test("spa route degisimlerinde pageview eventi tetikleniyor", async ({ page }) => {
+  await page.addInitScript(() => {
+    const bucket: string[] = [];
+    (window as Window & { __hikmetehliTrackedPaths?: string[] }).__hikmetehliTrackedPaths = bucket;
+
+    window.addEventListener("hikmetehli:pageview", (event) => {
+      const detail = (event as CustomEvent<{ page_path?: string }>).detail;
+      bucket.push(detail?.page_path || "");
+    });
+  });
+
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForLoadState("networkidle");
+
+  const muasirLink = page.locator('#muasir a[href="/muasir"]').first();
+  await expect(muasirLink).toBeVisible();
+  await muasirLink.click();
+  await expect(page).toHaveURL(/\/muasir$/);
+
+  await page.goBack({ waitUntil: "networkidle" });
+  await expect(page).toHaveURL(/\/$/);
+
+  const trackedPaths = await page.evaluate(
+    () => (window as Window & { __hikmetehliTrackedPaths?: string[] }).__hikmetehliTrackedPaths || [],
+  );
+
+  expect(trackedPaths.length).toBeGreaterThanOrEqual(3);
+  expect(trackedPaths[0]).toBe("/");
+  expect(trackedPaths).toContain("/muasir");
+  expect(trackedPaths[trackedPaths.length - 1]).toBe("/");
+});
+
 test("mobilde muasir kisi listeleri kaydirmasiz gorunuyor", async ({ page }) => {
   const runtimeErrors = captureRuntimeErrors(page);
 

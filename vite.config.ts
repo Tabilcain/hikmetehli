@@ -143,12 +143,12 @@ export default defineConfig(() => ({
           {
             urlPattern: ({ url }) =>
               /\/(favicon\.ico|favicon\.png|favicon-192\.png|favicon-32\.png|favicon-16\.png|apple-touch-icon\.png|og-image\.png)$/.test(url.pathname),
-            handler: "NetworkFirst",
+            handler: "CacheFirst",
             options: {
               cacheName: "brand-image-cache",
               expiration: {
                 maxEntries: 8,
-                maxAgeSeconds: 60 * 60 * 24,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
               },
             },
           },

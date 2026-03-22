@@ -17,6 +17,7 @@ const distDir = path.resolve(rootDir, "dist");
 const publicDir = path.resolve(rootDir, "public");
 const wranglerPath = path.resolve(rootDir, "wrangler.toml");
 const headersPath = path.resolve(publicDir, "_headers");
+const redirectsPath = path.resolve(publicDir, "_redirects");
 const catalogPath = path.resolve(publicDir, "library", "catalog.v1.json");
 const port = Number(process.env.SMOKE_HTTP_PORT || "8788");
 const baseUrl = `http://127.0.0.1:${port}`;
@@ -117,6 +118,18 @@ const run = async () => {
   assert(headersRaw.includes("/sahabeden"), "_headers içinde /sahabeden cache kuralı eksik.");
   assert(headersRaw.includes("/kutuphane"), "_headers içinde /kutuphane cache kuralı eksik.");
   assert(headersRaw.includes("s-maxage=300"), "_headers içinde SPA shell cache politikası eksik.");
+  assert(headersRaw.includes("/library/pdf/*"), "_headers içinde /library/pdf/* cache kuralı eksik.");
+  assert(headersRaw.includes("Strict-Transport-Security"), "_headers içinde HSTS politikası eksik.");
+
+  const redirectsRaw = await fs.readFile(redirectsPath, "utf8");
+  assert(
+    redirectsRaw.includes("http://hikmetehli.com/* https://hikmetehli.com/:splat 301!"),
+    "_redirects içinde http -> https zorlaması eksik.",
+  );
+  assert(
+    redirectsRaw.includes("https://www.hikmetehli.com/* https://hikmetehli.com/:splat 301!"),
+    "_redirects içinde www -> apex yönlendirmesi eksik.",
+  );
   const firstBook = catalog[0];
   assert(firstBook?.slug, "catalog.v1.json içinde slug bulunamadı.");
 
@@ -182,11 +195,13 @@ const run = async () => {
     const indexAssetPath = await getIndexAssetPath();
     await expectHeaderContains(indexAssetPath, "cache-control", "immutable");
     await expectHeaderContains(indexAssetPath, "cache-control", "max-age=31536000");
-    await expectHeaderContains("/muasir/quotes.v1.json", "cache-control", "s-maxage=3600");
-    await expectHeaderContains("/selef/quotes.v1.json", "cache-control", "s-maxage=3600");
-    await expectHeaderContains("/sahabeden/quotes.v1.json", "cache-control", "s-maxage=3600");
-    await expectHeaderContains("/library/catalog.v1.json", "cache-control", "s-maxage=3600");
+    await expectHeaderContains("/muasir/quotes.v1.json", "cache-control", "s-maxage=21600");
+    await expectHeaderContains("/selef/quotes.v1.json", "cache-control", "s-maxage=21600");
+    await expectHeaderContains("/sahabeden/quotes.v1.json", "cache-control", "s-maxage=21600");
+    await expectHeaderContains("/library/catalog.v1.json", "cache-control", "s-maxage=21600");
     await expectHeaderContains("/", "cache-control", "max-age=0");
+    await expectHeaderContains("/", "strict-transport-security", "max-age=31536000");
+    await expectHeaderContains("/favicon.ico", "cache-control", "immutable");
 
     for (const book of catalog) {
       await expectHttpOk(toAssetPathname(book.pdfPath), "application/pdf");
@@ -198,8 +213,10 @@ const run = async () => {
         await expectHttpOk(toAssetPathname(book.coverPathWebp), "image/webp");
       }
     }
+    await expectHeaderContains(toAssetPathname(firstBook.pdfPath), "cache-control", "s-maxage=604800");
 
     await expectHttpOk("/sw.js", "javascript");
+    await expectHeaderContains("/sw.js", "cache-control", "must-revalidate");
     await expectHttpOk("/manifest.webmanifest", "manifest");
     await expectHttpOk("/manifest.json", "json");
 
