@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { BookHeart, Home, LibraryBig } from "lucide-react";
@@ -7,9 +7,14 @@ import { LibraryCard } from "@/components/library/LibraryCard";
 import { LibrarySearch } from "@/components/library/LibrarySearch";
 import { getLibraryCatalog, normalizeSearchText } from "@/lib/library";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { usePerformanceMode } from "@/hooks/usePerformanceMode";
 
 const LibraryIndex = () => {
+  const { isMobile } = usePerformanceMode();
   const [search, setSearch] = useState("");
+  const initialVisibleCount = isMobile ? 8 : 12;
+  const loadMoreStep = isMobile ? 6 : 8;
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const { data: catalog, isLoading, isError } = useQuery({
     queryKey: ["library-catalog"],
@@ -27,6 +32,15 @@ const LibraryIndex = () => {
 
     return items.filter((book) => normalizeSearchText(book.title).includes(normalizedSearch));
   }, [catalog, search]);
+  const visibleBooks = useMemo(
+    () => filtered.slice(0, visibleCount),
+    [filtered, visibleCount],
+  );
+  const hasMoreBooks = visibleCount < filtered.length;
+
+  useEffect(() => {
+    setVisibleCount(initialVisibleCount);
+  }, [initialVisibleCount, search, filtered.length]);
 
   usePageMeta({
     title: "Kütüphane | Hikmet Ehli",
@@ -97,7 +111,7 @@ const LibraryIndex = () => {
               </div>
             ) : filtered.length > 0 ? (
               <div className="grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {filtered.map((book) => (
+                {visibleBooks.map((book) => (
                   <LibraryCard key={book.id} book={book} />
                 ))}
               </div>
@@ -108,6 +122,20 @@ const LibraryIndex = () => {
                 <p className="mt-2 text-sm text-muted-foreground">Arama ifadenizi sadeleştirip tekrar deneyin.</p>
               </div>
             )}
+
+            {hasMoreBooks ? (
+              <div className="mt-4 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setVisibleCount((current) => Math.min(filtered.length, current + loadMoreStep))
+                  }
+                  className="action-pill px-5"
+                >
+                  Daha Fazla Yükle ({filtered.length - visibleCount})
+                </button>
+              </div>
+            ) : null}
           </section>
         </div>
       </main>

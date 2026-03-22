@@ -11,6 +11,7 @@
     "validate:library-catalog": "tsx scripts/validate-library-catalog.mts",
     "smoke:http": "tsx scripts/smoke-http.mts",
     "analyze:cf": "tsx scripts/cloudflare-audit.mts",
+    "monitor:pagespeed": "tsx scripts/pagespeed-monitor.mts",
     "lighthouse:mobile": "lhci autorun --config=./lighthouserc.mobile.json",
     "lighthouse:desktop": "lhci autorun --config=./lighthouserc.desktop.json",
     "test:lighthouse": "npm run build && npm run lighthouse:mobile && npm run lighthouse:desktop",
@@ -21,7 +22,10 @@
     "export:widget-data": "tsx scripts/export-widget-data.mts",
     "native:sync": "npm run build && npm run export:widget-data && npx cap sync",
     "native:add:ios": "npx cap add ios",
-    "native:add:android": "npx cap add android"
+    "native:add:android": "npx cap add android",
+    "monitor:routes:mobile": "lhci autorun --config=./lighthouserc.routes.mobile.json",
+    "monitor:routes:desktop": "lhci autorun --config=./lighthouserc.routes.desktop.json",
+    "monitor:routes": "npm run build && npm run monitor:routes:mobile && npm run monitor:routes:desktop"
   },
   "dependencies": {
     "@capacitor/android": "^8.1.0",

@@ -142,6 +142,9 @@ const SahabedenSozler = () => {
   const [search, setSearch] = useState("");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(() => readFavoriteIds());
+  const initialVisibleCount = isMobile ? 14 : 24;
+  const loadMoreStep = isMobile ? 12 : 16;
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["sahabeden-quotes"],
@@ -172,6 +175,15 @@ const SahabedenSozler = () => {
       return haystack.includes(normalizedSearch);
     });
   }, [favoriteIds, favoritesOnly, mixedQuotes, normalizedSearch]);
+  const visibleQuotes = useMemo(
+    () => filteredQuotes.slice(0, visibleCount),
+    [filteredQuotes, visibleCount],
+  );
+  const hasMoreQuotes = visibleCount < filteredQuotes.length;
+
+  useEffect(() => {
+    setVisibleCount(initialVisibleCount);
+  }, [favoritesOnly, initialVisibleCount, normalizedSearch, mixedQuotes.length]);
 
   usePageMeta({
     title: "Sahabe’den, رضي الله عنهم, Öğütlerinden Seçmeler | Hikmet Ehli",
@@ -296,7 +308,7 @@ const SahabedenSozler = () => {
               </div>
             ) : filteredQuotes.length > 0 ? (
               <div className="grid gap-3 md:gap-4 md:grid-cols-2">
-                {filteredQuotes.map((quote) => {
+                {visibleQuotes.map((quote) => {
                   const isFavorite = favoriteIds.has(quote.id);
                   return (
                     <article
@@ -343,6 +355,20 @@ const SahabedenSozler = () => {
                 <p className="mt-2 text-sm text-muted-foreground">Filtreleri değiştirip tekrar deneyin.</p>
               </div>
             )}
+
+            {hasMoreQuotes ? (
+              <div className="mt-4 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setVisibleCount((current) => Math.min(filteredQuotes.length, current + loadMoreStep))
+                  }
+                  className="action-pill px-5"
+                >
+                  Daha Fazla Yükle ({filteredQuotes.length - visibleCount})
+                </button>
+              </div>
+            ) : null}
           </section>
         </div>
       </main>

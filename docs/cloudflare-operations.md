@@ -92,6 +92,8 @@ VITE_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 ```bash
 npm run build
 npm run smoke:http
+npm run monitor:routes
+npm run monitor:pagespeed
 ```
 
 `smoke:http` asagidakileri otomatik denetler:
@@ -100,3 +102,18 @@ npm run smoke:http
 2. `_redirects` HTTPS + kanonik host kurallari
 3. SPA route'larinin 200 donmesi
 4. PDF/cover/JSON asset erisimi
+
+`monitor:pagespeed` scripti su route'lari mobile+desktop olcer ve markdown raporu uretir:
+
+- `https://hikmetehli.com/`
+- `https://hikmetehli.com/sahabeden`
+- `https://hikmetehli.com/muasir`
+- `https://hikmetehli.com/selef-incileri`
+- `https://hikmetehli.com/#saatlik-ilham`
+- `https://hikmetehli.com/kutuphane`
+
+Rapor yolu:
+
+- `.artifacts/pagespeed/pagespeed-monitor-<timestamp>.md`
+
+`monitor:routes` ise ayni route setini lokal build uzerinde Lighthouse ile olcer.

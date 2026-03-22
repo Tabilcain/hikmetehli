@@ -1,0 +1,31 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 1,
+      "startServerCommand": "npm run preview -- --host 127.0.0.1 --port 4173",
+      "startServerReadyPattern": "127.0.0.1:4173",
+      "url": [
+        "http://127.0.0.1:4173/",
+        "http://127.0.0.1:4173/sahabeden",
+        "http://127.0.0.1:4173/muasir",
+        "http://127.0.0.1:4173/selef-incileri",
+        "http://127.0.0.1:4173/?open=hourly",
+        "http://127.0.0.1:4173/kutuphane"
+      ],
+      "settings": {
+        "chromeFlags": "--no-sandbox --headless=new",
+        "emulatedFormFactor": "mobile"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.8 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 3500 }],
+        "first-contentful-paint": ["warn", { "maxNumericValue": 2500 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}
