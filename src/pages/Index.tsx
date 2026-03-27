@@ -8,6 +8,7 @@ import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { PageTransition } from "@/components/PageTransition";
 import { InstallCTA } from "@/components/InstallCTA";
 import { usePerformanceMode } from "@/hooks/usePerformanceMode";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 const SahabedenPreviewSection = lazy(() =>
   import("@/components/SahabedenPreviewSection").then((module) => ({ default: module.SahabedenPreviewSection })),
@@ -30,6 +31,10 @@ const HourlyContentSectionLite = lazy(() =>
 const SocialLinks = lazy(() =>
   import("@/components/SocialLinks").then((module) => ({ default: module.SocialLinks })),
 );
+
+const HOME_META_TITLE = "Hikmet Ehli | Sahabeden ve Selef'ten Sözler, Dua Arşivi";
+const HOME_META_DESCRIPTION =
+  "Sahabeden, muasır alimlerden ve selef imamlarından seçme sözleri keşfedin; saatlik sahih hadis akışı ve dua arşiviyle günlük ilim takibi yapın.";
 
 const useDeferredSection = (forceVisible: boolean, rootMargin: string) => {
   const [isVisible, setIsVisible] = useState(forceVisible);
@@ -109,6 +114,12 @@ const Index = () => {
   const socialSection = useDeferredSection(shouldOpenSocial, "260px 0px");
   const showAllSections = !hourlyFocusMode;
   const useLiteHourlySection = lowPerformanceMode && hourlyFocusMode;
+
+  usePageMeta({
+    title: HOME_META_TITLE,
+    description: HOME_META_DESCRIPTION,
+    url: typeof window !== "undefined" ? window.location.href : undefined,
+  });
 
   useEffect(() => {
     if (!location.hash) return;
