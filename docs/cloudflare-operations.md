@@ -84,6 +84,25 @@ Env ornegi:
 VITE_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 ```
 
+## 3.1) Site-wide broken link taramasi
+
+GeoDaddy'nin "Broken link detection requires site-wide crawl mode" uyarisi teknik hata degildir; analiz modu bilgisidir.
+
+Repo icinden tum ic linkleri taramak icin:
+
+```bash
+npm run crawl:sitewide
+```
+
+Rapor dosyasi:
+
+- `.artifacts/link-crawl/sitewide-link-crawl-<timestamp>.md`
+
+Beklenen:
+
+- `Broken URLs: 0`
+- Cloudflare'in enjekte ettigi `/cdn-cgi/*` probe linkleri raporda otomatik haric tutulur.
+
 ## 4) 7 gun izleme hedefleri
 
 1. `Cached requests rate` >= `%25`

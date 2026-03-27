@@ -12,6 +12,7 @@
     "smoke:http": "tsx scripts/smoke-http.mts",
     "analyze:cf": "tsx scripts/cloudflare-audit.mts",
     "monitor:pagespeed": "tsx scripts/pagespeed-monitor.mts",
+    "crawl:sitewide": "tsx scripts/sitewide-link-crawl.mts",
     "lighthouse:mobile": "lhci autorun --config=./lighthouserc.mobile.json",
     "lighthouse:desktop": "lhci autorun --config=./lighthouserc.desktop.json",
     "test:lighthouse": "npm run build && npm run lighthouse:mobile && npm run lighthouse:desktop",
