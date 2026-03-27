@@ -60,6 +60,11 @@ Panel aksiyonu:
 2. robots yonetimini repo dosyasina (`public/robots.txt`) sabitle.
 3. Degisiklikten sonra Lighthouse SEO testini tekrar calistir.
 
+Not:
+
+- GEO gorunurlugu icin `GPTBot`, `ClaudeBot`, `Bytespider`, `CCBot`, `PerplexityBot`, `GoogleOther` satirlarinin `Allow: /` olmasi hedeflenir.
+- robots tarafinda bot erisimi acik olsa bile Cloudflare managed kurali aktifse canli dosyada tekrar `Disallow` enjekte edilebilir. Bu durumda once panelde managed kural kapatilmalidir.
+
 ## 3) Pageview dogrulama (SPA)
 
 Route degisimlerinde event gonderimi:
